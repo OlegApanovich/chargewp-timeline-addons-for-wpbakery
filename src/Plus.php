@@ -7,6 +7,8 @@
 
 namespace WpbPlusTimeline;
 
+use WpbPlusTimeline\PlusWpbShortcode;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -41,11 +43,14 @@ class Plus {
 			$config = wpbplustimeline_config( $element_init_data['config'] );
 			wpb_map( $config );
 
-			new $element_init_data['class'](
-				$element_slug,
-				$config,
-				$element_init_data['template']
-			);
+			$wpb_shortcode = new $element_init_data['class']($config);
+
+             (new PlusWpbShortcode())
+                ->setElementSlug($element_slug)
+                ->setConfig($config)
+                ->setTemplate($element_init_data['template'])
+                ->setWpbShortcode($wpb_shortcode)
+                ->add_shortcode();
 		}
 	}
 

@@ -1,144 +1,22 @@
-<ul class="timeline">
-    <!-- Item 1 -->
-    <li>
-        <div class="direction-r">
-            <div class="flag-wrapper">
-                <span class="hexa"></span>
-                <span class="flag">Lorem ipsum.</span>
-                <span class="time-wrapper"><span class="time">Feb 2015</span></span>
-            </div>
-            <div class="desc">Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation deserunt proident.</div>
-        </div>
-    </li>
+<?php
+/**
+ * The template for displaying [wpbakery-plus-vertical-timeline] shortcode output.
+ *
+ * @var array $atts
+ * @var string $content - shortcode content
+ * @var \WpbPlusTimeline\Shortcodes\VerticalTimeline $_this
+ */
 
-    <!-- Item 2 -->
-    <li>
-        <div class="direction-l">
-            <div class="flag-wrapper">
-                <span class="hexa"></span>
-                <span class="flag">Lorem ipsum Anim.</span>
-                <span class="time-wrapper"><span class="time">Dec 2014</span></span>
-            </div>
-            <div class="desc">Lorem ipsum In ut sit in dolor nisi ex magna eu anim anim tempor dolore aliquip enim cupidatat laborum dolore.</div>
-        </div>
-    </li>
+defined( 'ABSPATH' ) || exit;
+?>
+<div <?php $_this->outputShortcodeWrapperAttributes(); ?>>
+    <ul class="wpplus-timeline">
+        <?php echo do_shortcode( $content ); ?>
+    </ul>
+</div>
 
-    <!-- Item 3 -->
-    <li>
-        <div class="direction-r">
-            <div class="flag-wrapper">
-                <span class="hexa"></span>
-                <span class="flag">Lorem Occaecat.</span>
-                <span class="time-wrapper"><span class="time">July 2014</span></span>
-            </div>
-            <div class="desc">Lorem ipsum Minim labore Ut cupidatat quis qui deserunt proident fugiat pariatur cillum cupidatat reprehenderit sit id dolor consectetur ut.</div>
-        </div>
-    </li>
-
-    <li>
-        <div class="direction-r">
-            <div class="flag-wrapper">
-                <span class="hexa"></span>
-                <span class="flag">Lorem Occaecat.</span>
-                <span class="time-wrapper"><span class="time">July 2014</span></span>
-            </div>
-            <div class="desc">Lorem ipsum Minim labore Ut cupidatat quis qui deserunt proident fugiat pariatur cillum cupidatat reprehenderit sit id dolor consectetur ut.</div>
-        </div>
-    </li>
-    <li>
-        <div class="direction-r">
-            <div class="flag-wrapper">
-                <span class="hexa"></span>
-                <span class="flag">Lorem Occaecat.</span>
-                <span class="time-wrapper"><span class="time">July 2014</span></span>
-            </div>
-            <div class="desc">Lorem ipsum Minim labore Ut cupidatat quis qui deserunt proident fugiat pariatur cillum cupidatat reprehenderit sit id dolor consectetur ut.</div>
-        </div>
-    </li>
-    <li>
-        <div class="direction-r">
-            <div class="flag-wrapper">
-                <span class="hexa"></span>
-                <span class="flag">Lorem Occaecat.</span>
-                <span class="time-wrapper"><span class="time">July 2014</span></span>
-            </div>
-            <div class="desc">Lorem ipsum Minim labore Ut cupidatat quis qui deserunt proident fugiat pariatur cillum cupidatat reprehenderit sit id dolor consectetur ut.</div>
-        </div>
-    </li>
-    <li>
-        <div class="direction-r">
-            <div class="flag-wrapper">
-                <span class="hexa"></span>
-                <span class="flag">Lorem Occaecat.</span>
-                <span class="time-wrapper"><span class="time">July 2014</span></span>
-            </div>
-            <div class="desc">Lorem ipsum Minim labore Ut cupidatat quis qui deserunt proident fugiat pariatur cillum cupidatat reprehenderit sit id dolor consectetur ut.</div>
-        </div>
-    </li>
-    <li>
-        <div class="direction-r">
-            <div class="flag-wrapper">
-                <span class="hexa"></span>
-                <span class="flag">Lorem Occaecat.</span>
-                <span class="time-wrapper"><span class="time">July 2014</span></span>
-            </div>
-            <div class="desc">Lorem ipsum Minim labore Ut cupidatat quis qui deserunt proident fugiat pariatur cillum cupidatat reprehenderit sit id dolor consectetur ut.</div>
-        </div>
-    </li>
-    <li>
-        <div class="direction-r">
-            <div class="flag-wrapper">
-                <span class="hexa"></span>
-                <span class="flag">Lorem Occaecat.</span>
-                <span class="time-wrapper"><span class="time">July 2014</span></span>
-            </div>
-            <div class="desc">Lorem ipsum Minim labore Ut cupidatat quis qui deserunt proident fugiat pariatur cillum cupidatat reprehenderit sit id dolor consectetur ut.</div>
-        </div>
-    </li>
-    <li>
-        <div class="direction-r">
-            <div class="flag-wrapper">
-                <span class="hexa"></span>
-                <span class="flag">Lorem Occaecat.</span>
-                <span class="time-wrapper"><span class="time">July 2014</span></span>
-            </div>
-            <div class="desc">Lorem ipsum Minim labore Ut cupidatat quis qui deserunt proident fugiat pariatur cillum cupidatat reprehenderit sit id dolor consectetur ut.</div>
-        </div>
-    </li>
-
-    <li>
-        <div class="direction-l">
-            <div class="flag-wrapper">
-                <span class="hexa"></span>
-                <span class="flag">Lorem ipsum Anim.</span>
-                <span class="time-wrapper"><span class="time">Dec 2014</span></span>
-            </div>
-            <div class="desc">Lorem ipsum In ut sit in dolor nisi ex magna eu anim anim tempor dolore aliquip enim cupidatat laborum dolore.</div>
-        </div>
-    </li>
-
-</ul>
-
-<style type="text/css">
-    @import url(https://fonts.googleapis.com/css?family=Raleway:400,900);
-
-    body{
-        font-family: 'Raleway', sans-serif;
-        color: #333;
-    }
-
-    header h1{
-        text-align: center;
-        font-weight: bold;
-        margin-top: 0;
-    }
-
-    header p{
-        text-align: center;
-        margin-bottom: 0;
-    }
-
-    .hexa{
+<style>
+    .wpplus-hexa{
         border: 0px;
         float: left;
         text-align: center;
@@ -151,7 +29,7 @@
         margin-top: 15px;
     }
 
-    .hexa:before{
+    .wpplus-hexa:before{
         content: "";
         position: absolute;
         left: 0;
@@ -163,7 +41,7 @@
         top: -15px;
     }
 
-    .hexa:after{
+    .wpplus-hexa:after{
         content: "";
         position: absolute;
         left: 0;
@@ -175,7 +53,7 @@
         bottom: -15px;
     }
 
-    .timeline {
+    .wpplus-timeline {
         position: relative;
         padding: 0;
         width: 100%;
@@ -183,7 +61,7 @@
         list-style-type: none;
     }
 
-    .timeline:before {
+    .wpplus-timeline:before {
         position: absolute;
         left: 50%;
         top: 0;
@@ -202,11 +80,11 @@
         z-index: 5;
     }
 
-    .timeline li {
+    .wpplus-timeline li {
         padding: 2em 0;
     }
 
-    .timeline .hexa{
+    .wpplus-timeline .wpplus-hexa{
         width: 16px;
         height: 10px;
         position: absolute;
@@ -220,33 +98,33 @@
         margin-top: 0;
     }
 
-    .timeline .hexa:before {
+    .wpplus-timeline .wpplus-hexa:before {
         border-bottom: 4px solid #00c4f3;
         border-left-width: 8px;
         border-right-width: 8px;
         top: -4px;
     }
 
-    .timeline .hexa:after {
+    .wpplus-timeline .wpplus-hexa:after {
         border-left-width: 8px;
         border-right-width: 8px;
         border-top: 4px solid #00c4f3;
         bottom: -4px;
     }
 
-    .direction-l,
-    .direction-r {
+    .wpplus-direction-l,
+    .wpplus-direction-r {
         float: none;
         width: 100%;
         text-align: center;
     }
 
-    .flag-wrapper {
+    .wpplus-flag-wrapper {
         text-align: center;
         position: relative;
     }
 
-    .flag {
+    .wpplus-flag {
         position: relative;
         display: inline;
         background: rgb(255,255,255);
@@ -257,8 +135,8 @@
         border-radius: 5px;
     }
 
-    .direction-l .flag:after,
-    .direction-r .flag:after {
+    .wpplus-direction-l .wpplus-flag:after,
+    .wpplus-direction-r .wpplus-flag:after {
         content: "";
         position: absolute;
         left: 50%;
@@ -272,19 +150,19 @@
         pointer-events: none;
     }
 
-    .direction-l .flag {
+    .wpplus-direction-l .wpplus-flag {
         -webkit-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
         -moz-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
         box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
     }
 
-    .direction-r .flag {
+    .wpplus-direction-r .wpplus-flag {
         -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
         -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
         box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
     }
 
-    .time-wrapper {
+    .wpplus-time-wrapper {
         display: block;
         position: relative;
         margin: 4px 0 0 0;
@@ -294,21 +172,21 @@
         color: #fff;
     }
 
-    .direction-l .time-wrapper {
+    .wpplus-direction-l .wpplus-time-wrapper {
         float: none;
     }
 
-    .direction-r .time-wrapper {
+    .wpplus-direction-r .wpplus-time-wrapper {
         float: none;
     }
 
-    .time {
+    .wpplus-time {
         background: #00c4f3;
         display: inline-block;
         padding: 8px;
     }
 
-    .desc {
+    .wpplus-desc {
         position: relative;
         margin: 1em 0 0 0;
         padding: 1em;
@@ -319,8 +197,8 @@
         z-index: 15;
     }
 
-    .direction-l .desc,
-    .direction-r .desc {
+    .wpplus-direction-l .desc,
+    .wpplus-direction-r .desc {
         position: relative;
         margin: 1em 1em 0 1em;
         padding: 1em;
@@ -328,13 +206,13 @@
     }
 
     @media(min-width: 768px){
-        .timeline {
+        .wpplus-timeline {
             width: 660px;
             margin: 0 auto;
             margin-top: 20px;
         }
 
-        .timeline li:after {
+        .wpplus-timeline li:after {
             content: "";
             display: block;
             height: 0;
@@ -342,40 +220,40 @@
             visibility: hidden;
         }
 
-        .timeline .hexa {
+        .wpplus-timeline .wpplus-hexa {
             left: -28px;
             right: auto;
             top: 8px;
         }
 
-        .timeline .direction-l .hexa {
+        .wpplus-timeline .wpplus-direction-l .wpplus-hexa {
             left: auto;
             right: -28px;
         }
 
-        .direction-l {
+        .wpplus-direction-l {
             position: relative;
             width: 310px;
             float: left;
             text-align: right;
         }
 
-        .direction-r {
+        .wpplus-direction-r {
             position: relative;
             width: 310px;
             float: right;
             text-align: left;
         }
 
-        .flag-wrapper {
+        .wpplus-flag-wrapper {
             display: inline-block;
         }
 
-        .flag {
+        .wpplus-flag {
             font-size: 18px;
         }
 
-        .direction-l .flag:after {
+        .wpplus-direction-l .wpplus-flag:after {
             left: auto;
             right: -16px;
             top: 50%;
@@ -385,7 +263,7 @@
             border-width: 8px;
         }
 
-        .direction-r .flag:after {
+        .wpplus-direction-r .wpplus-flag:after {
             top: 50%;
             margin-top: -8px;
             border: solid transparent;
@@ -394,44 +272,44 @@
             left: -8px;
         }
 
-        .time-wrapper {
+        .wpplus-time-wrapper {
             display: inline;
             vertical-align: middle;
             margin: 0;
         }
 
-        .direction-l .time-wrapper {
+        .wpplus-direction-l .wpplus-time-wrapper {
             float: left;
         }
 
-        .direction-r .time-wrapper {
+        .wpplus-direction-r .wpplus-time-wrapper {
             float: right;
         }
 
-        .time {
+        .wpplus-time {
             padding: 5px 10px;
         }
 
-        .direction-r .desc {
+        .wpplus-direction-r .wpplus-desc {
             margin: 1em 0 0 0.75em;
         }
     }
 
     @media(min-width: 992px){
-        .timeline {
+        .wpplus-timeline {
             width: 800px;
             margin: 0 auto;
             margin-top: 20px;
         }
 
-        .direction-l {
+        .wpplus-direction-l {
             position: relative;
             width: 380px;
             float: left;
             text-align: right;
         }
 
-        .direction-r {
+        .wpplus-direction-r {
             position: relative;
             width: 380px;
             float: right;
