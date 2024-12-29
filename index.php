@@ -132,7 +132,7 @@ class Wpbplus_Timeline_Element {
 	 * @since 1.0
 	 */
 	private function init_hooks() {
-		add_action( 'init', array( $this, 'init' ), 0 );
+		add_action( 'init', [ $this, 'init' ], 0 );
 	}
 
 	/**

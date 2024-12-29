@@ -28,11 +28,11 @@ if ( ! function_exists( 'wpbplustimeline_validate_dependency_plugin' ) ) :
 		$version_to_check = null
 	) {
 		$success          = true;
-		$template_payload = array(
+		$template_payload = [
 			'my_plugin_name'         => $my_plugin_name,
 			'dependency_plugin_name' => $dependency_plugin_name,
 			'version_to_check'       => $version_to_check,
-		);
+		];
 		// Needed to the function "deactivate_plugins" works.
 		include_once ABSPATH . 'wp-admin/includes/plugin.php';
 
@@ -81,7 +81,7 @@ if ( ! function_exists( 'wpbplustimeline_get_template' ) ) :
 	 * @return mixed
 	 * @since 1.0
 	 */
-	function wpbplustimeline_include_template( $template, $variables = array(), $once = false ) {
+	function wpbplustimeline_include_template( $template, $variables = [], $once = false ) {
         // phpcs:ignore:WordPress.PHP.DontExtract.extract_extract
 		is_array( $variables ) && extract( $variables );
 		if ( $once ) {
@@ -104,7 +104,7 @@ if ( ! function_exists( 'wpbplustimeline_get_template' ) ) :
 	 * @return string
 	 * @since 1.0
 	 */
-	function wpbplustimeline_get_template( $template, $variables = array(), $once = false ) {
+	function wpbplustimeline_get_template( $template, $variables = [], $once = false ) {
 		ob_start();
 		$output = wpbplustimeline_include_template( $template, $variables, $once );
 
@@ -142,7 +142,7 @@ if ( ! function_exists( 'wpbplustimeline_config' ) ) :
 	 * @return mixed The configuration value.
 	 */
 	function wpbplustimeline_config( $config_path ) {
-		static $loaded_configs = array();
+		static $loaded_configs = [];
 
 		// Replace dots with slashes, except for the last dot.
 		$path = str_replace( '.', '/', $config_path );
@@ -176,7 +176,7 @@ if ( ! function_exists( 'wpbplustimeline_add_custom_font_to_field' ) ) :
 	 * @return array
 	 * @since 1.0
 	 */
-	function wpbplustimeline_add_custom_font_to_field( $filed_slug, $field_title, $condition, $exclude = array() ) {
+	function wpbplustimeline_add_custom_font_to_field( $filed_slug, $field_title, $condition, $exclude = [] ) {
 		$custom_font_atts = wpbplustimeline_get_integration_custom_heading_shortcode( $filed_slug, $field_title, $condition );
 
 		foreach ( $custom_font_atts as $key => $font_attr ) {
@@ -222,18 +222,18 @@ if ( ! function_exists( 'wpbplustimeline_get_custom_font_attribute' ) ) :
 				$filed_slug . '_',
 				$field_title,
 				$condition,
-				array(
+				[
 					'element' => 'use_custom_fonts_' . $filed_slug,
 					'value'   => 'true',
-				)
+				]
 			);
 		} catch ( Exception $e ) {
-			return array();
+			return [];
 		}
 
 		// This is needed to remove custom heading options.
 		if ( ! is_array( $custom_font_atts ) ) {
-			return array();
+			return [];
 		}
 
 		return $custom_font_atts;
@@ -274,10 +274,10 @@ if ( ! function_exists( 'wpbplustimeline_get_custom_font_attribute' ) ) :
 		$data['font_container'] = implode(
 			'|',
 			array_filter(
-				array(
+				[
 					$tag ? 'tag:' . $tag : '',
 					$data['font_container'],
-				)
+				]
 			)
 		);
 		$data['text']           = $atts[ $atts_slug ]; // provide text to shortcode.

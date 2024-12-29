@@ -18,6 +18,7 @@
         <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
         <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
         <exclude name="Squiz.Commenting.FunctionComment.MissingParamTag" />
+        <exclude name="Universal.Arrays.DisallowShortArraySyntax.Found" />
     </rule>
 
     <!-- some specific rules that rules ref="WordPress" does not have,
@@ -39,5 +40,7 @@
             <property name="maxComplexity" value="10"/>
         </properties>
     </rule>
+
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
 
 </ruleset>

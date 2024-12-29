@@ -124,7 +124,7 @@ class PlusWpbShortcode {
 	 * @since 1.0
 	 */
 	public function add_shortcode() {
-		add_shortcode( $this->element_slug, array( $this, 'render_shortcode' ) );
+		add_shortcode( $this->element_slug, [ $this, 'render_shortcode' ] );
 	}
 
 	/**
@@ -138,11 +138,11 @@ class PlusWpbShortcode {
 	public function render_shortcode( $atts, $content = null ) {
 		$this->shortcode_atts = $atts;
 
-		$payload = array(
+		$payload = [
 			'atts'    => vc_map_get_attributes( $this->wpb_shortcode->getShortcode(), $atts ),
 			'content' => $content,
 			'_this'   => $this,
-		);
+		];
 
 		$this->enqueue_shortcode_asset( 'css' );
 		$this->enqueue_shortcode_asset( 'js' );
@@ -158,7 +158,7 @@ class PlusWpbShortcode {
 	 *
 	 * @since 1.0
 	 */
-	public function enqueue_shortcode_asset( $type, $deps = array() ) {
+	public function enqueue_shortcode_asset( $type, $deps = [] ) {
 		$css_path = WPBPLUSTIMELINE_INCLUDES_ASSETS_DIR . '/css/shortcodes/' . $this->element_slug . '.' . $type;
 		$css_uri  = WPBPLUSTIMELINE_URI . '/assets/css/shortcodes/' . $this->element_slug . '.css';
 
@@ -175,12 +175,12 @@ class PlusWpbShortcode {
 	 * @param array $initial_markup_atts wrapper attributes that has our initial element markup.
 	 * @since 1.0
 	 */
-	public function output_shortcode_wrapper_attributes( $initial_markup_atts = array() ) {
+	public function output_shortcode_wrapper_attributes( $initial_markup_atts = [] ) {
 		$classes = $this->get_wrapper_classes( $initial_markup_atts );
 
 		unset( $initial_markup_atts['class'] );
 		$element_wrapper_attributes['class']                          = $classes;
-		$element_wrapper_attributes['id']                             = empty( $this->shortcode_atts['el_id'] ) ? array() : $this->shortcode_atts['el_id'];
+		$element_wrapper_attributes['id']                             = empty( $this->shortcode_atts['el_id'] ) ? [] : $this->shortcode_atts['el_id'];
 		$element_wrapper_attributes[ $this->get_data_attribute_id() ] = $this->id;
 
 		$element_wrapper_attributes = array_merge( $element_wrapper_attributes, $initial_markup_atts );
