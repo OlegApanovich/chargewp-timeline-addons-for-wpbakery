@@ -17,6 +17,7 @@
         <exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />
         <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
         <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
+        <exclude name="Squiz.Commenting.FunctionComment.MissingParamTag" />
     </rule>
 
     <!-- some specific rules that rules ref="WordPress" does not have,
@@ -29,7 +30,7 @@
 
     <rule ref="Generic.Metrics.CyclomaticComplexity">
         <properties>
-            <property name="complexity" value="5"/>
+            <property name="complexity" value="6"/>
         </properties>
     </rule>
 

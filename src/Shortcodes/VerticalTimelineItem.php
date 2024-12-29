@@ -16,14 +16,4 @@ defined( 'ABSPATH' ) || exit;
  *
  * @since 1.0
  */
-class VerticalTimelineItem extends WPBakeryShortCode {
-	/**
-	 * Constructor.
-	 *
-	 * @param array  $config
-	 * @since 1.0
-	 */
-	public function __construct( $config ) {
-		parent::__construct( $config );
-	}
-}
+class VerticalTimelineItem extends WPBakeryShortCode {}

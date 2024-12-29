@@ -5,15 +5,15 @@
  * @since 1.0
  */
 
-return [
-	'wpbakery-plus-vertical-timeline' => [
+return array(
+	'wpbakery-plus-vertical-timeline'      => array(
 		'config'   => 'shortcodes.vertical-timeline',
 		'template' => 'shortcodes/vertical-timeline.php',
 		'class'    => 'WpbPlusTimeline\Shortcodes\VerticalTimeline',
-	],
-	'wpbakery-plus-vertical-timeline-item' => [
+	),
+	'wpbakery-plus-vertical-timeline-item' => array(
 		'config'   => 'shortcodes.vertical-timeline-item',
 		'template' => 'shortcodes/vertical-timeline-item.php',
 		'class'    => 'WpbPlusTimeline\Shortcodes\VerticalTimelineItem',
-	],
-];
+	),
+);

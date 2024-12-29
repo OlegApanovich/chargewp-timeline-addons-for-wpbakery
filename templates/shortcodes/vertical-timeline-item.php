@@ -10,13 +10,53 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<li <?php $_this->outputShortcodeWrapperAttributes(); ?>>
-    <div class="wpplus-direction-r">
-        <div class="wpplus-flag-wrapper">
-            <span class="wpplus-hexa"></span>
-            <span class="wpplus-flag">Lorem ipsum.</span>
-            <span class="wpplus-time-wrapper"><span class="wpplus-time">Feb 2015</span></span>
-        </div>
-        <div class="wpplus-desc">Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation deserunt proident.</div>
-    </div>
+<li <?php $_this->output_shortcode_wrapper_attributes(); ?>>
+	<div class="wpplus-direction-<?php echo empty( $atts['position'] ) || 'right' === $atts['position'] ? 'r' : 'l'; ?>">
+		<div class="wpplus-flag-wrapper">
+			<span class="wpplus-hexa"></span>
+			<span class="wpplus-flag"><?php wpbplustimeline_output_custom_font_attribute( 'title', $atts, $_this->element_slug, 'span' ); ?></span>
+			<span class="wpplus-time-wrapper"><span class="wpplus-time"><?php wpbplustimeline_output_custom_font_attribute( 'date', $atts, $_this->element_slug, 'span' ); ?></span></span>
+		</div>
+
+		<div class="wpplus-desc">
+			<?php echo wpb_js_remove_wpautop( $content, true ); // phpcs:ignore: WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+		</div>
+	</div>
 </li>
+
+<style>
+	<?php $_this->output_style_shortcode_id(); ?> .wpplus-hexa {
+		background: <?php echo esc_attr( $atts['marker_color'] ); ?>;
+	}
+
+	.wpplus-timeline <?php $_this->output_style_shortcode_id(); ?> .wpplus-hexa:before {
+		border-bottom: 4px solid <?php echo esc_attr( $atts['marker_color'] ); ?>;
+		border-left-width: 8px;
+		border-right-width: 8px;
+		top: -4px;
+	}
+
+	.wpplus-timeline <?php $_this->output_style_shortcode_id(); ?> .wpplus-hexa:after {
+		border-left-width: 8px;
+		border-right-width: 8px;
+		border-top: 4px solid <?php echo esc_attr( $atts['marker_color'] ); ?>;
+		bottom: -4px;
+	}
+
+	<?php $_this->output_style_shortcode_id(); ?> .wpplus-time {
+		background: <?php echo esc_attr( $atts['date_background'] ); ?>;
+	}
+
+	<?php $_this->output_style_shortcode_id(); ?> .wpplus-flag {
+		background: <?php echo esc_attr( $atts['title_color'] ); ?>;
+	}
+
+	<?php $_this->output_style_shortcode_id(); ?> .wpplus-desc {
+		background: <?php echo esc_attr( $atts['text_color'] ); ?>;
+		<?php if ( '#FEFEFE' === $atts['text_color'] ) : ?>
+			-webkit-box-shadow: 0 0 1px rgba(0,0,0,0.20);
+			-moz-box-shadow: 0 0 1px rgba(0,0,0,0.20);
+			box-shadow: 0 0 1px rgba(0,0,0,0.20);
+		<?php endif; ?>
+	}
+</style>

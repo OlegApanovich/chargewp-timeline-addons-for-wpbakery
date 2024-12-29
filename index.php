@@ -112,6 +112,7 @@ class Wpbplus_Timeline_Element {
 		define( 'WPBPLUSTIMELINE_URI_ABSPATH', __DIR__ . '/' );
 		define( 'WPBPLUSTIMELINE_TEMPLATES_DIR', __DIR__ . '/templates' );
 		define( 'WPBPLUSTIMELINE_INCLUDES_DIR', __DIR__ . '/includes' );
+		define( 'WPBPLUSTIMELINE_INCLUDES_ASSETS_DIR', __DIR__ . '/assets' );
 		define( 'WPBPLUSTIMELINE_CONFIG_DIR', __DIR__ . '/config' );
 	}
 

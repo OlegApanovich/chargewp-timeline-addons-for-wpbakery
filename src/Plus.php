@@ -43,14 +43,15 @@ class Plus {
 			$config = wpbplustimeline_config( $element_init_data['config'] );
 			wpb_map( $config );
 
-			$wpb_shortcode = new $element_init_data['class']($config);
+			$wpb_shortcode = new $element_init_data['class']( $config );
 
-             (new PlusWpbShortcode())
-                ->setElementSlug($element_slug)
-                ->setConfig($config)
-                ->setTemplate($element_init_data['template'])
-                ->setWpbShortcode($wpb_shortcode)
-                ->add_shortcode();
+			( new PlusWpbShortcode() )
+				->set_element_slug( $element_slug )
+				->set_config( $config )
+				->set_template( $element_init_data['template'] )
+				->set_wpb_shortcode( $wpb_shortcode )
+				->set_id( $element_slug )
+				->add_shortcode();
 		}
 	}
 
