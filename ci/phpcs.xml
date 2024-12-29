@@ -31,13 +31,13 @@
 
     <rule ref="Generic.Metrics.CyclomaticComplexity">
         <properties>
-            <property name="complexity" value="6"/>
+            <property name="complexity" value="5"/>
         </properties>
     </rule>
 
     <rule ref="CognitiveComplexity">
         <properties>
-            <property name="maxComplexity" value="10"/>
+            <property name="maxCognitiveComplexity" value="10"/>
         </properties>
     </rule>
 

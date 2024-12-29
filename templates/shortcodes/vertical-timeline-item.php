@@ -8,14 +8,17 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+
+use WpbPlusTimeline\CustomHeadingIntegration;
+$custom_heading_integration = new CustomHeadingIntegration();
 ?>
 
 <li <?php $_this->output_shortcode_wrapper_attributes(); ?>>
 	<div class="wpplus-direction-<?php echo empty( $atts['position'] ) || 'right' === $atts['position'] ? 'r' : 'l'; ?>">
 		<div class="wpplus-flag-wrapper">
 			<span class="wpplus-hexa"></span>
-			<span class="wpplus-flag"><?php wpbplustimeline_output_custom_font_attribute( 'title', $atts, $_this->element_slug, 'span' ); ?></span>
-			<span class="wpplus-time-wrapper"><span class="wpplus-time"><?php wpbplustimeline_output_custom_font_attribute( 'date', $atts, $_this->element_slug, 'span' ); ?></span></span>
+			<span class="wpplus-flag"><?php $custom_heading_integration->output_custom_font_attribute( 'title', $atts, $_this->element_slug, 'span' ); ?></span>
+			<span class="wpplus-time-wrapper"><span class="wpplus-time"><?php $custom_heading_integration->output_custom_font_attribute( 'date', $atts, $_this->element_slug, 'span' ); ?></span></span>
 		</div>
 
 		<div class="wpplus-desc">

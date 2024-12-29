@@ -5,7 +5,11 @@
  * @since 1.0
  */
 
+use WpbPlusTimeline\CustomHeadingIntegration;
+
 defined( 'ABSPATH' ) || exit;
+
+$custom_heading_integration = new CustomHeadingIntegration();
 
 $params = array_merge(
 	[
@@ -50,7 +54,7 @@ $params = array_merge(
 			'edit_field_class' => 'vc_col-sm-3',
 		],
 	],
-	wpbplustimeline_add_custom_font_to_field( 'title', 'Title', [ 'exclude' => [ 'source', 'text', 'css' ] ], [ 'tag', 'text_align' ] ),
+	$custom_heading_integration->add_custom_font_to_field( 'title', 'Title', [ 'exclude' => [ 'source', 'text', 'css' ] ], [ 'tag', 'text_align' ] ),
 	[
 		[
 			'type'             => 'textfield',
@@ -69,7 +73,7 @@ $params = array_merge(
 			'edit_field_class' => 'vc_col-sm-3',
 		],
 	],
-	wpbplustimeline_add_custom_font_to_field( 'date', 'Date', [ 'exclude' => [ 'source', 'text', 'css' ] ], [ 'tag', 'text_align' ] ),
+	$custom_heading_integration->add_custom_font_to_field( 'date', 'Date', [ 'exclude' => [ 'source', 'text', 'css' ] ], [ 'tag', 'text_align' ] ),
 	[
 		[
 			'type'        => 'colorpicker',
