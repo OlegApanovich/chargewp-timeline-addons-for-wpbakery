@@ -7,7 +7,10 @@
 
 namespace WpbPlusTimeline;
 
-use WpbPlusTimeline\PlusWpbShortcode;
+use Exception;
+use WPBakeryShortCode;
+use WpbPlusTimeline\Shortcodes\PlusWpbShortcodeEmpty;
+use WpbPlusTimeline\Shortcodes\PlusWpbShortcodeContainerEmpty;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -36,14 +39,11 @@ class Plus {
 
 		foreach ( $element_list as $element_slug => $element_init_data ) {
 
-			if ( ! class_exists( $element_init_data['class'] ) ) {
-				continue;
-			}
-
 			$config = wpbplustimeline_config( $element_init_data['config'] );
-			wpb_map( $config );
 
-			$wpb_shortcode = new $element_init_data['class']( $config );
+			$this->map_wpb_shortcode( $config );
+
+			$wpb_shortcode = $this->get_wpb_shortcode_instance( $element_init_data, $config );
 
 			( new PlusWpbShortcode() )
 				->set_element_slug( $element_slug )
@@ -52,6 +52,23 @@ class Plus {
 				->set_wpb_shortcode( $wpb_shortcode )
 				->set_id( $element_slug )
 				->add_shortcode();
+		}
+	}
+
+	/**
+	 * Shortcode mapping in WPBakery it an actions that dynamically create attributes for a shortcode.
+	 * Then we can use this attributes in element edit window.
+	 *
+	 * @param array $config Element config.
+	 *
+	 * @since 1.0
+	 */
+	public function map_wpb_shortcode( $config ) {
+		try {
+			wpb_map( $config );
+		} catch ( Exception $e ) {
+            // phpcs:ignore
+			trigger_error( $e->getMessage(), E_USER_ERROR );
 		}
 	}
 
@@ -67,5 +84,28 @@ class Plus {
 			'js_composer/js_composer.php',
 			'4.0'
 		);
+	}
+
+	/**
+	 * Get shortcode instance.
+	 *
+	 * @param array $element_init_data Element init data.
+	 * @param array $config Element config.
+	 *
+	 * @return WPBakeryShortCode
+	 * @since 1.0
+	 */
+	public function get_wpb_shortcode_instance( $element_init_data, $config ) {
+		if ( ! empty( $element_init_data['class'] ) ) {
+			// user predefined class.
+			return new $element_init_data['class']( $config );
+		}
+
+		if ( empty( $element_init_data['is_container'] ) ) {
+			$instance = new PlusWpbShortcodeContainerEmpty( $config );
+		} else {
+			$instance = new PlusWpbShortcodeEmpty( $config );
+		}
+		return $instance;
 	}
 }
