@@ -107,6 +107,7 @@ class Wpbplus_Timeline_Element {
 	 * @since 1.0
 	 */
 	private function define_constants() {
+		define( 'WPBPLUSTIMELINE_VERSION', '1.0' );
 		define( 'WPBPLUSTIMELINE_PLUGIN_FILE', __FILE__ );
 		define( 'WPBPLUSTIMELINE_URI', plugins_url( '', WPBPLUSTIMELINE_PLUGIN_FILE ) );
 		define( 'WPBPLUSTIMELINE_URI_ABSPATH', __DIR__ . '/' );

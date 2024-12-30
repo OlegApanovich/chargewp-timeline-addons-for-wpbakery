@@ -61,6 +61,13 @@ class PlusWpbShortcode {
 	public $wpb_shortcode;
 
 	/**
+	 * We set this data for each element in config/elements.php.
+	 *
+	 * @var array
+	 */
+	public $element_init_data;
+
+	/**
 	 * Set element slug.
 	 *
 	 * @param string $element_slug
@@ -119,6 +126,17 @@ class PlusWpbShortcode {
 	}
 
 	/**
+	 * Set element init data.
+	 *
+	 * @param array $element_init_data
+	 * @since 1.0
+	 */
+	public function set_element_init_data( $element_init_data ) {
+		$this->element_init_data = $element_init_data;
+		return $this;
+	}
+
+	/**
 	 * Constructor.
 	 *
 	 * @since 1.0
@@ -144,26 +162,132 @@ class PlusWpbShortcode {
 			'_this'   => $this,
 		];
 
-		$this->enqueue_shortcode_asset( 'css' );
-		$this->enqueue_shortcode_asset( 'js' );
+		$this->enqueue_shortcode_asset_js( $this->element_slug );
+		$this->enqueue_shortcode_asset_css( $this->element_slug );
+
+		$this->enqueue_shortcode_depend_assets();
 
 		return wpbplustimeline_get_template( $this->template, $payload );
 	}
 
 	/**
-	 * Enqueue shortcode asset.
+	 * Enqueue shortcode asset css.
 	 *
-	 * @param string $type
+	 * @param string $file_name
 	 * @param array  $deps
 	 *
 	 * @since 1.0
 	 */
-	public function enqueue_shortcode_asset( $type, $deps = [] ) {
-		$css_path = WPBPLUSTIMELINE_INCLUDES_ASSETS_DIR . '/css/shortcodes/' . $this->element_slug . '.' . $type;
-		$css_uri  = WPBPLUSTIMELINE_URI . '/assets/css/shortcodes/' . $this->element_slug . '.css';
+	public function enqueue_shortcode_asset_css( $file_name, $deps = [] ) {
+		$path = $this->get_shortcode_asset_path( $file_name, 'css' );
+		$uri  = $this->get_shortcode_asset_uri( $file_name, 'css' );
 
-		if ( file_exists( $css_path ) ) {
-			wp_enqueue_style( $this->element_slug, $css_uri, $deps, filemtime( $css_path ) );
+		if ( ! file_exists( $path ) ) {
+			return;
+		}
+
+		wp_enqueue_style( $this->element_slug . '-' . $file_name, $uri, $deps, filemtime( $path ) );
+	}
+
+	/**
+	 * Enqueue shortcode asset js.
+	 *
+	 * @param string $file_name
+	 * @param array  $deps
+	 * @since 1.0
+	 */
+	public function enqueue_shortcode_asset_js( $file_name, $deps = [] ) {
+		$path = $this->get_shortcode_asset_path( $file_name, 'js' );
+		$uri  = $this->get_shortcode_asset_uri( $file_name, 'js' );
+
+		if ( ! file_exists( $path ) ) {
+			return;
+		}
+
+		wp_enqueue_script( $this->element_slug . '-' . $file_name, $uri, $deps, filemtime( $path ), true );
+	}
+
+	/**
+	 * Get path to shortcode asset.
+	 *
+	 * @param string $file_name
+	 * @param string $type
+	 * @since 1.0
+	 */
+	public function get_shortcode_asset_path( $file_name, $type ) {
+		return WPBPLUSTIMELINE_INCLUDES_ASSETS_DIR . '/' . $type . '/shortcodes/' . $this->element_slug . '/' . $file_name . '.' . $type;
+	}
+
+	/**
+	 * Get uri to shortcode asset.
+	 *
+	 * @param string $file_name
+	 * @param string $type
+	 * @since 1.0
+	 */
+	public function get_shortcode_asset_uri( $file_name, $type ) {
+		return WPBPLUSTIMELINE_URI . '/assets/' . $type . '/shortcodes/' . $this->element_slug . '/' . $file_name . '.' . $type;
+	}
+
+	/**
+	 * Enqueue shortcode dependency asset.
+	 * We consider dependency assets all 3 party assets no strictly related to shortcode itself.
+	 * They can be inner and external
+	 * Inner assets we keep in the same directory where regular shortcode assets
+	 * External assets provided in shortcode config by url.
+	 *
+	 * @since 1.0
+	 */
+	public function enqueue_shortcode_depend_assets() {
+		if ( empty( $this->element_init_data['depend_assets'] ) ) {
+			return;
+		}
+
+		$this->enqueue_shortcode_depend_inner_assets( $this->element_init_data['depend_assets'] );
+		$this->enqueue_shortcode_depend_external_assets( $this->element_init_data['depend_assets'] );
+	}
+
+	/**
+	 * Enqueue shortcode dependency inner assets.
+	 *
+	 * @param array $depend_assets
+	 * @since 1.0
+	 */
+	public function enqueue_shortcode_depend_inner_assets( $depend_assets ) {
+		if ( empty( $depend_assets['inner'] ) ) {
+			return;
+		}
+
+		foreach ( $depend_assets['inner'] as $type => $assets_list ) {
+			foreach ( $assets_list as $asset ) {
+				if ( 'js' === $type ) {
+					$this->enqueue_shortcode_asset_js( $asset );
+				} elseif ( 'css' === $type ) {
+					$this->enqueue_shortcode_asset_css( $asset );
+				}
+			}
+		}
+	}
+
+	/**
+	 * Enqueue shortcode dependency external assets.
+	 *
+	 * @param array $depend_assets
+	 * @since 1.0
+	 */
+	public function enqueue_shortcode_depend_external_assets( $depend_assets ) {
+		if ( empty( $depend_assets['external'] ) ) {
+			return;
+		}
+
+		foreach ( $depend_assets['external'] as $type => $assets_list ) {
+			foreach ( $assets_list as $asset ) {
+				if ( 'js' === $type ) {
+					wp_enqueue_script( $this->element_slug . '-' . $asset, $asset, [], WPBPLUSTIMELINE_VERSION, true );
+				} elseif ( 'css' === $type ) {
+					wp_enqueue_style( $this->element_slug . '-' . $asset, $asset, [], WPBPLUSTIMELINE_VERSION );
+				}
+			}
 		}
 	}
 

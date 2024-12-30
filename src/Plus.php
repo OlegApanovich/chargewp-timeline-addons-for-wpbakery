@@ -51,6 +51,7 @@ class Plus {
 				->set_template( $element_init_data['template'] )
 				->set_wpb_shortcode( $wpb_shortcode )
 				->set_id( $element_slug )
+				->set_element_init_data( $element_init_data )
 				->add_shortcode();
 		}
 	}
