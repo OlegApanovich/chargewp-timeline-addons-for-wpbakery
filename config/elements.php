@@ -23,30 +23,16 @@ return [
 		'config'       => 'shortcodes.vertical-timeline',
 		'template'     => 'shortcodes/vertical-timeline.php',
 		'is_container' => true,
+        'depend_assets' => [
+            'inner'    => [
+                'css' => [
+                    'element.css',
+                ],
+            ],
+        ],
 	],
 	'wpbakery-plus-vertical-timeline-item'   => [
 		'config'   => 'shortcodes.vertical-timeline-item',
 		'template' => 'shortcodes/vertical-timeline-item.php',
-	],
-	'wpbakery-plus-horizontal-timeline'      => [
-		'config'        => 'shortcodes.horizontal-timeline',
-		'template'      => 'shortcodes/horizontal-timeline.php',
-		'is_container'  => true,
-		'depend_assets' => [
-			'inner'    => [
-				'js' => [
-					'hammer',
-				],
-			],
-			'external' => [
-				'js' => [
-					'http://localhost/Test/test.js',
-				],
-			],
-		],
-	],
-	'wpbakery-plus-horizontal-timeline-item' => [
-		'config'   => 'shortcodes.horizontal-timeline-item',
-		'template' => 'shortcodes/horizontal-timeline-item.php',
 	],
 ];

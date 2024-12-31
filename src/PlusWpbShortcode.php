@@ -162,10 +162,7 @@ class PlusWpbShortcode {
 			'_this'   => $this,
 		];
 
-		$this->enqueue_shortcode_asset_js( $this->element_slug );
-		$this->enqueue_shortcode_asset_css( $this->element_slug );
-
-		$this->enqueue_shortcode_depend_assets();
+		$this->enqueue_shortcode_assets();
 
 		return wpbplustimeline_get_template( $this->template, $payload );
 	}
@@ -215,7 +212,7 @@ class PlusWpbShortcode {
 	 * @since 1.0
 	 */
 	public function get_shortcode_asset_path( $file_name, $type ) {
-		return WPBPLUSTIMELINE_INCLUDES_ASSETS_DIR . '/' . $type . '/shortcodes/' . $this->element_slug . '/' . $file_name . '.' . $type;
+		return WPBPLUSTIMELINE_INCLUDES_ASSETS_DIR . '/' . $type . '/shortcodes/' . $this->element_slug . '/' . $file_name;
 	}
 
 	/**
@@ -226,25 +223,24 @@ class PlusWpbShortcode {
 	 * @since 1.0
 	 */
 	public function get_shortcode_asset_uri( $file_name, $type ) {
-		return WPBPLUSTIMELINE_URI . '/assets/' . $type . '/shortcodes/' . $this->element_slug . '/' . $file_name . '.' . $type;
+		return WPBPLUSTIMELINE_URI . '/assets/' . $type . '/shortcodes/' . $this->element_slug . '/' . $file_name;
 	}
 
 	/**
-	 * Enqueue shortcode dependency asset.
-	 * We consider dependency assets all 3 party assets no strictly related to shortcode itself.
+	 * Enqueue shortcode dependency assets.
 	 * They can be inner and external
 	 * Inner assets we keep in the same directory where regular shortcode assets
 	 * External assets provided in shortcode config by url.
 	 *
 	 * @since 1.0
 	 */
-	public function enqueue_shortcode_depend_assets() {
+	public function enqueue_shortcode_assets() {
 		if ( empty( $this->element_init_data['depend_assets'] ) ) {
 			return;
 		}
 
-		$this->enqueue_shortcode_depend_inner_assets( $this->element_init_data['depend_assets'] );
-		$this->enqueue_shortcode_depend_external_assets( $this->element_init_data['depend_assets'] );
+		$this->enqueue_shortcode_inner_assets( $this->element_init_data['depend_assets'] );
+		$this->enqueue_shortcode_external_assets( $this->element_init_data['depend_assets'] );
 	}
 
 	/**
@@ -253,7 +249,7 @@ class PlusWpbShortcode {
 	 * @param array $depend_assets
 	 * @since 1.0
 	 */
-	public function enqueue_shortcode_depend_inner_assets( $depend_assets ) {
+	public function enqueue_shortcode_inner_assets( $depend_assets ) {
 		if ( empty( $depend_assets['inner'] ) ) {
 			return;
 		}
@@ -275,7 +271,7 @@ class PlusWpbShortcode {
 	 * @param array $depend_assets
 	 * @since 1.0
 	 */
-	public function enqueue_shortcode_depend_external_assets( $depend_assets ) {
+	public function enqueue_shortcode_external_assets( $depend_assets ) {
 		if ( empty( $depend_assets['external'] ) ) {
 			return;
 		}
