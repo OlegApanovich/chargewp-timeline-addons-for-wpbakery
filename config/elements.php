@@ -19,20 +19,36 @@
  */
 
 return [
-	'wpbakery-plus-vertical-timeline'        => [
-		'config'       => 'shortcodes.vertical-timeline',
-		'template'     => 'shortcodes/vertical-timeline.php',
-		'is_container' => true,
-        'depend_assets' => [
-            'inner'    => [
-                'css' => [
-                    'element.css',
-                ],
-            ],
-        ],
+	'wpbakery-plus-vertical-timeline'              => [
+		'config'        => 'shortcodes.vertical-timeline',
+		'template'      => 'shortcodes/vertical-timeline.php',
+		'is_container'  => true,
+		'depend_assets' => [
+			'inner' => [
+				'css' => [
+					'element.css',
+				],
+			],
+		],
 	],
-	'wpbakery-plus-vertical-timeline-item'   => [
+	'wpbakery-plus-vertical-timeline-item'         => [
 		'config'   => 'shortcodes.vertical-timeline-item',
 		'template' => 'shortcodes/vertical-timeline-item.php',
+	],
+	'wpbakery-plus-vertical-segment-timeline'      => [
+		'config'        => 'shortcodes.vertical-segment-timeline',
+		'template'      => 'shortcodes/vertical-segment-timeline.php',
+		'is_container'  => true,
+		'depend_assets' => [
+			'inner' => [
+				'css' => [
+					'element.css',
+				],
+			],
+		],
+	],
+	'wpbakery-plus-vertical-segment-timeline-item' => [
+		'config'   => 'shortcodes.vertical-segment-timeline-item',
+		'template' => 'shortcodes/vertical-segment-timeline-item.php',
 	],
 ];
