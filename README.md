@@ -1,6 +1,6 @@
 ## Description
 
-This WordPress plugin introduces three new, well-crafted timeline elements for the [WPBakery Page Builder]([https://www.google.com](https://wpbakery.com/)).
+This WordPress plugin introduces three new, well-crafted timeline elements for the [WPBakery Page Builder](https://wpbakery.com/).
 
 ## Installation
 You can directly install the plugin from the GitHub repository.
