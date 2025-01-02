@@ -51,4 +51,20 @@ return [
 		'config'   => 'shortcodes.vertical-segment-timeline-item',
 		'template' => 'shortcodes/vertical-segment-timeline-item.php',
 	],
+	'wpbakery-plus-zigzag-timeline'                => [
+		'config'        => 'shortcodes.zigzag-timeline',
+		'template'      => 'shortcodes/zigzag-timeline.php',
+		'is_container'  => true,
+		'depend_assets' => [
+			'inner' => [
+				'css' => [
+					'element.css',
+				],
+			],
+		],
+	],
+	'wpbakery-plus-zigzag-timeline-item'           => [
+		'config'   => 'shortcodes.zigzag-timeline-item',
+		'template' => 'shortcodes/zigzag-timeline-item.php',
+	],
 ];

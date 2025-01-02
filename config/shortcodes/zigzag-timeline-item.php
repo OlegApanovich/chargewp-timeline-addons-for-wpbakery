@@ -1,6 +1,6 @@
 <?php
 /**
- * Configuration file for [wpb-plus-vertical-timeline-item] shortcode of 'Vertical Timeline' element.
+ * Configuration file for [wpb-plus-zigzag-timeline-item] shortcode of 'Zigzag Timeline' element.
  *
  * @since 1.0
  */
@@ -16,8 +16,8 @@ $params = array_merge(
 		[
 			'type'        => 'dropdown',
 			'value'       => [
-				esc_html__( 'Right', 'wpbakery-plus-timeline-element' ) => 'right',
 				esc_html__( 'Left', 'wpbakery-plus-timeline-element' ) => 'left',
+				esc_html__( 'Right', 'wpbakery-plus-timeline-element' ) => 'right',
 			],
 			'heading'     => esc_html__( 'Position', 'wpbakery-plus-timeline-element' ),
 			'param_name'  => 'position',
@@ -25,17 +25,10 @@ $params = array_merge(
 		],
 		[
 			'type'        => 'colorpicker',
-			'value'       => '#00c4f3',
-			'heading'     => esc_html__( 'Marker color', 'wpbakery-plus-timeline-element' ),
-			'param_name'  => 'marker_color',
-			'description' => esc_html__( 'Select custom color for timeline item marker.', 'wpbakery-plus-timeline-element' ),
-		],
-		[
-			'type'        => 'colorpicker',
-			'value'       => '#FEFEFE',
-			'heading'     => esc_html__( 'Title Background', 'wpbakery-plus-timeline-element' ),
-			'param_name'  => 'title_color',
-			'description' => esc_html__( 'Select background for title.', 'wpbakery-plus-timeline-element' ),
+			'value'       => '#F6A4EC',
+			'heading'     => esc_html__( 'Decorative circle color', 'wpbakery-plus-timeline-element' ),
+			'param_name'  => 'decorative_circle_color',
+			'description' => esc_html__( 'Select custom color for decorative circle.', 'wpbakery-plus-timeline-element' ),
 		],
 		[
 			'type'             => 'textfield',
@@ -77,7 +70,7 @@ $params = array_merge(
 	[
 		[
 			'type'        => 'colorpicker',
-			'value'       => '#00c4f3',
+			'value'       => '#9251AC',
 			'heading'     => esc_html__( 'Date background', 'wpbakery-plus-timeline-element' ),
 			'param_name'  => 'date_background',
 			'description' => esc_html__( 'Select custom color for your date field.', 'wpbakery-plus-timeline-element' ),
@@ -86,24 +79,17 @@ $params = array_merge(
 			'type'       => 'textarea_html',
 			'heading'    => esc_html__( 'Text', 'wpbakery-plus-timeline-element' ),
 			'param_name' => 'content',
-			'value'      => 'Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation deserunt proident.',
-		],
-		[
-			'type'        => 'colorpicker',
-			'value'       => '#FEFEFE',
-			'heading'     => esc_html__( 'Text Background', 'wpbakery-plus-timeline-element' ),
-			'param_name'  => 'text_color',
-			'description' => esc_html__( 'Select background for text.', 'wpbakery-plus-timeline-element' ),
+			'value'      => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!',
 		],
 	]
 );
 
 return [
-	'name'                    => __( 'Vertical Timeline Item', 'wpbakery-plus-timeline-element' ),
-	'base'                    => 'wpbakery-plus-vertical-timeline-item',
-	'class'                   => 'wpbakery-plus-vertical-timeline-item',
-	'description'             => __( 'Timeline item for vertical timeline element.', 'wpbakery-plus-timeline-element' ),
-	'as_child'                => [ 'only' => 'wpbakery-plus-vertical-timeline' ],
+	'name'                    => __( 'Zigzag Timeline Item', 'wpbakery-plus-timeline-element' ),
+	'base'                    => 'wpbakery-plus-zigzag-timeline-item',
+	'class'                   => 'wpbakery-plus-zigzag-timeline-item',
+	'description'             => __( 'Timeline item for zigzag timeline element.', 'wpbakery-plus-timeline-element' ),
+	'as_child'                => [ 'only' => 'wpbakery-plus-zigzag-timeline' ],
 	'content_element'         => true,
 	'show_settings_on_create' => true,
 	'js_view'                 => 'VcColumnView',

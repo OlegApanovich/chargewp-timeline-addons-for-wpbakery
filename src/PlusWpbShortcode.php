@@ -101,20 +101,6 @@ class PlusWpbShortcode {
 	}
 
 	/**
-	 * Set id
-	 * It's uniq id that we use only for our plugin elements.
-	 *
-	 * @param string $element_slug
-	 *
-	 * @since 1.0
-	 */
-	public function set_id( $element_slug ) {
-		$this->id = uniqid( $element_slug . '-' );
-
-		return $this;
-	}
-
-	/**
 	 * Set WPBakeryShortCode.
 	 *
 	 * @param WPBakeryShortCode $wpb_shortcode
@@ -161,6 +147,8 @@ class PlusWpbShortcode {
 			'content' => $content,
 			'_this'   => $this,
 		];
+
+		$this->id = uniqid( $this->element_slug . '-' );
 
 		$this->enqueue_shortcode_assets();
 
