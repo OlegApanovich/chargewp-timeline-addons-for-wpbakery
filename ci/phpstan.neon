@@ -1,16 +1,11 @@
-includes:
-    - vendor/phpstan/phpstan/conf/bleedingEdge.neon # Optional: Adds advanced rules.
-
 parameters:
     level: 5 # Adjust the strictness level (0 to 9).
     bootstrapFiles:
         - ../../../../wp-load.php # Load WordPress core files for analysis.
-        - vendor/autoload.php # Ensure Composer dependencies are loaded.
+        - ../vendor/autoload.php # Ensure Composer dependencies are loaded.
     ignoreErrors:
-        - '#Call to an undefined method .*#' # Suppress dynamic method call errors.
-        - '#Call to an undefined function .*#' # Suppress undefined WordPress function errors.
     paths:
-        - includes
-        - src
-        - config
-        - templates
+        - ../includes
+        - ../src
+        - ../config
+        - ../templates

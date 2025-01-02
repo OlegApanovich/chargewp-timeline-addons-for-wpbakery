@@ -23,10 +23,10 @@ class CustomHeadingIntegration {
 	 * It appears near the textfield as checkbox, checked it user can
 	 * configure custom fonts in a new tab.
 	 *
-	 * @var string $filed_slug
-	 * @var string $field_title
-	 * @var array $condition here we can regulate custom fonts attributes
-	 * @var array $exlude here we can regulate our excludes from custom container attributes.
+	 * @param string $filed_slug
+	 * @param string $field_title
+	 * @param array $condition here we can regulate custom fonts attributes
+	 * @param array $exclude here we can regulate our excludes from custom container attributes.
 	 * specific tag attributes: 'tag', 'text_align', 'font_size', 'line_height', 'color'
 	 *
 	 * @return array
@@ -54,9 +54,9 @@ class CustomHeadingIntegration {
 	/**
 	 * Exclude fields from custom font container.
 	 *
-	 * @var array $custom_font_atts
-	 * @var string|int $key
-	 * @var array $exclude
+	 * @pram array $custom_font_atts
+	 * @pram string|int $key
+	 * @pram array $exclude
 	 *
 	 * @return array
 	 * @since 1.0
@@ -77,9 +77,9 @@ class CustomHeadingIntegration {
 	/**
 	 * Get configuration for custom heading shortcode with our custom parameters.
 	 *
-	 * @var string $filed_slug
-	 * @var string $field_title
-	 * @var array $condition
+	 * @pram string $filed_slug
+	 * @pram string $field_title
+	 * @pram array $condition
 	 *
 	 * @return array
 	 * @since 1.0
@@ -114,10 +114,10 @@ class CustomHeadingIntegration {
 	 * Get values for a certain attribute
 	 * and attach custom font integration to it if needed.
 	 *
-	 * @var string $atts_slug
-	 * @var array $atts
-	 * @var string $shortcode_tag
-	 * @var string $tag wrapper tag
+	 * @pram string $atts_slug
+	 * @pram array $atts
+	 * @pram string $shortcode_tag
+	 * @pram string $tag wrapper tag
 	 *
 	 * @since 1.0
 	 */

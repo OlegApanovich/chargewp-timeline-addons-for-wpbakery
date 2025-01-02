@@ -4,7 +4,7 @@
  *
  * @var array $atts
  * @var string $content - shortcode content
- * @var \WpbPlusTimeline\Shortcodes\VerticalTimelineItem $_this
+ * @var \WpbPlusTimeline\PlusWpbShortcode $_this
  */
 
 defined( 'ABSPATH' ) || exit;
