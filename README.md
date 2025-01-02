@@ -2,6 +2,19 @@
 
 This WordPress plugin introduces three new, well-crafted timeline elements for the [WPBakery Page Builder](https://wpbakery.com/).
 
+### 1. Vertical Timeline Element.
+
+![](assets/images/github-reame/screen-3.png)
+
+### 2. ZigZag Timeline Element.
+
+![](assets/images/github-reame/screen-2.png)
+
+
+### 2. Vertical Segment Timeline Element.
+
+![](assets/images/github-reame/screen-4.png)
+
 ## Installation
 You can directly install the plugin from the GitHub repository.
 1. Clone the repository to the `/wp-content/plugins/` directory.
