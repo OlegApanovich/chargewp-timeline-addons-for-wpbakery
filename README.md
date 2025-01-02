@@ -9,6 +9,8 @@ You can directly install the plugin from the GitHub repository.
 
 That's it. If you go to the WPBakery Page Builder editor you can enjoy new timeline elements.
 
+![](assets/images/github-reame/screen-1.png)
+
 ## Requirements
 1. WPBakery Page Builder version 5.0+
 2. PHP version 5.6+
