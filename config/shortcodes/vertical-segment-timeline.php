@@ -34,6 +34,7 @@ $params = [
 return [
 	'name'                    => __( 'Vertical Segment Timeline', 'wpbakery-plus-timeline-element' ),
 	'base'                    => 'wpbakery-plus-vertical-segment-timeline',
+	'icon'                    => 'wpbakery-plus-vertical-segment-timeline',
 	'class'                   => 'wpbakery-plus-vertical-segment-timeline',
 	'category'                => 'Plus Timeline',
 	'description'             => __( 'Timeline element with vertical-segment interface.', 'wpbakery-plus-timeline-element' ),

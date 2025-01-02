@@ -27,6 +27,7 @@ class Plus {
 	 */
 	public function init() {
 		add_action( 'init', [ $this, 'add_builder_elements' ] );
+		add_action( 'admin_enqueue_scripts', [ $this, 'register_elements_icons' ] );
 	}
 
 	/**
@@ -108,4 +109,16 @@ class Plus {
 		}
 		return $instance;
 	}
+
+    /**
+     * Register elements icons that user can see in 'Add Element' modal.
+     *
+     * @since 1.0
+     */
+    public function register_elements_icons() {
+        wp_enqueue_style(
+            'plus-wpb-timeline-element-icons',
+            WPBPLUSTIMELINE_URI . '/assets/css/plus-wpb-timeline-element-icons.css'
+        );
+    }
 }

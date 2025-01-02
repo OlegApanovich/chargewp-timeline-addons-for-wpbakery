@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Vertical Segment Timeline</title>
+    <desc>Vertical timeline with sections on the right side</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Vertical-Segment-Timeline">
+            <!-- Vertical line representing the timeline on the left side -->
+            <rect id="Timeline" x="4" y="0" width="4" height="32" fill="#4A90E2" rx="2"></rect>
+
+            <!-- Horizontal sections on the right side -->
+            <rect x="8" y="6" width="24" height="4" fill="#D1D1D1"></rect>
+            <rect x="8" y="14" width="24" height="4" fill="#D1D1D1"></rect>
+            <rect x="8" y="22" width="24" height="4" fill="#D1D1D1"></rect>
+
+            <!-- Circle markers for each section on the right side -->
+            <circle cx="30" cy="8" r="3" fill="#F06E6B"></circle>
+            <circle cx="30" cy="16" r="3" fill="#F06E6B"></circle>
+            <circle cx="30" cy="24" r="3" fill="#F06E6B"></circle>
+
+            <!-- Optional: Lines that divide the sections visually -->
+            <line x1="0" y1="6" x2="32" y2="6" stroke="#4A90E2" stroke-width="1"></line>
+            <line x1="0" y1="14" x2="32" y2="14" stroke="#4A90E2" stroke-width="1"></line>
+            <line x1="0" y1="22" x2="32" y2="22" stroke="#4A90E2" stroke-width="1"></line>
+        </g>
+    </g>
+</svg>

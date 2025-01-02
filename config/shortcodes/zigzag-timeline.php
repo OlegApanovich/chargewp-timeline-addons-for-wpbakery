@@ -10,6 +10,7 @@ defined( 'ABSPATH' ) || exit;
 return [
 	'name'                    => __( 'Zigzag Timeline', 'wpbakery-plus-timeline-element' ),
 	'base'                    => 'wpbakery-plus-zigzag-timeline',
+	'icon'                    => 'wpbakery-plus-zigzag-timeline',
 	'class'                   => 'wpbakery-plus-zigzag-timeline',
 	'category'                => 'Plus Timeline',
 	'description'             => __( 'Timeline element with vertical interface.', 'wpbakery-plus-timeline-element' ),
