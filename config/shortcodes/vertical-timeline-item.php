@@ -58,7 +58,7 @@ $params = array_merge(
 	[
 		[
 			'type'             => 'textfield',
-			'value'            => 'Feb 2015',
+			'value'            => 'Feb 2016',
 			'heading'          => esc_html__( 'Date', 'wpbakery-plus-timeline-element' ),
 			'admin_label'      => true,
 			'param_name'       => 'date',
