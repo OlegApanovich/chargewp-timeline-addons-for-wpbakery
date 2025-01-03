@@ -25,9 +25,9 @@ class CustomHeadingIntegration {
 	 *
 	 * @param string $filed_slug
 	 * @param string $field_title
-	 * @param array $condition here we can regulate custom fonts attributes
-	 * @param array $exclude here we can regulate our excludes from custom container attributes.
-	 * specific tag attributes: 'tag', 'text_align', 'font_size', 'line_height', 'color'
+	 * @param array  $condition here we can regulate custom fonts attributes.
+	 * @param array  $exclude here we can regulate our excludes from custom container attributes.
+	 *  specific tag attributes: 'tag', 'text_align', 'font_size', 'line_height', 'color'.
 	 *
 	 * @return array
 	 * @since 1.0

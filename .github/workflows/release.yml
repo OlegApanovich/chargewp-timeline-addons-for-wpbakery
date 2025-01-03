@@ -1,0 +1,32 @@
+name: Release Build
+
+on:
+  push:
+    branches:
+      - develop
+      - master
+      - main
+      - release/**
+      - hotfix/**
+  pull_request:
+    branches:
+      - develop
+      - main
+      - release/**
+      - hotfix/**
+
+jobs:
+  codestyle-php:
+    name: PHP Code Style
+    runs-on: ubuntu-latest
+    container:
+      image: mrdollar4444/plus-wp-builder-wpbakery:latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Composer dependencies
+        run: php composer.phar install
+
+      - name: Check PHP Code Style
+        run: php vendor/bin/phpcs --standard=ci/phpcs.xml include modules config tests js_composer.php

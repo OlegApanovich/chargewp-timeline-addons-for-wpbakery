@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 return [
 	'name'                    => __( 'Vertical Timeline', 'wpbakery-plus-timeline-element' ),
 	'base'                    => 'wpbakery-plus-vertical-timeline',
-    'icon'                    => 'wpbakery-plus-vertical-timeline',
+	'icon'                    => 'wpbakery-plus-vertical-timeline',
 	'class'                   => 'wpbakery-plus-vertical-timeline',
 	'category'                => 'Plus Timeline',
 	'description'             => __( 'Timeline element with vertical interface.', 'wpbakery-plus-timeline-element' ),

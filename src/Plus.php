@@ -110,15 +110,17 @@ class Plus {
 		return $instance;
 	}
 
-    /**
-     * Register elements icons that user can see in 'Add Element' modal.
-     *
-     * @since 1.0
-     */
-    public function register_elements_icons() {
-        wp_enqueue_style(
-            'plus-wpb-timeline-element-icons',
-            WPBPLUSTIMELINE_URI . '/assets/css/plus-wpb-timeline-element-icons.css'
-        );
-    }
+	/**
+	 * Register elements icons that user can see in 'Add Element' modal.
+	 *
+	 * @since 1.0
+	 */
+	public function register_elements_icons() {
+		wp_enqueue_style(
+			'plus-wpb-timeline-element-icons',
+			WPBPLUSTIMELINE_URI . '/assets/css/plus-wpb-timeline-element-icons.css',
+			[],
+			WPBPLUSTIMELINE_VERSION
+		);
+	}
 }
