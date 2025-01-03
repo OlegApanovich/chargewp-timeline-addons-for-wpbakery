@@ -40,7 +40,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Composer dependencies
-        run: php composer.phar install
+        run: php ci/composer.phar install
 
       - name: Check PHP Compatibility
         run: php vendor/bin/phpcs --standard=PHPCompatibility --extensions=php --runtime-set testVersion 5.6-8.4 --ignore=vendor/* .
