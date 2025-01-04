@@ -76,3 +76,6 @@ jobs:
 
       - name: Navigate to CI directory
         run: ls -la /var/www/html/wp-content/plugins/plus-wp-builder-wpbakery-timeline-element/vendor/bin;  cd /var/www/html/wp-content/plugins/plus-wp-builder-wpbakery-timeline-element/ci; ../vendor/bin/phpstan analyze
+
+      - name: Check
+        run: mysql
