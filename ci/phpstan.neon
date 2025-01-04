@@ -3,7 +3,6 @@ parameters:
     level: 5 # Adjust the strictness level (0 to 9).
     bootstrapFiles:
         - ../../../../wp-load.php # Load WordPress core files for analysis.
-        - ../vendor/autoload.php # Ensure Composer dependencies are loaded.
     ignoreErrors:
     paths:
         - ../includes
