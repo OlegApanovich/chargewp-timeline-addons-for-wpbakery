@@ -57,7 +57,7 @@ jobs:
         run: php ci/phpcpd.phar --fuzzy .
 
   php-stan-statanalize:
-    name: PHP Stan Statanalize
+    name: PHP Stan Static Analysis
     runs-on: ubuntu-latest
     container:
       image: mrdollar4444/plus-wp-builder-wpbakery:latest
@@ -68,5 +68,16 @@ jobs:
       - name: Install Composer dependencies
         run: php ci/composer.phar install
 
-      - name: PHP Static Analysis
-        run: cp -r  /__w/plus-wp-builder-wpbakery-timeline-element /var/www/html/wp-content/plugins; cd /var/www/html; wp plugin activate plus-wp-builder-wpbakery-timeline-element --allow-root; cd wp-content/plus-wp-builder-wpbakery-timeline-element/ci; ../vendor/bin/phpstan analyze 
+      - name: Copy plugin to WordPress plugins directory
+        run: cp -r /__w/plus-wp-builder-wpbakery-timeline-element /var/www/html/wp-content/plugins
+
+      - name: Activate plugin
+        run: |
+          cd /var/www/html
+          wp plugin activate plus-wp-builder-wpbakery-timeline-element --allow-root
+
+      - name: Navigate to CI directory
+        run: cd /var/www/html/wp-content/plus-wp-builder-wpbakery-timeline-element/ci
+
+      - name: Run PHP Static Analysis
+        run: ../vendor/bin/phpstan analyze
