@@ -68,6 +68,5 @@ jobs:
       - name: Install Composer dependencies
         run: php ci/composer.phar install
 
-      - name: PHP Clone Detection
-        run: cd ci; ../vendor/bin/phpstan analyze
-
+      - name: PHP Static Analysis
+        run: cd /var/www/html && ../vendor/bin/phpstan analyze
