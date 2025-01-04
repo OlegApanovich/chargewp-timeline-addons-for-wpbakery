@@ -56,3 +56,18 @@ jobs:
       - name: PHP Clone Detection
         run: php ci/phpcpd.phar --fuzzy .
 
+  php-stan-statanalize:
+    name: PHP Stan Statanalize
+    runs-on: ubuntu-latest
+    container:
+      image: mrdollar4444/plus-wp-builder-wpbakery:latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Composer dependencies
+        run: php ci/composer.phar install
+
+      - name: PHP Clone Detection
+        run: cd ci; ../vendor/bin/phpstan analyze
+
