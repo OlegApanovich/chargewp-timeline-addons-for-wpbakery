@@ -75,7 +75,4 @@ jobs:
         run: cp -r /__w/plus-wp-builder-wpbakery-timeline-element/plus-wp-builder-wpbakery-timeline-element /var/www/html/wp-content/plugins
 
       - name: Navigate to CI directory
-        run: cd /var/www/html/wp-content/plugins/plus-wp-builder-wpbakery-timeline-element/ci
-
-      - name: Run PHP Static Analysis
-        run: ../vendor/bin/phpstan analyze
+        run: cd /var/www/html/wp-content/plugins/plus-wp-builder-wpbakery-timeline-element/ci; ../vendor/bin/phpstan analyze
