@@ -68,13 +68,11 @@ jobs:
       - name: Install Composer dependencies
         run: php ci/composer.phar install
 
+      - name: Remove existing plugin dir
+        run: rm -rf /var/www/html/wp-content/plugins/plus-wp-builder-wpbakery-timeline-element
+
       - name: Copy plugin to WordPress plugins directory
         run: cp -r /__w/plus-wp-builder-wpbakery-timeline-element /var/www/html/wp-content/plugins
-
-      - name: Activate plugin
-        run: |
-          cd /var/www/html
-          wp plugin activate plus-wp-builder-wpbakery-timeline-element --allow-root
 
       - name: Navigate to CI directory
         run: cd /var/www/html/wp-content/plus-wp-builder-wpbakery-timeline-element/ci
