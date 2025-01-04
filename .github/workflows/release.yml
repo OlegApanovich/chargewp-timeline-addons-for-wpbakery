@@ -57,51 +57,37 @@ jobs:
         run: php ci/phpcpd.phar --fuzzy .
 
   php-stan-statanalize:
-    name: PHP Stan Static Analysis
-    runs-on: ubuntu-latest
-    container:
-      image: mrdollar4444/plus-wp-builder-wpbakery:latest
-    services:
-      mysql:
-        image: mysql:8
-        env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: test
-        ports:
-          - 3306:3306
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      name: PHP Stan Static Analysis
+      runs-on: ubuntu-latest
+      container:
+        image: mrdollar4444/plus-wp-builder-wpbakery:latest
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v4
 
-      - name: Wait for MySQL to be ready
-        run: |
-          for i in {30..0}; do
-            if mysql -h"127.0.0.1" -uroot -proot -e "SELECT 1;" > /dev/null 2>&1; then
-              echo "MySQL is up and running!"
-              break
+        - name: Wait for MySQL to be ready
+          run: |
+            for i in {30..0}; do
+              if mysql -h127.0.0.1 -uroot -proot -e "SELECT 1;" > /dev/null 2>&1; then
+                echo "MySQL is up and running!"
+                break
+              fi
+              echo 'Waiting for MySQL...'
+              sleep 1
+            done
+            if [ "$i" = 0 ]; then
+              echo "MySQL did not start in time."
+              exit 1
             fi
-            echo 'Waiting for MySQL...'
-            sleep 1
-          done
-          if [ "$i" = 0 ]; then
-            echo "MySQL did not start in time."
-            exit 1
-          fi
-      
-      - name: Checkout repository
-        uses: actions/checkout@v4
 
-      - name: Install Composer dependencies
-        run: php ci/composer.phar install
+        - name: Install Composer dependencies
+          run: php ci/composer.phar install
 
-      - name: Remove existing plugin dir
-        run: rm -rf /var/www/html/wp-content/plugins/plus-wp-builder-wpbakery-timeline-element
+        - name: Remove existing plugin dir
+          run: rm -rf /var/www/html/wp-content/plugins/plus-wp-builder-wpbakery-timeline-element
 
-      - name: Copy plugin to WordPress plugins directory
-        run: cp -r /__w/plus-wp-builder-wpbakery-timeline-element/plus-wp-builder-wpbakery-timeline-element /var/www/html/wp-content/plugins
+        - name: Copy plugin to WordPress plugins directory
+          run: cp -r /__w/plus-wp-builder-wpbakery-timeline-element/plus-wp-builder-wpbakery-timeline-element /var/www/html/wp-content/plugins
 
-      - name: Navigate to CI directory
-        run: ls -la /var/www/html/wp-content/plugins/plus-wp-builder-wpbakery-timeline-element/vendor/bin;  cd /var/www/html/wp-content/plugins/plus-wp-builder-wpbakery-timeline-element/ci; ../vendor/bin/phpstan analyze
-
-      - name: Check
-        run: mysql
+        - name: Run PHPStan analysis
+          run: php /var/www/html/wp-content/plugins/plus-wp-builder-wpbakery-timeline-element/vendor/bin/phpstan analyze
