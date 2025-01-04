@@ -61,7 +61,33 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: mrdollar4444/plus-wp-builder-wpbakery:latest
+    services:
+      mysql:
+        image: mysql:8
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: test
+        ports:
+          - 3306:3306
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Wait for MySQL to be ready
+        run: |
+          for i in {30..0}; do
+            if mysql -h"127.0.0.1" -uroot -proot -e "SELECT 1;" > /dev/null 2>&1; then
+              echo "MySQL is up and running!"
+              break
+            fi
+            echo 'Waiting for MySQL...'
+            sleep 1
+          done
+          if [ "$i" = 0 ]; then
+            echo "MySQL did not start in time."
+            exit 1
+          fi
+      
       - name: Checkout repository
         uses: actions/checkout@v4
 
