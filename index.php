@@ -1,15 +1,17 @@
 <?php
 /**
- * Plugin Name:     WPBakery Page Builder Plus Timeline Element
- * Plugin URI:      https://github.com/OlegApanovich/wpbakery-plus-timeline-element
- * Description:     Add WPBakery Page Builder 3 new well crafted timeline elements.
- * Author:          OlegApanovich
- * Author URI:      https://github.com/OlegApanovich
- * Text Domain:     wpbakery-plus-timeline-element
- * Domain Path:     /languages
- * Version:         1.0
- * License:         GPL-3.0+
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
+ * Plugin Name:       WPBakery Page Builder Plus Timeline Element
+ * Plugin URI:        https://github.com/OlegApanovich/wpbakery-plus-timeline-element
+ * Description:       Add WPBakery Page Builder 3 new well crafted timeline elements.
+ * Author:            OlegApanovich
+ * Author URI:        https://github.com/OlegApanovich
+ * Text Domain:       wpbakery-plus-timeline-element
+ * Domain Path:       /languages
+ * Requires at least: 4.7
+ * Requires PHP:      5.6
+ * Version:           1.0
+ * License:           GPL-3.0+
+ * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  *
  * Requires at least: 4.9
  * Requires PHP:      5.6
