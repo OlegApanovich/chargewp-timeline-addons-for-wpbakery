@@ -29,3 +29,16 @@ composer.lock
 # Other #
 #########
 assets/client_secret.json
+
+# vendor #
+##########
+vendor/bin/
+vendor/composer/autoload_files.php
+vendor/dealerdirect/
+vendor/php-stubs/
+vendor/phpcompatibility/
+vendor/phpcsstandards/
+vendor/phpstan/
+vendor/rarst/
+vendor/squizlabs/
+vendor/wp-coding-standards/
