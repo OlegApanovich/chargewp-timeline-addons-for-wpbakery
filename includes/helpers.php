@@ -69,7 +69,7 @@ if ( ! function_exists( 'wpbplustimeline_validate_dependency_plugin' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'wpbplustimeline_get_template' ) ) :
+if ( ! function_exists( 'wpbplustimeline_include_template' ) ) :
 	/**
 	 * Include template from templates dir.
 	 *
