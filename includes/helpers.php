@@ -27,45 +27,72 @@ if ( ! function_exists( 'wpbplustimeline_validate_dependency_plugin' ) ) :
 		$path_to_plugin,
 		$version_to_check = null
 	) {
-		$success          = true;
 		$template_payload = [
 			'my_plugin_name'         => $my_plugin_name,
 			'dependency_plugin_name' => $dependency_plugin_name,
 			'version_to_check'       => $version_to_check,
 		];
-		// Needed to the function "deactivate_plugins" works.
+		// Needed to the function "is_plugin_active" works.
 		include_once ABSPATH . 'wp-admin/includes/plugin.php';
+		$main_plugin_file = WP_PLUGIN_DIR . '/' . $path_to_plugin;
 
-		if ( ! is_plugin_active( $path_to_plugin ) ) {
-			// Show an error alert on the admin area.
-			$success = false;
-		} else {
-			// Get the plugin dependency info.
-			$dep_plugin_data =
-				get_plugin_data( WP_PLUGIN_DIR . '/' . $path_to_plugin );
+		if ( ! is_plugin_active( $path_to_plugin ) || ! file_exists( $main_plugin_file ) ) {
+			wpbplustimeline_output_plugin_dependen_notice( $template_payload );
+			return false;
+		}
+
+		if ( is_readable( $main_plugin_file ) ) {
+			$version =
+				wpbplustimeline_get_plugin_version( $main_plugin_file );
 
 			// Compare version.
 			$is_required_version = ! version_compare(
-				$dep_plugin_data['Version'],
+				$version,
 				$version_to_check,
 				'>='
 			);
 
 			if ( $is_required_version ) {
-				$success = false;
+				wpbplustimeline_output_plugin_dependen_notice( $template_payload );
+				return false;
 			}
 		}
 
-		if ( ! $success ) {
-			add_action(
-				'admin_notices',
-				function () use ( $template_payload ) {
-					wpbplustimeline_include_template( 'required-plugin-notification.php', $template_payload );
-				}
-			);
-		}
+		return true;
+	}
+endif;
 
-		return $success;
+if ( ! function_exists( 'wpbplustimeline_output_plugin_dependen_notice' ) ) :
+	/**
+	 * Output the plugin dependency notice.
+	 *
+	 * @param string $template_payload
+	 */
+	function wpbplustimeline_output_plugin_dependen_notice( $template_payload ) {
+		add_action(
+			'admin_notices',
+			function () use ( $template_payload ) {
+				wpbplustimeline_include_template( 'required-plugin-notification.php', $template_payload );
+			}
+		);
+	}
+endif;
+
+if ( ! function_exists( 'wpbplustimeline_get_plugin_version' ) ) :
+	/**
+	 * Get the plugin version, parsing main plugin file.
+	 *
+	 * @param string $plugin_file_path
+	 *
+	 * @return bool|string
+	 */
+	function wpbplustimeline_get_plugin_version( $plugin_file_path ) {
+        // phpcs:ignore:WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+		$plugin_data = file_get_contents( $plugin_file_path );
+		if ( preg_match( '/^[ \t\/*#@]*[Vv]ersion\s*:\s*([^\r\n]+)/m', $plugin_data, $matches ) ) {
+			return trim( $matches[1] );
+		}
+		return false;
 	}
 endif;
 
