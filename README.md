@@ -1,6 +1,6 @@
 ## Description
 
-This WordPress plugin introduces three new, well-crafted timeline elements for the [WPBakery Page Builder](https://wpbakery.com/).
+This WordPress plugin introduces three new well-crafted, and fully customizable timeline elements for the [WPBakery Page Builder](https://wpbakery.com/).
 All elements support both front-end and back-end WPBakery editors.
 
 ### 1. Vertical Timeline Element.
@@ -21,7 +21,7 @@ You can directly install the plugin from the GitHub repository.
 1. Clone the repository to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 
-That's it. If you go to the WPBakery Page Builder editor you can enjoy new timeline elements.
+That's it! If you go to any WPBakery Page Builder editor, you'll find new elements under the 'Plus Timeline' tab in the 'Add Element' WPBakery popup.
 
 ![](assets/images/github-reame/screen-1.png)
 
