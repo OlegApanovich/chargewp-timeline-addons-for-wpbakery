@@ -1,14 +1,12 @@
 <?php
 /**
- * Plugin Name:       WPBakery Page Builder Plus Timeline Element
- * Plugin URI:        https://github.com/OlegApanovich/wpbakery-plus-timeline-element
- * Description:       Add WPBakery Page Builder 3 new well crafted timeline elements.
+ * Plugin Name:       Charge WP Builder WPBakery Timeline Elements
+ * Plugin URI:        https://github.com/OlegApanovich/charge-wp-builder-wpbakery-timeline-elements
+ * Description:       Power your WPBakery Page Builder with new well crafted timeline elements.
  * Author:            OlegApanovich
  * Author URI:        https://github.com/OlegApanovich
- * Text Domain:       wpbakery-plus-timeline-element
+ * Text Domain:       charge-wp-builder-wpbakery-timeline-elements
  * Domain Path:       /languages
- * Requires at least: 4.7
- * Requires PHP:      5.6
  * Version:           1.0
  * License:           GPL-3.0+
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
@@ -162,7 +160,7 @@ class Wpbplus_Timeline_Element {
 	 */
 	public function load_plugin_textdomain() {
 		load_plugin_textdomain(
-			'wpbakery-plus-timeline-element',
+			'charge-wp-builder-wpbakery-timeline-elements',
 			false,
 			WPBPLUSTIMELINE_URI_ABSPATH . '/languages'
 		);
