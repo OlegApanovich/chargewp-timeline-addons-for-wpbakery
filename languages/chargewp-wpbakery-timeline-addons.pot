@@ -1,9 +1,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Charge WP Builder WPBakery With Timeline Addons\n"
+"Project-Id-Version: ChargeWP Builder WPBakery Timeline Addons\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-22 15:07+0000\n"
+"POT-Creation-Date: 2025-01-22 15:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.6.14; wp-6.7.1\n"
-"X-Domain: charge-wp-wpbakery-timeline-addons"
+"X-Domain: chargewp-wpbakery-timeline-addons"
 
 #: config/shortcodes/vertical-segment-timeline.php:21
 msgid "Background Color"
@@ -25,7 +25,7 @@ msgid "Baseline Color"
 msgstr ""
 
 #. Name of the plugin
-msgid "Charge WP Builder WPBakery With Timeline Addons"
+msgid "ChargeWP Builder WPBakery Timeline Addons"
 msgstr ""
 
 #: config/shortcodes/vertical-timeline-item.php:24
@@ -111,7 +111,7 @@ msgid "https://github.com/OlegApanovich"
 msgstr ""
 
 #. URI of the plugin
-msgid "https://github.com/OlegApanovich/charge-wp-wpbakery-timeline-addons"
+msgid "https://github.com/OlegApanovich/chargewp-wpbakery-timeline-addons"
 msgstr ""
 
 #: config/shortcodes/vertical-timeline-item.php:65

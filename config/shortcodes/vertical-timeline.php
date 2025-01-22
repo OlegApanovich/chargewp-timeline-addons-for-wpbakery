@@ -8,12 +8,12 @@
 defined( 'ABSPATH' ) || exit;
 
 return [
-	'name'                    => __( 'Vertical Timeline', 'charge-wp-wpbakery-timeline-addons' ),
+	'name'                    => __( 'Vertical Timeline', 'chargewp-wpbakery-timeline-addons' ),
 	'base'                    => 'wpbakery-plus-vertical-timeline',
 	'icon'                    => 'wpbakery-plus-vertical-timeline',
 	'class'                   => 'wpbakery-plus-vertical-timeline',
 	'category'                => 'Plus Timeline',
-	'description'             => __( 'Timeline element with vertical interface.', 'charge-wp-wpbakery-timeline-addons' ),
+	'description'             => __( 'Timeline element with vertical interface.', 'chargewp-wpbakery-timeline-addons' ),
 	'as_parent'               => [ 'only' => 'wpbakery-plus-vertical-timeline-item' ],
 	'content_element'         => true,
 	'default_content'         => '[wpbakery-plus-vertical-timeline-item position="left"]Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation deserunt proident.[/wpbakery-plus-vertical-timeline-item][wpbakery-plus-vertical-timeline-item]Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation deserunt proident.[/wpbakery-plus-vertical-timeline-item]',
