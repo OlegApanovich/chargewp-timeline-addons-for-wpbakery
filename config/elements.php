@@ -3,7 +3,7 @@
  * List of elements to add to dependency plugin.
  *
  * @note if you need specific class for a shortcode
- * then use for example: 'class'    => 'WpbPlusTimeline\Shortcodes\VerticalTimelineItem'
+ * then use for example: 'class'    => 'ChargewpWpbTimeline\Shortcodes\VerticalTimelineItem'
  * otherwise user 'is_container' => true for a container shortcode
  * and 'is_container' => false for a simple shortcode.
  *

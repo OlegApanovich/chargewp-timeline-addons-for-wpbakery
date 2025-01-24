@@ -10,7 +10,7 @@
     "php-stubs/wordpress-stubs": "^6.7"
   },
   "autoload": {
-    "psr-4": {"WpbPlusTimeline\\": "src/"}
+    "psr-4": {"ChargewpWpbTimeline\\": "src/"}
   },
   "config": {
     "platform": {

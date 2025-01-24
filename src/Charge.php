@@ -5,12 +5,12 @@
  * @since 1.0
  */
 
-namespace WpbPlusTimeline;
+namespace ChargewpWpbTimeline;
 
 use Exception;
 use WPBakeryShortCode;
-use WpbPlusTimeline\Shortcodes\PlusWpbShortcodeEmpty;
-use WpbPlusTimeline\Shortcodes\PlusWpbShortcodeContainerEmpty;
+use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeEmpty;
+use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeContainerEmpty;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * @since 1.0
  */
-class Plus {
+class Charge {
 	/**
 	 * Initialize plugin.
 	 *
@@ -36,17 +36,17 @@ class Plus {
 	 * @since 1.0
 	 */
 	public function add_builder_elements() {
-		$element_list = wpbplustimeline_config( 'elements' );
+		$element_list = chargewpwpbtimeline_config( 'elements' );
 
 		foreach ( $element_list as $element_slug => $element_init_data ) {
 
-			$config = wpbplustimeline_config( $element_init_data['config'] );
+			$config = chargewpwpbtimeline_config( $element_init_data['config'] );
 
 			$this->map_wpb_shortcode( $config );
 
 			$wpb_shortcode = $this->get_wpb_shortcode_instance( $element_init_data, $config );
 
-			( new PlusWpbShortcode() )
+			( new ChargeWpbShortcode() )
 				->set_element_slug( $element_slug )
 				->set_config( $config )
 				->set_template( $element_init_data['template'] )
@@ -79,8 +79,8 @@ class Plus {
 	 * @since 1.0
 	 */
 	public function is_dependency_plugin_active() {
-		return wpbplustimeline_validate_dependency_plugin(
-			'WPBakery Page Builder Plus Timeline Element',
+		return chargewpwpbtimeline_validate_dependency_plugin(
+			'ChargeWP Builder WPBakery Timeline Addons',
 			'WPBakery Page Builder',
 			'js_composer/js_composer.php',
 			'4.0'
@@ -103,9 +103,9 @@ class Plus {
 		}
 
 		if ( empty( $element_init_data['is_container'] ) ) {
-			$instance = new PlusWpbShortcodeContainerEmpty( $config );
+			$instance = new ChargeWpbShortcodeContainerEmpty( $config );
 		} else {
-			$instance = new PlusWpbShortcodeEmpty( $config );
+			$instance = new ChargeWpbShortcodeEmpty( $config );
 		}
 		return $instance;
 	}
@@ -118,9 +118,9 @@ class Plus {
 	public function register_elements_icons() {
 		wp_enqueue_style(
 			'plus-wpb-timeline-element-icons',
-			WPBPLUSTIMELINE_URI . '/assets/css/plus-wpb-timeline-element-icons.css',
+			CHARGEWPWPBTIMELINE_URI . '/assets/css/plus-wpb-timeline-element-icons.css',
 			[],
-			WPBPLUSTIMELINE_VERSION
+			CHARGEWPWPBTIMELINE_VERSION
 		);
 	}
 }

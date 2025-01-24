@@ -5,7 +5,7 @@
  * @since 1.0
  */
 
-use WpbPlusTimeline\CustomHeadingIntegration;
+use ChargewpWpbTimeline\CustomHeadingIntegration;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -96,6 +96,6 @@ return [
 	'params'                  => array_merge(
 		$params,
 		[ vc_map_add_css_animation() ],
-		wpbplustimeline_config( 'shortcode-container-config' )
+		chargewpwpbtimeline_config( 'shortcode-container-config' )
 	),
 ];

@@ -1,11 +1,11 @@
 <?php
-/**
+/*
  * Class that extend WPBakeryShortCodes class with additional functionality.
  *
  * @since 1.0
  */
 
-namespace WpbPlusTimeline;
+namespace ChargewpWpbTimeline;
 
 use WPBakeryShortCode;
 
@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * @since 1.0
  */
-class PlusWpbShortcode {
+class ChargeWpbShortcode {
 	/**
 	 * Element slug.
 	 *
@@ -152,7 +152,7 @@ class PlusWpbShortcode {
 
 		$this->enqueue_shortcode_assets();
 
-		return wpbplustimeline_get_template( $this->template, $payload );
+		return chargewpwpbtimeline_get_template( $this->template, $payload );
 	}
 
 	/**
@@ -200,7 +200,7 @@ class PlusWpbShortcode {
 	 * @since 1.0
 	 */
 	public function get_shortcode_asset_path( $file_name, $type ) {
-		return WPBPLUSTIMELINE_INCLUDES_ASSETS_DIR . '/' . $type . '/shortcodes/' . $this->element_slug . '/' . $file_name;
+		return CHARGEWPWPBTIMELINE_INCLUDES_ASSETS_DIR . '/' . $type . '/shortcodes/' . $this->element_slug . '/' . $file_name;
 	}
 
 	/**
@@ -211,7 +211,7 @@ class PlusWpbShortcode {
 	 * @since 1.0
 	 */
 	public function get_shortcode_asset_uri( $file_name, $type ) {
-		return WPBPLUSTIMELINE_URI . '/assets/' . $type . '/shortcodes/' . $this->element_slug . '/' . $file_name;
+		return CHARGEWPWPBTIMELINE_URI . '/assets/' . $type . '/shortcodes/' . $this->element_slug . '/' . $file_name;
 	}
 
 	/**
@@ -267,9 +267,9 @@ class PlusWpbShortcode {
 		foreach ( $depend_assets['external'] as $type => $assets_list ) {
 			foreach ( $assets_list as $asset ) {
 				if ( 'js' === $type ) {
-					wp_enqueue_script( $this->element_slug . '-' . $asset, $asset, [], WPBPLUSTIMELINE_VERSION, true );
+					wp_enqueue_script( $this->element_slug . '-' . $asset, $asset, [], CHARGEWPWPBTIMELINE_VERSION, true );
 				} elseif ( 'css' === $type ) {
-					wp_enqueue_style( $this->element_slug . '-' . $asset, $asset, [], WPBPLUSTIMELINE_VERSION );
+					wp_enqueue_style( $this->element_slug . '-' . $asset, $asset, [], CHARGEWPWPBTIMELINE_VERSION );
 				}
 			}
 		}

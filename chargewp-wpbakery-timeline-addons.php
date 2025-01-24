@@ -17,29 +17,29 @@
 
 defined( 'ABSPATH' ) || exit;
 
-use WpbPlusTimeline\Plus;
+use ChargewpWpbTimeline\Charge;
 
 /**
  * Main Plugin Class.
  *
  * @since 1.0
  */
-class Wpbplus_Timeline_Element {
+class Chargewp_Wpb_Timeline_Element {
 	/**
 	 * The single instance of the class.
 	 *
 	 * @since  1.0
-	 * @var Wpbplus_Timeline_Element|null
+	 * @var Chargewp_Wpb_Timeline_Element|null
 	 */
 	public static $instance = null;
 
 	/**
-	 * Plus dependency plugin instance.
+	 * Charge dependency plugin instance.
 	 *
 	 * @since 1.0
-	 * @var Plus
+	 * @var Charge
 	 */
-	public $plus;
+	public $charge;
 
 	/**
 	 * Main plugin instance.
@@ -69,36 +69,36 @@ class Wpbplus_Timeline_Element {
 
 		$this->init_hooks();
 
-		$plus = $this->get_plus();
+		$charge = $this->get_charge();
 
-		if ( ! $plus->is_dependency_plugin_active() ) {
+		if ( ! $charge->is_dependency_plugin_active() ) {
 			return;
 		}
 
-		$plus->init();
+		$charge->init();
 	}
 
 	/**
-	 * Get Plus instance.
+	 * Get Charge instance.
 	 *
 	 * @since 1.0
-	 * @return Plus
+	 * @return Charge
 	 */
-	public function get_plus() {
-		if ( ! $this->plus ) {
-			$this->set_plus();
+	public function get_charge() {
+		if ( ! $this->charge ) {
+			$this->set_charge();
 		}
 
-		return $this->plus;
+		return $this->charge;
 	}
 
 	/**
-	 * Set Plus instance.
+	 * Set Charge instance.
 	 *
 	 * @since 1.0
 	 */
-	public function set_plus() {
-		$this->plus = new Plus();
+	public function set_charge() {
+		$this->charge = new Charge();
 	}
 
 	/**
@@ -107,14 +107,14 @@ class Wpbplus_Timeline_Element {
 	 * @since 1.0
 	 */
 	private function define_constants() {
-		define( 'WPBPLUSTIMELINE_VERSION', '1.0' );
-		define( 'WPBPLUSTIMELINE_PLUGIN_FILE', __FILE__ );
-		define( 'WPBPLUSTIMELINE_URI', plugins_url( '', WPBPLUSTIMELINE_PLUGIN_FILE ) );
-		define( 'WPBPLUSTIMELINE_URI_ABSPATH', __DIR__ . '/' );
-		define( 'WPBPLUSTIMELINE_TEMPLATES_DIR', __DIR__ . '/templates' );
-		define( 'WPBPLUSTIMELINE_INCLUDES_DIR', __DIR__ . '/includes' );
-		define( 'WPBPLUSTIMELINE_INCLUDES_ASSETS_DIR', __DIR__ . '/assets' );
-		define( 'WPBPLUSTIMELINE_CONFIG_DIR', __DIR__ . '/config' );
+		define( 'CHARGEWPWPBTIMELINE_VERSION', '1.0' );
+		define( 'CHARGEWPWPBTIMELINE_PLUGIN_FILE', __FILE__ );
+		define( 'CHARGEWPWPBTIMELINE_URI', plugins_url( '', CHARGEWPWPBTIMELINE_PLUGIN_FILE ) );
+		define( 'CHARGEWPWPBTIMELINE_URI_ABSPATH', __DIR__ . '/' );
+		define( 'CHARGEWPWPBTIMELINE_TEMPLATES_DIR', __DIR__ . '/templates' );
+		define( 'CHARGEWPWPBTIMELINE_INCLUDES_DIR', __DIR__ . '/includes' );
+		define( 'CHARGEWPWPBTIMELINE_INCLUDES_ASSETS_DIR', __DIR__ . '/assets' );
+		define( 'CHARGEWPWPBTIMELINE_CONFIG_DIR', __DIR__ . '/config' );
 	}
 
 	/**
@@ -123,7 +123,7 @@ class Wpbplus_Timeline_Element {
 	 * @since 1.0
 	 */
 	public function includes() {
-		require_once WPBPLUSTIMELINE_INCLUDES_DIR . '/helpers.php';
+		require_once CHARGEWPWPBTIMELINE_INCLUDES_DIR . '/helpers.php';
 		require_once __DIR__ . '/vendor/autoload.php';
 	}
 
@@ -143,11 +143,11 @@ class Wpbplus_Timeline_Element {
 	 */
 	public function init() {
 		// Before init action.
-		do_action( 'before_wpbplustimeline' );
+		do_action( 'before_chargewp_wpb_timeline_addons' );
 		// Set up localisation.
 		$this->load_plugin_textdomain();
 		// After init action.
-		do_action( 'after_wpbplustimeline' );
+		do_action( 'after_chargewp_wpb_timeline_addons' );
 	}
 
 	/**
@@ -162,9 +162,9 @@ class Wpbplus_Timeline_Element {
 		load_plugin_textdomain(
 			'chargewp-wpbakery-timeline-addons',
 			false,
-			WPBPLUSTIMELINE_URI_ABSPATH . '/languages'
+			CHARGEWPWPBTIMELINE_URI_ABSPATH . '/languages'
 		);
 	}
 }
 
-Wpbplus_Timeline_Element::instance();
+Chargewp_Wpb_Timeline_Element::instance();

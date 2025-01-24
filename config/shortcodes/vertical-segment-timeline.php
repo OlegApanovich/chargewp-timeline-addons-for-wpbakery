@@ -36,7 +36,7 @@ return [
 	'base'                    => 'wpbakery-plus-vertical-segment-timeline',
 	'icon'                    => 'wpbakery-plus-vertical-segment-timeline',
 	'class'                   => 'wpbakery-plus-vertical-segment-timeline',
-	'category'                => 'Plus Timeline',
+	'category'                => 'ChargeWP',
 	'description'             => __( 'Timeline element with vertical-segment interface.', 'chargewp-wpbakery-timeline-addons' ),
 	'as_parent'               => [ 'only' => 'wpbakery-plus-vertical-segment-timeline-item' ],
 	'content_element'         => true,
@@ -46,6 +46,6 @@ return [
 	'params'                  => array_merge(
 		$params,
 		[ vc_map_add_css_animation() ],
-		wpbplustimeline_config( 'shortcode-container-config' )
+		chargewpwpbtimeline_config( 'shortcode-container-config' )
 	),
 ];

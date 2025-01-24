@@ -12,7 +12,7 @@ return [
 	'base'                    => 'wpbakery-plus-vertical-timeline',
 	'icon'                    => 'wpbakery-plus-vertical-timeline',
 	'class'                   => 'wpbakery-plus-vertical-timeline',
-	'category'                => 'Plus Timeline',
+	'category'                => 'ChargeWP',
 	'description'             => __( 'Timeline element with vertical interface.', 'chargewp-wpbakery-timeline-addons' ),
 	'as_parent'               => [ 'only' => 'wpbakery-plus-vertical-timeline-item' ],
 	'content_element'         => true,
@@ -21,6 +21,6 @@ return [
 	'js_view'                 => 'VcColumnView',
 	'params'                  => array_merge(
 		[ vc_map_add_css_animation() ],
-		wpbplustimeline_config( 'shortcode-container-config' )
+		chargewpwpbtimeline_config( 'shortcode-container-config' )
 	),
 ];

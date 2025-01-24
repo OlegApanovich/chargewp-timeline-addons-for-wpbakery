@@ -21,7 +21,7 @@ You can directly install the plugin from the GitHub repository.
 1. Clone the repository to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 
-That's it! If you go to any WPBakery Page Builder editor, you'll find new elements under the 'Plus Timeline' tab in the 'Add Element' WPBakery popup.
+That's it! If you go to any WPBakery Page Builder editor, you'll find new elements under the 'ChargeWp' tab in the 'Add Element' WPBakery popup.
 
 ![](assets/images/github-reame/screen-1.png)
 

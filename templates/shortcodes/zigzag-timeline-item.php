@@ -4,12 +4,12 @@
  *
  * @var array $atts
  * @var string $content - shortcode content
- * @var \WpbPlusTimeline\PlusWpbShortcode $_this
+ * @var ChargewpWpbTimeline\ChargeWpbShortcode $_this
  */
 
 defined( 'ABSPATH' ) || exit;
 
-use WpbPlusTimeline\CustomHeadingIntegration;
+use ChargewpWpbTimeline\CustomHeadingIntegration;
 $custom_heading_integration = new CustomHeadingIntegration();
 ?>
 

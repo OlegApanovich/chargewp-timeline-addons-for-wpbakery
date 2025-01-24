@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-if ( ! function_exists( 'wpbplustimeline_validate_dependency_plugin' ) ) :
+if ( ! function_exists( 'chargewpwpbtimeline_validate_dependency_plugin' ) ) :
 	/**
 	 * Verify if a plugin is active, if not than deactivate the actual our plugin and show an error.
 	 *
@@ -21,7 +21,7 @@ if ( ! function_exists( 'wpbplustimeline_validate_dependency_plugin' ) ) :
 	 *
 	 * @return bool
 	 */
-	function wpbplustimeline_validate_dependency_plugin(
+	function chargewpwpbtimeline_validate_dependency_plugin(
 		$my_plugin_name,
 		$dependency_plugin_name,
 		$path_to_plugin,
@@ -37,13 +37,13 @@ if ( ! function_exists( 'wpbplustimeline_validate_dependency_plugin' ) ) :
 		$main_plugin_file = WP_PLUGIN_DIR . '/' . $path_to_plugin;
 
 		if ( ! is_plugin_active( $path_to_plugin ) || ! file_exists( $main_plugin_file ) ) {
-			wpbplustimeline_output_plugin_dependen_notice( $template_payload );
+			chargewpwpbtimeline_output_plugin_dependen_notice( $template_payload );
 			return false;
 		}
 
 		if ( is_readable( $main_plugin_file ) ) {
 			$version =
-				wpbplustimeline_get_plugin_version( $main_plugin_file );
+				chargewpwpbtimeline_get_plugin_version( $main_plugin_file );
 
 			// Compare version.
 			$is_required_version = ! version_compare(
@@ -53,7 +53,7 @@ if ( ! function_exists( 'wpbplustimeline_validate_dependency_plugin' ) ) :
 			);
 
 			if ( $is_required_version ) {
-				wpbplustimeline_output_plugin_dependen_notice( $template_payload );
+				chargewpwpbtimeline_output_plugin_dependen_notice( $template_payload );
 				return false;
 			}
 		}
@@ -62,23 +62,23 @@ if ( ! function_exists( 'wpbplustimeline_validate_dependency_plugin' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'wpbplustimeline_output_plugin_dependen_notice' ) ) :
+if ( ! function_exists( 'chargewpwpbtimeline_output_plugin_dependen_notice' ) ) :
 	/**
 	 * Output the plugin dependency notice.
 	 *
 	 * @param string $template_payload
 	 */
-	function wpbplustimeline_output_plugin_dependen_notice( $template_payload ) {
+	function chargewpwpbtimeline_output_plugin_dependen_notice( $template_payload ) {
 		add_action(
 			'admin_notices',
 			function () use ( $template_payload ) {
-				wpbplustimeline_include_template( 'required-plugin-notification.php', $template_payload );
+				chargewpwpbtimeline_include_template( 'required-plugin-notification.php', $template_payload );
 			}
 		);
 	}
 endif;
 
-if ( ! function_exists( 'wpbplustimeline_get_plugin_version' ) ) :
+if ( ! function_exists( 'chargewpwpbtimeline_get_plugin_version' ) ) :
 	/**
 	 * Get the plugin version, parsing main plugin file.
 	 *
@@ -86,7 +86,7 @@ if ( ! function_exists( 'wpbplustimeline_get_plugin_version' ) ) :
 	 *
 	 * @return bool|string
 	 */
-	function wpbplustimeline_get_plugin_version( $plugin_file_path ) {
+	function chargewpwpbtimeline_get_plugin_version( $plugin_file_path ) {
         // phpcs:ignore:WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
 		$plugin_data = file_get_contents( $plugin_file_path );
 		if ( preg_match( '/^[ \t\/*#@]*[Vv]ersion\s*:\s*([^\r\n]+)/m', $plugin_data, $matches ) ) {
@@ -96,7 +96,7 @@ if ( ! function_exists( 'wpbplustimeline_get_plugin_version' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'wpbplustimeline_include_template' ) ) :
+if ( ! function_exists( 'chargewpwpbtimeline_include_template' ) ) :
 	/**
 	 * Include template from templates dir.
 	 *
@@ -108,18 +108,18 @@ if ( ! function_exists( 'wpbplustimeline_include_template' ) ) :
 	 * @return mixed
 	 * @since 1.0
 	 */
-	function wpbplustimeline_include_template( $template, $variables = [], $once = false ) {
+	function chargewpwpbtimeline_include_template( $template, $variables = [], $once = false ) {
         // phpcs:ignore:WordPress.PHP.DontExtract.extract_extract
 		is_array( $variables ) && extract( $variables );
 		if ( $once ) {
-			return require_once wpbplustimeline_template( $template );
+			return require_once chargewpwpbtimeline_template( $template );
 		} else {
-			return require wpbplustimeline_template( $template );
+			return require chargewpwpbtimeline_template( $template );
 		}
 	}
 endif;
 
-if ( ! function_exists( 'wpbplustimeline_get_template' ) ) :
+if ( ! function_exists( 'chargewpwpbtimeline_get_template' ) ) :
 	/**
 	 * Output template from templates dir.
 	 *
@@ -131,9 +131,9 @@ if ( ! function_exists( 'wpbplustimeline_get_template' ) ) :
 	 * @return string
 	 * @since 1.0
 	 */
-	function wpbplustimeline_get_template( $template, $variables = [], $once = false ) {
+	function chargewpwpbtimeline_get_template( $template, $variables = [], $once = false ) {
 		ob_start();
-		$output = wpbplustimeline_include_template( $template, $variables, $once );
+		$output = chargewpwpbtimeline_include_template( $template, $variables, $once );
 
 		if ( 1 === $output ) {
 			$output = ob_get_contents();
@@ -145,7 +145,7 @@ if ( ! function_exists( 'wpbplustimeline_get_template' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'wpbplustimeline_template' ) ) :
+if ( ! function_exists( 'chargewpwpbtimeline_template' ) ) :
 	/**
 	 * Shorthand for getting to plugin templates.
 	 *
@@ -155,12 +155,12 @@ if ( ! function_exists( 'wpbplustimeline_template' ) ) :
 	 *
 	 * @return string
 	 */
-	function wpbplustimeline_template( $file ) {
-		return WPBPLUSTIMELINE_TEMPLATES_DIR . '/' . $file;
+	function chargewpwpbtimeline_template( $file ) {
+		return CHARGEWPWPBTIMELINE_TEMPLATES_DIR . '/' . $file;
 	}
 endif;
 
-if ( ! function_exists( 'wpbplustimeline_config' ) ) :
+if ( ! function_exists( 'chargewpwpbtimeline_config' ) ) :
 	/**
 	 * Retrieve a configuration value from a file in the config directory.
 	 *
@@ -168,7 +168,7 @@ if ( ! function_exists( 'wpbplustimeline_config' ) ) :
 	 *
 	 * @return mixed The configuration value.
 	 */
-	function wpbplustimeline_config( $config_path ) {
+	function chargewpwpbtimeline_config( $config_path ) {
 		static $loaded_configs = [];
 
 		// Replace dots with slashes, except for the last dot.
@@ -176,7 +176,7 @@ if ( ! function_exists( 'wpbplustimeline_config' ) ) :
 
 		// Check if the config file has already been loaded.
 		if ( ! isset( $loaded_configs[ $path ] ) ) {
-			$file_path = WPBPLUSTIMELINE_CONFIG_DIR . '/' . $path . '.php';
+			$file_path = CHARGEWPWPBTIMELINE_CONFIG_DIR . '/' . $path . '.php';
 
 			// Load the configuration file.
 			// This will throw a fatal error if the file does not exist.
