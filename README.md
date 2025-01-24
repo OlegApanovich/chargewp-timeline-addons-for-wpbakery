@@ -1,6 +1,6 @@
 ## Description
 
-This WordPress plugin introduces three new well-crafted, and fully customizable timeline elements for the [WPBakery Page Builder](https://wpbakery.com/).
+This WordPress plugin introduces well-crafted, and fully customizable timeline elements for the [WPBakery Page Builder](https://wpbakery.com/).
 All elements support both front-end and back-end WPBakery editors.
 
 ### 1. Vertical Timeline Element.
