@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Class that extend WPBakeryShortCodes class with additional functionality.
  *
  * @since 1.0
