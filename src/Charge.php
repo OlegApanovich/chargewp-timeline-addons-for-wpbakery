@@ -117,8 +117,8 @@ class Charge {
 	 */
 	public function register_elements_icons() {
 		wp_enqueue_style(
-			'plus-wpb-timeline-element-icons',
-			CHARGEWPWPBTIMELINE_URI . '/assets/css/plus-wpb-timeline-element-icons.css',
+			'chargewp-timeline-element-icons',
+			CHARGEWPWPBTIMELINE_URI . '/assets/css/chargewp-timeline-element-icons.css',
 			[],
 			CHARGEWPWPBTIMELINE_VERSION
 		);

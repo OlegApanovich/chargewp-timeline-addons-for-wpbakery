@@ -1,6 +1,6 @@
 <?php
 /**
- * Configuration file for [wpb-plus-zigzag-timeline-item] shortcode of 'Zigzag Timeline' element.
+ * Configuration file for [chargewp-zigzag-timeline-item] shortcode of 'Zigzag Timeline' element.
  *
  * @since 1.0
  */
@@ -86,10 +86,10 @@ $params = array_merge(
 
 return [
 	'name'                    => __( 'Zigzag Timeline Item', 'chargewp-wpbakery-timeline-addons' ),
-	'base'                    => 'wpbakery-plus-zigzag-timeline-item',
-	'class'                   => 'wpbakery-plus-zigzag-timeline-item',
+	'base'                    => 'chargewp-zigzag-timeline-item',
+	'class'                   => 'chargewp-zigzag-timeline-item',
 	'description'             => __( 'Timeline item for zigzag timeline element.', 'chargewp-wpbakery-timeline-addons' ),
-	'as_child'                => [ 'only' => 'wpbakery-plus-zigzag-timeline' ],
+	'as_child'                => [ 'only' => 'chargewp-zigzag-timeline' ],
 	'content_element'         => true,
 	'show_settings_on_create' => true,
 	'js_view'                 => 'VcColumnView',

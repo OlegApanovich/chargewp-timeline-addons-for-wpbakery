@@ -19,7 +19,7 @@
  */
 
 return [
-	'wpbakery-plus-vertical-timeline'              => [
+	'chargewp-vertical-timeline'              => [
 		'config'        => 'shortcodes.vertical-timeline',
 		'template'      => 'shortcodes/vertical-timeline.php',
 		'is_container'  => true,
@@ -31,11 +31,11 @@ return [
 			],
 		],
 	],
-	'wpbakery-plus-vertical-timeline-item'         => [
+	'chargewp-vertical-timeline-item'         => [
 		'config'   => 'shortcodes.vertical-timeline-item',
 		'template' => 'shortcodes/vertical-timeline-item.php',
 	],
-	'wpbakery-plus-vertical-segment-timeline'      => [
+	'chargewp-vertical-segment-timeline'      => [
 		'config'        => 'shortcodes.vertical-segment-timeline',
 		'template'      => 'shortcodes/vertical-segment-timeline.php',
 		'is_container'  => true,
@@ -47,11 +47,11 @@ return [
 			],
 		],
 	],
-	'wpbakery-plus-vertical-segment-timeline-item' => [
+	'chargewp-vertical-segment-timeline-item' => [
 		'config'   => 'shortcodes.vertical-segment-timeline-item',
 		'template' => 'shortcodes/vertical-segment-timeline-item.php',
 	],
-	'wpbakery-plus-zigzag-timeline'                => [
+	'chargewp-zigzag-timeline'                => [
 		'config'        => 'shortcodes.zigzag-timeline',
 		'template'      => 'shortcodes/zigzag-timeline.php',
 		'is_container'  => true,
@@ -63,7 +63,7 @@ return [
 			],
 		],
 	],
-	'wpbakery-plus-zigzag-timeline-item'           => [
+	'chargewp-zigzag-timeline-item'           => [
 		'config'   => 'shortcodes.zigzag-timeline-item',
 		'template' => 'shortcodes/zigzag-timeline-item.php',
 	],

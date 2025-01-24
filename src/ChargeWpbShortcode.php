@@ -307,7 +307,7 @@ class ChargeWpbShortcode {
 	 * @since 1.0
 	 */
 	public function get_data_attribute_id() {
-		return 'data-plus-wpbakery-shortcode-id';
+		return 'data-chargewp-shortcode-id';
 	}
 
 	/**

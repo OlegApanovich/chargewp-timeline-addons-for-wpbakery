@@ -1,4 +1,4 @@
-.wpplus-hexa{
+.chargewp-hexa{
     border: 0px;
     float: left;
     text-align: center;
@@ -11,7 +11,7 @@
     margin-top: 15px;
 }
 
-.wpplus-hexa:before{
+.chargewp-hexa:before{
     content: "";
     position: absolute;
     left: 0;
@@ -23,7 +23,7 @@
     top: -15px;
 }
 
-.wpplus-hexa:after{
+.chargewp-hexa:after{
     content: "";
     position: absolute;
     left: 0;
@@ -35,7 +35,7 @@
     bottom: -15px;
 }
 
-.wpplus-timeline {
+.chargewp-timeline {
     position: relative;
     padding: 0;
     width: 100%;
@@ -43,7 +43,7 @@
     list-style-type: none;
 }
 
-.wpplus-timeline:before {
+.chargewp-timeline:before {
     position: absolute;
     left: 50%;
     top: 0;
@@ -62,11 +62,11 @@
     z-index: 5;
 }
 
-.wpplus-timeline li {
+.chargewp-timeline li {
     padding: 2em 0;
 }
 
-.wpplus-timeline .wpplus-hexa{
+.chargewp-timeline .chargewp-hexa{
     width: 16px;
     height: 10px;
     position: absolute;
@@ -79,19 +79,19 @@
     margin-top: 0;
 }
 
-.wpplus-direction-l,
-.wpplus-direction-r {
+.chargewp-direction-l,
+.chargewp-direction-r {
     float: none;
     width: 100%;
     text-align: center;
 }
 
-.wpplus-flag-wrapper {
+.chargewp-flag-wrapper {
     text-align: center;
     position: relative;
 }
 
-.wpplus-flag {
+.chargewp-flag {
     position: relative;
     display: inline;
     background: rgb(255,255,255);
@@ -102,8 +102,8 @@
     border-radius: 5px;
 }
 
-.wpplus-direction-l .wpplus-flag:after,
-.wpplus-direction-r .wpplus-flag:after {
+.chargewp-direction-l .chargewp-flag:after,
+.chargewp-direction-r .chargewp-flag:after {
     content: "";
     position: absolute;
     left: 50%;
@@ -117,19 +117,19 @@
     pointer-events: none;
 }
 
-.wpplus-direction-l .wpplus-flag {
+.chargewp-direction-l .chargewp-flag {
     -webkit-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
     -moz-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
     box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
 }
 
-.wpplus-direction-r .wpplus-flag {
+.chargewp-direction-r .chargewp-flag {
     -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
     -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
     box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
 }
 
-.wpplus-time-wrapper {
+.chargewp-time-wrapper {
     display: block;
     position: relative;
     margin: 4px 0 0 0;
@@ -139,28 +139,28 @@
     color: #fff;
 }
 
-.wpplus-direction-l .wpplus-time-wrapper {
+.chargewp-direction-l .chargewp-time-wrapper {
     float: none;
 }
 
-.wpplus-direction-r .wpplus-time-wrapper {
+.chargewp-direction-r .chargewp-time-wrapper {
     float: none;
 }
 
-.wpplus-time {
+.chargewp-time {
     display: inline-block;
     padding: 8px;
 }
 
-.wpplus-desc {
+.chargewp-desc {
     position: relative;
     margin: 1em 0 0 0;
     padding: 1em;
     z-index: 15;
 }
 
-.wpplus-direction-l .desc,
-.wpplus-direction-r .desc {
+.chargewp-direction-l .desc,
+.chargewp-direction-r .desc {
     position: relative;
     margin: 1em 1em 0 1em;
     padding: 1em;
@@ -168,13 +168,13 @@
 }
 
 @media(min-width: 768px){
-    .wpplus-timeline {
+    .chargewp-timeline {
         width: 660px;
         margin: 0 auto;
         margin-top: 20px;
     }
 
-    .wpplus-timeline li:after {
+    .chargewp-timeline li:after {
         content: "";
         display: block;
         height: 0;
@@ -182,40 +182,40 @@
         visibility: hidden;
     }
 
-    .wpplus-timeline .wpplus-hexa {
+    .chargewp-timeline .chargewp-hexa {
         left: -28px;
         right: auto;
         top: 8px;
     }
 
-    .wpplus-timeline .wpplus-direction-l .wpplus-hexa {
+    .chargewp-timeline .chargewp-direction-l .chargewp-hexa {
         left: auto;
         right: -28px;
     }
 
-    .wpplus-direction-l {
+    .chargewp-direction-l {
         position: relative;
         width: 310px;
         float: left;
         text-align: right;
     }
 
-    .wpplus-direction-r {
+    .chargewp-direction-r {
         position: relative;
         width: 310px;
         float: right;
         text-align: left;
     }
 
-    .wpplus-flag-wrapper {
+    .chargewp-flag-wrapper {
         display: inline-block;
     }
 
-    .wpplus-flag {
+    .chargewp-flag {
         font-size: 18px;
     }
 
-    .wpplus-direction-l .wpplus-flag:after {
+    .chargewp-direction-l .chargewp-flag:after {
         left: auto;
         right: -16px;
         top: 50%;
@@ -225,7 +225,7 @@
         border-width: 8px;
     }
 
-    .wpplus-direction-r .wpplus-flag:after {
+    .chargewp-direction-r .chargewp-flag:after {
         top: 50%;
         margin-top: -8px;
         border: solid transparent;
@@ -234,44 +234,44 @@
         left: -8px;
     }
 
-    .wpplus-time-wrapper {
+    .chargewp-time-wrapper {
         display: inline;
         vertical-align: middle;
         margin: 0;
     }
 
-    .wpplus-direction-l .wpplus-time-wrapper {
+    .chargewp-direction-l .chargewp-time-wrapper {
         float: left;
     }
 
-    .wpplus-direction-r .wpplus-time-wrapper {
+    .chargewp-direction-r .chargewp-time-wrapper {
         float: right;
     }
 
-    .wpplus-time {
+    .chargewp-time {
         padding: 5px 10px;
     }
 
-    .wpplus-direction-r .wpplus-desc {
+    .chargewp-direction-r .chargewp-desc {
         margin: 1em 0 0 0.75em;
     }
 }
 
 @media(min-width: 992px){
-    .wpplus-timeline {
+    .chargewp-timeline {
         width: 800px;
         margin: 0 auto;
         margin-top: 20px;
     }
 
-    .wpplus-direction-l {
+    .chargewp-direction-l {
         position: relative;
         width: 380px;
         float: left;
         text-align: right;
     }
 
-    .wpplus-direction-r {
+    .chargewp-direction-r {
         position: relative;
         width: 380px;
         float: right;

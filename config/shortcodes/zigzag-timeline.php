@@ -1,6 +1,6 @@
 <?php
 /**
- * Configuration file for [wpb_plus_zigzag_timeline] shortcode of 'Zigzag Timeline' element.
+ * Configuration file for [chargewp_zigzag_timeline] shortcode of 'Zigzag Timeline' element.
  *
  * @since 1.0
  */
@@ -9,14 +9,14 @@ defined( 'ABSPATH' ) || exit;
 
 return [
 	'name'                    => __( 'Zigzag Timeline', 'chargewp-wpbakery-timeline-addons' ),
-	'base'                    => 'wpbakery-plus-zigzag-timeline',
-	'icon'                    => 'wpbakery-plus-zigzag-timeline',
-	'class'                   => 'wpbakery-plus-zigzag-timeline',
+	'base'                    => 'chargewp-zigzag-timeline',
+	'icon'                    => 'chargewp-zigzag-timeline',
+	'class'                   => 'chargewp-zigzag-timeline',
 	'category'                => 'ChargeWP',
 	'description'             => __( 'Timeline element with vertical interface.', 'chargewp-wpbakery-timeline-addons' ),
-	'as_parent'               => [ 'only' => 'wpbakery-plus-zigzag-timeline-item' ],
+	'as_parent'               => [ 'only' => 'chargewp-zigzag-timeline-item' ],
 	'content_element'         => true,
-	'default_content'         => '[wpbakery-plus-zigzag-timeline-item position="right"]Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in![/wpbakery-plus-zigzag-timeline-item][wpbakery-plus-zigzag-timeline-item decorative_circle_color="#87BBFE" date_background="#555AC0"]Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in![/wpbakery-plus-zigzag-timeline-item][wpbakery-plus-zigzag-timeline-item position="right" decorative_circle_color="#AFF1B6" date_background="#24B47E"]Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in![/wpbakery-plus-zigzag-timeline-item]',
+	'default_content'         => '[chargewp-zigzag-timeline-item position="right"]Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in![/chargewp-zigzag-timeline-item][chargewp-zigzag-timeline-item decorative_circle_color="#87BBFE" date_background="#555AC0"]Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in![/chargewp-zigzag-timeline-item][chargewp-zigzag-timeline-item position="right" decorative_circle_color="#AFF1B6" date_background="#24B47E"]Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in![/chargewp-zigzag-timeline-item]',
 	'show_settings_on_create' => true,
 	'js_view'                 => 'VcColumnView',
 	'params'                  => array_merge(

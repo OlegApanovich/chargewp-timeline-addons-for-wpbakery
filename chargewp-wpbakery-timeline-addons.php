@@ -59,7 +59,7 @@ class Chargewp_Wpb_Timeline_Element {
 	}
 
 	/**
-	 * Wpbplus_Timeline_Element Constructor.
+	 * Chargewp_Wpb_Timeline_Element Constructor.
 	 *
 	 * @since 1.0
 	 */

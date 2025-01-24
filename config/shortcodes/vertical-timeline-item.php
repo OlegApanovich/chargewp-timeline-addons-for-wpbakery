@@ -1,6 +1,6 @@
 <?php
 /**
- * Configuration file for [wpb-plus-vertical-timeline-item] shortcode of 'Vertical Timeline' element.
+ * Configuration file for [chargewp-vertical-timeline-item] shortcode of 'Vertical Timeline' element.
  *
  * @since 1.0
  */
@@ -100,10 +100,10 @@ $params = array_merge(
 
 return [
 	'name'                    => __( 'Vertical Timeline Item', 'chargewp-wpbakery-timeline-addons' ),
-	'base'                    => 'wpbakery-plus-vertical-timeline-item',
-	'class'                   => 'wpbakery-plus-vertical-timeline-item',
+	'base'                    => 'chargewp-vertical-timeline-item',
+	'class'                   => 'chargewp-vertical-timeline-item',
 	'description'             => __( 'Timeline item for vertical timeline element.', 'chargewp-wpbakery-timeline-addons' ),
-	'as_child'                => [ 'only' => 'wpbakery-plus-vertical-timeline' ],
+	'as_child'                => [ 'only' => 'chargewp-vertical-timeline' ],
 	'content_element'         => true,
 	'show_settings_on_create' => true,
 	'js_view'                 => 'VcColumnView',
