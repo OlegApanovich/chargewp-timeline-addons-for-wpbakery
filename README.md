@@ -1,18 +1,18 @@
 ## Description
 
-This WordPress plugin introduces three new well-crafted, and fully customizable timeline elements for the [WPBakery Page Builder](https://wpbakery.com/).
-All elements support both front-end and back-end WPBakery editors.
+This WordPress plugin introduces well-crafted, and fully customizable timeline addons for the [WPBakery Page Builder](https://wpbakery.com/).
+All addons support both front-end and back-end WPBakery editors.
 
-### 1. Vertical Timeline Element.
+### 1. Vertical Timeline Addon.
 
 ![Vertical Timeline Element](assets/images/github-reame/screen-3.png)
 
-### 2. ZigZag Timeline Element.
+### 2. ZigZag Timeline Addon.
 
 ![ZigZag Timeline Element](assets/images/github-reame/screen-2.png)
 
 
-### 3. Vertical Segment Timeline Element.
+### 3. Vertical Segment Timeline Addon.
 
 ![Vertical Segment Timeline Element](assets/images/github-reame/screen-4.png)
 
