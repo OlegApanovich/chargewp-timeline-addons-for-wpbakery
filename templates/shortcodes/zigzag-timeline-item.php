@@ -12,21 +12,21 @@ defined( 'ABSPATH' ) || exit;
 use ChargewpWpbTimeline\CustomHeadingIntegration;
 use ChargewpWpbTimeline\CustomIconIntegration;
 $custom_heading_integration = new CustomHeadingIntegration();
-$custom_icon_integration = new CustomIconIntegration();
+$custom_icon_integration    = new CustomIconIntegration();
 ?>
 
 <div <?php $_this->output_shortcode_wrapper_attributes( [ 'class' => 'chargewp-zigzag-timeline__event  animated fadeInUp delay-3s4' ] ); ?>>
 	<div class="chargewp-zigzag-timeline__event__icon ">
-        <?php
-        if ($atts['add_icon'] === 'true') {
-            vc_icon_element_fonts_enqueue( $atts['i_type'] );
-            $icon_class = $custom_icon_integration->get_element_icon_class($atts);
-            $icon_color = $custom_icon_integration->get_element_icon_color($atts);
-            ?>
-            <i class="<?php esc_attr_e( $icon_class )?>" style="color: <?php esc_attr_e($icon_color); ?>"></i>
-            <?php
-        }
-        ?>
+		<?php
+		if ( 'true' === $atts['add_icon'] ) {
+			vc_icon_element_fonts_enqueue( $atts['i_type'] );
+			$icon_class = $custom_icon_integration->get_element_icon_class( $atts );
+			$icon_color = $custom_icon_integration->get_element_icon_color( $atts );
+			?>
+			<i class="<?php echo esc_attr( $icon_class ); ?>" style="color: <?php echo esc_attr( $icon_color ); ?>"></i>
+			<?php
+		}
+		?>
 	</div>
 	<div class="chargewp-zigzag-timeline__event__date">
 		<?php $custom_heading_integration->output_custom_font_attribute( 'date', $atts, $_this->element_slug, 'span' ); ?>
