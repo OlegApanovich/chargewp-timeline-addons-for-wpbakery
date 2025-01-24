@@ -6,10 +6,12 @@
  */
 
 use ChargewpWpbTimeline\CustomHeadingIntegration;
+use ChargewpWpbTimeline\CustomIconIntegration;
 
 defined( 'ABSPATH' ) || exit;
 
 $custom_heading_integration = new CustomHeadingIntegration();
+$custom_icon_integration = new CustomIconIntegration();
 
 $params = array_merge(
 	[
@@ -81,7 +83,8 @@ $params = array_merge(
 			'param_name' => 'content',
 			'value'      => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!',
 		],
-	]
+	],
+    $custom_icon_integration->add_icon_checkbox(['background_style', 'align', 'link', 'background_color', 'custom_background_color', 'size'])
 );
 
 return [

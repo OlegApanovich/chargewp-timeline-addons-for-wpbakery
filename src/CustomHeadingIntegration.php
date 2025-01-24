@@ -13,7 +13,7 @@ use Exception;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Trait CustomHeadingIntegration
+ * Class CustomHeadingIntegration
  *
  * @since 1.0
  */
