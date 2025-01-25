@@ -1,4 +1,4 @@
-.chargewp-hexa{
+.chargewp-vertical-timeline-hexa{
     border: 0px;
     float: left;
     text-align: center;
@@ -11,7 +11,7 @@
     margin-top: 15px;
 }
 
-.chargewp-hexa:before{
+.chargewp-vertical-timeline-hexa:before{
     content: "";
     position: absolute;
     left: 0;
@@ -23,7 +23,7 @@
     top: -15px;
 }
 
-.chargewp-hexa:after{
+.chargewp-vertical-timeline-hexa:after{
     content: "";
     position: absolute;
     left: 0;
@@ -35,7 +35,7 @@
     bottom: -15px;
 }
 
-.chargewp-timeline {
+.chargewp-vertical-timeline-timeline {
     position: relative;
     padding: 0;
     width: 100%;
@@ -43,7 +43,7 @@
     list-style-type: none;
 }
 
-.chargewp-timeline:before {
+.chargewp-vertical-timeline-timeline:before {
     position: absolute;
     left: 50%;
     top: 0;
@@ -62,11 +62,11 @@
     z-index: 5;
 }
 
-.chargewp-timeline li {
+.chargewp-vertical-timeline-timeline li {
     padding: 2em 0;
 }
 
-.chargewp-timeline .chargewp-hexa{
+.chargewp-vertical-timeline-timeline .chargewp-vertical-timeline-hexa{
     width: 16px;
     height: 10px;
     position: absolute;
@@ -79,19 +79,19 @@
     margin-top: 0;
 }
 
-.chargewp-direction-l,
-.chargewp-direction-r {
+.chargewp-vertical-timeline-direction-l,
+.chargewp-vertical-timeline-direction-r {
     float: none;
     width: 100%;
     text-align: center;
 }
 
-.chargewp-flag-wrapper {
+.chargewp-vertical-timeline-flag-wrapper {
     text-align: center;
     position: relative;
 }
 
-.chargewp-flag {
+.chargewp-vertical-timeline-flag {
     position: relative;
     display: inline;
     background: rgb(255,255,255);
@@ -102,8 +102,8 @@
     border-radius: 5px;
 }
 
-.chargewp-direction-l .chargewp-flag:after,
-.chargewp-direction-r .chargewp-flag:after {
+.chargewp-vertical-timeline-direction-l .chargewp-vertical-timeline-flag:after,
+.chargewp-vertical-timeline-direction-r .chargewp-vertical-timeline-flag:after {
     content: "";
     position: absolute;
     left: 50%;
@@ -117,19 +117,19 @@
     pointer-events: none;
 }
 
-.chargewp-direction-l .chargewp-flag {
+.chargewp-vertical-timeline-direction-l .chargewp-vertical-timeline-flag {
     -webkit-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
     -moz-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
     box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
 }
 
-.chargewp-direction-r .chargewp-flag {
+.chargewp-vertical-timeline-direction-r .chargewp-vertical-timeline-flag {
     -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
     -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
     box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
 }
 
-.chargewp-time-wrapper {
+.chargewp-vertical-timeline-time-wrapper {
     display: block;
     position: relative;
     margin: 4px 0 0 0;
@@ -139,28 +139,28 @@
     color: #fff;
 }
 
-.chargewp-direction-l .chargewp-time-wrapper {
+.chargewp-vertical-timeline-direction-l .chargewp-vertical-timeline-time-wrapper {
     float: none;
 }
 
-.chargewp-direction-r .chargewp-time-wrapper {
+.chargewp-vertical-timeline-direction-r .chargewp-vertical-timeline-time-wrapper {
     float: none;
 }
 
-.chargewp-time {
+.chargewp-vertical-timeline-time {
     display: inline-block;
     padding: 8px;
 }
 
-.chargewp-desc {
+.chargewp-vertical-timeline-desc {
     position: relative;
     margin: 1em 0 0 0;
     padding: 1em;
     z-index: 15;
 }
 
-.chargewp-direction-l .desc,
-.chargewp-direction-r .desc {
+.chargewp-vertical-timeline-direction-l .desc,
+.chargewp-vertical-timeline-direction-r .desc {
     position: relative;
     margin: 1em 1em 0 1em;
     padding: 1em;
@@ -168,13 +168,13 @@
 }
 
 @media(min-width: 768px){
-    .chargewp-timeline {
+    .chargewp-vertical-timeline-timeline {
         width: 660px;
         margin: 0 auto;
         margin-top: 20px;
     }
 
-    .chargewp-timeline li:after {
+    .chargewp-vertical-timeline-timeline li:after {
         content: "";
         display: block;
         height: 0;
@@ -182,40 +182,40 @@
         visibility: hidden;
     }
 
-    .chargewp-timeline .chargewp-hexa {
+    .chargewp-vertical-timeline-timeline .chargewp-vertical-timeline-hexa {
         left: -28px;
         right: auto;
         top: 8px;
     }
 
-    .chargewp-timeline .chargewp-direction-l .chargewp-hexa {
+    .chargewp-vertical-timeline-timeline .chargewp-vertical-timeline-direction-l .chargewp-vertical-timeline-hexa {
         left: auto;
         right: -28px;
     }
 
-    .chargewp-direction-l {
+    .chargewp-vertical-timeline-direction-l {
         position: relative;
         width: 310px;
         float: left;
         text-align: right;
     }
 
-    .chargewp-direction-r {
+    .chargewp-vertical-timeline-direction-r {
         position: relative;
         width: 310px;
         float: right;
         text-align: left;
     }
 
-    .chargewp-flag-wrapper {
+    .chargewp-vertical-timeline-flag-wrapper {
         display: inline-block;
     }
 
-    .chargewp-flag {
+    .chargewp-vertical-timeline-flag {
         font-size: 18px;
     }
 
-    .chargewp-direction-l .chargewp-flag:after {
+    .chargewp-vertical-timeline-direction-l .chargewp-vertical-timeline-flag:after {
         left: auto;
         right: -16px;
         top: 50%;
@@ -225,7 +225,7 @@
         border-width: 8px;
     }
 
-    .chargewp-direction-r .chargewp-flag:after {
+    .chargewp-vertical-timeline-direction-r .chargewp-vertical-timeline-flag:after {
         top: 50%;
         margin-top: -8px;
         border: solid transparent;
@@ -234,44 +234,44 @@
         left: -8px;
     }
 
-    .chargewp-time-wrapper {
+    .chargewp-vertical-timeline-time-wrapper {
         display: inline;
         vertical-align: middle;
         margin: 0;
     }
 
-    .chargewp-direction-l .chargewp-time-wrapper {
+    .chargewp-vertical-timeline-direction-l .chargewp-vertical-timeline-time-wrapper {
         float: left;
     }
 
-    .chargewp-direction-r .chargewp-time-wrapper {
+    .chargewp-vertical-timeline-direction-r .chargewp-vertical-timeline-time-wrapper {
         float: right;
     }
 
-    .chargewp-time {
+    .chargewp-vertical-timeline-time {
         padding: 5px 10px;
     }
 
-    .chargewp-direction-r .chargewp-desc {
+    .chargewp-vertical-timeline-direction-r .chargewp-vertical-timeline-desc {
         margin: 1em 0 0 0.75em;
     }
 }
 
 @media(min-width: 992px){
-    .chargewp-timeline {
+    .chargewp-vertical-timeline-timeline {
         width: 800px;
         margin: 0 auto;
         margin-top: 20px;
     }
 
-    .chargewp-direction-l {
+    .chargewp-vertical-timeline-direction-l {
         position: relative;
         width: 380px;
         float: left;
         text-align: right;
     }
 
-    .chargewp-direction-r {
+    .chargewp-vertical-timeline-direction-r {
         position: relative;
         width: 380px;
         float: right;

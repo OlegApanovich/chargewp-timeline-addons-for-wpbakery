@@ -10,7 +10,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 <div <?php $_this->output_shortcode_wrapper_attributes(); ?>>
-	<ul class="chargewp-timeline">
+	<ul class="chargewp-vertical-timeline-timeline">
 		<?php echo do_shortcode( $content ); ?>
 	</ul>
 </div>
