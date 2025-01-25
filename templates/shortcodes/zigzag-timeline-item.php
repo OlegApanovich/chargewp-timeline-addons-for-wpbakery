@@ -80,7 +80,7 @@ $custom_icon_integration    = new CustomIconIntegration();
 				right: auto;
 				z-index: -1;
 				transform: translateX(-50%);
-				animation: fillTop 2s forwards 4s ease-in-out;
+				animation: chargewp-zigzag-timeline-fillTop 2s forwards 4s ease-in-out;
 			}
 
 			<?php $_this->output_style_shortcode_id(); ?> .chargewp-zigzag-timeline__event__icon:after {
@@ -93,7 +93,7 @@ $custom_icon_integration    = new CustomIconIntegration();
 				top: 50%;
 				left: auto;
 				transform: translateY(-50%);
-				animation: fillLeft 2s forwards 4s ease-in-out;
+				animation: chargewp-zigzag-timeline-fillLeft 2s forwards 4s ease-in-out;
 			}
 			@media (max-width: 786px) {
 				<?php $_this->output_style_shortcode_id(); ?> {

@@ -35,6 +35,7 @@ return [
 		'config'   => 'shortcodes.vertical-timeline-item',
 		'template' => 'shortcodes/vertical-timeline-item.php',
 	],
+
 	'chargewp-vertical-segment-timeline'      => [
 		'config'        => 'shortcodes.vertical-segment-timeline',
 		'template'      => 'shortcodes/vertical-segment-timeline.php',
@@ -51,6 +52,7 @@ return [
 		'config'   => 'shortcodes.vertical-segment-timeline-item',
 		'template' => 'shortcodes/vertical-segment-timeline-item.php',
 	],
+
 	'chargewp-zigzag-timeline'                => [
 		'config'        => 'shortcodes.zigzag-timeline',
 		'template'      => 'shortcodes/zigzag-timeline.php',
