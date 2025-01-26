@@ -16,6 +16,10 @@ All addons support both front-end and back-end WPBakery editors.
 
 ![Vertical Segment Timeline Element](assets/images/github-reame/screen-4.png)
 
+### 4. Left Side Stack Timeline.
+
+![Vertical Segment Timeline Element](assets/images/github-reame/screen-5.png)
+
 ## Installation
 You can directly install the plugin from the GitHub repository.
 1. Clone the repository to the `/wp-content/plugins/` directory.
