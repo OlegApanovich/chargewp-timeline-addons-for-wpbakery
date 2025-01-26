@@ -69,4 +69,21 @@ return [
 		'config'   => 'shortcodes.zigzag-timeline-item',
 		'template' => 'shortcodes/zigzag-timeline-item.php',
 	],
+
+	'chargewp-left-side-stack-timeline'                => [
+		'config'        => 'shortcodes.left-side-stack-timeline',
+		'template'      => 'shortcodes/left-side-stack-timeline.php',
+		'is_container'  => true,
+		'depend_assets' => [
+			'inner' => [
+				'css' => [
+					'element.css',
+				],
+			],
+		],
+	],
+	'chargewp-left-side-stack-timeline-item'           => [
+		'config'   => 'shortcodes.left-side-stack-timeline-item',
+		'template' => 'shortcodes/left-side-stack-timeline-item.php',
+	],
 ];
