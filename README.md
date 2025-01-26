@@ -1,7 +1,10 @@
 ## Description
 
-This WordPress plugin introduces well-crafted, and fully customizable timeline addons for the [WPBakery Page Builder](https://wpbakery.com/).
-All addons support both front-end and back-end WPBakery editors.
+This WordPress plugin introduces well-crafted and fully customizable timeline addons for the [WPBakery Page Builder](https://wpbakery.com/). All addons support both the front-end and back-end WPBakery editors. 
+
+If you need to organize and present information in chronological order, making it easier for your users to understand the content on your web page, this plugin offers many addons to help with that. 
+
+The WPBakery Page Builder plugin must be installed and activated to use this plugin. Once the required plugins are activated, the elements will be available for use in any WPBakery editor.
 
 ### 1. Vertical Timeline Addon.
 
