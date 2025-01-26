@@ -34,6 +34,9 @@ class CustomIconIntegration {
 				'description' => esc_html__( 'Add icon next to section title.', 'js_composer' ),
 			],
 		];
+
+        $exclude = array_merge( $this->get_always_exclude_params(), $exclude );
+
 		$include_params     = [ 'exclude' => $exclude ];
 		$integration_params = [
 			'element' => 'add_icon',
@@ -51,6 +54,20 @@ class CustomIconIntegration {
 			)
 		);
 	}
+
+    /**
+     * Get icon elements params list that we always exclude when integrate icon shortcode.
+     *
+     * @return array
+     */
+    public function get_always_exclude_params() {
+        return [
+            'css_animation',
+            'el_id',
+            'el_class',
+            'css',
+        ];
+    }
 
 	/**
 	 * Get icon class base on user selection.
