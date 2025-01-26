@@ -16,11 +16,14 @@ If you need to organize and present information in chronological order, making i
 
 The WPBakery Page Builder plugin must be installed and activated to use this plugin. Once the required plugins are activated, the elements will be available for use in any WPBakery editor.
 
+Source file code you can find on [our GitHub plugin page](https://github.com/OlegApanovich/chargewp-wpbakery-timeline-addons). Everyone is welcome to contribute to the development there.
+
 ### Browser support
 1. Chrome version 49+
 2. Safari 12+
 3. Firefox 78+
 4. Edge: Chromium-based Edge (79+)
+
 
 == Installation ==
 1. Upload the plugin folder to the ‘/wp-content/plugins/’ directory.
