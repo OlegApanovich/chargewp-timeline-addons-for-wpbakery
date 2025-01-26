@@ -7,16 +7,20 @@ Stable tag: 1.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Restore the old school icons in WPBakery Page Builder, as used before Version 8.0.
+Power your WPBakery Page Builder with well crafted timeline addons.
 
 == Description ==
+This WordPress plugin introduces well-crafted and fully customizable timeline addons for the [WPBakery Page Builder plugin](https://wpbakery.com). All addons support both the front-end and back-end WPBakery editors.
 
-This WordPress plugin adds a module to [WPBakery Page Builder plugin](https://wpbakery.com), bringing back the old school style of editor elements icons that WPBakery used in versions prior to 8.0.
+If you need to organize and present information in chronological order, making it easier for your users to understand the content on your web page, this plugin offers many addons to help with that.
 
-If, like me, you fall in love with interfaces you've used for decades, then this plugin can be useful for you if you don’t feel comfortable with the new 'Add Element' popup icons in WPBakery Page Builder introduced after version 8.0.
-After installing the plugin, you can enjoy the old icon style again in both the backend and frontend WPBakery Page Builder editors. You can always switch it on or off in the Module interface on the WPBakery Page Builder settings page.
+The WPBakery Page Builder plugin must be installed and activated to use this plugin. Once the required plugins are activated, the elements will be available for use in any WPBakery editor.
 
-Source file code you can find on [our GitHub plugin page](https://github.com/OlegApanovich/add-wpbakery-old-school-elements-icons-module)
+### Browser support
+1. Chrome version 49+
+2. Safari 12+
+3. Firefox 78+
+4. Edge: Chromium-based Edge (79+)
 
 == Installation ==
 1. Upload the plugin folder to the ‘/wp-content/plugins/’ directory.
@@ -24,8 +28,10 @@ Source file code you can find on [our GitHub plugin page](https://github.com/Ole
 
 == Screenshots ==
 
-1. Restore old style icons of WPBakery Page Builder
-2. Remember, as this plugin is just a regular WPBakery module you can always switch it on/off in WPBakery modules settings.
+1. Vertical Timeline Addon.
+2. ZigZag Timeline Addon.
+3. Vertical Segment Timeline Addon.
+4. Left Side Stack Timeline.
 
 == Changelog ==
 
@@ -34,4 +40,4 @@ Source file code you can find on [our GitHub plugin page](https://github.com/Ole
 
 == Upgrade Notice ==
 
-[See the release history.](https://github.com/OlegApanovich/add-wpbakery-old-school-elements-icons-module/releases)
+[See the release history.](https://github.com/OlegApanovich/chargewp-wpbakery-timeline-addons/releases)
