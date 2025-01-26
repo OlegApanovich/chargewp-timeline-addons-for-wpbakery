@@ -8,13 +8,13 @@
 defined( 'ABSPATH' ) || exit;
 
 $params = [
-    [
-        'type'        => 'colorpicker',
-        'value'       => '#27293d',
-        'heading'     => esc_html__( 'Baseline Color', 'chargewp-wpbakery-timeline-addons' ),
-        'param_name'  => 'baseline_background',
-        'description' => esc_html__( 'Select custom color for timeline base line.', 'chargewp-wpbakery-timeline-addons' ),
-    ],
+	[
+		'type'        => 'colorpicker',
+		'value'       => '#27293d',
+		'heading'     => esc_html__( 'Baseline Color', 'chargewp-wpbakery-timeline-addons' ),
+		'param_name'  => 'baseline_background',
+		'description' => esc_html__( 'Select custom color for timeline base line.', 'chargewp-wpbakery-timeline-addons' ),
+	],
 ];
 
 return [
@@ -30,7 +30,7 @@ return [
 	'show_settings_on_create' => true,
 	'js_view'                 => 'VcColumnView',
 	'params'                  => array_merge(
-        $params,
+		$params,
 		[ vc_map_add_css_animation() ],
 		chargewpwpbtimeline_config( 'shortcode-container-config' )
 	),

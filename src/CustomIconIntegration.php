@@ -26,7 +26,7 @@ class CustomIconIntegration {
 	public function add_icon_checkbox( $exclude = [] ) {
 		require_once vc_path_dir( 'CONFIG_DIR', 'content/vc-icon-element.php' );
 
-		$icon_params        = [
+		$icon_params = [
 			[
 				'type'        => 'checkbox',
 				'param_name'  => 'add_icon',
@@ -35,7 +35,7 @@ class CustomIconIntegration {
 			],
 		];
 
-        $exclude = array_merge( $this->get_always_exclude_params(), $exclude );
+		$exclude = array_merge( $this->get_always_exclude_params(), $exclude );
 
 		$include_params     = [ 'exclude' => $exclude ];
 		$integration_params = [
@@ -55,19 +55,19 @@ class CustomIconIntegration {
 		);
 	}
 
-    /**
-     * Get icon elements params list that we always exclude when integrate icon shortcode.
-     *
-     * @return array
-     */
-    public function get_always_exclude_params() {
-        return [
-            'css_animation',
-            'el_id',
-            'el_class',
-            'css',
-        ];
-    }
+	/**
+	 * Get icon elements params list that we always exclude when integrate icon shortcode.
+	 *
+	 * @return array
+	 */
+	public function get_always_exclude_params() {
+		return [
+			'css_animation',
+			'el_id',
+			'el_class',
+			'css',
+		];
+	}
 
 	/**
 	 * Get icon class base on user selection.
