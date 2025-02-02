@@ -103,9 +103,9 @@ class Charge {
 		}
 
 		if ( empty( $element_init_data['is_container'] ) ) {
-			$instance = new ChargeWpbShortcodeContainerEmpty( $config );
-		} else {
 			$instance = new ChargeWpbShortcodeEmpty( $config );
+		} else {
+			$instance = new ChargeWpbShortcodeContainerEmpty( $config );
 		}
 		return $instance;
 	}
