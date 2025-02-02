@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       ChargeWP Timeline Addons For WPBakery Page Builder 
+ * Plugin Name:       ChargeWP Timeline Addons For WPBakery Page Builder
  * Plugin URI:        https://github.com/OlegApanovich/chargewp-timeline-addons-for-wpbakery
  * Description:       Power your WPBakery Page Builder with well crafted timeline addons.
  * Author:            OlegApanovich
