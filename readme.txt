@@ -1,4 +1,4 @@
-=== ChargeWP Builder WPBakery Timeline Addons ===
+=== ChargeWP Timeline Addons For WPBakery Page Builder ===
 Contributors: mrdollar4444
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K9NTJ6E2RQN3A&source=url
 Tags: WPBakery, wpbakery addons, wpbakery page builder, wpbakery page builder addons
@@ -16,7 +16,7 @@ If you need to organize and present information in chronological order, making i
 
 The WPBakery Page Builder plugin must be installed and activated to use this plugin. Once the required plugins are activated, the elements will be available for use in any WPBakery editor.
 
-Source file code you can find on [our GitHub plugin page](https://github.com/OlegApanovich/chargewp-wpbakery-timeline-addons). Everyone is welcome to contribute to the development there.
+Source file code you can find on [our GitHub plugin page](https://github.com/OlegApanovich/chargewp-timeline-addons-for-wpbakery). Everyone is welcome to contribute to the development there.
 
 ### Browser support
 1. Chrome version 49+
@@ -43,4 +43,4 @@ Source file code you can find on [our GitHub plugin page](https://github.com/Ole
 
 == Upgrade Notice ==
 
-[See the release history.](https://github.com/OlegApanovich/chargewp-wpbakery-timeline-addons/releases)
+[See the release history.](https://github.com/OlegApanovich/chargewp-timeline-addons-for-wpbakery/releases)

@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name:       ChargeWP Builder WPBakery Timeline Addons
- * Plugin URI:        https://github.com/OlegApanovich/chargewp-wpbakery-timeline-addons
+ * Plugin Name:       ChargeWP Timeline Addons For WPBakery Page Builder 
+ * Plugin URI:        https://github.com/OlegApanovich/chargewp-timeline-addons-for-wpbakery
  * Description:       Power your WPBakery Page Builder with well crafted timeline addons.
  * Author:            OlegApanovich
  * Author URI:        https://github.com/OlegApanovich
- * Text Domain:       chargewp-wpbakery-timeline-addons
+ * Text Domain:       chargewp-timeline-addons-for-wpbakery
  * Domain Path:       /languages
  * Version:           1.0
  * License:           GPL-3.0+
@@ -160,7 +160,7 @@ class Chargewp_Wpb_Timeline_Element {
 	 */
 	public function load_plugin_textdomain() {
 		load_plugin_textdomain(
-			'chargewp-wpbakery-timeline-addons',
+			'chargewp-timeline-addons-for-wpbakery',
 			false,
 			CHARGEWPWPBTIMELINE_URI_ABSPATH . '/languages'
 		);

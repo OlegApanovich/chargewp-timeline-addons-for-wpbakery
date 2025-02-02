@@ -1,9 +1,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ChargeWP Builder WPBakery Timeline Addons\n"
+"Project-Id-Version: ChargeWP Timeline Addons For WPBakery Page Builder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-22 15:17+0000\n"
+"POT-Creation-Date: 2025-02-02 11:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,24 +14,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.6.14; wp-6.7.1\n"
-"X-Domain: chargewp-wpbakery-timeline-addons"
+"X-Domain: chargewp-timeline-addons-for-wpbakery"
 
 #: config/shortcodes/vertical-segment-timeline.php:21
 msgid "Background Color"
 msgstr ""
 
 #: config/shortcodes/vertical-segment-timeline.php:14
+#: config/shortcodes/left-side-stack-timeline.php:14
 msgid "Baseline Color"
 msgstr ""
 
 #. Name of the plugin
-msgid "ChargeWP Builder WPBakery Timeline Addons"
+msgid "ChargeWP Timeline Addons For WPBakery Page Builder"
 msgstr ""
 
 #: config/shortcodes/vertical-timeline-item.php:24
 #: config/shortcodes/vertical-segment-timeline-item.php:99
-#: config/shortcodes/zigzag-timeline-item.php:24
+#: config/shortcodes/zigzag-timeline-item.php:26
 msgid "Choose right or left item position for timeline item."
+msgstr ""
+
+#: config/shortcodes/left-side-stack-timeline-item.php:47
+msgid "Circle color"
 msgstr ""
 
 #: config/shortcodes/vertical-segment-timeline.php:28
@@ -42,14 +47,15 @@ msgstr ""
 msgid "Dashed"
 msgstr ""
 
+#: config/shortcodes/left-side-stack-timeline-item.php:54
 #: config/shortcodes/vertical-timeline-item.php:62
 #: config/shortcodes/vertical-segment-timeline-item.php:52
-#: config/shortcodes/zigzag-timeline-item.php:55
+#: config/shortcodes/zigzag-timeline-item.php:57
 msgid "Date"
 msgstr ""
 
 #: config/shortcodes/vertical-timeline-item.php:81
-#: config/shortcodes/zigzag-timeline-item.php:74
+#: config/shortcodes/zigzag-timeline-item.php:76
 msgid "Date background"
 msgstr ""
 
@@ -61,7 +67,7 @@ msgstr ""
 msgid "Date font size."
 msgstr ""
 
-#: config/shortcodes/zigzag-timeline-item.php:29
+#: config/shortcodes/zigzag-timeline-item.php:31
 msgid "Decorative circle color"
 msgstr ""
 
@@ -89,16 +95,19 @@ msgstr ""
 msgid "Double"
 msgstr ""
 
+#: config/shortcodes/left-side-stack-timeline-item.php:31
+#: config/shortcodes/left-side-stack-timeline-item.php:64
 #: config/shortcodes/vertical-timeline-item.php:53
 #: config/shortcodes/vertical-timeline-item.php:72
 #: config/shortcodes/vertical-segment-timeline-item.php:43
-#: config/shortcodes/zigzag-timeline-item.php:46
-#: config/shortcodes/zigzag-timeline-item.php:65
+#: config/shortcodes/zigzag-timeline-item.php:48
+#: config/shortcodes/zigzag-timeline-item.php:67
 msgid "Enable custom font option."
 msgstr ""
 
+#: config/shortcodes/left-side-stack-timeline-item.php:24
 #: config/shortcodes/vertical-timeline-item.php:46
-#: config/shortcodes/zigzag-timeline-item.php:39
+#: config/shortcodes/zigzag-timeline-item.php:41
 msgid "Enter text for title line."
 msgstr ""
 
@@ -111,20 +120,33 @@ msgid "https://github.com/OlegApanovich"
 msgstr ""
 
 #. URI of the plugin
-msgid "https://github.com/OlegApanovich/chargewp-wpbakery-timeline-addons"
+msgid "https://github.com/OlegApanovich/chargewp-timeline-addons-for-wpbakery"
 msgstr ""
 
+#: config/shortcodes/left-side-stack-timeline-item.php:57
 #: config/shortcodes/vertical-timeline-item.php:65
 #: config/shortcodes/vertical-segment-timeline-item.php:55
-#: config/shortcodes/zigzag-timeline-item.php:58
+#: config/shortcodes/zigzag-timeline-item.php:60
 msgid ""
 "Initially, it was designed as a date field, but you can use it as a regular "
 "text as well. "
 msgstr ""
 
+#: config/shortcodes/left-side-stack-timeline-item.php:70
+msgid "Item background color"
+msgstr ""
+
 #: config/shortcodes/vertical-timeline-item.php:20
-#: config/shortcodes/zigzag-timeline-item.php:19
+#: config/shortcodes/zigzag-timeline-item.php:21
 msgid "Left"
+msgstr ""
+
+#: config/shortcodes/left-side-stack-timeline-item.php:88
+msgid "Left Side Stack Item"
+msgstr ""
+
+#: config/shortcodes/left-side-stack-timeline.php:21
+msgid "Left Side Stack Timeline"
 msgstr ""
 
 #: config/shortcodes/vertical-segment-timeline-item.php:19
@@ -144,17 +166,16 @@ msgid "OlegApanovich"
 msgstr ""
 
 #: config/shortcodes/vertical-timeline-item.php:22
-#: config/shortcodes/zigzag-timeline-item.php:22
+#: config/shortcodes/zigzag-timeline-item.php:24
 msgid "Position"
 msgstr ""
 
 #. Description of the plugin
-msgid ""
-"Power your WPBakery Page Builder with new well crafted timeline elements."
+msgid "Power your WPBakery Page Builder with well crafted timeline addons."
 msgstr ""
 
 #: config/shortcodes/vertical-timeline-item.php:19
-#: config/shortcodes/zigzag-timeline-item.php:20
+#: config/shortcodes/zigzag-timeline-item.php:22
 msgid "Right"
 msgstr ""
 
@@ -174,12 +195,20 @@ msgstr ""
 msgid "Select background for title."
 msgstr ""
 
+#: config/shortcodes/left-side-stack-timeline-item.php:49
+msgid "Select custom color for circle."
+msgstr ""
+
 #: config/shortcodes/vertical-segment-timeline-item.php:63
 msgid "Select custom color for date."
 msgstr ""
 
-#: config/shortcodes/zigzag-timeline-item.php:31
+#: config/shortcodes/zigzag-timeline-item.php:33
 msgid "Select custom color for decorative circle."
+msgstr ""
+
+#: config/shortcodes/left-side-stack-timeline-item.php:72
+msgid "Select custom color for item background."
 msgstr ""
 
 #: config/shortcodes/vertical-segment-timeline-item.php:28
@@ -187,6 +216,7 @@ msgid "Select custom color for marker inside circle."
 msgstr ""
 
 #: config/shortcodes/vertical-segment-timeline.php:16
+#: config/shortcodes/left-side-stack-timeline.php:16
 msgid "Select custom color for timeline base line."
 msgstr ""
 
@@ -202,8 +232,12 @@ msgstr ""
 msgid "Select custom color for timeline section delimiter."
 msgstr ""
 
+#: config/shortcodes/left-side-stack-timeline-item.php:42
+msgid "Select custom color for title background."
+msgstr ""
+
 #: config/shortcodes/vertical-timeline-item.php:83
-#: config/shortcodes/zigzag-timeline-item.php:76
+#: config/shortcodes/zigzag-timeline-item.php:78
 msgid "Select custom color for your date field."
 msgstr ""
 
@@ -219,9 +253,10 @@ msgstr ""
 msgid "Solid"
 msgstr ""
 
+#: config/shortcodes/left-side-stack-timeline-item.php:79
 #: config/shortcodes/vertical-timeline-item.php:87
 #: config/shortcodes/vertical-segment-timeline-item.php:76
-#: config/shortcodes/zigzag-timeline-item.php:80
+#: config/shortcodes/zigzag-timeline-item.php:82
 msgid "Text"
 msgstr ""
 
@@ -229,13 +264,24 @@ msgstr ""
 msgid "Text Background"
 msgstr ""
 
-#: config/shortcodes/zigzag-timeline.php:16
+#: config/shortcodes/left-side-stack-timeline.php:26
+msgid "Timeline element with stack items on the left side."
+msgstr ""
+
 #: config/shortcodes/vertical-timeline.php:16
 msgid "Timeline element with vertical interface."
 msgstr ""
 
 #: config/shortcodes/vertical-segment-timeline.php:40
 msgid "Timeline element with vertical-segment interface."
+msgstr ""
+
+#: config/shortcodes/zigzag-timeline.php:16
+msgid "Timeline element with zigzag interface."
+msgstr ""
+
+#: config/shortcodes/left-side-stack-timeline-item.php:91
+msgid "Timeline item for left side stack timeline element."
 msgstr ""
 
 #: config/shortcodes/vertical-segment-timeline-item.php:117
@@ -246,13 +292,14 @@ msgstr ""
 msgid "Timeline item for vertical timeline element."
 msgstr ""
 
-#: config/shortcodes/zigzag-timeline-item.php:91
+#: config/shortcodes/zigzag-timeline-item.php:94
 msgid "Timeline item for zigzag timeline element."
 msgstr ""
 
+#: config/shortcodes/left-side-stack-timeline-item.php:21
 #: config/shortcodes/vertical-timeline-item.php:43
 #: config/shortcodes/vertical-segment-timeline-item.php:33
-#: config/shortcodes/zigzag-timeline-item.php:36
+#: config/shortcodes/zigzag-timeline-item.php:38
 msgid "Title"
 msgstr ""
 
@@ -260,11 +307,17 @@ msgstr ""
 msgid "Title Background"
 msgstr ""
 
+#: config/shortcodes/left-side-stack-timeline-item.php:40
+msgid "Title background color"
+msgstr ""
+
+#: config/shortcodes/left-side-stack-timeline-item.php:29
+#: config/shortcodes/left-side-stack-timeline-item.php:62
 #: config/shortcodes/vertical-timeline-item.php:51
 #: config/shortcodes/vertical-timeline-item.php:70
 #: config/shortcodes/vertical-segment-timeline-item.php:41
-#: config/shortcodes/zigzag-timeline-item.php:44
-#: config/shortcodes/zigzag-timeline-item.php:63
+#: config/shortcodes/zigzag-timeline-item.php:46
+#: config/shortcodes/zigzag-timeline-item.php:65
 msgid "Use custom font?"
 msgstr ""
 
@@ -288,6 +341,6 @@ msgstr ""
 msgid "Zigzag Timeline"
 msgstr ""
 
-#: config/shortcodes/zigzag-timeline-item.php:88
+#: config/shortcodes/zigzag-timeline-item.php:91
 msgid "Zigzag Timeline Item"
 msgstr ""
