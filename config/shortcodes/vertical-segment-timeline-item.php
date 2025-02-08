@@ -6,6 +6,7 @@
  */
 
 use ChargewpWpbTimeline\CustomHeadingIntegration;
+use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeEmpty;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -115,10 +116,10 @@ return [
 	'base'                    => 'chargewp-vertical-segment-timeline-item',
 	'class'                   => 'chargewp-vertical-segment-timeline-item',
 	'description'             => __( 'Timeline item for vertical segment timeline element.', 'chargewp-timeline-addons-for-wpbakery' ),
+	'php_class_name'          => ChargeWpbShortcodeEmpty::class,
 	'as_child'                => [ 'only' => 'chargewp-vertical-segment-timeline' ],
 	'content_element'         => true,
 	'show_settings_on_create' => true,
-	'js_view'                 => 'VcColumnView',
 	'params'                  => array_merge(
 		$params,
 		[ vc_map_add_css_animation() ],

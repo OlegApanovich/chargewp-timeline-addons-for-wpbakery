@@ -5,6 +5,8 @@
  * @since 1.0
  */
 
+use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeContainerEmpty;
+
 defined( 'ABSPATH' ) || exit;
 
 return [
@@ -14,6 +16,7 @@ return [
 	'class'                   => 'chargewp-vertical-timeline',
 	'category'                => 'ChargeWP',
 	'description'             => __( 'Timeline element with vertical interface.', 'chargewp-timeline-addons-for-wpbakery' ),
+	'php_class_name'          => ChargeWpbShortcodeContainerEmpty::class,
 	'as_parent'               => [ 'only' => 'chargewp-vertical-timeline-item' ],
 	'content_element'         => true,
 	'default_content'         => '[chargewp-vertical-timeline-item position="left"]Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation deserunt proident.[/chargewp-vertical-timeline-item][chargewp-vertical-timeline-item]Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation deserunt proident.[/chargewp-vertical-timeline-item]',

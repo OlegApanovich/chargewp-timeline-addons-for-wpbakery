@@ -7,6 +7,7 @@
 
 use ChargewpWpbTimeline\CustomHeadingIntegration;
 use ChargewpWpbTimeline\CustomIconIntegration;
+use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeEmpty;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -92,10 +93,10 @@ return [
 	'base'                    => 'chargewp-zigzag-timeline-item',
 	'class'                   => 'chargewp-zigzag-timeline-item',
 	'description'             => __( 'Timeline item for zigzag timeline element.', 'chargewp-timeline-addons-for-wpbakery' ),
+	'php_class_name'          => ChargeWpbShortcodeEmpty::class,
 	'as_child'                => [ 'only' => 'chargewp-zigzag-timeline' ],
 	'content_element'         => true,
 	'show_settings_on_create' => true,
-	'js_view'                 => 'VcColumnView',
 	'params'                  => array_merge(
 		$params,
 		[ vc_map_add_css_animation() ],
