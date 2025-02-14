@@ -62,6 +62,9 @@ return [
 				'css' => [
 					'element.css',
 				],
+				'js' => [
+					'element.js',
+				],
 			],
 		],
 	],

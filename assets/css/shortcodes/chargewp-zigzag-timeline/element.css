@@ -10,7 +10,8 @@
     margin: 20px 0;
     border-radius: 6px;
     align-self: center;
-    width: 50vw;
+    width: 100%;
+    max-width: 50vw;
 }
 .chargewp-zigzag-timeline__event__title {
     font-size: 1.2rem;
@@ -23,7 +24,10 @@
     padding: 20px;
     box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
     background: #fff;
-    width: calc(40vw - 84px);
+    width: 100%;
+    flex-grow: 1;
+    box-sizing: border-box;
+    max-width: calc(40vw - 84px);
     border-radius: 0 6px 6px 0;
 }
 .chargewp-zigzag-timeline__event__date {
@@ -117,4 +121,29 @@
     100% {
         left: 100%;
     }
+}
+
+.chargewp-zigzag-timeline.chargewp-compact .chargewp-zigzag-timeline__event {
+    flex-direction: column;
+    align-self: center;
+}
+.chargewp-zigzag-timeline.chargewp-compact .chargewp-zigzag-timeline__event__content {
+    width: 100%;
+}
+.chargewp-zigzag-timeline.chargewp-compact .chargewp-zigzag-timeline__event__icon {
+    width: 60px;
+    height: 60px;
+    padding: 20px;
+    max-width: 100%;
+    border-radius: 6px 6px 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+.chargewp-zigzag-timeline.chargewp-compact .chargewp-zigzag-timeline__event__icon:before,
+.chargewp-zigzag-timeline.chargewp-compact .chargewp-zigzag-timeline__event__icon:after {
+    display: none;
+}
+.chargewp-zigzag-timeline.chargewp-compact .chargewp-zigzag-timeline__event__date {
+    border-radius: 0;
+    padding: 20px;
 }
