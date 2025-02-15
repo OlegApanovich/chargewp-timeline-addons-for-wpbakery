@@ -31,10 +31,9 @@ Source file code you can find on [our GitHub plugin page](https://github.com/Ole
 
 == Screenshots ==
 
-1. Vertical Timeline Addon.
-2. ZigZag Timeline Addon.
-3. Vertical Segment Timeline Addon.
-4. Left Side Stack Timeline.
+1. ZigZag Timeline Addon.
+2. Vertical Segment Timeline Addon.
+3. Left Side Stack Timeline.
 
 == Changelog ==
 

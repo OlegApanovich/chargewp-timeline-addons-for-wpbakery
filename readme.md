@@ -6,20 +6,16 @@ If you need to organize and present information in chronological order, making i
 
 The WPBakery Page Builder plugin must be installed and activated to use this plugin. Once the required plugins are activated, the elements will be available for use in any WPBakery editor.
 
-### 1. Vertical Timeline Addon.
-
-![Vertical Timeline Element](assets/images/github-reame/screen-3.png)
-
-### 2. ZigZag Timeline Addon.
+### 1. ZigZag Timeline Addon.
 
 ![ZigZag Timeline Element](assets/images/github-reame/screen-2.png)
 
 
-### 3. Vertical Segment Timeline Addon.
+### 2. Vertical Segment Timeline Addon.
 
 ![Vertical Segment Timeline Element](assets/images/github-reame/screen-4.png)
 
-### 4. Left Side Stack Timeline.
+### 3. Left Side Stack Timeline.
 
 ![Vertical Segment Timeline Element](assets/images/github-reame/screen-5.png)
 

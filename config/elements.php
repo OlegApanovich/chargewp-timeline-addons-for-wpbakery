@@ -19,23 +19,6 @@
  */
 
 return [
-	'chargewp-vertical-timeline'              => [
-		'config'        => 'shortcodes.vertical-timeline',
-		'template'      => 'shortcodes/vertical-timeline.php',
-		'is_container'  => true,
-		'depend_assets' => [
-			'inner' => [
-				'css' => [
-					'element.css',
-				],
-			],
-		],
-	],
-	'chargewp-vertical-timeline-item'         => [
-		'config'   => 'shortcodes.vertical-timeline-item',
-		'template' => 'shortcodes/vertical-timeline-item.php',
-	],
-
 	'chargewp-vertical-segment-timeline'      => [
 		'config'        => 'shortcodes.vertical-segment-timeline',
 		'template'      => 'shortcodes/vertical-segment-timeline.php',
