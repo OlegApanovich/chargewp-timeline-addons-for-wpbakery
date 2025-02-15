@@ -22,6 +22,6 @@ defined( 'ABSPATH' ) || exit;
 	}
 	.chargewp-vertical-segment-timeline-content<?php $_this->output_style_shortcode_id(); ?> {
 		background: <?php echo esc_attr( $atts['background_color'] ); ?>;
-        overflow: hidden;
+		overflow: hidden;
 	}
 </style>
