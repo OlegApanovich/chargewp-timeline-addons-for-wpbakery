@@ -17,10 +17,10 @@ defined( 'ABSPATH' ) || exit;
 		<?php
 		echo wp_kses(
 			sprintf(
-			// translators: %1$s: current plugin name, %2$s plugin name that current plugin dependent on.
+				// translators: %1$s: current plugin name, %2$s plugin name that current plugin dependent on.
 				__(
 					'The plugin <strong>"%1$s"</strong> requires the plugin <strong>"%2$s"</strong> active with version <strong>%3$s</strong> or higher.',
-					'wpbakery-old-school-elements-icons-module'
+					'chargewp-timeline-addons-for-wpbakery'
 				),
 				$my_plugin_name,
 				$dependency_plugin_name,
