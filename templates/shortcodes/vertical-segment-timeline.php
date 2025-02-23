@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 $custom_tag = 'style';
 ?>
 
-<<?php echo esc_attr($custom_tag) ?>>
+<<?php echo esc_attr( $custom_tag ); ?>>
 	<?php $_this->output_style_shortcode_id(); ?> .chargewp-vertical-segment-timeline-list {
 		border-left: 4px solid <?php echo esc_attr( $atts['baseline_background'] ); ?>;
 		background: <?php echo esc_attr( $atts['content_background_color'] ); ?>;
@@ -28,4 +28,4 @@ $custom_tag = 'style';
 		background: <?php echo esc_attr( $atts['background_color'] ); ?>;
 		overflow: hidden;
 	}
-</<?php echo esc_attr($custom_tag) ?>>
+</<?php echo esc_attr( $custom_tag ); ?>>
