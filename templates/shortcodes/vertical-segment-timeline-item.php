@@ -20,7 +20,11 @@ $custom_heading_integration = new CustomHeadingIntegration();
 	<?php echo do_shortcode( $content ); ?>
 </li>
 
-<style>
+<?php
+$custom_tag = 'style';
+?>
+
+<<?php echo esc_attr($custom_tag) ?>>
 	<?php $_this->output_style_shortcode_id(); ?>.chargewp-horizontal-section-timeline-event:after {
 		background: <?php echo esc_attr( $atts['marker_inner_color'] ); ?>;
 		box-shadow: 0 0 0 4px <?php echo esc_attr( $atts['marker_color'] ); ?>;
@@ -32,4 +36,4 @@ $custom_heading_integration = new CustomHeadingIntegration();
 	<?php $_this->output_style_shortcode_id(); ?>.chargewp-horizontal-section-timeline-event {
 		border-bottom: <?php echo esc_attr( $atts['delimiter_size'] ); ?> <?php echo esc_attr( $atts['delimiter_type'] ); ?> <?php echo esc_attr( $atts['delimiter_color'] ); ?>;
 	}
-</style>
+</<?php echo esc_attr($custom_tag) ?>>

@@ -41,7 +41,11 @@ $custom_icon_integration    = new CustomIconIntegration();
 	</div>
 </div>
 
-<style>
+<?php
+$custom_tag = 'style';
+?>
+
+<<?php echo esc_attr($custom_tag) ?>>
 	<?php $_this->output_style_shortcode_id(); ?> .chargewp-zigzag-timeline__event__icon {
 		background: <?php echo esc_attr( $atts['decorative_circle_color'] ); ?>;
 	}
@@ -114,4 +118,4 @@ $custom_icon_integration    = new CustomIconIntegration();
 		<?php
 	}
 	?>
-</style>
+</<?php echo esc_attr($custom_tag) ?>>

@@ -41,7 +41,11 @@ $custom_icon_integration    = new CustomIconIntegration();
 	</div>
 </div>
 
-<style>
+<?php
+$custom_tag = 'style';
+?>
+
+<<?php echo esc_attr($custom_tag) ?>>
 	<?php $_this->output_style_shortcode_id(); ?> .chargewp-left-side-stack-timeline-badge {
 		background: <?php echo esc_attr( $atts['title_background_color'] ); ?>;
 	}
@@ -53,6 +57,6 @@ $custom_icon_integration    = new CustomIconIntegration();
 	<?php $_this->output_style_shortcode_id(); ?> .chargewp-left-side-stack-timeline-timeline-body {
 		background: <?php echo esc_attr( $atts['item_background_color'] ); ?>;
 	}
-</style>
+</<?php echo esc_attr($custom_tag) ?>>
 
 

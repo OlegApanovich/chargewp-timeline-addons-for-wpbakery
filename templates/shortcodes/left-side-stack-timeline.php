@@ -15,8 +15,12 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 
-<style>
+<?php
+$custom_tag = 'style';
+?>
+
+<<?php echo esc_attr($custom_tag) ?>>
 	<?php $_this->output_style_shortcode_id(); ?> .chargewp-left-side-stack-timeline-timeline:before {
 		background: <?php echo esc_attr( $atts['baseline_background'] ); ?>;
 	}
-</style>
+</<?php echo esc_attr($custom_tag) ?>>
