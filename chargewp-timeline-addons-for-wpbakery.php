@@ -12,7 +12,7 @@
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  *
  * Requires at least: 4.9
- * Requires PHP:      5.6
+ * Requires PHP:      7.0
  */
 
 defined( 'ABSPATH' ) || exit;

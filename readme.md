@@ -30,7 +30,7 @@ That's it! If you go to any WPBakery Page Builder editor, you'll find new elemen
 
 ## Requirements
 1. WPBakery Page Builder version 5.0+
-2. PHP version 5.6+
+2. PHP version 7.0+
 3. Wordpress version 4.9+
    
 ## Browser support
