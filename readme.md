@@ -20,7 +20,9 @@ The WPBakery Page Builder plugin must be installed and activated to use this plu
 ![Vertical Segment Timeline Element](assets/images/github-reame/screen-5.png)
 
 ## Installation
-You can directly install the plugin from the GitHub repository.
+It's recommended to use the [official plugin page on WordPress.org](https://wordpress.org/plugins/chargewp-timeline-addons-for-wpbakery).
+
+Also, you can directly install the plugin from the GitHub repository.
 1. Clone the repository to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 
