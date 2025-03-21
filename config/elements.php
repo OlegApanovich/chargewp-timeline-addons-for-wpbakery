@@ -72,4 +72,21 @@ return [
 		'config'   => 'shortcodes.left-side-stack-timeline-item',
 		'template' => 'shortcodes/left-side-stack-timeline-item.php',
 	],
+
+	'chargewp-tailwind-vertical-classic-timeline'       => [
+		'config'        => 'shortcodes.tailwind-vertical-classic-timeline',
+		'template'      => 'shortcodes/tailwind-vertical-classic-timeline.php',
+		'is_container'  => true,
+		'depend_assets' => [
+			'external' => [
+				'js' => [
+					'https://cdn.tailwindcss.com',
+				],
+			],
+		],
+	],
+	'chargewp-tailwind-vertical-classic-timeline-item'  => [
+		'config'   => 'shortcodes.tailwind-vertical-classic-timeline-item',
+		'template' => 'shortcodes/tailwind-vertical-classic-timeline-item.php',
+	],
 ];

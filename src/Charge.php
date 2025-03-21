@@ -11,6 +11,7 @@ use Exception;
 use WPBakeryShortCode;
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeEmpty;
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeContainerEmpty;
+use ChargewpWpbTimeline\Params\Params;
 
 defined( 'ABSPATH' ) || exit;
 

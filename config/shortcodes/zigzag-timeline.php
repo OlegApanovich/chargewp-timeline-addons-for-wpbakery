@@ -1,6 +1,6 @@
 <?php
 /**
- * Configuration file for [chargewp_zigzag_timeline] shortcode of 'Zigzag Timeline' element.
+ * Configuration file for [chargewp-zigzag-timeline] shortcode of 'Zigzag Timeline' element.
  *
  * @since 1.0
  */
