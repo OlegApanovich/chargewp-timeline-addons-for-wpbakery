@@ -11,7 +11,7 @@ use Exception;
 use WPBakeryShortCode;
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeEmpty;
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeContainerEmpty;
-use ChargewpWpbTimeline\Params\Params;
+use ChargewpWpbTimeline\ElementParams\ElementParams;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -29,6 +29,7 @@ class Charge {
 	public function init() {
 		add_action( 'init', [ $this, 'add_builder_elements' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'register_elements_icons' ] );
+		add_action( 'admin_init', [ $this, 'init_custom_element_params' ] );
 	}
 
 	/**
@@ -123,5 +124,14 @@ class Charge {
 			[],
 			CHARGEWPWPBTIMELINE_VERSION
 		);
+	}
+
+	/**
+	 * Initialize custom element params.
+	 *
+	 * @since 1.1
+	 */
+	public function init_custom_element_params() {
+		( new ElementParams() )->init_custom_element_params();
 	}
 }

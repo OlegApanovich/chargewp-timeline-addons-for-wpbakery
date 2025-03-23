@@ -19,7 +19,7 @@
  */
 
 return [
-	'chargewp-vertical-segment-timeline'      => [
+	'chargewp-vertical-segment-timeline'               => [
 		'config'        => 'shortcodes.vertical-segment-timeline',
 		'template'      => 'shortcodes/vertical-segment-timeline.php',
 		'is_container'  => true,
@@ -31,12 +31,12 @@ return [
 			],
 		],
 	],
-	'chargewp-vertical-segment-timeline-item' => [
+	'chargewp-vertical-segment-timeline-item'          => [
 		'config'   => 'shortcodes.vertical-segment-timeline-item',
 		'template' => 'shortcodes/vertical-segment-timeline-item.php',
 	],
 
-	'chargewp-zigzag-timeline'                => [
+	'chargewp-zigzag-timeline'                         => [
 		'config'        => 'shortcodes.zigzag-timeline',
 		'template'      => 'shortcodes/zigzag-timeline.php',
 		'is_container'  => true,
@@ -51,12 +51,12 @@ return [
 			],
 		],
 	],
-	'chargewp-zigzag-timeline-item'           => [
+	'chargewp-zigzag-timeline-item'                    => [
 		'config'   => 'shortcodes.zigzag-timeline-item',
 		'template' => 'shortcodes/zigzag-timeline-item.php',
 	],
 
-	'chargewp-left-side-stack-timeline'       => [
+	'chargewp-left-side-stack-timeline'                => [
 		'config'        => 'shortcodes.left-side-stack-timeline',
 		'template'      => 'shortcodes/left-side-stack-timeline.php',
 		'is_container'  => true,
@@ -68,12 +68,12 @@ return [
 			],
 		],
 	],
-	'chargewp-left-side-stack-timeline-item'  => [
+	'chargewp-left-side-stack-timeline-item'           => [
 		'config'   => 'shortcodes.left-side-stack-timeline-item',
 		'template' => 'shortcodes/left-side-stack-timeline-item.php',
 	],
 
-	'chargewp-tailwind-vertical-classic-timeline'       => [
+	'chargewp-tailwind-vertical-classic-timeline'      => [
 		'config'        => 'shortcodes.tailwind-vertical-classic-timeline',
 		'template'      => 'shortcodes/tailwind-vertical-classic-timeline.php',
 		'is_container'  => true,
@@ -85,7 +85,7 @@ return [
 			],
 		],
 	],
-	'chargewp-tailwind-vertical-classic-timeline-item'  => [
+	'chargewp-tailwind-vertical-classic-timeline-item' => [
 		'config'   => 'shortcodes.tailwind-vertical-classic-timeline-item',
 		'template' => 'shortcodes/tailwind-vertical-classic-timeline-item.php',
 	],
