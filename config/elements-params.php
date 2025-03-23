@@ -8,4 +8,5 @@
 
 return [
 	'chargewp-number',
+	'chargewp-switch',
 ];

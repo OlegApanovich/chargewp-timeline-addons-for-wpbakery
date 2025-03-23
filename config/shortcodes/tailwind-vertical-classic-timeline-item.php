@@ -5,16 +5,27 @@
  * @since 1.1
  */
 
-use ChargewpWpbTimeline\CustomHeadingIntegration;
-use ChargewpWpbTimeline\CustomIconIntegration;
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeEmpty;
 
 defined( 'ABSPATH' ) || exit;
 
-$custom_heading_integration = new CustomHeadingIntegration();
-$custom_icon_integration    = new CustomIconIntegration();
-
-$params = [];
+$params = [
+	[
+		'type'        => 'chargewp-switch',
+		'class'       => '',
+		'heading'     => __( 'Element Rotation', 'ultimate_vc' ),
+		'param_name'  => 'rotation',
+		'admin_label' => true,
+		'value'       => 'set',
+		'default_set' => true,
+		'options'     => [
+			'set' => [
+				'on'  => 'Left',
+				'off' => 'Right',
+			],
+		],
+	],
+];
 
 return [
 	'name'                    => __( 'Tailwind Vertical Classic Timeline', 'chargewp-timeline-addons-for-wpbakery' ),

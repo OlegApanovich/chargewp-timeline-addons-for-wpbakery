@@ -1,7 +1,8 @@
 <?php
 /**
- * Custom param for wpbakery element.
+ * Custom param 'Number' for wpbakery element.
  *
+ * @see https://kb.wpbakery.com/docs/inner-api/vc_add_shortcode_param
  * @since 1.1
  */
 
@@ -10,7 +11,7 @@ namespace ChargewpWpbTimeline\ElementParams\Lib;
 use ChargewpWpbTimeline\ElementParams\ElementParamsAbstract;
 
 /**
- * Number class.
+ * ChargewpNumber class.
  *
  * @since 1.1
  */
