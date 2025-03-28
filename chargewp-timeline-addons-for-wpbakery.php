@@ -108,12 +108,16 @@ class Chargewp_Wpb_Timeline_Element {
 	 */
 	private function define_constants() {
 		define( 'CHARGEWPWPBTIMELINE_VERSION', '1.0' );
+
 		define( 'CHARGEWPWPBTIMELINE_PLUGIN_FILE', __FILE__ );
+
 		define( 'CHARGEWPWPBTIMELINE_URI', plugins_url( '', CHARGEWPWPBTIMELINE_PLUGIN_FILE ) );
+		define( 'CHARGEWPWPBTIMELINE_ASSETS_URI', plugins_url( 'assets', CHARGEWPWPBTIMELINE_PLUGIN_FILE ) );
+
 		define( 'CHARGEWPWPBTIMELINE_URI_ABSPATH', __DIR__ . '/' );
 		define( 'CHARGEWPWPBTIMELINE_TEMPLATES_DIR', __DIR__ . '/templates' );
 		define( 'CHARGEWPWPBTIMELINE_INCLUDES_DIR', __DIR__ . '/includes' );
-		define( 'CHARGEWPWPBTIMELINE_INCLUDES_ASSETS_DIR', __DIR__ . '/assets' );
+		define( 'CHARGEWPWPBTIMELINE_ASSETS_DIR', __DIR__ . '/assets' );
 		define( 'CHARGEWPWPBTIMELINE_CONFIG_DIR', __DIR__ . '/config' );
 	}
 

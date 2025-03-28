@@ -20,6 +20,7 @@ class ChargeWpbShortcode {
 	/**
 	 * Element slug.
 	 *
+     * @since 1.0
 	 * @var string
 	 */
 	public $element_slug;
@@ -27,6 +28,7 @@ class ChargeWpbShortcode {
 	/**
 	 * Element template render file.
 	 *
+     * @since 1.0
 	 * @var string
 	 */
 	public $template;
@@ -34,6 +36,7 @@ class ChargeWpbShortcode {
 	/**
 	 * Shortcode attributes.
 	 *
+     * @since 1.0
 	 * @var array
 	 */
 	public $shortcode_atts;
@@ -41,6 +44,7 @@ class ChargeWpbShortcode {
 	/**
 	 * Shortcode attributes.
 	 *
+     * @since 1.0
 	 * @var array
 	 */
 	public $config;
@@ -49,6 +53,7 @@ class ChargeWpbShortcode {
 	 * Shortcode id.
 	 * It's uniq id that we use only for our plugin elements.
 	 *
+     * @since 1.0
 	 * @var string
 	 */
 	public $id;
@@ -56,16 +61,26 @@ class ChargeWpbShortcode {
 	/**
 	 * Shortcode attributes.
 	 *
+     * @since 1.0
 	 * @var WPBakeryShortCode
 	 */
 	public $wpb_shortcode;
 
 	/**
 	 * We set this data for each element in config/elements.php.
-	 *
+     *
+	 * @since 1.0
 	 * @var array
 	 */
 	public $element_init_data;
+
+	/**
+	 * External assets prefix.
+	 *
+     * @since 1.1
+	 * @var string
+	 */
+	public $external_assets_prefix = 'chargewp';
 
 	/**
 	 * Set element slug.
@@ -200,7 +215,7 @@ class ChargeWpbShortcode {
 	 * @since 1.0
 	 */
 	public function get_shortcode_asset_path( $file_name, $type ) {
-		return CHARGEWPWPBTIMELINE_INCLUDES_ASSETS_DIR . '/' . $type . '/shortcodes/' . $this->element_slug . '/' . $file_name;
+		return CHARGEWPWPBTIMELINE_ASSETS_DIR . '/' . $type . '/shortcodes/' . $this->element_slug . '/' . $file_name;
 	}
 
 	/**
@@ -265,11 +280,11 @@ class ChargeWpbShortcode {
 		}
 
 		foreach ( $depend_assets['external'] as $type => $assets_list ) {
-			foreach ( $assets_list as $asset ) {
+			foreach ( $assets_list as $asset_name => $asset_url ) {
 				if ( 'js' === $type ) {
-					wp_enqueue_script( $this->element_slug . '-' . $asset, $asset, [], CHARGEWPWPBTIMELINE_VERSION, true );
+					wp_enqueue_script( $this->external_assets_prefix . '-' . $asset_name, $asset_url, [], CHARGEWPWPBTIMELINE_VERSION, true );
 				} elseif ( 'css' === $type ) {
-					wp_enqueue_style( $this->element_slug . '-' . $asset, $asset, [], CHARGEWPWPBTIMELINE_VERSION );
+					wp_enqueue_style( $this->external_assets_prefix . '-' . $asset_name, $asset_url, [], CHARGEWPWPBTIMELINE_VERSION );
 				}
 			}
 		}

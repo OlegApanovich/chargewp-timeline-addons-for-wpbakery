@@ -10,21 +10,16 @@ use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeEmpty;
 defined( 'ABSPATH' ) || exit;
 
 $params = [
-	[
-		'type'        => 'chargewp-switch',
-		'class'       => '',
-		'heading'     => __( 'Element Rotation', 'ultimate_vc' ),
-		'param_name'  => 'rotation',
-		'admin_label' => true,
-		'value'       => 'set',
-		'default_set' => true,
-		'options'     => [
-			'set' => [
-				'on'  => 'Left',
-				'off' => 'Right',
-			],
-		],
-	],
+    [
+        'type'        => 'dropdown',
+        'value'       => [
+            esc_html__( 'Left', 'chargewp-timeline-addons-for-wpbakery' ) => 'left',
+            esc_html__( 'Right', 'chargewp-timeline-addons-for-wpbakery' ) => 'right',
+        ],
+        'heading'     => esc_html__( 'Rotation', 'chargewp-timeline-addons-for-wpbakery' ),
+        'param_name'  => 'rotation',
+        'description' => esc_html__( 'Choose right or left item rotation for timeline item.', 'chargewp-timeline-addons-for-wpbakery' ),
+    ],
 ];
 
 return [
