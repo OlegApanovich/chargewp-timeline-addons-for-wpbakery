@@ -80,9 +80,9 @@ return [
 		'depend_assets' => [
 			'external' => [
 				'js' => [
-					'tailwind-cdn-before-setup' => CHARGEWPWPBTIMELINE_ASSETS_URI . '/js/shortcodes-common/tailwind-cdn-before-setup.js',
+//					'tailwind-cdn-before-setup' => CHARGEWPWPBTIMELINE_ASSETS_URI . '/js/shortcodes-common/tailwind-cdn-before-setup.js',
 					'tailwind-cdn' => 'https://cdn.tailwindcss.com?min',
-					'tailwind-cdn-after-setup' => CHARGEWPWPBTIMELINE_ASSETS_URI . '/js/shortcodes-common/tailwind-cdn-after-setup.js',
+//					'tailwind-cdn-after-setup' => CHARGEWPWPBTIMELINE_ASSETS_URI . '/js/shortcodes-common/tailwind-cdn-after-setup.js',
 				],
 			],
 		],

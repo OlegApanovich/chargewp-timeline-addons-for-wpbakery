@@ -32,15 +32,65 @@ defined( 'ABSPATH' ) || exit;
                 <h3 class="text-lg sm:text-xl md:text-2xl font-playfair text-gray-900 mt-2">Digital Renaissance</h3>
                 <p class="mt-2 text-sm sm:text-base text-gray-600 font-lato">The emergence of revolutionary digital platforms transforms modern journalism and storytelling methods.</p>
             </div>
-
-            <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[3%] h-[3%] min-w-[44px] min-h-[24px] bg-white border-2 border-gray-200 group-hover:border-indigo-500 transition-colors duration-300 rotate-75 hidden sm:flex items-center justify-center">
-                <i class="fas fa-newspaper text-gray-400 group-hover:text-indigo-500 text-xs"></i>
-            </div>
-<!--            <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[3%] h-[3%] min-w-[44px] min-h-[44px] bg-green-500 border-2 border-green-300 group-hover:border-indigo-500 transition-colors duration-300 hidden sm:block rounded-full"></div>-->
-
-<!--                <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[3%] h-[3%] min-w-[24px] min-h-[24px] bg-white border-2 border-gray-200 group-hover:border-indigo-500 transition-colors duration-300 rotate-45 hidden sm:flex items-center justify-center">-->
-<!--                    <i class="fas fa-newspaper -rotate-45 text-gray-400 group-hover:text-indigo-500 text-xs"></i>-->
-<!--                </div>-->
+                <?php
+                    switch ($atts['marker_type']) {
+                        case 'circle':
+                            ?>
+                            <div class="
+                                absolute
+                                left-1/2
+                                transform
+                                -translate-x-1/2
+                                -translate-y-1/2
+                                w-[3%]
+                                h-[3%]
+                                min-w-[44px]
+                                min-h-[44px]
+                                bg-[<?php echo esc_attr( $atts['marker_background_color'] ); ?>]
+                                border-2
+                                border-green-300
+                                group-hover:border-indigo-500
+                                transition-colors
+                                duration-300
+                                hidden
+                                sm:block
+                                rounded-full"
+                            >
+                            </div>
+                            <?php
+                            break;
+                        case 'square':
+                            ?>
+                            <div class="
+                                absolute
+                                left-1/2
+                                transform
+                                -translate-x-1/2
+                                -translate-y-1/2
+                                w-[3%]
+                                h-[3%]
+                                min-w-[44px]
+                                min-h-[24px]
+                                bg-white
+                                border-2
+                                border-gray-200
+                                group-hover:border-indigo-500
+                                transition-colors
+                                duration-300
+                                rotate-75
+                                hidden
+                                sm:flex
+                                items-center
+                                justify-center"
+                            >
+                                <i class="fas fa-newspaper text-gray-400 group-hover:text-indigo-500 text-xs"></i>
+                            </div>
+                            <?php
+                            break;
+                        default:
+                            break;
+                    }
+                ?>
 
             <div class="w-full sm:w-[48%] pl-0 sm:pl-[4%] md:pl-[6%]">
                 <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea" alt="Digital Media" class="w-full aspect-video object-cover rounded-lg shadow-lg">

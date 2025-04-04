@@ -20,6 +20,39 @@ $params = [
         'param_name'  => 'rotation',
         'description' => esc_html__( 'Choose right or left item rotation for timeline item.', 'chargewp-timeline-addons-for-wpbakery' ),
     ],
+    [
+        'type'        => 'dropdown',
+        'value'       => [
+            esc_html__( 'Circle', 'chargewp-timeline-addons-for-wpbakery' ) => 'circle',
+            esc_html__( 'Square', 'chargewp-timeline-addons-for-wpbakery' ) => 'square',
+            esc_html__( 'No', 'chargewp-timeline-addons-for-wpbakery' ) => 'no',
+        ],
+        'heading'     => esc_html__( 'Marker Type', 'chargewp-timeline-addons-for-wpbakery' ),
+        'param_name'  => 'marker_type',
+        'description' => esc_html__( 'Choose marker type.', 'chargewp-timeline-addons-for-wpbakery' ),
+        'group'       => 'Marker',
+    ],
+    [
+        'type'        => 'colorpicker',
+        'value'       => '#ffffff',
+        'heading'     => esc_html__( 'Marker background color', 'chargewp-timeline-addons-for-wpbakery' ),
+        'param_name'  => 'marker_background_color',
+        'description' => esc_html__( 'Select custom color for marker background.', 'chargewp-timeline-addons-for-wpbakery' ),
+        'dependency'  => [ 'element' => 'marker_type', 'value' => [ 'circle', 'square' ] ],
+        'group'       => 'Marker',
+    ],
+    [
+        'type'        => 'chargewp-number',
+        'value'       => '1',
+        'min'         => '0',
+        'max'         => '10',
+        'step'        => '1',
+        'heading'     => esc_html__( 'Marker Border', 'chargewp-timeline-addons-for-wpbakery' ),
+        'param_name'  => 'marker_border_width',
+        'description' => esc_html__( 'Set custom width from 0 to 10 for marker border.', 'chargewp-timeline-addons-for-wpbakery' ),
+        'group'       => 'Marker',
+        'dependency'  => [ 'element' => 'marker_type', 'value' => [ 'circle', 'square' ] ],
+    ],
 ];
 
 return [
