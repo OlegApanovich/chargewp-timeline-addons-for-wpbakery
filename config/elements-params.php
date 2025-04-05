@@ -9,4 +9,5 @@
 return [
 	'chargewp-number',
 	'chargewp-switch',
+	'chargewp-notice',
 ];

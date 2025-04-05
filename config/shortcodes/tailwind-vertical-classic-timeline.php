@@ -11,6 +11,12 @@ defined( 'ABSPATH' ) || exit;
 
 $params = [
 	[
+		'type'        => 'chargewp-notice',
+	    'level'       => 'warning',
+	    'notice'      => '<b>The Tailwind environment may apply additional CSS styles to the entire current page, not just the current element. Please check the page output after using Tailwind elements.</b>',
+        'param_name'  => 'tailwind_notice',
+	],
+	[
 		'type'        => 'colorpicker',
 		'value'       => '#cccccc',
 		'heading'     => esc_html__( 'Baseline Color', 'chargewp-timeline-addons-for-wpbakery' ),
