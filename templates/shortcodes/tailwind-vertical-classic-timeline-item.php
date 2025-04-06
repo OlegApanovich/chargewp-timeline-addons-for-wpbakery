@@ -10,7 +10,9 @@
 defined( 'ABSPATH' ) || exit;
 
 use ChargewpWpbTimeline\CustomIconIntegration;
+use ChargewpWpbTimeline\CustomHeadingIntegration;
 $custom_icon_integration = new CustomIconIntegration();
+$custom_heading_integration = new CustomHeadingIntegration();
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <div <?php $_this->output_shortcode_wrapper_attributes( [ 'class' => 'chargewp-tailwind-vertical-classic-timeline-item-container relative flex flex-col sm:flex-row items-center sm:items-center justify-between group' ] ); ?>>
@@ -30,9 +32,15 @@ $custom_icon_integration = new CustomIconIntegration();
     } else {
         ?>
             <div class="w-full sm:w-[48%] pr-0 sm:pr-[4%] md:pr-[6%] text-center sm:text-right mb-4 sm:mb-0">
-                <span class="text-base sm:text-lg md:text-xl font-playfair text-gray-500">2023</span>
-                <h3 class="text-lg sm:text-xl md:text-2xl font-playfair text-gray-900 mt-2">Digital Renaissance</h3>
-                <p class="mt-2 text-sm sm:text-base text-gray-600 font-lato">The emergence of revolutionary digital platforms transforms modern journalism and storytelling methods.</p>
+                <div class="text-base sm:text-lg md:text-xl text-gray-500">
+                    <?php $custom_heading_integration->output_custom_font_attribute( 'date', $atts, $_this->element_slug, 'span' ); ?>
+                </div>
+                <div class="text-lg sm:text-xl md:text-2xl font-playfair text-gray-900 mt-2">
+                    <?php $custom_heading_integration->output_custom_font_attribute( 'title', $atts, $_this->element_slug, 'span' ); ?>
+                </div>
+                <div class="mt-2 text-sm sm:text-base">
+                    <?php echo wpb_js_remove_wpautop( $content, true ); // phpcs:ignore: WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+                </div>
             </div>
             <?php
             if ( 'no' !== $atts['marker_type'] ) {

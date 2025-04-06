@@ -42,7 +42,7 @@ $params = array_merge(
             'heading'     => esc_html__( 'Marker Type', 'chargewp-timeline-addons-for-wpbakery' ),
             'param_name'  => 'marker_type',
             'description' => esc_html__( 'Choose marker type.', 'chargewp-timeline-addons-for-wpbakery' ),
-            'group'       => 'Marker',
+            'group'       => esc_html__('Marker', 'chargewp-timeline-addons-for-wpbakery'),
         ],
         [
             'type'        => 'colorpicker',
@@ -51,7 +51,7 @@ $params = array_merge(
             'param_name'  => 'marker_background_color',
             'description' => esc_html__( 'Select custom color for marker background.', 'chargewp-timeline-addons-for-wpbakery' ),
             'dependency'  => [ 'element' => 'marker_type', 'value' => [ 'circle', 'square' ] ],
-            'group'       => 'Marker',
+            'group'       => esc_html__('Marker', 'chargewp-timeline-addons-for-wpbakery'),
         ],
         [
             'type'        => 'colorpicker',
@@ -60,7 +60,7 @@ $params = array_merge(
             'param_name'  => 'marker_background_hover_color',
             'description' => esc_html__( 'Select custom color for marker background hover.', 'chargewp-timeline-addons-for-wpbakery' ),
             'dependency'  => [ 'element' => 'marker_type', 'value' => [ 'circle', 'square' ] ],
-            'group'       => 'Marker',
+            'group'       => esc_html__('Marker', 'chargewp-timeline-addons-for-wpbakery'),
         ],
         [
             'type'        => 'dropdown',
@@ -73,7 +73,7 @@ $params = array_merge(
             'param_name'  => 'marker_border_type',
             'description' => esc_html__( 'Choose marker border type.', 'chargewp-timeline-addons-for-wpbakery' ),
             'dependency'  => [ 'element' => 'marker_type', 'value' => [ 'circle', 'square' ] ],
-            'group'       => 'Marker',
+            'group'       => esc_html__('Marker', 'chargewp-timeline-addons-for-wpbakery'),
         ],
         [
             'type'        => 'colorpicker',
@@ -82,7 +82,7 @@ $params = array_merge(
             'param_name'  => 'marker_border_color',
             'description' => esc_html__( 'Select custom color for marker border.', 'chargewp-timeline-addons-for-wpbakery' ),
             'dependency'  => [ 'element' => 'marker_type', 'value' => [ 'circle', 'square' ] ],
-            'group'       => 'Marker',
+            'group'       => esc_html__('Marker', 'chargewp-timeline-addons-for-wpbakery'),
         ],
         [
             'type'        => 'colorpicker',
@@ -91,7 +91,7 @@ $params = array_merge(
             'param_name'  => 'marker_border_hover_color',
             'description' => esc_html__( 'Select custom color for marker border hover.', 'chargewp-timeline-addons-for-wpbakery' ),
             'dependency'  => [ 'element' => 'marker_type', 'value' => [ 'circle', 'square' ] ],
-            'group'       => 'Marker',
+            'group'       => esc_html__('Marker', 'chargewp-timeline-addons-for-wpbakery'),
         ],
         [
             'type'        => 'chargewp-number',
@@ -102,7 +102,7 @@ $params = array_merge(
             'heading'     => esc_html__( 'Marker Width', 'chargewp-timeline-addons-for-wpbakery' ),
             'param_name'  => 'marker_width',
             'description' => esc_html__( 'Set custom width in px from 15 to 100 for marker.', 'chargewp-timeline-addons-for-wpbakery' ),
-            'group'       => 'Marker',
+            'group'       => esc_html__('Marker', 'chargewp-timeline-addons-for-wpbakery'),
             'dependency'  => [ 'element' => 'marker_type', 'value' => [ 'circle', 'square' ] ],
             'title'       => esc_html__( 'px', 'chargewp-timeline-addons-for-wpbakery' ),
         ],
@@ -115,7 +115,7 @@ $params = array_merge(
             'heading'     => esc_html__( 'Marker Height', 'chargewp-timeline-addons-for-wpbakery' ),
             'param_name'  => 'marker_height',
             'description' => esc_html__( 'Set custom height in px from 15 to 100 for marker.', 'chargewp-timeline-addons-for-wpbakery' ),
-            'group'       => 'Marker',
+            'group'       => esc_html__('Marker', 'chargewp-timeline-addons-for-wpbakery'),
             'dependency'  => [ 'element' => 'marker_type', 'value' => [ 'circle', 'square' ] ],
             'title'       => esc_html__( 'px', 'chargewp-timeline-addons-for-wpbakery' ),
         ],
@@ -130,7 +130,7 @@ $params = array_merge(
             'param_name'  => 'marker_border_style',
             'description' => esc_html__( 'Choose marker border style.', 'chargewp-timeline-addons-for-wpbakery' ),
             'dependency'  => [ 'element' => 'marker_type', 'value' => [ 'circle', 'square' ] ],
-            'group'       => 'Marker',
+            'group'       => esc_html__('Marker', 'chargewp-timeline-addons-for-wpbakery'),
         ],
         [
             'type'        => 'dropdown',
@@ -147,10 +147,61 @@ $params = array_merge(
             'param_name'  => 'marker_rotation_degree',
             'description' => esc_html__( 'Choose rotation degree.', 'chargewp-timeline-addons-for-wpbakery' ),
             'dependency'  => [ 'element' => 'marker_type', 'value' => [ 'circle', 'square' ] ],
-            'group'       => 'Marker',
+            'group'       => esc_html__('Marker', 'chargewp-timeline-addons-for-wpbakery'),
         ],
     ],
-    $custom_icon_integration->add_icon_checkbox( [ 'background_style', 'align', 'link', 'background_color', 'custom_background_color' ] )
+    $custom_icon_integration->add_icon_checkbox( [ 'background_style', 'align', 'link', 'background_color', 'custom_background_color' ] ),
+    [
+        [
+            'type'             => 'textfield',
+            'value'            => 'Feb 2015',
+            'heading'          => esc_html__( 'Date', 'chargewp-timeline-addons-for-wpbakery' ),
+            'admin_label'      => true,
+            'param_name'       => 'date',
+            'description'      => esc_html__( 'Initially, it was designed as a date field, but you can use it as a regular text as well. ', 'chargewp-timeline-addons-for-wpbakery' ),
+            'edit_field_class' => 'vc_col-sm-9',
+            'group'            => esc_html__('Content', 'chargewp-timeline-addons-for-wpbakery'),
+        ],
+		[
+            'type'             => 'checkbox',
+            'heading'          => esc_html__( 'Use custom font?', 'chargewp-timeline-addons-for-wpbakery' ),
+            'param_name'       => 'use_custom_fonts_date',
+            'description'      => esc_html__( 'Enable custom font option.', 'chargewp-timeline-addons-for-wpbakery' ),
+            'edit_field_class' => 'vc_col-sm-3',
+            'group'            => esc_html__('Content', 'chargewp-timeline-addons-for-wpbakery'),
+        ],
+	],
+	$custom_heading_integration->add_custom_font_to_field( 'date', 'Date', [ 'exclude' => [ 'source', 'text', 'css' ] ], [ 'tag', 'text_align' ] ),
+    [
+        [
+            'type'             => 'textfield',
+            'value'            => 'Lorem ipsum.',
+            'heading'          => esc_html__( 'Title', 'chargewp-timeline-addons-for-wpbakery' ),
+            'admin_label'      => true,
+            'param_name'       => 'title',
+            'description'      => esc_html__( 'Enter text for title line.', 'chargewp-timeline-addons-for-wpbakery' ),
+            'edit_field_class' => 'vc_col-sm-9',
+            'group'            => esc_html__('Content', 'chargewp-timeline-addons-for-wpbakery'),
+        ],
+        [
+            'type'             => 'checkbox',
+            'heading'          => esc_html__( 'Use custom font?', 'chargewp-timeline-addons-for-wpbakery' ),
+            'param_name'       => 'use_custom_fonts_title',
+            'description'      => esc_html__( 'Enable custom font option.', 'chargewp-timeline-addons-for-wpbakery' ),
+            'edit_field_class' => 'vc_col-sm-3',
+            'group'            => esc_html__('Content', 'chargewp-timeline-addons-for-wpbakery'),
+        ],
+    ],
+    $custom_heading_integration->add_custom_font_to_field( 'title', 'Title', [ 'exclude' => [ 'source', 'text', 'css' ] ], [ 'tag', 'text_align' ] ),
+    [
+        [
+            'type'       => 'textarea_html',
+            'heading'    => esc_html__( 'Text', 'chargewp-timeline-addons-for-wpbakery' ),
+            'param_name' => 'content',
+            'value'      => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam necessitatibus numquam earum ipsa fugiat veniam suscipit, officiis repudiandae, eum recusandae neque dignissimos. Cum fugit laboriosam culpa, repellendus esse commodi deserunt.',
+            'group'            => esc_html__('Content', 'chargewp-timeline-addons-for-wpbakery'),
+        ],
+    ]
 );
 
 return [
