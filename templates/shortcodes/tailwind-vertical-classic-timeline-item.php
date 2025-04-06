@@ -72,11 +72,8 @@ $custom_icon_integration = new CustomIconIntegration();
                 ">
                     <?php
                     if ( 'true' === $atts['add_icon'] ) {
-                        vc_icon_element_fonts_enqueue( $atts['i_type'] );
-                        $icon_class = $custom_icon_integration->get_element_icon_class( $atts );
-                        $icon_color = $custom_icon_integration->get_element_icon_color( $atts );
+                        $custom_icon_integration->output_icon_integration( $_this, $atts, 'i_');
                         ?>
-                        <i class="<?php echo esc_attr( $icon_class ); ?>" style="color: <?php echo esc_attr( $icon_color ); ?>"></i>
                         <?php
                     }
                     ?>

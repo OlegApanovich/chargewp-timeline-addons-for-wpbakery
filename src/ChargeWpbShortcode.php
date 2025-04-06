@@ -349,4 +349,29 @@ class ChargeWpbShortcode {
 	public function output_style_shortcode_id() {
 		echo '[' . esc_attr( $this->get_data_attribute_id() ) . '="' . esc_attr( $this->id ) . '"]';
 	}
+
+    /**
+     * We use it when want to get output template element shortcode
+     * that was already integrated in current element.
+     *
+     * @since 1.1
+     * @param array $atts
+     * @param string $integrated_slug
+     * @param string $integrated_prefix we use this prefix to find integrated shortcode atts
+     * that contains our current shortcode atts
+     * @throws \Exception
+     *
+     * @return string
+     */
+    public function get_integrated_shortcode_output( $atts, $integrated_slug, $integrated_prefix ) {
+        $data = vc_map_integrate_parse_atts( $this->element_slug, $integrated_slug, $atts, $integrated_prefix );
+        if ( $data ) {
+            $integrated_shortcode = wpbakery()->getShortCode( 'vc_icon' );
+            if ( is_object( $integrated_shortcode ) ) {
+                return $integrated_shortcode->render( array_filter( $data ) );
+            }
+        }
+
+        return '';
+    }
 }

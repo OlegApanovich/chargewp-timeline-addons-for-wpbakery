@@ -150,7 +150,7 @@ $params = array_merge(
             'group'       => 'Marker',
         ],
     ],
-    $custom_icon_integration->add_icon_checkbox( [ 'background_style', 'align', 'link', 'background_color', 'custom_background_color', 'size' ] )
+    $custom_icon_integration->add_icon_checkbox( [ 'background_style', 'align', 'link', 'background_color', 'custom_background_color' ] )
 );
 
 return [
