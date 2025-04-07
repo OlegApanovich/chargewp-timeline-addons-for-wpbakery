@@ -30,7 +30,7 @@ class ElementParams {
 	 * @since 1.1
 	 */
 	public function init_custom_element_params() {
-		$param_list = chargewpwpbtimeline_config( 'elements-params' );
+		$param_list = chargewpwpbtimeline_config( 'element-custom-params' );
 
 		foreach ( $param_list as $param_slug ) {
 			$result = $this->init_single_param( $param_slug );
