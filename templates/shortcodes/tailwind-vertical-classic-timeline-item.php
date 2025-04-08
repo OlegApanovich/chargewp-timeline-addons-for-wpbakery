@@ -9,7 +9,6 @@
 
 defined( 'ABSPATH' ) || exit;
 ?>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <div <?php $_this->output_shortcode_wrapper_attributes( [ 'class' => 'chargewp-tailwind-vertical-classic-timeline-item-container relative flex flex-col sm:flex-row items-center sm:items-center justify-between group' ] ); ?>>
     <?php
     if ('right' === $atts['rotation']) {
