@@ -52,6 +52,7 @@ return [
             esc_html__( 'Full', 'js_composer' ) => 'full',
         ],
         'border_type' => [
+            esc_html__( 'None', 'chargewp-timeline-addons-for-wpbakery' ) => '0',
             esc_html__( 'Slim', 'chargewp-timeline-addons-for-wpbakery' ) => '2',
             esc_html__( 'Middle', 'chargewp-timeline-addons-for-wpbakery' ) => '4',
             esc_html__( 'Bold', 'chargewp-timeline-addons-for-wpbakery' ) => '8',

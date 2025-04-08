@@ -28,7 +28,7 @@ if ( 'no' !== $atts['marker_type'] ) {
                 border-[<?php echo esc_attr( $atts['marker_border_color'] ); ?>]
                 border-<?php echo esc_attr( $atts['marker_border_style'] ); ?>
                 group-hover:border-[<?php echo esc_attr( $atts['marker_border_hover_color'] ); ?>]
-                rotate-<?php echo esc_attr( $atts['marker_rotation_degree'] ); ?>
+                <?php echo esc_attr($atts['marker_negative_rotation_degree']) ? '-' : '' ?>rotate-<?php echo esc_attr( $atts['marker_rotation_degree'] ); ?>
                 hidden
                 sm:flex
                 items-center

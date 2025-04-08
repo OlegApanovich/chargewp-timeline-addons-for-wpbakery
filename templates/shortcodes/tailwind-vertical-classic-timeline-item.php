@@ -34,35 +34,27 @@ defined( 'ABSPATH' ) || exit;
                     '_this' => $_this,
                 ]
             );
-            ?>
-            <div class="w-full sm:w-[48%] pl-0 sm:pl-[4%] md:pl-[6%] order-1 sm:order-2 text-center sm:text-left mb-4 sm:mb-0">
-                <?php
-                chargewpwpbtimeline_include_template(
-                    'shortcodes/partials/tailwind-vertical-classic-timeline-item/content.php',
-                    [
-                        'atts' => $atts,
-                        'content' => $content,
-                        '_this' => $_this,
-                    ]
-                );
-                ?>
-            </div>
-        <?php
+            chargewpwpbtimeline_include_template(
+                'shortcodes/partials/tailwind-vertical-classic-timeline-item/content.php',
+                [
+                    'atts' => $atts,
+                    'content' => $content,
+                    '_this' => $_this,
+                    'default_classes' => 'w-full sm:w-[48%] pl-0 sm:pl-[4%] md:pl-[6%] order-1 sm:order-2 text-center sm:text-left mb-4 sm:mb-0',
+                ]
+            );
     } else {
         ?>
-            <div class="w-full sm:w-[48%] pr-0 sm:pr-[4%] md:pr-[6%] text-center sm:text-right mb-4 sm:mb-0">
-                <?php
-                chargewpwpbtimeline_include_template(
-                    'shortcodes/partials/tailwind-vertical-classic-timeline-item/content.php',
-                    [
-                        'atts' => $atts,
-                        'content' => $content,
-                        '_this' => $_this,
-                    ]
-                );
-                ?>
-            </div>
             <?php
+            chargewpwpbtimeline_include_template(
+                'shortcodes/partials/tailwind-vertical-classic-timeline-item/content.php',
+                [
+                    'atts' => $atts,
+                    'content' => $content,
+                    '_this' => $_this,
+                    'default_classes' => 'w-full sm:w-[48%] pr-0 sm:pr-[4%] md:pr-[6%] text-center sm:text-right mb-4 sm:mb-0',
+                ]
+            );
             chargewpwpbtimeline_include_template(
                 'shortcodes/partials/tailwind-vertical-classic-timeline-item/marker.php',
                 [
