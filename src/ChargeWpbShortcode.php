@@ -20,7 +20,7 @@ class ChargeWpbShortcode {
 	/**
 	 * Element slug.
 	 *
-     * @since 1.0
+	 * @since 1.0
 	 * @var string
 	 */
 	public $element_slug;
@@ -28,7 +28,7 @@ class ChargeWpbShortcode {
 	/**
 	 * Element template render file.
 	 *
-     * @since 1.0
+	 * @since 1.0
 	 * @var string
 	 */
 	public $template;
@@ -36,7 +36,7 @@ class ChargeWpbShortcode {
 	/**
 	 * Shortcode attributes.
 	 *
-     * @since 1.0
+	 * @since 1.0
 	 * @var array
 	 */
 	public $shortcode_atts;
@@ -44,7 +44,7 @@ class ChargeWpbShortcode {
 	/**
 	 * Shortcode attributes.
 	 *
-     * @since 1.0
+	 * @since 1.0
 	 * @var array
 	 */
 	public $config;
@@ -53,7 +53,7 @@ class ChargeWpbShortcode {
 	 * Shortcode id.
 	 * It's uniq id that we use only for our plugin elements.
 	 *
-     * @since 1.0
+	 * @since 1.0
 	 * @var string
 	 */
 	public $id;
@@ -61,14 +61,14 @@ class ChargeWpbShortcode {
 	/**
 	 * Shortcode attributes.
 	 *
-     * @since 1.0
+	 * @since 1.0
 	 * @var WPBakeryShortCode
 	 */
 	public $wpb_shortcode;
 
 	/**
 	 * We set this data for each element in config/elements.php.
-     *
+	 *
 	 * @since 1.0
 	 * @var array
 	 */
@@ -77,7 +77,7 @@ class ChargeWpbShortcode {
 	/**
 	 * External assets prefix.
 	 *
-     * @since 1.1
+	 * @since 1.1
 	 * @var string
 	 */
 	public $external_assets_prefix = 'chargewp';
@@ -350,28 +350,27 @@ class ChargeWpbShortcode {
 		echo '[' . esc_attr( $this->get_data_attribute_id() ) . '="' . esc_attr( $this->id ) . '"]';
 	}
 
-    /**
-     * We use it when want to get output template element shortcode
-     * that was already integrated in current element.
-     *
-     * @since 1.1
-     * @param array $atts
-     * @param string $integrated_slug
-     * @param string $integrated_prefix we use this prefix to find integrated shortcode atts
-     * that contains our current shortcode atts
-     * @throws \Exception
-     *
-     * @return string
-     */
-    public function get_integrated_shortcode_output( $atts, $integrated_slug, $integrated_prefix ) {
-        $data = vc_map_integrate_parse_atts( $this->element_slug, $integrated_slug, $atts, $integrated_prefix );
-        if ( $data ) {
-            $integrated_shortcode = wpbakery()->getShortCode( 'vc_icon' );
-            if ( is_object( $integrated_shortcode ) ) {
-                return $integrated_shortcode->render( array_filter( $data ) );
-            }
-        }
+	/**
+	 * We use it when want to get output template element shortcode
+	 * that was already integrated in current element.
+	 *
+	 * @since 1.1
+	 * @param array  $atts
+	 * @param string $integrated_slug
+	 * @param string $integrated_prefix we use this prefix to find integrated shortcode atts,
+	 * that contains our current shortcode atts.
+	 *
+	 * @return string
+	 */
+	public function get_integrated_shortcode_output( $atts, $integrated_slug, $integrated_prefix ) {
+		$data = vc_map_integrate_parse_atts( $this->element_slug, $integrated_slug, $atts, $integrated_prefix );
+		if ( $data ) {
+			$integrated_shortcode = wpbakery()->getShortCode( 'vc_icon' );
+			if ( is_object( $integrated_shortcode ) ) {
+				return $integrated_shortcode->render( array_filter( $data ) );
+			}
+		}
 
-        return '';
-    }
+		return '';
+	}
 }

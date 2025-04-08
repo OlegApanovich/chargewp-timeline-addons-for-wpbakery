@@ -11,10 +11,10 @@ defined( 'ABSPATH' ) || exit;
 
 $params = [
 	[
-		'type'        => 'chargewp-notice',
-	    'level'       => 'warning',
-	    'notice'      => '<b>The Tailwind environment may apply additional CSS styles to the entire current page, not just the current element. Please check the page output after using Tailwind elements.</b>',
-        'param_name'  => 'tailwind_notice',
+		'type'       => 'chargewp-notice',
+		'level'      => 'warning',
+		'notice'     => '<b>The Tailwind environment may apply additional CSS styles to the entire current page, not just the current element. Please check the page output after using Tailwind elements.</b>',
+		'param_name' => 'tailwind_notice',
 	],
 	[
 		'type'        => 'colorpicker',
@@ -36,19 +36,18 @@ $params = [
 ];
 
 return [
-	'name'                            => __( 'Tailwind Vertical Classic Timeline', 'chargewp-timeline-addons-for-wpbakery' ),
-	'base'                            => 'chargewp-tailwind-vertical-classic-timeline',
-	'icon'                            => 'chargewp-tailwind-vertical-classic-timeline',
-	'class'                           => 'chargewp-tailwind-vertical-classic-timeline',
-	'category'                        => 'ChargeWP',
-	'description'                     => __( 'Timeline element with base on tailwind css framework with classic vertical interface.', 'chargewp-timeline-addons-for-wpbakery' ),
-	'php_class_name'                  => ChargeWpbShortcodeContainerEmpty::class,
-	'as_parent'                       => [ 'only' => 'chargewp-tailwind-vertical-classic-timeline-item' ],
-	'content_element'                 => true,
-	// 'default_content'         => '',
-			'show_settings_on_create' => true,
-	'js_view'                         => 'VcColumnView',
-	'params'                          => array_merge(
+	'name'                    => __( 'Tailwind Vertical Classic Timeline', 'chargewp-timeline-addons-for-wpbakery' ),
+	'base'                    => 'chargewp-tailwind-vertical-classic-timeline',
+	'icon'                    => 'chargewp-tailwind-vertical-classic-timeline',
+	'class'                   => 'chargewp-tailwind-vertical-classic-timeline',
+	'category'                => 'ChargeWP',
+	'description'             => __( 'Timeline element with base on tailwind css framework with classic vertical interface.', 'chargewp-timeline-addons-for-wpbakery' ),
+	'php_class_name'          => ChargeWpbShortcodeContainerEmpty::class,
+	'as_parent'               => [ 'only' => 'chargewp-tailwind-vertical-classic-timeline-item' ],
+	'content_element'         => true,
+	'show_settings_on_create' => true,
+	'js_view'                 => 'VcColumnView',
+	'params'                  => array_merge(
 		$params,
 		[ vc_map_add_css_animation() ],
 		chargewpwpbtimeline_config( 'shortcode-container-config' )

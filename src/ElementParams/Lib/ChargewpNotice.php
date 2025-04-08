@@ -42,32 +42,32 @@ class ChargewpNotice extends ElementParamsAbstract {
 		$values = [];
 
 		foreach ( $this->get_param_default_attr_list() as $name ) {
-            if ( 'level' === $name ) {
-                if ( in_array( $settings[ $name ], $this->get_level_list() ) ) {
-                    $values[ $name ] = 'notice-' . esc_attr( $settings[ $name ] );
-                } else {
-                    $values[ $name ] = 'notice';
-                }
-            } else {
-                $values[ $name ] = $settings[ $name ] ?? '';
-            }
+			if ( 'level' === $name ) {
+				if ( in_array( $settings[ $name ], $this->get_level_list(), true ) ) {
+					$values[ $name ] = 'notice-' . esc_attr( $settings[ $name ] );
+				} else {
+					$values[ $name ] = 'notice';
+				}
+			} else {
+				$values[ $name ] = $settings[ $name ] ?? '';
+			}
 		}
 
 		return $values;
 	}
 
 
-    /**
-     * Get level notice list possible values.
-     *
-     * @return string[]
-     */
-    public function get_level_list() : array {
-        return [
-            'info',
-            'warning',
-            'error',
-            'success',
-        ];
-    }
+	/**
+	 * Get level notice list possible values.
+	 *
+	 * @return string[]
+	 */
+	public function get_level_list(): array {
+		return [
+			'info',
+			'warning',
+			'error',
+			'success',
+		];
+	}
 }

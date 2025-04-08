@@ -81,14 +81,14 @@ return [
 			'external' => [
 				'js' => [
 					'tailwind-cdn-before-setup' => CHARGEWPWPBTIMELINE_ASSETS_URI . '/js/shortcodes-common/tailwind-cdn-before-setup.js',
-					'tailwind-cdn' => 'https://cdn.tailwindcss.com?min',
+					'tailwind-cdn'              => 'https://cdn.tailwindcss.com?min',
 				],
 			],
-            'inner' => [
-                'css' => [
-                    'element.css',
-                ],
-            ],
+			'inner'    => [
+				'css' => [
+					'element.css',
+				],
+			],
 		],
 	],
 	'chargewp-tailwind-vertical-classic-timeline-item' => [

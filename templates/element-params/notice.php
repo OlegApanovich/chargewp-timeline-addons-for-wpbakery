@@ -12,8 +12,8 @@
  */
 
 ?>
-<div class="notice <?php echo esc_attr($settings['level']) ?> update-nag inline" style="margin: 0">
-    <?php
-    echo wp_kses_post($settings['notice']);
-    ?>
+<div class="notice <?php echo esc_attr( $settings['level'] ); ?> update-nag inline" style="margin: 0">
+	<?php
+	echo wp_kses_post( $settings['notice'] );
+	?>
 </div>

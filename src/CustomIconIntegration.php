@@ -127,16 +127,16 @@ class CustomIconIntegration {
 		return isset( $color_lib[ $color_name ] ) ? $color_lib[ $color_name ] : $color_lib['default'];
 	}
 
-    /**
-     * Output integrated icon
-     *
-     * @since 1.1
-     * @param ChargeWpbShortcode $shortcode
-     * @param array $atts
-     * @param string $prefix
-     */
-    public function output_icon_integration( $shortcode, $atts, $prefix ) {
+	/**
+	 * Output integrated icon
+	 *
+	 * @since 1.1
+	 * @param ChargeWpbShortcode $shortcode
+	 * @param array              $atts
+	 * @param string             $prefix
+	 */
+	public function output_icon_integration( $shortcode, $atts, $prefix ) {
         // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-        echo $shortcode->get_integrated_shortcode_output( $atts, 'vc_icon', $prefix );
-    }
+		echo $shortcode->get_integrated_shortcode_output( $atts, 'vc_icon', $prefix );
+	}
 }

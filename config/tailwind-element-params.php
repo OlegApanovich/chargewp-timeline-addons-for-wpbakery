@@ -5,6 +5,4 @@
  * @since 1.0
  */
 
-return [
-
-];
+return [];
