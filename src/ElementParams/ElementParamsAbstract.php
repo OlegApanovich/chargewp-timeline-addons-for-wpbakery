@@ -31,7 +31,7 @@ abstract class ElementParamsAbstract {
 	 * @since 1.1
 	 * @var string
 	 */
-	public string $param_slug;
+	public $param_slug;
 
 	/**
 	 * ElementParamsAbstract constructor.

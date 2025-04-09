@@ -22,7 +22,7 @@ class ElementParams {
 	 * @since 1.1
 	 * @var string
 	 */
-	public string $namespace_prefix = 'ChargewpWpbTimeline\ElementParams\Lib\\';
+	public $namespace_prefix = 'ChargewpWpbTimeline\ElementParams\Lib\\';
 
 	/**
 	 * Initialize element custom params.
@@ -48,7 +48,7 @@ class ElementParams {
 	 *
 	 * @return bool
 	 */
-	public function init_single_param( string $param_slug ) {
+	public function init_single_param( string $param_slug ): bool {
 		$param_instance = $this->get_param_instance( $param_slug );
 
 		if ( version_compare( WPB_VC_VERSION, 4.8 ) >= 0 ) {
