@@ -4,6 +4,10 @@
     <desc>Vertical zigzag timeline with sections and markers</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+
+        <!-- White background -->
+        <rect x="0" y="0" width="32" height="32" fill="#FFFFFF"></rect>
+
         <g id="Zigzag-Timeline">
             <!-- Horizontal sections on the right side -->
             <rect x="8" y="6" width="16" height="4" fill="#D1D1D1"></rect>

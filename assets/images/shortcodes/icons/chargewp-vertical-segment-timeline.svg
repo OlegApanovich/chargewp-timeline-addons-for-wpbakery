@@ -5,6 +5,10 @@
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Vertical-Segment-Timeline">
+
+            <!-- White background -->
+            <rect x="0" y="0" width="32" height="32" fill="#FFFFFF"></rect>
+
             <!-- Vertical line representing the timeline on the left side -->
             <rect id="Timeline" x="4" y="0" width="4" height="32" fill="#4A90E2" rx="2"></rect>
 
