@@ -64,7 +64,12 @@ $params = array_merge(
 		],
 		[
 			'type'        => 'dropdown',
-			'value'       => chargewpwpbtimeline_config( 'element-params' )['tailwind']['border_type'],
+			'value'       => [
+                esc_html__( 'Slim', 'chargewp-timeline-addons-for-wpbakery' ) => '2',
+                esc_html__( 'Middle', 'chargewp-timeline-addons-for-wpbakery' ) => '4',
+                esc_html__( 'Bold', 'chargewp-timeline-addons-for-wpbakery' ) => '8',
+                esc_html__( 'None', 'chargewp-timeline-addons-for-wpbakery' ) => '0',
+            ],
 			'heading'     => esc_html__( 'Border Type', 'chargewp-timeline-addons-for-wpbakery' ),
 			'param_name'  => 'marker_border_type',
 			'description' => esc_html__( 'Choose border type.', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -100,11 +105,7 @@ $params = array_merge(
 		],
 		[
 			'type'        => 'dropdown',
-			'value'       => [
-				esc_html__( 'Slim', 'chargewp-timeline-addons-for-wpbakery' ) => '2',
-				esc_html__( 'Middle', 'chargewp-timeline-addons-for-wpbakery' ) => '4',
-				esc_html__( 'Bold', 'chargewp-timeline-addons-for-wpbakery' ) => '8',
-			],
+			'value'       => chargewpwpbtimeline_config( 'element-params' )['tailwind']['border_style'],
 			'heading'     => esc_html__( 'Border Style', 'chargewp-timeline-addons-for-wpbakery' ),
 			'param_name'  => 'marker_border_style',
 			'description' => esc_html__( 'Choose border style.', 'chargewp-timeline-addons-for-wpbakery' ),
