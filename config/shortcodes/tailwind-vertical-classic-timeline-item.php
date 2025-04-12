@@ -17,12 +17,6 @@ $custom_icon_integration    = new CustomIconIntegration();
 $params = array_merge(
 	[
 		[
-			'type'       => 'chargewp-notice',
-			'level'      => 'warning',
-			'notice'     => '<b>The Tailwind environment may apply additional CSS styles to the entire current page, not just the current element. Please check the page output after using Tailwind elements.</b>',
-			'param_name' => 'tailwind_notice',
-		],
-		[
 			'type'        => 'dropdown',
 			'value'       => [
 				esc_html__( 'Left', 'chargewp-timeline-addons-for-wpbakery' ) => 'left',

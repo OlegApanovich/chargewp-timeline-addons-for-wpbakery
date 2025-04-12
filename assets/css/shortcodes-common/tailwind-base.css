@@ -1,0 +1,350 @@
+*, ::before, ::after {
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x:  ;
+    --tw-pan-y:  ;
+    --tw-pinch-zoom:  ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-gradient-from-position:  ;
+    --tw-gradient-via-position:  ;
+    --tw-gradient-to-position:  ;
+    --tw-ordinal:  ;
+    --tw-slashed-zero:  ;
+    --tw-numeric-figure:  ;
+    --tw-numeric-spacing:  ;
+    --tw-numeric-fraction:  ;
+    --tw-ring-inset:  ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgb(59 130 246 / 0.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur:  ;
+    --tw-brightness:  ;
+    --tw-contrast:  ;
+    --tw-grayscale:  ;
+    --tw-hue-rotate:  ;
+    --tw-invert:  ;
+    --tw-saturate:  ;
+    --tw-sepia:  ;
+    --tw-drop-shadow:  ;
+    --tw-backdrop-blur:  ;
+    --tw-backdrop-brightness:  ;
+    --tw-backdrop-contrast:  ;
+    --tw-backdrop-grayscale:  ;
+    --tw-backdrop-hue-rotate:  ;
+    --tw-backdrop-invert:  ;
+    --tw-backdrop-opacity:  ;
+    --tw-backdrop-saturate:  ;
+    --tw-backdrop-sepia:  ;
+    --tw-contain-size:  ;
+    --tw-contain-layout:  ;
+    --tw-contain-paint:  ;
+    --tw-contain-style:
+}
+
+::backdrop {
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x:  ;
+    --tw-pan-y:  ;
+    --tw-pinch-zoom:  ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-gradient-from-position:  ;
+    --tw-gradient-via-position:  ;
+    --tw-gradient-to-position:  ;
+    --tw-ordinal:  ;
+    --tw-slashed-zero:  ;
+    --tw-numeric-figure:  ;
+    --tw-numeric-spacing:  ;
+    --tw-numeric-fraction:  ;
+    --tw-ring-inset:  ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgb(59 130 246 / 0.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur:  ;
+    --tw-brightness:  ;
+    --tw-contrast:  ;
+    --tw-grayscale:  ;
+    --tw-hue-rotate:  ;
+    --tw-invert:  ;
+    --tw-saturate:  ;
+    --tw-sepia:  ;
+    --tw-drop-shadow:  ;
+    --tw-backdrop-blur:  ;
+    --tw-backdrop-brightness:  ;
+    --tw-backdrop-contrast:  ;
+    --tw-backdrop-grayscale:  ;
+    --tw-backdrop-hue-rotate:  ;
+    --tw-backdrop-invert:  ;
+    --tw-backdrop-opacity:  ;
+    --tw-backdrop-saturate:  ;
+    --tw-backdrop-sepia:  ;
+    --tw-contain-size:  ;
+    --tw-contain-layout:  ;
+    --tw-contain-paint:  ;
+    --tw-contain-style:
+}
+
+.chargewp-tailwind-container *,
+.chargewp-tailwind-container ::before,
+.chargewp-tailwind-container ::after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+}
+
+.chargewp-tailwind-container ::before,
+.chargewp-tailwind-container ::after {
+    --tw-content: '';
+}
+
+.chargewp-tailwind-container :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.chargewp-tailwind-container hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+}
+
+.chargewp-tailwind-container abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+}
+
+.chargewp-tailwind-container h1,
+.chargewp-tailwind-container h2,
+.chargewp-tailwind-container h3,
+.chargewp-tailwind-container h4,
+.chargewp-tailwind-container h5,
+.chargewp-tailwind-container h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.chargewp-tailwind-container a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.chargewp-tailwind-container b,
+.chargewp-tailwind-container strong {
+    font-weight: bolder;
+}
+
+.chargewp-tailwind-container code,
+.chargewp-tailwind-container kbd,
+.chargewp-tailwind-container samp,
+.chargewp-tailwind-container pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    font-size: 1em;
+}
+
+.chargewp-tailwind-container small {
+    font-size: 80%;
+}
+
+.chargewp-tailwind-container sub,
+.chargewp-tailwind-container sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+.chargewp-tailwind-container sub {
+    bottom: -0.25em;
+}
+
+.chargewp-tailwind-container sup {
+    top: -0.5em;
+}
+
+.chargewp-tailwind-container table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+}
+
+.chargewp-tailwind-container button,
+.chargewp-tailwind-container input,
+.chargewp-tailwind-container optgroup,
+.chargewp-tailwind-container select,
+.chargewp-tailwind-container textarea {
+    font-family: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.chargewp-tailwind-container button,
+.chargewp-tailwind-container select {
+    text-transform: none;
+}
+
+.chargewp-tailwind-container button,
+.chargewp-tailwind-container input:where([type='button']),
+.chargewp-tailwind-container input:where([type='reset']),
+.chargewp-tailwind-container input:where([type='submit']) {
+    -webkit-appearance: button;
+    background-color: transparent;
+    background-image: none;
+}
+
+.chargewp-tailwind-container :-moz-focusring {
+    outline: auto;
+}
+
+.chargewp-tailwind-container :-moz-ui-invalid {
+    box-shadow: none;
+}
+
+.chargewp-tailwind-container progress {
+    vertical-align: baseline;
+}
+
+.chargewp-tailwind-container ::-webkit-inner-spin-button,
+.chargewp-tailwind-container ::-webkit-outer-spin-button {
+    height: auto;
+}
+
+.chargewp-tailwind-container [type='search'] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+}
+
+.chargewp-tailwind-container ::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+.chargewp-tailwind-container ::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+}
+
+.chargewp-tailwind-container summary {
+    display: list-item;
+}
+
+.chargewp-tailwind-container blockquote,
+.chargewp-tailwind-container dl,
+.chargewp-tailwind-container dd,
+.chargewp-tailwind-container h1,
+.chargewp-tailwind-container h2,
+.chargewp-tailwind-container h3,
+.chargewp-tailwind-container h4,
+.chargewp-tailwind-container h5,
+.chargewp-tailwind-container h6,
+.chargewp-tailwind-container hr,
+.chargewp-tailwind-container figure,
+.chargewp-tailwind-container p,
+.chargewp-tailwind-container pre {
+    margin: 0;
+}
+
+.chargewp-tailwind-container fieldset {
+    margin: 0;
+    padding: 0;
+}
+
+.chargewp-tailwind-container legend {
+    padding: 0;
+}
+
+.chargewp-tailwind-container ol,
+.chargewp-tailwind-container ul,
+.chargewp-tailwind-container menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chargewp-tailwind-container dialog {
+    padding: 0;
+}
+
+.chargewp-tailwind-container textarea {
+    resize: vertical;
+}
+
+.chargewp-tailwind-container input::-moz-placeholder,
+.chargewp-tailwind-container textarea::-moz-placeholder {
+    opacity: 1;
+    color: #9ca3af;
+}
+
+.chargewp-tailwind-container input::placeholder,
+.chargewp-tailwind-container textarea::placeholder {
+    opacity: 1;
+    color: #9ca3af;
+}
+
+.chargewp-tailwind-container button,
+.chargewp-tailwind-container [role="button"] {
+    cursor: pointer;
+}
+
+.chargewp-tailwind-container :disabled {
+    cursor: default;
+}
+
+.chargewp-tailwind-container img,
+.chargewp-tailwind-container svg,
+.chargewp-tailwind-container video,
+.chargewp-tailwind-container canvas,
+.chargewp-tailwind-container audio,
+.chargewp-tailwind-container iframe,
+.chargewp-tailwind-container embed,
+.chargewp-tailwind-container object {
+    display: block;
+    vertical-align: middle;
+}
+
+.chargewp-tailwind-container img,
+.chargewp-tailwind-container video {
+    max-width: 100%;
+    height: auto;
+}
+
+.chargewp-tailwind-container [hidden]:where(:not([hidden="until-found"])) {
+    display: none;
+}
