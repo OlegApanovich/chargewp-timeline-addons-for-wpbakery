@@ -23,17 +23,17 @@ if ( $img_src ) {
 	<img
 		src="<?php echo esc_url( $img_src ); ?>"
 		alt="Digital Media"
-		class="transform
-			w-full
-			aspect-video
-			object-<?php echo esc_attr( $atts['image_fit'] ); ?>
-			rounded-<?php echo esc_attr( $atts['image_rounded'] ); ?>
-			shadow-<?php echo esc_attr( $atts['image_shadow'] ); ?>
-			<?php echo esc_attr( $atts['image_negative_rotation_degree'] ) ? '-' : ''; ?>rotate-<?php echo esc_attr( $atts['image_rotation_degree'] ); ?>
-			border-<?php echo esc_attr( $atts['image_border_type'] ); ?>
-			border-[<?php echo esc_attr( $atts['image_border_color'] ); ?>]
-			border-<?php echo esc_attr( $atts['image_border_style'] ); ?>
-			group-hover:border-[<?php echo esc_attr( $atts['image_border_hover_color'] ); ?>]"
+		class="chargewp-transform
+		    chargewp-w-full
+			chargewp-aspect-video
+			chargewp-object-<?php echo esc_attr( $atts['image_fit'] ); ?>
+			chargewp-rounded-<?php echo esc_attr( $atts['image_rounded'] ); ?>
+			chargewp-shadow-<?php echo esc_attr( $atts['image_shadow'] ); ?>
+			<?php echo esc_attr( $atts['image_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-<?php echo esc_attr( $atts['image_rotation_degree'] ); ?>
+			chargewp-border-<?php echo esc_attr( $atts['image_border_type'] ); ?>
+			chargewp-border-[<?php echo esc_attr( $atts['image_border_color'] ); ?>]
+			chargewp-border-<?php echo esc_attr( $atts['image_border_style'] ); ?>
+			chargewp-group-hover:border-[<?php echo esc_attr( $atts['image_border_hover_color'] ); ?>]"
 	>
 	<?php
 }
