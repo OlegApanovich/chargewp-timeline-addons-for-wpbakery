@@ -5,7 +5,7 @@
  * @since 1.0
  */
 
-namespace ChargewpWpbTimeline;
+namespace ChargewpWpbTimeline\Shortcodes;
 
 use WPBakeryShortCode;
 

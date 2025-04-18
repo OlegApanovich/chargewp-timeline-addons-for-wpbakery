@@ -10,6 +10,7 @@ namespace ChargewpWpbTimeline;
 use Exception;
 use WPBakeryShortCode;
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeEmpty;
+use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcode;
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeContainerEmpty;
 use ChargewpWpbTimeline\ElementParams\ElementParams;
 
