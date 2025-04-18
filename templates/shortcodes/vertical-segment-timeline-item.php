@@ -4,7 +4,7 @@
  *
  * @var array $atts
  * @var string $content - shortcode content
- * @var ChargewpWpbTimeline\ChargeWpbShortcode $_this
+ * @var ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcode $_this
  */
 
 defined( 'ABSPATH' ) || exit;

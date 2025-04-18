@@ -4,7 +4,7 @@
  *
  * @var array $atts
  * @var string $content - shortcode content
- * @var ChargewpWpbTimeline\ChargeWpbShortcode $_this
+ * @var ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcode $_this
  */
 
 $img_src = '';
@@ -22,7 +22,7 @@ if ( $img_src ) {
 	?>
 	<img
 		src="<?php echo esc_url( $img_src ); ?>"
-		alt="Digital Media"
+		alt="<?php echo esc_attr( $img_alt )?>"
 		class="chargewp-transform
 		    chargewp-w-full
 			chargewp-aspect-video
@@ -37,3 +37,10 @@ if ( $img_src ) {
 	>
 	<?php
 }
+?>
+
+<style>
+    <?php $_this->output_style_shortcode_id(); ?> .chargewp-tailwind-container .chargewp-object-<?php echo esc_attr( $atts['image_fit'] ); ?> {
+        object-fit: <?php echo esc_attr( $atts['image_fit'] ); ?>;
+    }
+</style>

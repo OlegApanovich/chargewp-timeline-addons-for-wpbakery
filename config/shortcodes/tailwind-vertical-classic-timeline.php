@@ -20,9 +20,9 @@ $params = [
 	[
 		'type'        => 'chargewp-number',
 		'value'       => '1',
-		'min'         => '0',
+		'min'         => '0.5',
 		'max'         => '10',
-		'step'        => '1',
+		'step'        => '0.5',
 		'heading'     => esc_html__( 'Baseline Width', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'  => 'baseline_width',
 		'description' => esc_html__( 'Set custom width from 0 to 10 for timeline base line.', 'chargewp-timeline-addons-for-wpbakery' ),

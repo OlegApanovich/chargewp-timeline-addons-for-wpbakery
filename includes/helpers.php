@@ -17,7 +17,7 @@ if ( ! function_exists( 'chargewpwpbtimeline_validate_dependency_plugin' ) ) :
 	 * @param string $dependency_plugin_name The dependency plugin name.
 	 * @param string $path_to_plugin Path of the plugin
 	 * to verify with the format 'dependency_plugin/dependency_plugin.php'.
-	 * @param string $version_to_check Optional, verify certain version of the dependent plugin.
+	 * @param string $version_to_check Optional, verify a certain version of the dependent plugin.
 	 *
 	 * @return bool
 	 */
@@ -26,7 +26,8 @@ if ( ! function_exists( 'chargewpwpbtimeline_validate_dependency_plugin' ) ) :
 		$dependency_plugin_name,
 		$path_to_plugin,
 		$version_to_check = null
-	) {
+	): bool
+    {
 		$template_payload = [
 			'my_plugin_name'         => $my_plugin_name,
 			'dependency_plugin_name' => $dependency_plugin_name,
@@ -37,7 +38,7 @@ if ( ! function_exists( 'chargewpwpbtimeline_validate_dependency_plugin' ) ) :
 		$main_plugin_file = WP_PLUGIN_DIR . '/' . $path_to_plugin;
 
 		if ( ! is_plugin_active( $path_to_plugin ) || ! file_exists( $main_plugin_file ) ) {
-			chargewpwpbtimeline_output_plugin_dependen_notice( $template_payload );
+			chargewpwpbtimeline_output_plugin_dependent_notice( $template_payload );
 			return false;
 		}
 
@@ -53,7 +54,7 @@ if ( ! function_exists( 'chargewpwpbtimeline_validate_dependency_plugin' ) ) :
 			);
 
 			if ( $is_required_version ) {
-				chargewpwpbtimeline_output_plugin_dependen_notice( $template_payload );
+				chargewpwpbtimeline_output_plugin_dependent_notice( $template_payload );
 				return false;
 			}
 		}
@@ -62,13 +63,13 @@ if ( ! function_exists( 'chargewpwpbtimeline_validate_dependency_plugin' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'chargewpwpbtimeline_output_plugin_dependen_notice' ) ) :
+if ( ! function_exists( 'chargewpwpbtimeline_output_plugin_dependent_notice' ) ) :
 	/**
 	 * Output the plugin dependency notice.
 	 *
 	 * @param string $template_payload
 	 */
-	function chargewpwpbtimeline_output_plugin_dependen_notice( $template_payload ) {
+	function chargewpwpbtimeline_output_plugin_dependent_notice( $template_payload ) {
 		add_action(
 			'admin_notices',
 			function () use ( $template_payload ) {
@@ -155,7 +156,8 @@ if ( ! function_exists( 'chargewpwpbtimeline_template' ) ) :
 	 *
 	 * @return string
 	 */
-	function chargewpwpbtimeline_template( $file ) {
+	function chargewpwpbtimeline_template( $file ): string
+    {
 		return CHARGEWPWPBTIMELINE_TEMPLATES_DIR . '/' . $file;
 	}
 endif;
@@ -185,5 +187,31 @@ if ( ! function_exists( 'chargewpwpbtimeline_config' ) ) :
 
 		// Retrieve config value.
 		return $loaded_configs[ $path ];
+	}
+endif;
+
+if ( ! function_exists( 'chargewpwpbtimeline_hex_to_rgb' ) ) :
+	/**
+	 * Convert a hex color code to an RGB.
+	 *
+	 * @param string $hex
+	 *
+	 * @return string
+	 */
+	function chargewpwpbtimeline_hex_to_rgb( string $hex ): string
+    {
+        $hex = ltrim($hex, '#');
+
+        // Convert the 3-digit format to 6-digit
+        if (strlen($hex) == 3) {
+            $hex = $hex[0].$hex[0].$hex[1].$hex[1].$hex[2].$hex[2];
+        }
+
+        // Extract the RGB values
+        $r = hexdec(substr($hex, 0, 2));
+        $g = hexdec(substr($hex, 2, 2));
+        $b = hexdec(substr($hex, 4, 2));
+
+        return "$r $g $b";
 	}
 endif;
