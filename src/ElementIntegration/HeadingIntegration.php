@@ -6,18 +6,18 @@
  * @since 1.0
  */
 
-namespace ChargewpWpbTimeline;
+namespace ChargewpWpbTimeline\ElementIntegration;
 
 use Exception;
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class CustomHeadingIntegration
+ * Class HeadingIntegration
  *
  * @since 1.0
  */
-class CustomHeadingIntegration {
+class HeadingIntegration {
 	/**
 	 * Add custom font integration to element attribute textfield.
 	 * It appears near the textfield as checkbox, checked it user can
@@ -151,7 +151,7 @@ class CustomHeadingIntegration {
 
 		$result = $custom_heading->render( array_filter( $data ) );
 
-		// we already has properly escaped value here that we get on integration shortcode level.
+		// we already have properly escaped value here that we get on integration shortcode level.
         // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo $result;
 	}

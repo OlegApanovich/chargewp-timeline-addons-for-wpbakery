@@ -9,8 +9,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
-use ChargewpWpbTimeline\CustomHeadingIntegration;
-$custom_heading_integration = new CustomHeadingIntegration();
+use ChargewpWpbTimeline\ElementIntegration\HeadingIntegration;
+$custom_heading_integration = new HeadingIntegration();
 ?>
 
 <li <?php $_this->output_shortcode_wrapper_attributes( [ 'class' => 'chargewp-horizontal-section-timeline-event' ] ); ?> data-date="<?php echo esc_attr( $atts['date'] ); ?>">

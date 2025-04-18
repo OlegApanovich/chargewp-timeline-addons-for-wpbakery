@@ -8,8 +8,8 @@
  * @var string $default_classes
  */
 
-use ChargewpWpbTimeline\CustomHeadingIntegration;
-$custom_heading_integration = new CustomHeadingIntegration();
+use ChargewpWpbTimeline\ElementIntegration\HeadingIntegration;
+$custom_heading_integration = new HeadingIntegration();
 ?>
 
 <div class="<?php echo esc_attr( $default_classes ); ?>

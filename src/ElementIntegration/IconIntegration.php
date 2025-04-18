@@ -6,16 +6,16 @@
  * @since 1.0
  */
 
-namespace ChargewpWpbTimeline;
+namespace ChargewpWpbTimeline\ElementIntegration;
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class CustomIconIntegration
+ * Class IconIntegration
  *
  * @since 1.0
  */
-class CustomIconIntegration {
+class IconIntegration {
 	/**
 	 * Get custom icon checkbox field params.
 	 *

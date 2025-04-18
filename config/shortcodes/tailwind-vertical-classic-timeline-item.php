@@ -6,13 +6,13 @@
  */
 
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeEmpty;
-use ChargewpWpbTimeline\CustomHeadingIntegration;
-use ChargewpWpbTimeline\CustomIconIntegration;
+use ChargewpWpbTimeline\ElementIntegration\HeadingIntegration;
+use ChargewpWpbTimeline\ElementIntegration\IconIntegration;
 
 defined( 'ABSPATH' ) || exit;
 
-$custom_heading_integration = new CustomHeadingIntegration();
-$custom_icon_integration    = new CustomIconIntegration();
+$custom_heading_integration = new HeadingIntegration();
+$custom_icon_integration    = new IconIntegration();
 
 $params = array_merge(
 	[

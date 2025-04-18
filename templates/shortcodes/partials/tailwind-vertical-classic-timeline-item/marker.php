@@ -7,8 +7,8 @@
  * @var ChargewpWpbTimeline\ChargeWpbShortcode $_this
  */
 
-use ChargewpWpbTimeline\CustomIconIntegration;
-$custom_icon_integration = new CustomIconIntegration();
+use ChargewpWpbTimeline\ElementIntegration\IconIntegration;
+$custom_icon_integration = new IconIntegration();
 
 if ( 'no' !== $atts['marker_type'] ) {
 	?>

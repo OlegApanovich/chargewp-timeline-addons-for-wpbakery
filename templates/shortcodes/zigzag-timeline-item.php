@@ -9,10 +9,10 @@
 
 defined( 'ABSPATH' ) || exit;
 
-use ChargewpWpbTimeline\CustomHeadingIntegration;
-use ChargewpWpbTimeline\CustomIconIntegration;
-$custom_heading_integration = new CustomHeadingIntegration();
-$custom_icon_integration    = new CustomIconIntegration();
+use ChargewpWpbTimeline\ElementIntegration\HeadingIntegration;
+use ChargewpWpbTimeline\ElementIntegration\IconIntegration;
+$custom_heading_integration = new HeadingIntegration();
+$custom_icon_integration    = new IconIntegration();
 ?>
 
 <div <?php $_this->output_shortcode_wrapper_attributes( [ 'class' => 'chargewp-zigzag-timeline__event  animated fadeInUp delay-3s4' ] ); ?>>

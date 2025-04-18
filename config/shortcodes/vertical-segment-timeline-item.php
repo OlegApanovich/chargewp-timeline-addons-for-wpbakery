@@ -5,12 +5,12 @@
  * @since 1.0
  */
 
-use ChargewpWpbTimeline\CustomHeadingIntegration;
+use ChargewpWpbTimeline\ElementIntegration\HeadingIntegration;
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeEmpty;
 
 defined( 'ABSPATH' ) || exit;
 
-$custom_heading_integration = new CustomHeadingIntegration();
+$custom_heading_integration = new HeadingIntegration();
 
 $params = array_merge(
 	[
