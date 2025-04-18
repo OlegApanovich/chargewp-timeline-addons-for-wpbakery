@@ -1,3 +1,192 @@
 .chargewp-tailwind-vertical-classic-timeline-container .vc_icon_element {
     margin: 0;
 }
+
+*, ::before, ::after {
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x:  ;
+    --tw-pan-y:  ;
+    --tw-pinch-zoom:  ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-gradient-from-position:  ;
+    --tw-gradient-via-position:  ;
+    --tw-gradient-to-position:  ;
+    --tw-ordinal:  ;
+    --tw-slashed-zero:  ;
+    --tw-numeric-figure:  ;
+    --tw-numeric-spacing:  ;
+    --tw-numeric-fraction:  ;
+    --tw-ring-inset:  ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgb(59 130 246 / 0.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur:  ;
+    --tw-brightness:  ;
+    --tw-contrast:  ;
+    --tw-grayscale:  ;
+    --tw-hue-rotate:  ;
+    --tw-invert:  ;
+    --tw-saturate:  ;
+    --tw-sepia:  ;
+    --tw-drop-shadow:  ;
+    --tw-backdrop-blur:  ;
+    --tw-backdrop-brightness:  ;
+    --tw-backdrop-contrast:  ;
+    --tw-backdrop-grayscale:  ;
+    --tw-backdrop-hue-rotate:  ;
+    --tw-backdrop-invert:  ;
+    --tw-backdrop-opacity:  ;
+    --tw-backdrop-saturate:  ;
+    --tw-backdrop-sepia:  ;
+    --tw-contain-size:  ;
+    --tw-contain-layout:  ;
+    --tw-contain-paint:  ;
+    --tw-contain-style:
+}
+
+::backdrop {
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x:  ;
+    --tw-pan-y:  ;
+    --tw-pinch-zoom:  ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-gradient-from-position:  ;
+    --tw-gradient-via-position:  ;
+    --tw-gradient-to-position:  ;
+    --tw-ordinal:  ;
+    --tw-slashed-zero:  ;
+    --tw-numeric-figure:  ;
+    --tw-numeric-spacing:  ;
+    --tw-numeric-fraction:  ;
+    --tw-ring-inset:  ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgb(59 130 246 / 0.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur:  ;
+    --tw-brightness:  ;
+    --tw-contrast:  ;
+    --tw-grayscale:  ;
+    --tw-hue-rotate:  ;
+    --tw-invert:  ;
+    --tw-saturate:  ;
+    --tw-sepia:  ;
+    --tw-drop-shadow:  ;
+    --tw-backdrop-blur:  ;
+    --tw-backdrop-brightness:  ;
+    --tw-backdrop-contrast:  ;
+    --tw-backdrop-grayscale:  ;
+    --tw-backdrop-hue-rotate:  ;
+    --tw-backdrop-invert:  ;
+    --tw-backdrop-opacity:  ;
+    --tw-backdrop-saturate:  ;
+    --tw-backdrop-sepia:  ;
+    --tw-contain-size:  ;
+    --tw-contain-layout:  ;
+    --tw-contain-paint:  ;
+    --tw-contain-style:
+}
+
+.chargewp-tailwind-container .chargewp-container {
+    width: 100%;
+}
+@media (min-width: 640px) {
+    .chargewp-tailwind-container .chargewp-container {
+        max-width: 640px;
+    }
+}
+@media (min-width: 768px) {
+    .chargewp-tailwind-container .chargewp-container {
+        max-width: 768px;
+    }
+}
+@media (min-width: 1024px) {
+    .chargewp-tailwind-container .chargewp-container {
+        max-width: 1024px;
+    }
+}
+@media (min-width: 1280px) {
+    .chargewp-tailwind-container .chargewp-container {
+        max-width: 1280px;
+    }
+}
+@media (min-width: 1536px) {
+    .chargewp-tailwind-container .chargewp-container {
+        max-width: 1536px;
+    }
+}
+
+/* All Other Styles */
+.chargewp-tailwind-container .chargewp-absolute { position: absolute; }
+.chargewp-tailwind-container .chargewp-relative { position: relative; }
+.chargewp-tailwind-container .chargewp-left-1\/2 { left: 50%; }
+.chargewp-tailwind-container .chargewp-order-1 { order: 1; }
+.chargewp-tailwind-container .chargewp-order-2 { order: 2; }
+.chargewp-tailwind-container .chargewp-mx-auto { margin-left: auto; margin-right: auto; }
+.chargewp-tailwind-container .chargewp-mb-4 { margin-bottom: 1rem; }
+.chargewp-tailwind-container .chargewp-mt-2 { margin-top: 0.5rem; }
+.chargewp-tailwind-container .chargewp-flex { display: flex; }
+.chargewp-tailwind-container .chargewp-hidden { display: none; }
+.chargewp-tailwind-container .chargewp-aspect-video { aspect-ratio: 16 / 9; }
+.chargewp-tailwind-container .chargewp-h-\[3\%\] { height: 3%; }
+.chargewp-tailwind-container .chargewp-h-full { height: 100%; }
+.chargewp-tailwind-container .chargewp-min-h-\[44px\] { min-height: 44px; }
+.chargewp-tailwind-container .chargewp-min-h-\[50px\] { min-height: 50px; }
+.chargewp-tailwind-container .chargewp-w-1 { width: 0.25rem; }
+.chargewp-tailwind-container .chargewp-w-\[3\%\] { width: 3%; }
+.chargewp-tailwind-container .chargewp-w-full { width: 100%; }
+.chargewp-tailwind-container .chargewp-min-w-\[44px\] { min-width: 44px; }
+.chargewp-tailwind-container .chargewp-min-w-\[50px\] { min-width: 50px; }
+.chargewp-tailwind-container .chargewp-max-w-\[100\%\] { max-width: 100%; }
+
+/* Transforms */
+.chargewp-tailwind-container .-chargewp-translate-x-1\/2,
+.chargewp-tailwind-container .-chargewp-translate-y-1\/2,
+.chargewp-tailwind-container .chargewp-rotate-0,
+.chargewp-tailwind-container .chargewp-rotate-45,
+.chargewp-tailwind-container .chargewp-transform {
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate))
+    skewX(var(--tw-skew-x))
+    skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x))
+    scaleY(var(--tw-scale-y));
+}
+.chargewp-tailwind-container .-chargewp-translate-x-1\/2 { --tw-translate-x: -50%; }
+.chargewp-tailwind-container .-chargewp-translate-y-1\/2 { --tw-translate-y: -50%; }
+.chargewp-tailwind-container .chargewp-rotate-0 { --tw-rotate: 0deg; }
+.chargewp-tailwind-container .chargewp-rotate-45 { --tw-rotate: 45deg; }
+
+/* Layout */
+.chargewp-tailwind-container .chargewp-flex-col { flex-direction: column; }
+.chargewp-tailwind-container .chargewp-items-center { align-items: center; }
+.chargewp-tailwind-container .chargewp-justify-center { justify-content: center; }
+.chargewp-tailwind-container .chargewp-justify-between { justify-content: space-between; }
+.chargewp-tailwind-container .chargewp-space-y-\[4\%\] > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(4% * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(4% * var(--tw-space-y-reverse));
+}
