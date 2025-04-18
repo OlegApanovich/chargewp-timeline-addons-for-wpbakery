@@ -53,22 +53,6 @@ defined( 'ABSPATH' ) || exit;
 </style>
 
 <style>
-    /* Borders, Radius, Backgrounds */
-    .chargewp-tailwind-container .chargewp-rounded-full { border-radius: 9999px; }
-    .chargewp-tailwind-container .chargewp-rounded-md { border-radius: 0.375rem; }
-    .chargewp-tailwind-container .chargewp-rounded-none { border-radius: 0; }
-    .chargewp-tailwind-container .chargewp-border-0 { border-width: 0px; }
-    .chargewp-tailwind-container .chargewp-border-2 { border-width: 2px; }
-    .chargewp-tailwind-container .chargewp-border-solid { border-style: solid; }
-    .chargewp-tailwind-container .chargewp-border-\[\#cccccc\] {
-        --tw-border-opacity: 1;
-        border-color: rgb(204 204 204 / var(--tw-border-opacity));
-    }
-    .chargewp-tailwind-container .chargewp-bg-\[\#ffffff\] {
-        --tw-bg-opacity: 1;
-        background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-    }
-
     /* Misc */
     .chargewp-tailwind-container .chargewp-p-6 { padding: 1.5rem; }
     .chargewp-tailwind-container .chargewp-px-\[2\%\] { padding-left: 2%; padding-right: 2%; }
@@ -94,15 +78,6 @@ defined( 'ABSPATH' ) || exit;
     .chargewp-tailwind-container .chargewp-text-gray-900 {
         --tw-text-opacity: 1;
         color: rgb(17 24 39 / var(--tw-text-opacity));
-    }
-    .chargewp-tailwind-container .chargewp-shadow-md {
-        --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
-        0 2px 4px -2px rgb(0 0 0 / 0.1);
-        box-shadow: var(--tw-shadow);
-    }
-    .chargewp-tailwind-container .chargewp-shadow-none {
-        --tw-shadow: 0 0 #0000;
-        box-shadow: var(--tw-shadow);
     }
 
     /* Hover Groups */
