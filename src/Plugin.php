@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * @since 1.0
  */
-class Charge {
+class Plugin {
 	/**
 	 * Initialize plugin.
 	 *

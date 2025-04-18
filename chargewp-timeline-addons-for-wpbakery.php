@@ -17,7 +17,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-use ChargewpWpbTimeline\Charge;
+use ChargewpWpbTimeline\Plugin;
 
 /**
  * Main Plugin Class.
@@ -98,7 +98,7 @@ class Chargewp_Wpb_Timeline_Element {
 	 * @since 1.0
 	 */
 	public function set_charge() {
-		$this->charge = new Charge();
+		$this->charge = new Plugin();
 	}
 
 	/**
