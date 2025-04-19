@@ -324,4 +324,5 @@ defined( 'ABSPATH' ) || exit;
             line-height: 2rem;
         }
     }
+    .chargewp-tailwind-container .chargewp-rounded-full { border-radius: 9999px; }
 </style>

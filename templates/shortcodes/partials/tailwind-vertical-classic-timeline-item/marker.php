@@ -58,11 +58,6 @@ if ( 'no' !== $atts['marker_type'] ) {
 ?>
 
 <style>
-    /* Borders, Radius, Backgrounds */
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-rounded-full { border-radius: 9999px; }
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-rounded-md { border-radius: 0.375rem; }
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-rounded-none { border-radius: 0; }
-
     <?php $_this->output_style_shortcode_id(); ?> .chargewp-bg-\[\<?php echo esc_attr( $atts['marker_background_color'] ); ?>\] {
         background-color: <?php echo esc_attr( $atts['marker_background_color'] ); ?>;
     }
@@ -88,9 +83,6 @@ if ( 'no' !== $atts['marker_type'] ) {
     }
     <?php $_this->output_style_shortcode_id(); ?> .chargewp-border-<?php echo esc_attr( $atts['marker_border_style'] ); ?> {
         border-style: <?php echo esc_attr( $atts['marker_border_style'] ); ?>
-    }
-    <?php $_this->output_style_shortcode_id(); ?> group-hover:chargewp-border-[<?php echo esc_attr( $atts['marker_border_hover_color'] ); ?>]" {
-        border-style: <?php echo esc_attr( $atts['marker_border_hover_color'] ); ?>
     }
 
     <?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-0 {
