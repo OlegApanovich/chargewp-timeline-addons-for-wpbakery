@@ -47,16 +47,18 @@ if ( $img_src ) {
     <?php $_this->output_style_shortcode_id(); ?> .chargewp-border-<?php echo esc_attr( (int) $atts['image_border_width'] ); ?> {
         border-width: <?php echo esc_attr( (int) $atts['image_border_width'] ); ?>px;
     }
-
     <?php $_this->output_style_shortcode_id(); ?> .chargewp-border-\[\<?php echo esc_attr( $atts['image_border_color'] ); ?>\] {
         border-color: <?php echo esc_attr( $atts['image_border_color'] ); ?>
     }
-
     .chargewp-group:hover .group-hover\:chargewp-border-\[\<?php echo esc_attr( $atts['image_border_hover_color'] ); ?>\] {
         border-color: <?php echo esc_attr( $atts['image_border_hover_color'] ); ?>
     }
-
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-border-solid { border-style: solid; }
+    <?php $_this->output_style_shortcode_id(); ?> .chargewp-border-<?php echo esc_attr( $atts['image_border_style'] ); ?> {
+      border-style: <?php echo esc_attr( $atts['image_border_style'] ); ?>
+    }
+    <?php $_this->output_style_shortcode_id(); ?> group-hover:chargewp-border-[<?php echo esc_attr( $atts['image_border_hover_color'] ); ?>]" {
+        border-style: <?php echo esc_attr( $atts['image_border_hover_color'] ); ?>
+    }
 
     <?php $_this->output_style_shortcode_id(); ?> .chargewp-rounded-full {
         border-radius: 9999px;
@@ -153,12 +155,5 @@ if ( $img_src ) {
     <?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['image_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-180 {
         --tw-rotate: <?php echo esc_attr( $atts['image_negative_rotation_degree'] ) ? '-' : ''; ?>180deg;
         transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-    }
-
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-border-<?php echo esc_attr( $atts['image_border_style'] ); ?> {
-        border-style: <?php echo esc_attr( $atts['image_border_style'] ); ?>
-    }
-    <?php $_this->output_style_shortcode_id(); ?> group-hover:chargewp-border-[<?php echo esc_attr( $atts['image_border_hover_color'] ); ?>]" {
-        border-style: <?php echo esc_attr( $atts['image_border_hover_color'] ); ?>
     }
 </style>

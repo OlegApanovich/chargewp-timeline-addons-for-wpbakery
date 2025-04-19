@@ -177,13 +177,9 @@ defined( 'ABSPATH' ) || exit;
     .chargewp-tailwind-container .chargewp-aspect-video { aspect-ratio: 16 / 9; }
     .chargewp-tailwind-container .chargewp-h-\[3\%\] { height: 3%; }
     .chargewp-tailwind-container .chargewp-h-full { height: 100%; }
-    .chargewp-tailwind-container .chargewp-min-h-\[44px\] { min-height: 44px; }
-    .chargewp-tailwind-container .chargewp-min-h-\[50px\] { min-height: 50px; }
     .chargewp-tailwind-container .chargewp-w-1 { width: 0.25rem; }
     .chargewp-tailwind-container .chargewp-w-\[3\%\] { width: 3%; }
     .chargewp-tailwind-container .chargewp-w-full { width: 100%; }
-    .chargewp-tailwind-container .chargewp-min-w-\[44px\] { min-width: 44px; }
-    .chargewp-tailwind-container .chargewp-min-w-\[50px\] { min-width: 50px; }
     .chargewp-tailwind-container .chargewp-max-w-\[100\%\] { max-width: 100%; }
 
     /* Transforms */
@@ -269,15 +265,6 @@ defined( 'ABSPATH' ) || exit;
     .chargewp-tailwind-container .chargewp-text-gray-900 {
         --tw-text-opacity: 1;
         color: rgb(17 24 39 / var(--tw-text-opacity));
-    }
-
-    /* Hover Groups */
-    .chargewp-tailwind-container .chargewp-group:hover .group-hover\:chargewp-border-\[\#EEEE2278\] {
-        border-color: #EEEE2278;
-    }
-    .chargewp-tailwind-container .chargewp-group:hover .group-hover\:chargewp-bg-\[\#EEEE22\] {
-        --tw-bg-opacity: 1;
-        background-color: rgb(238 238 34 / var(--tw-bg-opacity));
     }
 
     /* Responsive Styles */
