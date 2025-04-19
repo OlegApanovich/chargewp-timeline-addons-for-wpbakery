@@ -158,5 +158,7 @@ if ( $img_src ) {
     <?php $_this->output_style_shortcode_id(); ?> .chargewp-border-<?php echo esc_attr( $atts['image_border_style'] ); ?> {
         border-style: <?php echo esc_attr( $atts['image_border_style'] ); ?>
     }
-
+    <?php $_this->output_style_shortcode_id(); ?> group-hover:chargewp-border-[<?php echo esc_attr( $atts['image_border_hover_color'] ); ?>]" {
+        border-style: <?php echo esc_attr( $atts['image_border_hover_color'] ); ?>
+    }
 </style>
