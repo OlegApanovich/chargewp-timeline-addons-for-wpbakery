@@ -40,6 +40,9 @@ Source file code you can find on [our GitHub plugin page](https://github.com/Ole
 = 1.0 =
 * Initial release.
 
+= 1.1 =
+* Dev - Introduced new "Tailwind Vertical Classic Timeline" addon.
+
 == Upgrade Notice ==
 
 [See the release history.](https://github.com/OlegApanovich/chargewp-timeline-addons-for-wpbakery/releases)
