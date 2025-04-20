@@ -8,16 +8,20 @@ The WPBakery Page Builder plugin must be installed and activated to use this plu
 
 ### 1. ZigZag Timeline Addon.
 
-![ZigZag Timeline Element](assets/images/github-reame/screen-2.png)
+![ZigZag Timeline Addon](assets/images/github-reame/screen-2.png)
 
 
 ### 2. Vertical Segment Timeline Addon.
 
-![Vertical Segment Timeline Element](assets/images/github-reame/screen-4.png)
+![Vertical Segment Timeline Addon](assets/images/github-reame/screen-4.png)
 
-### 3. Left Side Stack Timeline.
+### 3. Tailwind Vertical Classic Timeline Addon.
 
-![Vertical Segment Timeline Element](assets/images/github-reame/screen-5.png)
+![Tailwind Vertical Classic Timeline Addon](assets/images/github-reame/screen-6.png)
+
+### 4. Left Side Stack Timeline.
+
+![Vertical Segment Timeline Addon](assets/images/github-reame/screen-5.png)
 
 ## Installation
 It's recommended to use the [official plugin page on WordPress.org](https://wordpress.org/plugins/chargewp-timeline-addons-for-wpbakery).
