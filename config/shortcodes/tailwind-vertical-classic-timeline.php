@@ -19,7 +19,7 @@ $params = [
 	],
 	[
 		'type'        => 'chargewp-number',
-		'value'       => '1',
+		'value'       => '0.5',
 		'min'         => '0.5',
 		'max'         => '10',
 		'step'        => '0.5',
@@ -27,19 +27,6 @@ $params = [
 		'param_name'  => 'baseline_width',
 		'description' => esc_html__( 'Set custom width from 0 to 10 for timeline base line.', 'chargewp-timeline-addons-for-wpbakery' ),
 	],
-];
-
-$params = array_merge(
-    $params,
-    [ vc_map_add_css_animation() ],
-    chargewpwpbtimeline_config( 'shortcode-container-config' )
-);
-
-$params[] = [
-    'type'       => 'chargewp-notice',
-    'level'      => 'warning',
-    'notice'     => '<b>The Tailwind environment apply additional preflight CSS to element, it can affect some text and containers that you use inside element. <a href="https://tailwindcss.com/docs/preflight" target="_blank"> Please check which html elements can be affected<a></a></b>',
-    'param_name' => 'tailwind_notice',
 ];
 
 return [
@@ -55,5 +42,9 @@ return [
 	'show_settings_on_create' => true,
 	// 'default_content'         => '[chargewp-tailwind-vertical-classic-timeline-item marker_type="square" marker_rotation_degree="45" date="Feb 2023" title="Visual Storytelling" image_source="external_link" image_rounded="none" image_shadow="none" image_fit="cover" image_custom_src="https://images.unsplash.com/photo-1516116216624-53e697fedbea"]The art of visual narrative reaches new heights with immersive technologies and creative direction.[/chargewp-tailwind-vertical-classic-timeline-item][chargewp-tailwind-vertical-classic-timeline-item rotation="right" marker_border_type="4" marker_width="50" marker_height="50" marker_rotation_degree="45" i_type="openiconic" i_icon_openiconic="vc-oi vc-oi-target" i_color="custom" date="Feb 2024" title="Print Evolution" image_source="external_link" image_rounded="none" image_shadow="none" image_fit="cover" add_icon="true" i_custom_color="#A4A4A4" image_custom_src="https://images.unsplash.com/photo-1542744094-24638eff58bb"]Traditional print media adapts to modern demands while maintaining its timeless appeal.[/chargewp-tailwind-vertical-classic-timeline-item][chargewp-tailwind-vertical-classic-timeline-item marker_type="square" marker_rotation_degree="45" date="Feb 2025" title="Digital Renaissance" image_source="external_link" image_rounded="md" image_shadow="md" image_fit="cover" image_custom_src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0"]The emergence of revolutionary digital platforms transforms modern journalism and storytelling methods.[/chargewp-tailwind-vertical-classic-timeline-item]',
 	'js_view'                 => 'VcColumnView',
-	'params'                  => $params,
+	'params'                  => array_merge(
+        $params,
+        [ vc_map_add_css_animation() ],
+        chargewpwpbtimeline_config( 'shortcode-container-config' )
+    ),
 ];
