@@ -39,11 +39,11 @@ Source file code you can find on [our GitHub plugin page](https://github.com/Ole
 
 == Changelog ==
 
-= 1.0 =
-* Initial release.
-
 = 1.1 =
 * Dev - Introduced new "Tailwind Vertical Classic Timeline" addon.
+
+= 1.0 =
+* Initial release.
 
 == Upgrade Notice ==
 
