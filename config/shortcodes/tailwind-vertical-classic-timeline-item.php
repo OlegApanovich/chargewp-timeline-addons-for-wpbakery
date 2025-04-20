@@ -52,7 +52,6 @@ $params = array_merge(
 		],
 		[
 			'type'        => 'colorpicker',
-			'value'       => '#EEEE22',
 			'heading'     => esc_html__( 'Background hover color', 'chargewp-timeline-addons-for-wpbakery' ),
 			'param_name'  => 'marker_background_hover_color',
 			'description' => esc_html__( 'Select custom color for background hover.', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -88,7 +87,6 @@ $params = array_merge(
 		],
 		[
 			'type'        => 'colorpicker',
-			'value'       => '#EEEE2278',
 			'heading'     => esc_html__( 'Border hover color', 'chargewp-timeline-addons-for-wpbakery' ),
 			'param_name'  => 'marker_border_hover_color',
 			'description' => esc_html__( 'Select custom color for border hover.', 'chargewp-timeline-addons-for-wpbakery' ),
