@@ -26,8 +26,7 @@ if ( ! function_exists( 'chargewpwpbtimeline_validate_dependency_plugin' ) ) :
 		$dependency_plugin_name,
 		$path_to_plugin,
 		$version_to_check = null
-	): bool
-    {
+	): bool {
 		$template_payload = [
 			'my_plugin_name'         => $my_plugin_name,
 			'dependency_plugin_name' => $dependency_plugin_name,
@@ -156,8 +155,7 @@ if ( ! function_exists( 'chargewpwpbtimeline_template' ) ) :
 	 *
 	 * @return string
 	 */
-	function chargewpwpbtimeline_template( $file ): string
-    {
+	function chargewpwpbtimeline_template( $file ): string {
 		return CHARGEWPWPBTIMELINE_TEMPLATES_DIR . '/' . $file;
 	}
 endif;
@@ -187,31 +185,5 @@ if ( ! function_exists( 'chargewpwpbtimeline_config' ) ) :
 
 		// Retrieve config value.
 		return $loaded_configs[ $path ];
-	}
-endif;
-
-if ( ! function_exists( 'chargewpwpbtimeline_hex_to_rgb' ) ) :
-	/**
-	 * Convert a hex color code to an RGB.
-	 *
-	 * @param string $hex
-	 *
-	 * @return string
-	 */
-	function chargewpwpbtimeline_hex_to_rgb( string $hex ): string
-    {
-        $hex = ltrim($hex, '#');
-
-        // Convert the 3-digit format to 6-digit
-        if (strlen($hex) == 3) {
-            $hex = $hex[0].$hex[0].$hex[1].$hex[1].$hex[2].$hex[2];
-        }
-
-        // Extract the RGB values
-        $r = hexdec(substr($hex, 0, 2));
-        $g = hexdec(substr($hex, 2, 2));
-        $b = hexdec(substr($hex, 4, 2));
-
-        return "$r $g $b";
 	}
 endif;

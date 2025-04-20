@@ -58,67 +58,67 @@ if ( 'no' !== $atts['marker_type'] ) {
 ?>
 
 <style>
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-bg-\[\<?php echo esc_attr( $atts['marker_background_color'] ); ?>\] {
-        background-color: <?php echo esc_attr( $atts['marker_background_color'] ); ?>;
-    }
-    .chargewp-tailwind-container .chargewp-group:hover .group-hover\:chargewp-bg-\[\<?php echo esc_attr( $atts['marker_background_hover_color'] ); ?>\] {
-        background-color: <?php echo esc_attr( $atts['marker_background_hover_color'] ); ?>;
-    }
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-bg-\[\<?php echo esc_attr( $atts['marker_background_color'] ); ?>\] {
+		background-color: <?php echo esc_attr( $atts['marker_background_color'] ); ?>;
+	}
+	.chargewp-tailwind-container .chargewp-group:hover .group-hover\:chargewp-bg-\[\<?php echo esc_attr( $atts['marker_background_hover_color'] ); ?>\] {
+		background-color: <?php echo esc_attr( $atts['marker_background_hover_color'] ); ?>;
+	}
 
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-min-h-\[<?php echo esc_attr( $atts['marker_height'] ); ?>px\] {
-        min-height: <?php echo esc_attr( $atts['marker_height'] ); ?>px;
-    }
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-min-w-\[<?php echo esc_attr( $atts['marker_width'] ); ?>px\] {
-        min-width: <?php echo esc_attr( $atts['marker_width'] ); ?>px;
-    }
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-min-h-\[<?php echo esc_attr( $atts['marker_height'] ); ?>px\] {
+		min-height: <?php echo esc_attr( $atts['marker_height'] ); ?>px;
+	}
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-min-w-\[<?php echo esc_attr( $atts['marker_width'] ); ?>px\] {
+		min-width: <?php echo esc_attr( $atts['marker_width'] ); ?>px;
+	}
 
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-border-<?php echo esc_attr( (int) $atts['marker_border_width'] ); ?> {
-        border-width: <?php echo esc_attr( (int) $atts['marker_border_width'] ); ?>px;
-    }
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-border-\[\<?php echo esc_attr( $atts['marker_border_color'] ); ?>\] {
-        border-color: <?php echo esc_attr( $atts['marker_border_color'] ); ?>
-    }
-    .chargewp-group:hover .group-hover\:chargewp-border-\[\<?php echo esc_attr( $atts['marker_border_hover_color'] ); ?>\] {
-        border-color: <?php echo esc_attr( $atts['marker_border_hover_color'] ); ?>
-    }
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-border-<?php echo esc_attr( $atts['marker_border_style'] ); ?> {
-        border-style: <?php echo esc_attr( $atts['marker_border_style'] ); ?>
-    }
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-border-<?php echo esc_attr( (int) $atts['marker_border_width'] ); ?> {
+		border-width: <?php echo esc_attr( (int) $atts['marker_border_width'] ); ?>px;
+	}
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-border-\[\<?php echo esc_attr( $atts['marker_border_color'] ); ?>\] {
+		border-color: <?php echo esc_attr( $atts['marker_border_color'] ); ?>
+	}
+	.chargewp-group:hover .group-hover\:chargewp-border-\[\<?php echo esc_attr( $atts['marker_border_hover_color'] ); ?>\] {
+		border-color: <?php echo esc_attr( $atts['marker_border_hover_color'] ); ?>
+	}
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-border-<?php echo esc_attr( $atts['marker_border_style'] ); ?> {
+		border-style: <?php echo esc_attr( $atts['marker_border_style'] ); ?>
+	}
 
-    <?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-0 {
-        --tw-rotate: <?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>0deg;
-        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-    }
-    <?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-1 {
-        --tw-rotate: <?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>1deg;
-        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-    }
-    <?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-2 {
-        --tw-rotate: <?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>2deg;
-        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-    }
-    <?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-3 {
-        --tw-rotate: <?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>3deg;
-        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-    }
-    <?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-6 {
-        --tw-rotate: <?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>6deg;
-        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-    }
-    <?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-12 {
-        --tw-rotate: <?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>12deg;
-        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-    }
-    <?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-45 {
-        --tw-rotate: <?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>45deg;
-        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-    }
-    <?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-90 {
-        --tw-rotate: <?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>90deg;
-        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-    }
-    <?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-180 {
-        --tw-rotate: <?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>180deg;
-        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-    }
+	<?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-0 {
+		--tw-rotate: <?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>0deg;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+	}
+	<?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-1 {
+		--tw-rotate: <?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>1deg;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+	}
+	<?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-2 {
+		--tw-rotate: <?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>2deg;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+	}
+	<?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-3 {
+		--tw-rotate: <?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>3deg;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+	}
+	<?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-6 {
+		--tw-rotate: <?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>6deg;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+	}
+	<?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-12 {
+		--tw-rotate: <?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>12deg;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+	}
+	<?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-45 {
+		--tw-rotate: <?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>45deg;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+	}
+	<?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-90 {
+		--tw-rotate: <?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>90deg;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+	}
+	<?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-180 {
+		--tw-rotate: <?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>180deg;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+	}
 </style>

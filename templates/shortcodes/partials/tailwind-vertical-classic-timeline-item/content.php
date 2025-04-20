@@ -32,24 +32,24 @@ $custom_heading_integration = new HeadingIntegration();
 </div>
 
 <style>
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-bg-\[\<?php echo esc_attr( $atts['content_background_color'] ); ?>\] {
-        background-color: <?php echo esc_attr( $atts['content_background_color'] ); ?>;
-    }
-    .chargewp-tailwind-container .chargewp-group:hover .group-hover\:chargewp-bg-\[\<?php echo esc_attr( $atts['content_background_hover_color'] ); ?>\] {
-        background-color: <?php echo esc_attr( $atts['content_background_hover_color'] ); ?>;
-    }
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-bg-\[\<?php echo esc_attr( $atts['content_background_color'] ); ?>\] {
+		background-color: <?php echo esc_attr( $atts['content_background_color'] ); ?>;
+	}
+	.chargewp-tailwind-container .chargewp-group:hover .group-hover\:chargewp-bg-\[\<?php echo esc_attr( $atts['content_background_hover_color'] ); ?>\] {
+		background-color: <?php echo esc_attr( $atts['content_background_hover_color'] ); ?>;
+	}
 
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-border-<?php echo esc_attr( (int) $atts['content_border_width'] ); ?> {
-        border-width: <?php echo esc_attr( (int) $atts['content_border_width'] ); ?>px;
-    }
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-border-\[\<?php echo esc_attr( $atts['content_border_color'] ); ?>\] {
-        border-color: <?php echo esc_attr( $atts['content_border_color'] ); ?>
-    }
-    .chargewp-group:hover .group-hover\:chargewp-border-\[\<?php echo esc_attr( $atts['content_border_hover_color'] ); ?>\] {
-        border-color: <?php echo esc_attr( $atts['content_border_hover_color'] ); ?>
-    }
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-border-<?php echo esc_attr( $atts['content_border_style'] ); ?> {
-        border-style: <?php echo esc_attr( $atts['content_border_style'] ); ?>
-    }
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-border-<?php echo esc_attr( (int) $atts['content_border_width'] ); ?> {
+		border-width: <?php echo esc_attr( (int) $atts['content_border_width'] ); ?>px;
+	}
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-border-\[\<?php echo esc_attr( $atts['content_border_color'] ); ?>\] {
+		border-color: <?php echo esc_attr( $atts['content_border_color'] ); ?>
+	}
+	.chargewp-group:hover .group-hover\:chargewp-border-\[\<?php echo esc_attr( $atts['content_border_hover_color'] ); ?>\] {
+		border-color: <?php echo esc_attr( $atts['content_border_hover_color'] ); ?>
+	}
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-border-<?php echo esc_attr( $atts['content_border_style'] ); ?> {
+		border-style: <?php echo esc_attr( $atts['content_border_style'] ); ?>
+	}
 
 </style>

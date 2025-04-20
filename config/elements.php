@@ -79,9 +79,9 @@ return [
 		'is_container'  => true,
 		'depend_assets' => [
 			'external' => [
-                'css' => [
-                    'chargewp-tailwind-cdn-before-setup' => CHARGEWPWPBTIMELINE_ASSETS_URI . '/css/shortcodes-common/tailwind-base.css',
-                ],
+				'css' => [
+					'chargewp-tailwind-cdn-before-setup' => CHARGEWPWPBTIMELINE_ASSETS_URI . '/css/shortcodes-common/tailwind-base.css',
+				],
 			],
 			'inner'    => [
 				'css' => [
