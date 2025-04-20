@@ -34,6 +34,8 @@ Source file code you can find on [our GitHub plugin page](https://github.com/Ole
 1. ZigZag Timeline Addon.
 2. Vertical Segment Timeline Addon.
 3. Left Side Stack Timeline.
+4. How to find plugin elements in Wpbakery editor.
+5. Tailwind Vertical Classic Timeline
 
 == Changelog ==
 
