@@ -37,7 +37,7 @@ class Chargewp_Wpb_Timeline_Element {
 	 * Charge dependency plugin instance.
 	 *
 	 * @since 1.0
-	 * @var Charge
+	 * @var Plugin
 	 */
 	public $charge;
 
@@ -82,7 +82,7 @@ class Chargewp_Wpb_Timeline_Element {
 	 * Get Charge instance.
 	 *
 	 * @since 1.0
-	 * @return Charge
+	 * @return Plugin
 	 */
 	public function get_charge() {
 		if ( ! $this->charge ) {
