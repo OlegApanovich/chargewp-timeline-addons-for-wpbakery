@@ -365,7 +365,7 @@ class ChargeWpbShortcode {
 	public function get_integrated_shortcode_output( $atts, $integrated_slug, $integrated_prefix ) {
 		$data = vc_map_integrate_parse_atts( $this->element_slug, $integrated_slug, $atts, $integrated_prefix );
 		if ( $data ) {
-			$integrated_shortcode = wpbakery()->getShortCode( 'vc_icon' );
+			$integrated_shortcode = vc_manager()->vc()->getShortCode( 'vc_icon' );
 			if ( is_object( $integrated_shortcode ) ) {
 				return $integrated_shortcode->render( array_filter( $data ) );
 			}

@@ -136,7 +136,7 @@ class HeadingIntegration {
 			return;
 		}
 
-		$custom_heading         = wpbakery()->getShortCode( 'vc_custom_heading' );
+		$custom_heading         = vc_manager()->vc()->getShortCode( 'vc_custom_heading' );
 		$data                   = vc_map_integrate_parse_atts( $shortcode_tag, 'vc_custom_heading', $atts, $atts_slug . '_' );
 		$data['font_container'] = implode(
 			'|',
