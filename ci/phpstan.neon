@@ -5,6 +5,7 @@ parameters:
         - ../../../../wp-load.php # Load WordPress core files for analysis.
     ignoreErrors:
     paths:
+        - ../chargewp-timeline-addons-for-wpbakery.php
         - ../includes
         - ../src
         - ../config

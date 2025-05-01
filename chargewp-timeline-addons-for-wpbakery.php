@@ -37,7 +37,7 @@ class Chargewp_Wpb_Timeline_Element {
 	 * Charge dependency plugin instance.
 	 *
 	 * @since 1.0
-	 * @var Plugin
+	 * @var Plugin|null
 	 */
 	public $charge;
 
