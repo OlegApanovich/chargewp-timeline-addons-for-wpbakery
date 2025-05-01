@@ -13,6 +13,7 @@ use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeEmpty;
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcode;
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeContainerEmpty;
 use ChargewpWpbTimeline\ElementParams\ElementParams;
+use ChargewpWpbTimeline\Utils\Requirement;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -61,13 +62,13 @@ class Plugin {
 
 	/**
 	 * Shortcode mapping in WPBakery it an actions that dynamically create attributes for a shortcode.
-	 * Then we can use this attributes in element edit window.
+	 * Then we can use attributes in the element edit window.
 	 *
 	 * @param array $config Element config.
 	 *
 	 * @since 1.0
 	 */
-	public function map_wpb_shortcode( $config ) {
+	public function map_wpb_shortcode( array $config ) {
 		try {
 			wpb_map( $config );
 		} catch ( Exception $e ) {
@@ -80,14 +81,27 @@ class Plugin {
 	 * Check if wpbakery already activated.
 	 *
 	 * @since 1.0
+	 * @return bool
 	 */
-	public function is_dependency_plugin_active() {
-		return chargewpwpbtimeline_validate_dependency_plugin(
-			'ChargeWP Builder WPBakery Timeline Addons',
-			'WPBakery Page Builder',
-			'js_composer/js_composer.php',
-			'4.0'
+	public function is_dependency_plugin_active(): bool {
+		$requirement = new Requirement();
+		$requirement->plugins(
+			[ CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_PATH => CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_VERSION ]
 		);
+
+		$is_active = $requirement->met();
+		if ( ! $is_active ) {
+			add_action(
+				'admin_notices',
+				function () use ( $requirement ) {
+					$requirement->print_notice();
+				},
+				0,
+				0
+			);
+		}
+
+		return $requirement->met();
 	}
 
 	/**
@@ -99,7 +113,7 @@ class Plugin {
 	 * @return WPBakeryShortCode
 	 * @since 1.0
 	 */
-	public function get_wpb_shortcode_instance( $element_init_data, $config ) {
+	public function get_wpb_shortcode_instance( array $element_init_data, array $config ) {
 		if ( ! empty( $element_init_data['class'] ) ) {
 			// user predefined class.
 			return new $element_init_data['class']( $config );

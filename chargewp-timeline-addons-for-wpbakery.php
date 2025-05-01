@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       ChargeWP Timeline Addons For WPBakery Page Builder
  * Plugin URI:        https://github.com/OlegApanovich/chargewp-timeline-addons-for-wpbakery
- * Description:       Power your WPBakery Page Builder with well crafted timeline addons.
+ * Description:       Power your WPBakery Page Builder with well-crafted timeline addons.
  * Author:            OlegApanovich
  * Author URI:        https://github.com/OlegApanovich
  * Text Domain:       chargewp-timeline-addons-for-wpbakery
@@ -84,7 +84,7 @@ class Chargewp_Wpb_Timeline_Element {
 	 * @since 1.0
 	 * @return Plugin
 	 */
-	public function get_charge() {
+	public function get_charge(): Plugin {
 		if ( ! $this->charge ) {
 			$this->set_charge();
 		}
@@ -108,6 +108,8 @@ class Chargewp_Wpb_Timeline_Element {
 	 */
 	private function define_constants() {
 		define( 'CHARGEWPWPBTIMELINE_VERSION', '1.0' );
+		define( 'CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_VERSION', '5.0' );
+		define( 'CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_PATH', 'js_composer/js_composer.php' );
 
 		define( 'CHARGEWPWPBTIMELINE_PLUGIN_FILE', __FILE__ );
 
@@ -148,7 +150,7 @@ class Chargewp_Wpb_Timeline_Element {
 	public function init() {
 		// Before init action.
 		do_action( 'before_chargewp_wpb_timeline_addons' );
-		// Set up localisation.
+		// Set up localization.
 		$this->load_plugin_textdomain();
 		// After init action.
 		do_action( 'after_chargewp_wpb_timeline_addons' );

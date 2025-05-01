@@ -7,95 +7,6 @@
 
 defined( 'ABSPATH' ) || exit;
 
-if ( ! function_exists( 'chargewpwpbtimeline_validate_dependency_plugin' ) ) :
-	/**
-	 * Verify if a plugin is active, if not than deactivate the actual our plugin and show an error.
-	 *
-	 * @since  1.0
-	 *
-	 * @param string $my_plugin_name The plugin name trying to activate. The name of this plugin.
-	 * @param string $dependency_plugin_name The dependency plugin name.
-	 * @param string $path_to_plugin Path of the plugin
-	 * to verify with the format 'dependency_plugin/dependency_plugin.php'.
-	 * @param string $version_to_check Optional, verify a certain version of the dependent plugin.
-	 *
-	 * @return bool
-	 */
-	function chargewpwpbtimeline_validate_dependency_plugin(
-		$my_plugin_name,
-		$dependency_plugin_name,
-		$path_to_plugin,
-		$version_to_check = null
-	): bool {
-		$template_payload = [
-			'my_plugin_name'         => $my_plugin_name,
-			'dependency_plugin_name' => $dependency_plugin_name,
-			'version_to_check'       => $version_to_check,
-		];
-		// Needed to the function "is_plugin_active" works.
-		include_once ABSPATH . 'wp-admin/includes/plugin.php';
-		$main_plugin_file = WP_PLUGIN_DIR . '/' . $path_to_plugin;
-
-		if ( ! is_plugin_active( $path_to_plugin ) || ! file_exists( $main_plugin_file ) ) {
-			chargewpwpbtimeline_output_plugin_dependent_notice( $template_payload );
-			return false;
-		}
-
-		if ( is_readable( $main_plugin_file ) ) {
-			$version =
-				chargewpwpbtimeline_get_plugin_version( $main_plugin_file );
-
-			// Compare version.
-			$is_required_version = ! version_compare(
-				$version,
-				$version_to_check,
-				'>='
-			);
-
-			if ( $is_required_version ) {
-				chargewpwpbtimeline_output_plugin_dependent_notice( $template_payload );
-				return false;
-			}
-		}
-
-		return true;
-	}
-endif;
-
-if ( ! function_exists( 'chargewpwpbtimeline_output_plugin_dependent_notice' ) ) :
-	/**
-	 * Output the plugin dependency notice.
-	 *
-	 * @param string $template_payload
-	 */
-	function chargewpwpbtimeline_output_plugin_dependent_notice( $template_payload ) {
-		add_action(
-			'admin_notices',
-			function () use ( $template_payload ) {
-				chargewpwpbtimeline_include_template( 'required-plugin-notification.php', $template_payload );
-			}
-		);
-	}
-endif;
-
-if ( ! function_exists( 'chargewpwpbtimeline_get_plugin_version' ) ) :
-	/**
-	 * Get the plugin version, parsing main plugin file.
-	 *
-	 * @param string $plugin_file_path
-	 *
-	 * @return bool|string
-	 */
-	function chargewpwpbtimeline_get_plugin_version( $plugin_file_path ) {
-        // phpcs:ignore:WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
-		$plugin_data = file_get_contents( $plugin_file_path );
-		if ( preg_match( '/^[ \t\/*#@]*[Vv]ersion\s*:\s*([^\r\n]+)/m', $plugin_data, $matches ) ) {
-			return trim( $matches[1] );
-		}
-		return false;
-	}
-endif;
-
 if ( ! function_exists( 'chargewpwpbtimeline_include_template' ) ) :
 	/**
 	 * Include template from templates dir.
@@ -112,9 +23,9 @@ if ( ! function_exists( 'chargewpwpbtimeline_include_template' ) ) :
         // phpcs:ignore:WordPress.PHP.DontExtract.extract_extract
 		is_array( $variables ) && extract( $variables );
 		if ( $once ) {
-			return require_once chargewpwpbtimeline_template( $template );
+			return require_once chargewpwpbtimeline_get_template_path( $template );
 		} else {
-			return require chargewpwpbtimeline_template( $template );
+			return require chargewpwpbtimeline_get_template_path( $template );
 		}
 	}
 endif;
@@ -145,9 +56,9 @@ if ( ! function_exists( 'chargewpwpbtimeline_get_template' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'chargewpwpbtimeline_template' ) ) :
+if ( ! function_exists( 'chargewpwpbtimeline_get_template_path' ) ) :
 	/**
-	 * Shorthand for getting to plugin templates.
+	 * Shorthand for getting to the plugin templates.
 	 *
 	 * @param string $file
 	 *
@@ -155,7 +66,7 @@ if ( ! function_exists( 'chargewpwpbtimeline_template' ) ) :
 	 *
 	 * @return string
 	 */
-	function chargewpwpbtimeline_template( $file ): string {
+	function chargewpwpbtimeline_get_template_path( $file ): string {
 		return CHARGEWPWPBTIMELINE_TEMPLATES_DIR . '/' . $file;
 	}
 endif;
