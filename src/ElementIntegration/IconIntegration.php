@@ -8,6 +8,8 @@
 
 namespace ChargewpWpbTimeline\ElementIntegration;
 
+use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcode;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -23,7 +25,7 @@ class IconIntegration {
 	 * @param array $exclude
 	 * @return array
 	 */
-	public function add_icon_checkbox( $exclude = [] ) {
+	public function add_icon_checkbox( array $exclude = [] ): array {
 		require_once vc_path_dir( 'CONFIG_DIR', 'content/vc-icon-element.php' );
 
 		$icon_params = [
@@ -58,9 +60,10 @@ class IconIntegration {
 	/**
 	 * Get icon elements params list that we always exclude when integrate icon shortcode.
 	 *
+	 * @since 1.0
 	 * @return array
 	 */
-	public function get_always_exclude_params() {
+	public function get_always_exclude_params(): array {
 		return [
 			'css_animation',
 			'el_id',
@@ -76,7 +79,7 @@ class IconIntegration {
 	 * @param array $atts
 	 * @return string
 	 */
-	public function get_element_icon_class( $atts ) {
+	public function get_element_icon_class( array $atts ): string {
 		return $atts[ 'i_icon_' . $atts['i_type'] ];
 	}
 
@@ -87,7 +90,7 @@ class IconIntegration {
 	 * @param array $atts
 	 * @return string
 	 */
-	public function get_element_icon_color( $atts ) {
+	public function get_element_icon_color( array $atts ): string {
 		if ( 'custom' === $atts['i_color'] ) {
 			return $atts['i_custom_color'];
 		}
@@ -102,7 +105,7 @@ class IconIntegration {
 	 * @param string $color_name
 	 * @return string
 	 */
-	public function get_icon_color_from_color_lib( $color_name ) {
+	public function get_icon_color_from_color_lib( string $color_name ): string {
 		$color_lib = [
 			'blue'        => '#5472D2',
 			'turquoise'   => '#00C1CF',
@@ -124,7 +127,7 @@ class IconIntegration {
 			'default'     => '#111111',
 		];
 
-		return isset( $color_lib[ $color_name ] ) ? $color_lib[ $color_name ] : $color_lib['default'];
+		return $color_lib[ $color_name ] ?? $color_lib['default'];
 	}
 
 	/**
@@ -135,7 +138,7 @@ class IconIntegration {
 	 * @param array              $atts
 	 * @param string             $prefix
 	 */
-	public function output_icon_integration( $shortcode, $atts, $prefix ) {
+	public function output_icon_integration( ChargeWpbShortcode $shortcode, array $atts, string $prefix ) {
         // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo $shortcode->get_integrated_shortcode_output( $atts, 'vc_icon', $prefix );
 	}

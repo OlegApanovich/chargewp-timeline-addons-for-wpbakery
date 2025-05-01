@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
 		<div class="chargewp-relative chargewp-w-full chargewp-p-6 chargewp-md:p-8">
 			<div class="chargewp-w-full chargewp-max-w-[100%] chargewp-mx-auto chargewp-container">
 				<div class="chargewp-relative chargewp-w-full chargewp-px-[2%] sm:chargewp-px-[4%] md:chargewp-px-[6%]">
-					<div class="chargewp-absolute chargewp-left-1/2 chargewp-transform -chargewp-translate-x-1/2 chargewp-h-full chargewp-w-<?php echo esc_attr( (float) $atts['baseline_width'] ); ?> chargewp-bg-[<?php echo esc_attr( $atts['baseline_background'] ); ?>] chargewp-hidden sm:chargewp-block"></div>
+					<div class="chargewp-absolute chargewp-left-1/2 chargewp-transform -chargewp-translate-x-1/2 chargewp-h-full chargewp-w-<?php echo (float) $atts['baseline_width']; ?> chargewp-bg-[<?php echo esc_attr( $atts['baseline_background'] ); ?>] chargewp-hidden sm:chargewp-block"></div>
 					<div class="chargewp-space-y-[4%] sm:chargewp-space-y-[6%] md:chargewp-space-y-[8%]">
 						<?php echo do_shortcode( $content ); ?>
 					</div>

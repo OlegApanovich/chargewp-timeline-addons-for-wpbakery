@@ -47,7 +47,9 @@ class ChargewpSwitch extends ElementParamsAbstract {
 			return $output;
 		}
 
-		$un = uniqid( 'ultswitch-' . wp_rand( 1000, 9999 ) );
+		$un  = uniqid( 'ultswitch-' . wp_rand( 1000, 9999 ) );
+		$uid = '';
+		$key = '';
 		foreach ( $settings['options'] as $key => $opts ) {
 			$checked = $value === $key ? 'checked' : '';
 			$uid     = uniqid( 'ultswitchparam-' . wp_rand( 1000, 9999 ) );

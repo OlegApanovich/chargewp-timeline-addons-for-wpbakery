@@ -72,8 +72,8 @@ if ( 'no' !== $atts['marker_type'] ) {
 		min-width: <?php echo esc_attr( $atts['marker_width'] ); ?>px;
 	}
 
-	<?php $_this->output_style_shortcode_id(); ?> .chargewp-border-<?php echo esc_attr( (int) $atts['marker_border_width'] ); ?> {
-		border-width: <?php echo esc_attr( (int) $atts['marker_border_width'] ); ?>px;
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-border-<?php echo (int) $atts['marker_border_width']; ?> {
+		border-width: <?php echo (int) $atts['marker_border_width']; ?>px;
 	}
 	<?php $_this->output_style_shortcode_id(); ?> .chargewp-border-\[\<?php echo esc_attr( $atts['marker_border_color'] ); ?>\] {
 		border-color: <?php echo esc_attr( $atts['marker_border_color'] ); ?>

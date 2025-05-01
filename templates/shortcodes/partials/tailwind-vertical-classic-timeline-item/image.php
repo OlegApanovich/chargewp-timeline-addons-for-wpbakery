@@ -30,7 +30,7 @@ if ( $img_src ) {
 			chargewp-rounded-<?php echo esc_attr( $atts['image_rounded'] ); ?>
 			chargewp-shadow-<?php echo esc_attr( $atts['image_shadow'] ); ?>
 			<?php echo esc_attr( $atts['image_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-<?php echo esc_attr( $atts['image_rotation_degree'] ); ?>
-			chargewp-border-<?php echo esc_attr( (int) $atts['image_border_width'] ); ?>
+			chargewp-border-<?php echo (int) $atts['image_border_width']; ?>
 			chargewp-border-[<?php echo esc_attr( $atts['image_border_color'] ); ?>]
 			chargewp-border-<?php echo esc_attr( $atts['image_border_style'] ); ?>
 			group-hover:chargewp-border-[<?php echo esc_attr( $atts['image_border_hover_color'] ); ?>]"
@@ -44,8 +44,8 @@ if ( $img_src ) {
 		object-fit: <?php echo esc_attr( $atts['image_fit'] ); ?>;
 	}
 
-	<?php $_this->output_style_shortcode_id(); ?> .chargewp-border-<?php echo esc_attr( (int) $atts['image_border_width'] ); ?> {
-		border-width: <?php echo esc_attr( (int) $atts['image_border_width'] ); ?>px;
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-border-<?php echo (int) $atts['image_border_width']; ?> {
+		border-width: <?php echo (int) $atts['image_border_width']; ?>px;
 	}
 	<?php $_this->output_style_shortcode_id(); ?> .chargewp-border-\[\<?php echo esc_attr( $atts['image_border_color'] ); ?>\] {
 		border-color: <?php echo esc_attr( $atts['image_border_color'] ); ?>

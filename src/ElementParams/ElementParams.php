@@ -51,13 +51,7 @@ class ElementParams {
 	public function init_single_param( string $param_slug ): bool {
 		$param_instance = $this->get_param_instance( $param_slug );
 
-		if ( version_compare( WPB_VC_VERSION, 4.8 ) >= 0 ) {
-			$result = vc_add_shortcode_param( $param_slug, [ $param_instance, 'param_output' ] );
-		} else {
-			$result = add_shortcode_param( $param_slug, [ $param_instance, 'param_output' ] );
-		}
-
-		return $result;
+		return vc_add_shortcode_param( $param_slug, [ $param_instance, 'param_output' ] );
 	}
 
 	/**
