@@ -37,3 +37,6 @@ jobs:
 
       - name: activate plugin inside wp enviroment
         run:  cd /var/www/html; wp plugin activate chargewp-timeline-addons-for-wpbakery --allow-root; wp plugin list --allow-root
+
+      - name: PHP stan check
+        run:  cd /var/www/html/wp-content/plugins/chargewp-timeline-addons-for-wpbakery/ci; ../vendor/bin/phpstan analyse
