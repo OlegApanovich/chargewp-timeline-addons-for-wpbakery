@@ -43,7 +43,7 @@ jobs:
         run: php ci/composer.phar install
 
       - name: PHP Stan Stat Analys
-        run: cd ci; ../vendor/bin/phpstan analyse
+        run: cd ci; ls -la; ls -la ../; ls -la ../../; ls -la ../../../; ls -la ../../../../; ../vendor/bin/phpstan analyse
   compatibility-php:
     name: PHP Code Compatibility
     runs-on: ubuntu-latest
