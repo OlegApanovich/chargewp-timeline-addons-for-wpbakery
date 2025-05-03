@@ -25,6 +25,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Start MySql
+        run: service mysql start
+
       - name: Install Composer dependencies
         run: php ci/composer.phar install
 
