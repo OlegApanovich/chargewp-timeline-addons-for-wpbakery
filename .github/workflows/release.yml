@@ -25,11 +25,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Start MySql
-        run: service mysql start
-
       - name: Install Composer dependencies
         run: php ci/composer.phar install
 
-      - name: PHP Stan Stat Analys
-        run:  cd /var/www/html; wp db check --allow-root; wp plugin list --allow-root;
+      - name: Symlink plugin into WordPress installation
+        run: |
+          ln -s "$GITHUB_WORKSPACE" /var/www/html/wp-content/plugins/chargewp-timeline-addons-for-wpbakery
+
+      - name: Start MySql
+        run: service mysql start
+
+      - name: activate plugin inside wp enviroment
+        run:  cd /var/www/html; wp plugin activate chargewp-timeline-addons-for-wpbakery --allow-root; wp plugin list --allow-root
