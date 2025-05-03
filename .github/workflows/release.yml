@@ -29,4 +29,4 @@ jobs:
         run: php ci/composer.phar install
 
       - name: PHP Stan Stat Analys
-        run: cd /; pwd; cd /var/www/html; pwd
+        run:  cd /var/www/html; ls -la
