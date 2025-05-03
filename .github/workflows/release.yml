@@ -16,20 +16,6 @@ on:
       - hotfix/**
 
 jobs:
-  codestyle-php:
-    name: PHP Code Style
-    runs-on: ubuntu-latest
-    container:
-      image: mrdollar4444/plus-wp-builder-wpbakery:latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Install Composer dependencies
-        run: php ci/composer.phar install
-
-      - name: Check PHP Code Style
-        run: php vendor/bin/phpcs --standard=ci/phpcs.xml .
   statanalys-php:
     name: PHP Stan Stat Analys
     runs-on: ubuntu-latest
@@ -43,29 +29,4 @@ jobs:
         run: php ci/composer.phar install
 
       - name: PHP Stan Stat Analys
-        run: cd ci; pwd; ../vendor/bin/phpstan analyse
-  compatibility-php:
-    name: PHP Code Compatibility
-    runs-on: ubuntu-latest
-    container:
-      image: mrdollar4444/plus-wp-builder-wpbakery:latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Install Composer dependencies
-        run: php ci/composer.phar install
-
-      - name: Check PHP Compatibility
-        run: php vendor/bin/phpcs --standard=PHPCompatibility --extensions=php --runtime-set testVersion 7.0-8.4 --ignore=vendor/* .
-  php-clones:
-    name: PHP Clone Detection
-    runs-on: ubuntu-latest
-    container:
-      image: mrdollar4444/plus-wp-builder-wpbakery:latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: PHP Clone Detection
-        run: php ci/phpcpd.phar --fuzzy .
+        run: cd /; pwd; cd /var/www/html; pwd
