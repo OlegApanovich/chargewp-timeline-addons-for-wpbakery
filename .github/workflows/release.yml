@@ -20,7 +20,7 @@ jobs:
     name: PHP Code Style
     runs-on: ubuntu-latest
     container:
-      image: mrdollar4444/plus-wp-builder-wpbakery:latest
+      image: mrdollar4444/plus-wp-builder-wpbakery-03052025:latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -34,21 +34,32 @@ jobs:
     name: PHP Stan Stat Analys
     runs-on: ubuntu-latest
     container:
-      image: mrdollar4444/plus-wp-builder-wpbakery:latest
+      image: mrdollar4444/plus-wp-builder-wpbakery-03052025:latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Start MySql
+        run: service mysql start
+
       - name: Install Composer dependencies
         run: php ci/composer.phar install
 
-      - name: PHP Stan Stat Analys
-        run: cd ci; ../vendor/bin/phpstan analyse
+      - name: Copy plugin into WordPress installation
+        run: |
+          cp -R "$GITHUB_WORKSPACE" /var/www/html/wp-content/plugins/chargewp-timeline-addons-for-wpbakery
+
+      - name: activate plugin inside wp enviroment
+        run:  cd /var/www/html; wp plugin activate chargewp-timeline-addons-for-wpbakery --allow-root; wp plugin list --allow-root
+
+      - name: PHP stan check
+        run:  cd /var/www/html/wp-content/plugins/chargewp-timeline-addons-for-wpbakery/ci; ../vendor/bin/phpstan analyse
+
   compatibility-php:
     name: PHP Code Compatibility
     runs-on: ubuntu-latest
     container:
-      image: mrdollar4444/plus-wp-builder-wpbakery:latest
+      image: mrdollar4444/plus-wp-builder-wpbakery-03052025:latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -62,7 +73,7 @@ jobs:
     name: PHP Clone Detection
     runs-on: ubuntu-latest
     container:
-      image: mrdollar4444/plus-wp-builder-wpbakery:latest
+      image: mrdollar4444/plus-wp-builder-wpbakery-03052025:latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
