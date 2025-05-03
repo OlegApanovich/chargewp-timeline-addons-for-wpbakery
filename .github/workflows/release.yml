@@ -20,7 +20,7 @@ jobs:
     name: PHP Stan Stat Analys
     runs-on: ubuntu-latest
     container:
-      image: mrdollar4444/plus-wp-builder-wpbakery:latest
+      image: mrdollar4444/plus-wp-builder-wpbakery-03052025:latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
