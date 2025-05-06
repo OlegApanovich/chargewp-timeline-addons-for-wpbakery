@@ -8,6 +8,9 @@
     <!-- Show sniff codes in all reports -->
     <arg value="s"/>
 
+    <!-- Help speed up checks -->
+    <arg name="parallel" value="10" />
+
     <!-- Exclude these paths -->
     <exclude-pattern>*/vendor/*</exclude-pattern>
     <exclude-pattern>languages</exclude-pattern>
