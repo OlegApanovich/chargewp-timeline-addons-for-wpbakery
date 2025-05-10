@@ -79,4 +79,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: PHP Clone Detection
-        run: php ci/phpcpd.phar --fuzzy --exclude includes/vendor .
+        run: php ci/phpcpd.phar --fuzzy --exclude vendor includes/wpbakery-custom-param-collection/vendor .
