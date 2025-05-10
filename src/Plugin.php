@@ -147,7 +147,12 @@ class Plugin {
 	 * @since 1.1
 	 */
 	public function init_custom_element_params() {
-        add_filter('wpcustomparamcollection_get_param_prefix', function() { return 'chargewp'; });
-        include CHARGEWPWPBTIMELINE_INCLUDES_DIR . '/wpbakery-custom-param-collection/wpbakery-custom-param-collection.php';
+		add_filter(
+			'wpcustomparamcollection_get_param_prefix',
+			function () {
+				return 'chargewp';
+			}
+		);
+		include CHARGEWPWPBTIMELINE_INCLUDES_DIR . '/wpbakery-custom-param-collection/wpbakery-custom-param-collection.php';
 	}
 }

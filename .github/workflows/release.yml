@@ -79,4 +79,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: PHP Clone Detection
-        run: php ci/phpcpd.phar --fuzzy .
+        run: php ci/phpcpd.phar --fuzzy --exclude includes/vendor .
