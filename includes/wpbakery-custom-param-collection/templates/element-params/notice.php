@@ -8,9 +8,10 @@
  *
  * @var mixed $value
  * @var array $settings
- * @var ChargewpWpbTimeline\ElementParams\ElementParamsAbstract $_this
+ * @var WpbCustomParamCollection\ElementParams\ElementParamsAbstract $_this
  */
 
+defined( 'ABSPATH' ) || exit;
 ?>
 <div class="notice <?php echo esc_attr( $settings['level'] ); ?> update-nag inline" style="margin: 0">
 	<?php

@@ -11,9 +11,10 @@
  * @var string $checked,
  * @var mixed $value
  * @var array $settings
- * @var ChargewpWpbTimeline\ElementParams\ElementParamsAbstract $_this
+ * @var WpbCustomParamCollection\ElementParams\ElementParamsAbstract $_this
  */
 
+defined( 'ABSPATH' ) || exit;
 ?>
 
 <div class="ult-onoffswitch">

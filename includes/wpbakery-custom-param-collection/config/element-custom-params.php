@@ -7,7 +7,7 @@
  */
 
 return [
-	'chargewp-number',
-	'chargewp-switch',
-	'chargewp-notice',
+	'number',
+	'switcher',
+	'notice',
 ];

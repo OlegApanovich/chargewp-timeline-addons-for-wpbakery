@@ -3,23 +3,23 @@
  * Custom param 'Switch' for wpbakery element.
  *
  * @see https://kb.wpbakery.com/docs/inner-api/vc_add_shortcode_param
- * @since 1.1
+ * @since 1.0
  */
 
-namespace ChargewpWpbTimeline\ElementParams\Lib;
+namespace WpbCustomParamCollection\ElementParams\Lib;
 
-use ChargewpWpbTimeline\ElementParams\ElementParamsAbstract;
+use WpbCustomParamCollection\ElementParams\ElementParamsAbstract;
 
 /**
- * ChargewpSwitch class.
+ * Switch class.
  *
- * @since 1.1
+ * @since 1.0
  */
-class ChargewpSwitch extends ElementParamsAbstract {
+class Switcher extends ElementParamsAbstract {
 	/**
 	 * Get param default attr list.
 	 *
-	 * @since 1.1
+	 * @since 1.0
 	 * @return array
 	 */
 	public function get_param_default_attr_list(): array {
@@ -38,12 +38,12 @@ class ChargewpSwitch extends ElementParamsAbstract {
 	 * @param array $settings
 	 * @param mixed $value
 	 * @return string
-	 * @since 1.1
+	 * @since 1.0
 	 */
 	public function param_output( array $settings, $value ): string {
 		$output   = '';
 		$settings = $this->merge_default_settings( $settings );
-		if ( ! is_array( $settings['options'] ) && $settings['options'] > 0 ) {
+		if ( ! is_array( $settings['options'] ) ) {
 			return $output;
 		}
 
@@ -54,7 +54,7 @@ class ChargewpSwitch extends ElementParamsAbstract {
 			$checked = $value === $key ? 'checked' : '';
 			$uid     = uniqid( 'ultswitchparam-' . wp_rand( 1000, 9999 ) );
 			$label   = $opts['label'] ?? '';
-			$output .= chargewpwpbtimeline_get_template(
+			$output .= wpbcustomparamcollection_get_template(
 				'element-params/partials/switcher-segment.php',
 				[
 					'label'    => $label,
@@ -70,7 +70,7 @@ class ChargewpSwitch extends ElementParamsAbstract {
 		}
 
 		$set_value = $settings['default_set'] ? 'off' : '';
-		$output   .= chargewpwpbtimeline_get_template(
+		$output   .= wpbcustomparamcollection_get_template(
 			$this->get_param_template_name(),
 			[
 				'uid'       => $uid,
@@ -87,7 +87,7 @@ class ChargewpSwitch extends ElementParamsAbstract {
 	 *
 	 * @param array $settings
 	 * @return array
-	 * @since 1.1
+	 * @since 1.0
 	 */
 	public function merge_default_settings( array $settings ): array {
 		$values = [];

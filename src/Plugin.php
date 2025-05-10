@@ -12,8 +12,8 @@ use WPBakeryShortCode;
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeEmpty;
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcode;
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeContainerEmpty;
-use ChargewpWpbTimeline\ElementParams\ElementParams;
 use ChargewpWpbTimeline\Utils\Requirement;
+use WpbCustomParamCollection\Plugin\Wpbackery_Custom_Param_Collection;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -147,6 +147,7 @@ class Plugin {
 	 * @since 1.1
 	 */
 	public function init_custom_element_params() {
-		( new ElementParams() )->init_custom_element_params();
+        add_filter('wpcustomparamcollection_get_param_prefix', function() { return 'chargewp'; });
+        include CHARGEWPWPBTIMELINE_INCLUDES_DIR . '/wpbakery-custom-param-collection/wpbakery-custom-param-collection.php';
 	}
 }

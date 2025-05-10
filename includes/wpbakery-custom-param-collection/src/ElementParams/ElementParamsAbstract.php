@@ -3,24 +3,23 @@
  * Base abstract class for custom element params.
  *
  * @see https://kb.wpbakery.com/docs/developers-how-tos/create-new-param-type
- * @since 1.1
+ * @since 1.0
  */
 
-namespace ChargewpWpbTimeline\ElementParams;
+namespace WpbCustomParamCollection\ElementParams;
 
 defined( 'ABSPATH' ) || exit;
 
 /**
  * ElementParamsAbstract class.
  *
- * @since 1.1
+ * @since 1.0
  */
 abstract class ElementParamsAbstract {
-
 	/**
 	 * Element params templates folder.
 	 *
-	 * @since 1.1
+	 * @since 1.0
 	 * @var string
 	 */
 	public $element_params_templates_folder = 'element-params';
@@ -28,7 +27,7 @@ abstract class ElementParamsAbstract {
 	/**
 	 * Param slug.
 	 *
-	 * @since 1.1
+	 * @since 1.0
 	 * @var string
 	 */
 	public $param_slug;
@@ -36,7 +35,7 @@ abstract class ElementParamsAbstract {
 	/**
 	 * ElementParamsAbstract constructor.
 	 *
-	 * @since 1.1
+	 * @since 1.0
 	 * @param string $param_slug
 	 */
 	public function __construct( string $param_slug ) {
@@ -49,12 +48,12 @@ abstract class ElementParamsAbstract {
 	 * @param array $settings
 	 * @param mixed $value
 	 * @return string
-	 * @since 1.1
+	 * @since 1.0
 	 */
 	public function param_output( array $settings, $value ): string {
 		$settings = $this->merge_default_settings( $settings );
 
-		return chargewpwpbtimeline_get_template(
+		return wpbcustomparamcollection_get_template(
 			$this->get_param_template_name(),
 			[
 				'value'    => $value,
@@ -67,7 +66,7 @@ abstract class ElementParamsAbstract {
 	/**
 	 * Get param default attr list.
 	 *
-	 * @since 1.1
+	 * @since 1.0
 	 * @return array
 	 */
 	abstract public function get_param_default_attr_list(): array;
@@ -77,14 +76,14 @@ abstract class ElementParamsAbstract {
 	 *
 	 * @param array $settings
 	 * @return array
-	 * @since 1.1
+	 * @since 1.0
 	 */
 	abstract public function merge_default_settings( array $settings ): array;
 
 	/**
 	 * Get param slug.
 	 *
-	 * @since 1.1
+	 * @since 1.0
 	 * @return string
 	 */
 	public function get_param_slug(): string {
@@ -94,12 +93,11 @@ abstract class ElementParamsAbstract {
 	/**
 	 * Get param template name.
 	 *
-	 * @since 1.1
+	 * @since 1.0
 	 * @return string
 	 */
 	public function get_param_template_name(): string {
-		$name = str_replace( 'chargewp-', '', $this->get_param_slug() );
-		return $this->element_params_templates_folder . '/' . $name . '.php';
+		return $this->element_params_templates_folder . '/' . $this->get_param_slug() . '.php';
 	}
 
 	/**

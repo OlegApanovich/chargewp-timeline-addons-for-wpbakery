@@ -4,23 +4,23 @@
  * We use this to show user some notice or information about the element.
  *
  * @see https://kb.wpbakery.com/docs/inner-api/vc_add_shortcode_param
- * @since 1.1
+ * @since 1.0
  */
 
-namespace ChargewpWpbTimeline\ElementParams\Lib;
+namespace WpbCustomParamCollection\ElementParams\Lib;
 
-use ChargewpWpbTimeline\ElementParams\ElementParamsAbstract;
+use WpbCustomParamCollection\ElementParams\ElementParamsAbstract;
 
 /**
- * ChargewpNumber class.
+ * Notice class.
  *
- * @since 1.1
+ * @since 1.0
  */
-class ChargewpNotice extends ElementParamsAbstract {
+class Notice extends ElementParamsAbstract {
 	/**
 	 * Get param default attr list.
 	 *
-	 * @since 1.1
+	 * @since 1.0
 	 * @return array
 	 */
 	public function get_param_default_attr_list(): array {
@@ -36,7 +36,7 @@ class ChargewpNotice extends ElementParamsAbstract {
 	 *
 	 * @param array $settings
 	 * @return array
-	 * @since 1.1
+	 * @since 1.0
 	 */
 	public function merge_default_settings( array $settings ): array {
 		$values = [];

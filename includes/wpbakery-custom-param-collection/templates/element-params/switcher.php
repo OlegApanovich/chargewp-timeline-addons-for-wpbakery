@@ -10,6 +10,7 @@
  * @var string $set_value
  */
 
+defined( 'ABSPATH' ) || exit;
 ?>
 
 <script type="text/javascript">
