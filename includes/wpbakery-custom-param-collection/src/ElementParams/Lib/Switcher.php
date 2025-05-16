@@ -2,7 +2,7 @@
 /**
  * Custom param 'Switch' for wpbakery element.
  *
- * @see https://kb.wpbakery.com/docs/inner-api/vc_add_shortcode_param
+ * @see https://github.com/OlegApanovich/wpbakery-custom-param-collection?tab=readme-ov-file#3-switcher
  * @since 1.0
  */
 
@@ -79,7 +79,7 @@ class Switcher extends ElementParamsAbstract {
 			]
 		);
 
-		return $output;
+		return $this->attach_styles_to_param_output( $output );
 	}
 
 	/**

@@ -1,0 +1,74 @@
+.wcp-number-slider-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    font-size: 16px;
+    font-family: sans-serif;
+    margin-top: 10px;
+}
+
+.wcp-number-slider-wrapper .wcp-number-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    min-width: 150px;
+    max-width: 300px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 5px;
+    outline: none;
+    flex: 1;
+    padding: 0;
+}
+
+.wcp-number-slider-wrapper .wcp-number-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background: #aaa;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #888;
+}
+
+.wcp-number-slider-wrapper .wcp-number-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: #aaa;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #888;
+}
+
+.wcp-number-slider-wrapper .wcp-number-slider::-ms-thumb {
+    width: 24px;
+    height: 24px;
+    background: #aaa;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #888;
+}
+
+.wcp-number-slider-wrapper .wcp-number-slider-input {
+    width: 10ch;
+    background: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+@media (max-width: 500px) {
+    .wcp-number-slider-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .wcp-number-with-title {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+}

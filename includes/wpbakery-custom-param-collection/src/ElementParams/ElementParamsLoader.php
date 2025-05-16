@@ -33,17 +33,6 @@ class ElementParamsLoader {
 	public $param_prefix;
 
 	/**
-	 * Set param prefix.
-	 *
-	 * @since 1.0
-	 * @param string $param_prefix
-	 * @return void
-	 */
-	public function set_param_prefix( string $param_prefix ) {
-		$this->param_prefix = $param_prefix;
-	}
-
-	/**
 	 * Get param prefix.
 	 *
 	 * @since 1.0
@@ -87,9 +76,27 @@ class ElementParamsLoader {
 	public function init_single_param( string $param_slug ): bool {
 		$param_instance = $this->get_param_instance( $param_slug );
 
-		$param_slug = $this->get_param_prefix() . '-' . $param_slug;
+		$param_script = $this->get_param_script( $param_slug );
+		$param_slug   = $this->get_param_prefix() . '-' . $param_slug;
+		// as wpbakery does not have a system to include param styles we output styles together with param output.
+		// @see ElementParamsAbstract::param_output().
 
-		return vc_add_shortcode_param( $param_slug, [ $param_instance, 'param_output' ] );
+		return vc_add_shortcode_param( $param_slug, [ $param_instance, 'param_output' ], $param_script );
+	}
+
+	/**
+	 * Get param script.
+	 *
+	 * @param string $param_slug
+	 * @return string|null
+	 * @since 1.0
+	 */
+	public function get_param_script( $param_slug ) {
+		$path             = '/js/params/' . $param_slug . '.js';
+		$param_script     = WPBCUSTOMPARAMCCOLECTION_ASSETS_DIR . $path;
+		$param_script_url = WPBCUSTOMPARAMCCOLECTION_ASSETS_URI . $path;
+
+		return file_exists( $param_script ) ? $param_script_url : null;
 	}
 
 	/**

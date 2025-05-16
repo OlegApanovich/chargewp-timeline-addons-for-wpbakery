@@ -3,7 +3,7 @@
  * Custom param 'Notice' for wpbakery element.
  * We use this to show user some notice or information about the element.
  *
- * @see https://kb.wpbakery.com/docs/inner-api/vc_add_shortcode_param
+ * @see https://github.com/OlegApanovich/wpbakery-custom-param-collection?tab=readme-ov-file#2-notice
  * @since 1.0
  */
 

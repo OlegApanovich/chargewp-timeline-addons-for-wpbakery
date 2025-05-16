@@ -53,7 +53,7 @@ abstract class ElementParamsAbstract {
 	public function param_output( array $settings, $value ): string {
 		$settings = $this->merge_default_settings( $settings );
 
-		return wpbcustomparamcollection_get_template(
+		$output = wpbcustomparamcollection_get_template(
 			$this->get_param_template_name(),
 			[
 				'value'    => $value,
@@ -61,6 +61,29 @@ abstract class ElementParamsAbstract {
 				'_this'    => $this,
 			]
 		);
+
+		return $this->attach_styles_to_param_output( $output );
+	}
+
+	/**
+	 * Attach param styles to param output.
+	 *
+	 * @param string $output
+	 * @return string
+	 * @since 1.0
+	 */
+	public function attach_styles_to_param_output( $output ): string {
+		$path        = '/css/params/' . $this->param_slug . '.css';
+		$param_style = WPBCUSTOMPARAMCCOLECTION_ASSETS_DIR . $path;
+
+		if ( ! file_exists( $param_style ) ) {
+			return $output;
+		}
+
+        // phpcs:ignore:WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+		$output .= '<style>' . file_get_contents( $param_style ) . '</style>';
+
+		return $output;
 	}
 
 	/**
@@ -106,7 +129,7 @@ abstract class ElementParamsAbstract {
 	 * @param array $settings
 	 * @return string
 	 */
-	public function get_param_classes( $settings ) {
+	public function get_param_classes( array $settings ): string {
 		$class_list = [
 			'wpb_vc_param_value',
 			$settings['param_name'],

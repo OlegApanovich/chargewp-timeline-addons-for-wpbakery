@@ -7,7 +7,7 @@
  *
  * @var mixed $value
  * @var array $settings
- * @var WpbCustomParamCollection\ElementParams\ElementParamsAbstract $_this
+ * @var WpbCustomParamCollection\ElementParams\Lib\Number $_this
  */
 
 defined( 'ABSPATH' ) || exit;
