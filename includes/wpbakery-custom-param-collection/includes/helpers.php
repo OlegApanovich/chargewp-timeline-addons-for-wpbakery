@@ -14,19 +14,13 @@ if ( ! function_exists( 'wpbcustomparamcollection_include_template' ) ) :
 	 * @param string $template
 	 * @param array  $variables - passed variables to the template.
 	 *
-	 * @param bool   $once
-	 *
 	 * @return mixed
 	 * @since 1.0
 	 */
-	function wpbcustomparamcollection_include_template( $template, $variables = [], $once = false ) {
+	function wpbcustomparamcollection_include_template( $template, $variables = [] ) {
         // phpcs:ignore:WordPress.PHP.DontExtract.extract_extract
 		is_array( $variables ) && extract( $variables );
-		if ( $once ) {
-			return require_once wpbcustomparamcollection_get_template_path( $template );
-		} else {
-			return require wpbcustomparamcollection_get_template_path( $template );
-		}
+		return require_once wpbcustomparamcollection_get_template_path( $template );
 	}
 endif;
 
@@ -37,14 +31,12 @@ if ( ! function_exists( 'wpbcustomparamcollection_get_template' ) ) :
 	 * @param string $template
 	 * @param array  $variables - passed variables to the template.
 	 *
-	 * @param bool   $once
-	 *
 	 * @return string
 	 * @since 1.0
 	 */
-	function wpbcustomparamcollection_get_template( $template, $variables = [], $once = false ) {
+	function wpbcustomparamcollection_get_template( $template, $variables = [] ) {
 		ob_start();
-		$output = wpbcustomparamcollection_include_template( $template, $variables, $once );
+		$output = wpbcustomparamcollection_include_template( $template, $variables );
 
 		if ( 1 === $output ) {
 			$output = ob_get_contents();
