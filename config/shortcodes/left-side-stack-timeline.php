@@ -22,7 +22,7 @@ $params = [
 return [
 	'name'                    => __( 'Left Side Stack Timeline', 'chargewp-timeline-addons-for-wpbakery' ),
 	'base'                    => 'chargewp-left-side-stack-timeline',
-	'icon'                    => 'chargewp-left-side-stack-timeline',
+	'icon'                    => CHARGEWPWPBTIMELINE_ASSETS_URI . '/images/shortcodes/icons/left-side-stack-timeline.svg',
 	'class'                   => 'chargewp-left-side-stack-timeline',
 	'category'                => 'ChargeWP',
 	'description'             => __( 'Timeline element with stack items on the left side.', 'chargewp-timeline-addons-for-wpbakery' ),

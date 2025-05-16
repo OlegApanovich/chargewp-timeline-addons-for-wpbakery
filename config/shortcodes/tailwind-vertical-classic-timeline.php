@@ -32,7 +32,7 @@ $params = [
 return [
 	'name'                    => __( 'Tailwind Vertical Classic Timeline', 'chargewp-timeline-addons-for-wpbakery' ),
 	'base'                    => 'chargewp-tailwind-vertical-classic-timeline',
-	'icon'                    => 'chargewp-tailwind-vertical-classic-timeline',
+	'icon'                    => CHARGEWPWPBTIMELINE_ASSETS_URI . '/images/shortcodes/icons/tailwind-vertical-classic-timeline.svg',
 	'class'                   => 'chargewp-tailwind-vertical-classic-timeline',
 	'category'                => 'ChargeWP',
 	'description'             => __( 'Timeline element with base on tailwind css framework with classic vertical interface.', 'chargewp-timeline-addons-for-wpbakery' ),

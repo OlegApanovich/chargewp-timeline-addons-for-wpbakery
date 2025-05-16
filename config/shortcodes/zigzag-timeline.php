@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
 return [
 	'name'                    => __( 'Zigzag Timeline', 'chargewp-timeline-addons-for-wpbakery' ),
 	'base'                    => 'chargewp-zigzag-timeline',
-	'icon'                    => 'chargewp-zigzag-timeline',
+	'icon'                    => CHARGEWPWPBTIMELINE_ASSETS_URI . '/images/shortcodes/icons/zigzag-timeline.svg',
 	'class'                   => 'chargewp-zigzag-timeline',
 	'category'                => 'ChargeWP',
 	'description'             => __( 'Timeline element with zigzag interface.', 'chargewp-timeline-addons-for-wpbakery' ),

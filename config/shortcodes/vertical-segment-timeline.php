@@ -36,7 +36,7 @@ $params = [
 return [
 	'name'                    => __( 'Vertical Segment Timeline', 'chargewp-timeline-addons-for-wpbakery' ),
 	'base'                    => 'chargewp-vertical-segment-timeline',
-	'icon'                    => 'chargewp-vertical-segment-timeline',
+	'icon'                    => CHARGEWPWPBTIMELINE_ASSETS_URI . '/images/shortcodes/icons/vertical-segment-timeline.svg',
 	'class'                   => 'chargewp-vertical-segment-timeline',
 	'category'                => 'ChargeWP',
 	'description'             => __( 'Timeline element with vertical-segment interface.', 'chargewp-timeline-addons-for-wpbakery' ),

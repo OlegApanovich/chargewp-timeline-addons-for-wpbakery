@@ -30,7 +30,6 @@ class Plugin {
 	 */
 	public function init() {
 		add_action( 'init', [ $this, 'add_builder_elements' ] );
-		add_action( 'admin_enqueue_scripts', [ $this, 'register_elements_icons' ] );
 		add_action( 'admin_init', [ $this, 'init_custom_element_params' ] );
 	}
 
@@ -125,20 +124,6 @@ class Plugin {
 			$instance = new ChargeWpbShortcodeContainerEmpty( $config );
 		}
 		return $instance;
-	}
-
-	/**
-	 * Register elements icons that user can see in 'Add Element' modal.
-	 *
-	 * @since 1.0
-	 */
-	public function register_elements_icons() {
-		wp_enqueue_style(
-			'chargewp-timeline-element-icons',
-			CHARGEWPWPBTIMELINE_URI . '/assets/css/chargewp-timeline-element-icons.css',
-			[],
-			CHARGEWPWPBTIMELINE_VERSION
-		);
 	}
 
 	/**
