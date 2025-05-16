@@ -91,7 +91,7 @@ if ( ! function_exists( 'chargewpwpbtimeline_config' ) ) :
 
 			// Load the configuration file.
 			// This will throw a fatal error if the file does not exist.
-			$loaded_configs[ $path ] = include $file_path;
+			$loaded_configs[ $path ] = include_once $file_path;
 		}
 
 		// Retrieve config value.
