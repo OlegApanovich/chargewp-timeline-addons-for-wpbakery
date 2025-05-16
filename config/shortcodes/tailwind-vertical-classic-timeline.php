@@ -18,7 +18,7 @@ $params = [
 		'description' => esc_html__( 'Select custom color for timeline base line.', 'chargewp-timeline-addons-for-wpbakery' ),
 	],
 	[
-		'type'        => 'chargewp-number',
+		'type'        => 'chargewp-number-slider',
 		'value'       => '0.5',
 		'min'         => '0.5',
 		'max'         => '10',
