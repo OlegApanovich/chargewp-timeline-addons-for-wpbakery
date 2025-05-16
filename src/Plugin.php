@@ -138,6 +138,6 @@ class Plugin {
 				return 'chargewp';
 			}
 		);
-		include CHARGEWPWPBTIMELINE_INCLUDES_DIR . '/wpbakery-custom-param-collection/wpbakery-custom-param-collection.php';
+		include_once CHARGEWPWPBTIMELINE_INCLUDES_DIR . '/wpbakery-custom-param-collection/wpbakery-custom-param-collection.php';
 	}
 }
