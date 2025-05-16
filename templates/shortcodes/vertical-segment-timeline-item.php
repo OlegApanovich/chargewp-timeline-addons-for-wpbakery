@@ -13,6 +13,9 @@ use ChargewpWpbTimeline\ElementIntegration\HeadingIntegration;
 $custom_heading_integration = new HeadingIntegration();
 ?>
 
+<?php
+// Intentionally not wrapping <li> in <ul> here: the parent template provides the <ul> wrapper.
+?>
 <li <?php $_this->output_shortcode_wrapper_attributes( [ 'class' => 'chargewp-horizontal-section-timeline-event' ] ); ?> data-date="<?php echo esc_attr( $atts['date'] ); ?>">
 	<h3 class="chargewp-horizontal-section-timeline-title">
 		<?php $custom_heading_integration->output_custom_font_attribute( 'title', $atts, $_this->element_slug, 'span' ); ?>
