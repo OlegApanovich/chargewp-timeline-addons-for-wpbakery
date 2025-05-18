@@ -99,19 +99,19 @@ return [
 		'config'        => 'shortcodes.left-side-vertical-slider-timeline',
 		'template'      => 'shortcodes/left-side-vertical-slider-timeline.php',
 		'depend_assets' => [
-			'inner' => [
+			'inner'    => [
 				'css' => [
 					'element.css',
 				],
 			],
-            'external' => [
-                'js' => [
-                    'timelinr' => [
-                        'url' => CHARGEWPWPBTIMELINE_ASSETS_URI . '/js/shortcodes-common/timelinr.js',
-                        'deps' => ['jquery'],
-                    ],
-                ],
-            ],
+			'external' => [
+				'js' => [
+					'timelinr' => [
+						'url'  => CHARGEWPWPBTIMELINE_ASSETS_URI . '/js/shortcodes-common/timelinr.js',
+						'deps' => [ 'jquery' ],
+					],
+				],
+			],
 		],
 	],
 ];
