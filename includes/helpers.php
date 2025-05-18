@@ -14,19 +14,13 @@ if ( ! function_exists( 'chargewpwpbtimeline_include_template' ) ) :
 	 * @param string $template
 	 * @param array  $variables - passed variables to the template.
 	 *
-	 * @param bool   $once
-	 *
 	 * @return mixed
 	 * @since 1.0
 	 */
-	function chargewpwpbtimeline_include_template( $template, $variables = [], $once = false ) {
+	function chargewpwpbtimeline_include_template( $template, $variables = [] ) {
         // phpcs:ignore:WordPress.PHP.DontExtract.extract_extract
 		is_array( $variables ) && extract( $variables );
-		if ( $once ) {
-			return require_once chargewpwpbtimeline_get_template_path( $template );
-		} else {
-			return require chargewpwpbtimeline_get_template_path( $template );
-		}
+        return require chargewpwpbtimeline_get_template_path( $template );
 	}
 endif;
 
@@ -37,14 +31,12 @@ if ( ! function_exists( 'chargewpwpbtimeline_get_template' ) ) :
 	 * @param string $template
 	 * @param array  $variables - passed variables to the template.
 	 *
-	 * @param bool   $once
-	 *
 	 * @return string
 	 * @since 1.0
 	 */
-	function chargewpwpbtimeline_get_template( $template, $variables = [], $once = false ) {
+	function chargewpwpbtimeline_get_template( $template, $variables = [] ) {
 		ob_start();
-		$output = chargewpwpbtimeline_include_template( $template, $variables, $once );
+		$output = chargewpwpbtimeline_include_template( $template, $variables );
 
 		if ( 1 === $output ) {
 			$output = ob_get_contents();
