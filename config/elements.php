@@ -94,4 +94,19 @@ return [
 		'config'   => 'shortcodes.tailwind-vertical-classic-timeline-item',
 		'template' => 'shortcodes/tailwind-vertical-classic-timeline-item.php',
 	],
+
+	'chargewp-left-side-vertical-slider-timeline'      => [
+		'config'        => 'shortcodes.left-side-vertical-slider-timeline',
+		'template'      => 'shortcodes/left-side-vertical-slider-timeline.php',
+		'depend_assets' => [
+			'inner'    => [
+				'css' => [
+					'element.css',
+				],
+				'js' => [
+					'timelinr.css',
+				],
+			],
+		],
+	],
 ];

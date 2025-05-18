@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Left-Side Vertical Slider Timeline</title>
+    <desc>Vertical timeline with one centered block and gold caret arrows at top and bottom</desc>
+    <g fill="none" fill-rule="evenodd">
+        <!-- Background -->
+        <rect x="0" y="0" width="32" height="32" fill="#FFFFFF" rx="5"></rect>
+
+        <!-- Vertical timeline line on the left -->
+        <rect x="4" y="4" width="2" height="24" fill="#4A90E2" rx="1"></rect>
+
+        <!-- Centered slider-style block on the right -->
+        <rect x="10" y="13" width="18" height="6" fill="#D1D1D1" rx="1"></rect>
+
+        <!-- Circle markers on the timeline line -->
+        <circle cx="5" cy="8" r="2" fill="#F6A4EC"></circle>
+        <circle cx="5" cy="16" r="2" fill="#87BBFE"></circle>
+        <circle cx="5" cy="24" r="2" fill="#AFF1B6"></circle>
+
+        <!-- Gold caret arrows further to the right -->
+        <!-- Upward arrow -->
+        <polygon points="14,2 17,6 11,6" fill="#FFD700"/>
+
+        <!-- Downward arrow -->
+        <polygon points="14,30 11,26 17,26" fill="#FFD700"/>
+    </g>
+</svg>
