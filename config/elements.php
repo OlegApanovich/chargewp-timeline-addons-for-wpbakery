@@ -80,7 +80,7 @@ return [
 		'depend_assets' => [
 			'external' => [
 				'css' => [
-					'chargewp-tailwind-cdn-before-setup' => CHARGEWPWPBTIMELINE_ASSETS_URI . '/css/shortcodes-common/tailwind-base.css',
+					'tailwind-cdn-before-setup' => CHARGEWPWPBTIMELINE_ASSETS_URI . '/css/shortcodes-common/tailwind-base.css',
 				],
 			],
 			'inner'    => [
@@ -103,10 +103,15 @@ return [
 				'css' => [
 					'element.css',
 				],
-				'js'  => [
-					'timelinr.css',
-				],
 			],
+            'external' => [
+                'js' => [
+                    'timelinr' => [
+                        'url' => CHARGEWPWPBTIMELINE_ASSETS_URI . '/js/shortcodes-common/timelinr.js',
+                        'deps' => ['jquery'],
+                    ],
+                ],
+            ],
 		],
 	],
 ];

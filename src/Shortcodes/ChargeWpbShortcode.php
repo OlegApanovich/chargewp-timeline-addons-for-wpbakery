@@ -280,15 +280,30 @@ class ChargeWpbShortcode {
 		}
 
 		foreach ( $depend_assets['external'] as $type => $assets_list ) {
-			foreach ( $assets_list as $asset_name => $asset_url ) {
-				if ( 'js' === $type ) {
-					wp_enqueue_script( $this->external_assets_prefix . '-' . $asset_name, $asset_url, [], CHARGEWPWPBTIMELINE_VERSION, true );
-				} elseif ( 'css' === $type ) {
-					wp_enqueue_style( $this->external_assets_prefix . '-' . $asset_name, $asset_url, [], CHARGEWPWPBTIMELINE_VERSION );
-				}
+			foreach ( $assets_list as $asset_name => $asset ) {
+                $this->enqueue_single_asset( $type, $asset_name, $asset );
 			}
 		}
 	}
+
+    /**
+     * Enqueue single asset.
+     *
+     * @param string $type
+     * @param string $asset_name
+     * @param string|array $asset
+     * @since 1.2
+     */
+    public function enqueue_single_asset( $type, $asset_name, $asset ) {
+        $deps = empty( $asset['deps'] ) ? [] : $asset['deps'];
+        $strategy = empty( $asset['strategy'] ) ? true : $asset['strategy'];
+        $url = empty( $asset['url'] ) ? '' : $asset['url'];
+        if ( 'js' === $type ) {
+            wp_enqueue_script( $this->external_assets_prefix . '-' . $asset_name, $url, $deps, CHARGEWPWPBTIMELINE_VERSION, $strategy );
+        } elseif ( 'css' === $type ) {
+            wp_enqueue_style( $this->external_assets_prefix . '-' . $asset_name, $url, $deps, CHARGEWPWPBTIMELINE_VERSION );
+        }
+    }
 
 	/**
 	 * Here we combine initial markup attributes that has our element wrapper
