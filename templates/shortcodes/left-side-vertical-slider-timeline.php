@@ -8,4 +8,3 @@
  */
 
 defined( 'ABSPATH' ) || exit;
-?>

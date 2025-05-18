@@ -99,11 +99,11 @@ return [
 		'config'        => 'shortcodes.left-side-vertical-slider-timeline',
 		'template'      => 'shortcodes/left-side-vertical-slider-timeline.php',
 		'depend_assets' => [
-			'inner'    => [
+			'inner' => [
 				'css' => [
 					'element.css',
 				],
-				'js' => [
+				'js'  => [
 					'timelinr.css',
 				],
 			],

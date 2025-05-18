@@ -9,9 +9,7 @@ use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeContainerEmpty;
 
 defined( 'ABSPATH' ) || exit;
 
-$params = [
-    
-];
+$params = [];
 
 return [
 	'name'                    => __( 'Left Side Vertical Slider Timeline', 'chargewp-timeline-addons-for-wpbakery' ),
