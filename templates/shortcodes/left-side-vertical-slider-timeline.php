@@ -10,7 +10,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<div class="timeline-container">
+<div <?php $_this->output_shortcode_wrapper_attributes( [ 'class' => 'chargewp-left-side-vertical-slider-timeline-container' ] ); ?>>
 	<div id="timeline">
 		<ul id="dates">
 			<li><a href="#1900">1900</a></li>
@@ -82,25 +82,20 @@ defined( 'ABSPATH' ) || exit;
 </div>
 
 <style>
-	/* Container-specific styles instead of global styles */
-	.timeline-container {
+	.chargewp-left-side-vertical-slider-timeline-container {
 		margin: 0;
 		padding: 0;
-		font-family: Georgia, serif;
-		color: #fff;
-		font-size: 14px;
-		background: #222;
 		width: 100%;
 	}
 
 	/* Reset styles only for elements inside the container */
-	.timeline-container * {
+	.chargewp-left-side-vertical-slider-timeline-container * {
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
 	}
 
-	.timeline-container a {
+	.chargewp-left-side-vertical-slider-timeline-container a {
 		color: #ffffcc;
 		text-decoration: none;
 		-webkit-transition: 0.5s;
@@ -110,12 +105,12 @@ defined( 'ABSPATH' ) || exit;
 		transition: 0.5s;
 	}
 
-	.timeline-container a:hover,
-	.timeline-container a.selected {
+	.chargewp-left-side-vertical-slider-timeline-container a:hover,
+	.chargewp-left-side-vertical-slider-timeline-container a.selected {
 		color: #ffcc00;
 	}
 
-	.timeline-container #timeline {
+	.chargewp-left-side-vertical-slider-timeline-container #timeline {
 		width: 100%; /* Make timeline responsive */
 		height: 600px;
 		overflow: hidden;
@@ -125,7 +120,7 @@ defined( 'ABSPATH' ) || exit;
 	}
 
 	/* Add a vertical line through the center of the dots */
-	.timeline-container #timeline::before {
+	.chargewp-left-side-vertical-slider-timeline-container #timeline::before {
 		content: '';
 		position: absolute;
 		top: 0;
@@ -136,7 +131,7 @@ defined( 'ABSPATH' ) || exit;
 		z-index: 1;
 	}
 
-	.timeline-container #dates {
+	.chargewp-left-side-vertical-slider-timeline-container #dates {
 		width: auto; /* Let width be determined by content */
 		min-width: 60px;
 		height: 600px;
@@ -144,7 +139,7 @@ defined( 'ABSPATH' ) || exit;
 		float: left;
 	}
 
-	.timeline-container #dates li {
+	.chargewp-left-side-vertical-slider-timeline-container #dates li {
 		list-style: none;
 		width: auto;
 		height: 100px;
@@ -156,7 +151,7 @@ defined( 'ABSPATH' ) || exit;
 	}
 
 	/* Create a dot centered on the vertical line */
-	.timeline-container #dates li::before {
+	.chargewp-left-side-vertical-slider-timeline-container #dates li::before {
 		content: '';
 		position: absolute;
 		left: 0;
@@ -170,24 +165,24 @@ defined( 'ABSPATH' ) || exit;
 		z-index: 2;
 	}
 
-	.timeline-container #dates a {
+	.chargewp-left-side-vertical-slider-timeline-container #dates a {
 		line-height: 38px;
 		padding-bottom: 10px;
 	}
 
-	.timeline-container #dates a.selected,
-	.timeline-container #dates li a.selected {
+	.chargewp-left-side-vertical-slider-timeline-container #dates a.selected,
+	.chargewp-left-side-vertical-slider-timeline-container #dates li a.selected {
 		font-size: 24px; /* Larger selected font size */
 	}
 
-	.timeline-container #issues {
+	.chargewp-left-side-vertical-slider-timeline-container #issues {
 		width: auto; /* Let issues take remaining space */
 		height: 600px;
 		overflow: hidden;
 		float: left;
 	}
 
-	.timeline-container #issues li {
+	.chargewp-left-side-vertical-slider-timeline-container #issues li {
 		max-width: 300px;
 		height: 600px;
 		list-style: none;
@@ -199,7 +194,7 @@ defined( 'ABSPATH' ) || exit;
 		padding: 0 10px;
 	}
 
-	.timeline-container #issues li.selected img {
+	.chargewp-left-side-vertical-slider-timeline-container #issues li.selected img {
 		-webkit-transform: scale(1.1,1.1);
 		-moz-transform: scale(1.1,1.1);
 		-o-transform: scale(1.1,1.1);
@@ -207,7 +202,7 @@ defined( 'ABSPATH' ) || exit;
 		transform: scale(1.1,1.1);
 	}
 
-	.timeline-container #issues li img {
+	.chargewp-left-side-vertical-slider-timeline-container #issues li img {
 		width: 80%; /* Responsive image size */
 		max-width: 100px;
 		margin: 10px auto; /* Center image horizontally */
@@ -224,7 +219,7 @@ defined( 'ABSPATH' ) || exit;
 		transform: scale(0.7,0.7);
 	}
 
-	.timeline-container #issues li h1 {
+	.chargewp-left-side-vertical-slider-timeline-container #issues li h1 {
 		color: #ffcc00;
 		font-size: 24px; /* Smaller heading */
 		text-align: center; /* Center heading */
@@ -232,7 +227,7 @@ defined( 'ABSPATH' ) || exit;
 		margin-bottom: 10px;
 	}
 
-	.timeline-container #issues li p {
+	.chargewp-left-side-vertical-slider-timeline-container #issues li p {
 		font-size: 12px; /* Smaller text */
 		margin: 10px auto;
 		font-weight: normal;
@@ -242,8 +237,8 @@ defined( 'ABSPATH' ) || exit;
 		max-width: 250px; /* Control paragraph width */
 	}
 
-	.timeline-container #next,
-	.timeline-container #prev {
+	.chargewp-left-side-vertical-slider-timeline-container #next,
+	.chargewp-left-side-vertical-slider-timeline-container #prev {
 		position: absolute;
 		left: 30px; /* Center horizontally relative to the issues container */
 		transform: translateX(-50%); /* Center perfectly by shifting back by half of width */
@@ -255,33 +250,33 @@ defined( 'ABSPATH' ) || exit;
 		z-index: 100; /* Ensure arrows appear above content */
 	}
 
-	.timeline-container #next:hover,
-	.timeline-container #prev:hover {
+	.chargewp-left-side-vertical-slider-timeline-container #next:hover,
+	.chargewp-left-side-vertical-slider-timeline-container #prev:hover {
 		opacity: 0.8;
 	}
 
-	.timeline-container #next.disabled,
-	.timeline-container #prev.disabled {
+	.chargewp-left-side-vertical-slider-timeline-container #next.disabled,
+	.chargewp-left-side-vertical-slider-timeline-container #prev.disabled {
 		opacity: 0.2;
 	}
 
 	/* REPLACED BACKGROUND IMAGES WITH SVG */
-	.timeline-container #next {
+	.chargewp-left-side-vertical-slider-timeline-container #next {
 		bottom: 0;
 		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 22'%3E%3Cpath d='M19 22L0 3L3 0L19 16L35 0L38 3L19 22Z' fill='%23ffcc00'/%3E%3C/svg%3E") no-repeat center;
 	}
 
-	.timeline-container #prev {
+	.chargewp-left-side-vertical-slider-timeline-container #prev {
 		top: 0;
 		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 22'%3E%3Cpath d='M19 0L38 19L35 22L19 6L3 22L0 19L19 0Z' fill='%23ffcc00'/%3E%3C/svg%3E") no-repeat center;
 	}
 
-	.timeline-container #grad_top {
+	.chargewp-left-side-vertical-slider-timeline-container #grad_top {
 		top: 0;
 		background: linear-gradient(to bottom, rgba(34,34,34,1) 0%, rgba(34,34,34,0) 100%);
 	}
 
-	.timeline-container #grad_bottom {
+	.chargewp-left-side-vertical-slider-timeline-container #grad_bottom {
 		bottom: 0;
 		background: linear-gradient(to top, rgba(34,34,34,1) 0%, rgba(34,34,34,0) 100%);
 	}

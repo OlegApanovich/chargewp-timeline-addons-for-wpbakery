@@ -9,7 +9,22 @@ use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeContainerEmpty;
 
 defined( 'ABSPATH' ) || exit;
 
-$params = [];
+$params = [
+	[
+		'type'        => 'colorpicker',
+		'value'       => '#cccccc',
+		'heading'     => esc_html__( 'Baseline Color', 'chargewp-timeline-addons-for-wpbakery' ),
+		'param_name'  => 'baseline_color',
+		'description' => esc_html__( 'Select custom color for timeline base line.', 'chargewp-timeline-addons-for-wpbakery' ),
+	],
+	[
+		'type'        => 'colorpicker',
+		'value'       => '#cccccc',
+		'heading'     => esc_html__( 'Baseline Color', 'chargewp-timeline-addons-for-wpbakery' ),
+		'param_name'  => 'baseline_color',
+		'description' => esc_html__( 'Select custom color for timeline base line.', 'chargewp-timeline-addons-for-wpbakery' ),
+	],
+];
 
 return [
 	'name'                    => __( 'Left Side Vertical Slider Timeline', 'chargewp-timeline-addons-for-wpbakery' ),
