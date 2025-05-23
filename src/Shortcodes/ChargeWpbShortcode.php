@@ -282,7 +282,7 @@ class ChargeWpbShortcode {
 	 * Enqueue single inner element asset.
 	 *
 	 * @param string       $type
-	 * @param string|array $asset
+	 * @param array $asset
 	 * @since 1.2
 	 */
 	public function enqueue_single_inner_asset( string $type, array $asset ) {

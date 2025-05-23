@@ -5,7 +5,7 @@
  * @since 1.0
  */
 
-use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeContainerEmpty;
+use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeEmpty;
 
 defined( 'ABSPATH' ) || exit;
 
