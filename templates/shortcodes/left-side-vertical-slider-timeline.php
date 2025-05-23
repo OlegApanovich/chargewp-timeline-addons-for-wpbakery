@@ -82,13 +82,25 @@ defined( 'ABSPATH' ) || exit;
 </div>
 
 <style>
+	<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container #timeline::before {
+		background-color: <?php echo esc_attr( $atts['baseline_color'] ); ?>;
+		width: <?php echo esc_attr( $atts['baseline_width'] ); ?>px;
+	}
+	<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container #next {
+		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 22'%3E%3Cpath d='M19 22L0 3L3 0L19 16L35 0L38 3L19 22Z' fill='<?php echo rawurlencode( esc_attr( $atts['next_arrow_color'] ) ); ?>'/%3E%3C/svg%3E") no-repeat center;
+	}
+	<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container #prev {
+		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 22'%3E%3Cpath d='M19 0L38 19L35 22L19 6L3 22L0 19L19 0Z' fill='<?php echo rawurlencode( esc_attr( $atts['prev_arrow_color'] ) ); ?>'/%3E%3C/svg%3E") no-repeat center;
+	}
+</style>
+
+<style>
 	.chargewp-left-side-vertical-slider-timeline-container {
 		margin: 0;
 		padding: 0;
 		width: 100%;
 	}
 
-	/* Reset styles only for elements inside the container */
 	.chargewp-left-side-vertical-slider-timeline-container * {
 		margin: 0;
 		padding: 0;
@@ -119,15 +131,12 @@ defined( 'ABSPATH' ) || exit;
 		display: flex; /* Use flexbox for layout */
 	}
 
-	/* Add a vertical line through the center of the dots */
 	.chargewp-left-side-vertical-slider-timeline-container #timeline::before {
 		content: '';
 		position: absolute;
 		top: 0;
 		left: 6px; /* Position for center of dots (dot is at 0px, 12px wide) */
-		width: 2px;
 		height: 100%;
-		background-color: #444;
 		z-index: 1;
 	}
 
@@ -260,15 +269,12 @@ defined( 'ABSPATH' ) || exit;
 		opacity: 0.2;
 	}
 
-	/* REPLACED BACKGROUND IMAGES WITH SVG */
 	.chargewp-left-side-vertical-slider-timeline-container #next {
 		bottom: 0;
-		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 22'%3E%3Cpath d='M19 22L0 3L3 0L19 16L35 0L38 3L19 22Z' fill='%23ffcc00'/%3E%3C/svg%3E") no-repeat center;
 	}
 
 	.chargewp-left-side-vertical-slider-timeline-container #prev {
 		top: 0;
-		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 22'%3E%3Cpath d='M19 0L38 19L35 22L19 6L3 22L0 19L19 0Z' fill='%23ffcc00'/%3E%3C/svg%3E") no-repeat center;
 	}
 
 	.chargewp-left-side-vertical-slider-timeline-container #grad_top {
