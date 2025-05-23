@@ -86,9 +86,10 @@ class ChargeWpbShortcode {
 	 * Set element slug.
 	 *
 	 * @param string $element_slug
+	 * return ChargeWpbShortcode
 	 * @since 1.0
 	 */
-	public function set_element_slug( $element_slug ) {
+	public function set_element_slug( string $element_slug ): ChargeWpbShortcode {
 		$this->element_slug = $element_slug;
 		return $this;
 	}
@@ -97,9 +98,10 @@ class ChargeWpbShortcode {
 	 * Set element template.
 	 *
 	 * @param string $template
+	 * return ChargeWpbShortcode
 	 * @since 1.0
 	 */
-	public function set_template( $template ) {
+	public function set_template( string $template ): ChargeWpbShortcode {
 		$this->template = $template;
 		return $this;
 	}
@@ -108,9 +110,10 @@ class ChargeWpbShortcode {
 	 * Set shortcode attributes.
 	 *
 	 * @param array $config
+	 * return ChargeWpbShortcode
 	 * @since 1.0
 	 */
-	public function set_config( $config ) {
+	public function set_config( array $config ): ChargeWpbShortcode {
 		$this->config = $config;
 		return $this;
 	}
@@ -119,9 +122,10 @@ class ChargeWpbShortcode {
 	 * Set WPBakeryShortCode.
 	 *
 	 * @param WPBakeryShortCode $wpb_shortcode
+	 * return ChargeWpbShortcode
 	 * @since 1.0
 	 */
-	public function set_wpb_shortcode( $wpb_shortcode ) {
+	public function set_wpb_shortcode( WPBakeryShortCode $wpb_shortcode ): ChargeWpbShortcode {
 		$this->wpb_shortcode = $wpb_shortcode;
 		return $this;
 	}
@@ -130,9 +134,10 @@ class ChargeWpbShortcode {
 	 * Set element init data.
 	 *
 	 * @param array $element_init_data
+	 * return ChargeWpbShortcode
 	 * @since 1.0
 	 */
-	public function set_element_init_data( $element_init_data ) {
+	public function set_element_init_data( array $element_init_data ): ChargeWpbShortcode {
 		$this->element_init_data = $element_init_data;
 		return $this;
 	}
@@ -154,7 +159,7 @@ class ChargeWpbShortcode {
 	 * @return string
 	 * @since 1.0
 	 */
-	public function render_shortcode( $atts, $content = null ) {
+	public function render_shortcode( array $atts, $content = null ): string {
 		$this->shortcode_atts = $atts;
 
 		$payload = [
@@ -171,50 +176,14 @@ class ChargeWpbShortcode {
 	}
 
 	/**
-	 * Enqueue shortcode asset css.
-	 *
-	 * @param string $file_name
-	 * @param array  $deps
-	 *
-	 * @since 1.0
-	 */
-	public function enqueue_shortcode_asset_css( $file_name, $deps = [] ) {
-		$path = $this->get_shortcode_asset_path( $file_name, 'css' );
-		$uri  = $this->get_shortcode_asset_uri( $file_name, 'css' );
-
-		if ( ! file_exists( $path ) ) {
-			return;
-		}
-
-		wp_enqueue_style( $this->element_slug . '-' . $file_name, $uri, $deps, filemtime( $path ) );
-	}
-
-	/**
-	 * Enqueue shortcode asset js.
-	 *
-	 * @param string $file_name
-	 * @param array  $deps
-	 * @since 1.0
-	 */
-	public function enqueue_shortcode_asset_js( $file_name, $deps = [] ) {
-		$path = $this->get_shortcode_asset_path( $file_name, 'js' );
-		$uri  = $this->get_shortcode_asset_uri( $file_name, 'js' );
-
-		if ( ! file_exists( $path ) ) {
-			return;
-		}
-
-		wp_enqueue_script( $this->element_slug . '-' . $file_name, $uri, $deps, filemtime( $path ), true );
-	}
-
-	/**
 	 * Get path to shortcode asset.
 	 *
 	 * @param string $file_name
 	 * @param string $type
+	 * @return string
 	 * @since 1.0
 	 */
-	public function get_shortcode_asset_path( $file_name, $type ) {
+	public function get_shortcode_asset_path( string $file_name, string $type ): string {
 		return CHARGEWPWPBTIMELINE_ASSETS_DIR . '/' . $type . '/shortcodes/' . $this->element_slug . '/' . $file_name;
 	}
 
@@ -223,9 +192,10 @@ class ChargeWpbShortcode {
 	 *
 	 * @param string $file_name
 	 * @param string $type
+	 * @return string
 	 * @since 1.0
 	 */
-	public function get_shortcode_asset_uri( $file_name, $type ) {
+	public function get_shortcode_asset_uri( string $file_name, string $type ): string {
 		return CHARGEWPWPBTIMELINE_URI . '/assets/' . $type . '/shortcodes/' . $this->element_slug . '/' . $file_name;
 	}
 
@@ -252,18 +222,18 @@ class ChargeWpbShortcode {
 	 * @param array $depend_assets
 	 * @since 1.0
 	 */
-	public function enqueue_shortcode_inner_assets( $depend_assets ) {
+	public function enqueue_shortcode_inner_assets( array $depend_assets ) {
 		if ( empty( $depend_assets['inner'] ) ) {
 			return;
 		}
 
-		foreach ( $depend_assets['inner'] as $type => $assets_list ) {
-			foreach ( $assets_list as $asset ) {
-				if ( 'js' === $type ) {
-					$this->enqueue_shortcode_asset_js( $asset );
-				} elseif ( 'css' === $type ) {
-					$this->enqueue_shortcode_asset_css( $asset );
+		foreach ( $depend_assets['inner'] as $type => $assets_data ) {
+			foreach ( $assets_data as $asset ) {
+				if ( empty( $asset['file'] ) ) {
+					continue;
 				}
+
+				$this->enqueue_single_inner_asset( $type, $asset );
 			}
 		}
 	}
@@ -274,35 +244,76 @@ class ChargeWpbShortcode {
 	 * @param array $depend_assets
 	 * @since 1.0
 	 */
-	public function enqueue_shortcode_external_assets( $depend_assets ) {
+	public function enqueue_shortcode_external_assets( array $depend_assets ) {
 		if ( empty( $depend_assets['external'] ) ) {
 			return;
 		}
 
 		foreach ( $depend_assets['external'] as $type => $assets_list ) {
 			foreach ( $assets_list as $asset_name => $asset ) {
-				$this->enqueue_single_asset( $type, $asset_name, $asset );
+				if ( empty( $asset['url'] ) ) {
+					continue;
+				}
+
+				$this->enqueue_single_external_asset( $type, $asset, $asset_name );
 			}
 		}
 	}
 
 	/**
-	 * Enqueue single asset.
+	 * Enqueue single external element asset.
 	 *
 	 * @param string       $type
+	 * @param string|array $asset
 	 * @param string       $asset_name
+	 * @since 1.2
+	 */
+	public function enqueue_single_external_asset( string $type, $asset, string $asset_name ) {
+		$options    = $this->extract_asset_options( $asset );
+		$asset_name = $this->external_assets_prefix . '-' . $asset_name;
+		if ( 'js' === $type ) {
+			wp_enqueue_script( $asset_name, $asset['url'], $options['deps'], CHARGEWPWPBTIMELINE_VERSION, $options['args'] );
+		} elseif ( 'css' === $type ) {
+			wp_enqueue_style( $asset_name, $asset['url'], $options['deps'], CHARGEWPWPBTIMELINE_VERSION, $options['media'] );
+		}
+	}
+
+	/**
+	 * Enqueue single inner element asset.
+	 *
+	 * @param string       $type
 	 * @param string|array $asset
 	 * @since 1.2
 	 */
-	public function enqueue_single_asset( $type, $asset_name, $asset ) {
-		$deps     = empty( $asset['deps'] ) ? [] : $asset['deps'];
-		$strategy = empty( $asset['strategy'] ) ? true : $asset['strategy'];
-		$url      = empty( $asset['url'] ) ? '' : $asset['url'];
-		if ( 'js' === $type ) {
-			wp_enqueue_script( $this->external_assets_prefix . '-' . $asset_name, $url, $deps, CHARGEWPWPBTIMELINE_VERSION, $strategy );
-		} elseif ( 'css' === $type ) {
-			wp_enqueue_style( $this->external_assets_prefix . '-' . $asset_name, $url, $deps, CHARGEWPWPBTIMELINE_VERSION );
+	public function enqueue_single_inner_asset( string $type, array $asset ) {
+		$path = $this->get_shortcode_asset_path( $asset['file'], $type );
+		if ( ! file_exists( $path ) ) {
+			return;
 		}
+
+		$options    = $this->extract_asset_options( $asset );
+		$url        = $this->get_shortcode_asset_uri( $asset['file'], $type );
+		$asset_name = $this->element_slug . '-' . $asset['file'];
+
+		if ( 'js' === $type ) {
+			wp_enqueue_script( $asset_name, $url, $options['deps'], filemtime( $path ), $options['args'] );
+		} elseif ( 'css' === $type ) {
+			wp_enqueue_style( $asset_name, $url, $options['deps'], filemtime( $path ), $options['media'] );
+		}
+	}
+
+	/**
+	 * Extract asset enqueue arguments from the shortcode configuration settings
+	 *
+	 * @param array $asset
+	 * @return array
+	 */
+	private function extract_asset_options( array $asset ): array {
+		return [
+			'deps'  => $asset['deps'] ?? [],
+			'args'  => $asset['strategy'] ?? [],
+			'media' => $asset['media'] ?? 'all',
+		];
 	}
 
 	/**
@@ -313,7 +324,7 @@ class ChargeWpbShortcode {
 	 * @param array $initial_markup_atts wrapper attributes that has our initial element markup.
 	 * @since 1.0
 	 */
-	public function output_shortcode_wrapper_attributes( $initial_markup_atts = [] ) {
+	public function output_shortcode_wrapper_attributes( array $initial_markup_atts = [] ) {
 		$classes = $this->get_wrapper_classes( $initial_markup_atts );
 
 		unset( $initial_markup_atts['class'] );
@@ -336,7 +347,7 @@ class ChargeWpbShortcode {
 	 * @return string
 	 * @since 1.0
 	 */
-	public function get_data_attribute_id() {
+	public function get_data_attribute_id(): string {
 		return 'data-chargewp-shortcode-id';
 	}
 
@@ -347,7 +358,7 @@ class ChargeWpbShortcode {
 	 * @return string
 	 * @since 1.0
 	 */
-	public function get_wrapper_classes( $initial_markup_atts ) {
+	public function get_wrapper_classes( array $initial_markup_atts ): string {
 		$classes  = empty( $this->shortcode_atts['css'] ) ? '' : vc_shortcode_custom_css_class( $this->shortcode_atts['css'], ' ' );
 		$classes .= empty( $this->shortcode_atts['el_class'] ) ? '' : $this->wpb_shortcode->getExtraClass( $this->shortcode_atts['el_class'] );
 		$classes .= empty( $this->shortcode_atts['css_animation'] ) ? '' : $this->wpb_shortcode->getCSSAnimation( $this->shortcode_atts['css_animation'] );
@@ -369,15 +380,15 @@ class ChargeWpbShortcode {
 	 * We use it when want to get output template element shortcode
 	 * that was already integrated in current element.
 	 *
-	 * @since 1.1
 	 * @param array  $atts
 	 * @param string $integrated_slug
 	 * @param string $integrated_prefix we use this prefix to find integrated shortcode atts,
 	 * that contains our current shortcode atts.
 	 *
 	 * @return string
+	 * @since 1.1
 	 */
-	public function get_integrated_shortcode_output( $atts, $integrated_slug, $integrated_prefix ) {
+	public function get_integrated_shortcode_output( array $atts, string $integrated_slug, string $integrated_prefix ): string {
 		$data = vc_map_integrate_parse_atts( $this->element_slug, $integrated_slug, $atts, $integrated_prefix );
 		if ( $data ) {
 			$integrated_shortcode = vc_manager()->vc()->getShortCode( 'vc_icon' );

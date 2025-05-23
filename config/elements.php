@@ -26,7 +26,9 @@ return [
 		'depend_assets' => [
 			'inner' => [
 				'css' => [
-					'element.css',
+					[
+						'file' => 'element.css',
+					],
 				],
 			],
 		],
@@ -43,10 +45,14 @@ return [
 		'depend_assets' => [
 			'inner' => [
 				'css' => [
-					'element.css',
+					[
+						'file' => 'element.css',
+					],
 				],
 				'js'  => [
-					'element.js',
+					[
+						'element.js',
+					],
 				],
 			],
 		],
@@ -63,7 +69,9 @@ return [
 		'depend_assets' => [
 			'inner' => [
 				'css' => [
-					'element.css',
+					[
+						'file' => 'element.css',
+					],
 				],
 			],
 		],
@@ -85,7 +93,9 @@ return [
 			],
 			'inner'    => [
 				'css' => [
-					'element.css',
+					[
+						'file' => 'element.css',
+					],
 				],
 			],
 		],
@@ -101,10 +111,15 @@ return [
 		'depend_assets' => [
 			'inner'    => [
 				'css' => [
-					'element.css',
+					[
+						'file' => 'element.css',
+					],
 				],
-				'js' => [
-					'element.js',
+				'js'  => [
+					[
+						'file' => 'element.js',
+						'deps' => [ 'jquery' ],
+					],
 				],
 			],
 			'external' => [
