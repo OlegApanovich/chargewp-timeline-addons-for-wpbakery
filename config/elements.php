@@ -4,16 +4,16 @@
  *
  * @note if you need specific class for a shortcode
  * then use for example: 'class'    => 'ChargewpWpbTimeline\Shortcodes\VerticalTimelineItem'
- * otherwise user 'is_container' => true for a container shortcode
+ * use 'is_container' => true for a container shortcode
  * and 'is_container' => false for a simple shortcode.
  *
  * @note we can use 'depend_assets' to include assets.
- * We consider dependency assets all assets no strictly related to shortcode itself.
+ * We consider dependency assets all assets related to shortcode itself.
  * They can be inner and external.
- *  - Inner assets we keep in the same directory where regular shortcode, it's a shortcode specific asset.
- * 'depend_assets' => ['inner' => ['js' => ['hammer.js',],]],
+ *  - Inner assets we keep in assets/(css|js)/shortcodes/shortcode-slug.
+ * 'depend_assets' => ['inner' => ['js' => ['file' => 'hammer.js',],]],
  *  - External assets provided in shortcode config by url.
- * 'depend_assets' => ['external' => ['js' => ['https://code.jquery.com/jquery-3.7.1.min.js',],]],
+ * 'depend_assets' => ['external' => ['js' => ['url' => 'https://code.jquery.com/jquery-3.7.1.min.js',],]],
  *
  * @since 1.0
  */
