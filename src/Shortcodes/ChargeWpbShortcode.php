@@ -281,8 +281,8 @@ class ChargeWpbShortcode {
 	/**
 	 * Enqueue single inner element asset.
 	 *
-	 * @param string       $type
-	 * @param array $asset
+	 * @param string $type
+	 * @param array  $asset
 	 * @since 1.2
 	 */
 	public function enqueue_single_inner_asset( string $type, array $asset ) {
@@ -307,11 +307,12 @@ class ChargeWpbShortcode {
 	 *
 	 * @param array $asset
 	 * @return array
+	 * @since 1.2
 	 */
 	private function extract_asset_options( array $asset ): array {
 		return [
 			'deps'  => $asset['deps'] ?? [],
-			'args'  => $asset['strategy'] ?? [],
+			'args'  => $asset['args'] ?? [],
 			'media' => $asset['media'] ?? 'all',
 		];
 	}

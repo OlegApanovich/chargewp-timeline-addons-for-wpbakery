@@ -187,9 +187,6 @@
     margin-bottom: calc(4% * var(--tw-space-y-reverse));
 }
 
-
-
-
 /* Misc */
 .chargewp-tailwind-container .chargewp-p-6 { padding: 1.5rem; }
 .chargewp-tailwind-container .chargewp-px-\[2\%\] { padding-left: 2%; padding-right: 2%; }
