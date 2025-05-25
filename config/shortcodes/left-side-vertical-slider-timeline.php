@@ -49,6 +49,12 @@ $params = [
 		'param_name' => 'items',
 		'params'     => [
 			[
+				'type'        => 'checkbox',
+				'heading'     => esc_html__( 'Active Item', 'chargewp-timeline-addons-for-wpbakery' ),
+				'description' => esc_html__( 'Set this item as active after the page finishes loading in the slider. Only one item can be active in the slider. If you select more than one as active, the slider will activate only the last one.', 'chargewp-timeline-addons-for-wpbakery' ),
+				'param_name'  => 'is_active',
+			],
+			[
 				'type'        => 'dropdown',
 				'heading'     => esc_html__( 'Image source', 'js_composer' ),
 				'param_name'  => 'image_source',
@@ -94,6 +100,30 @@ $params = [
 				'type'       => 'textarea',
 				'heading'    => esc_html__( 'Text', 'chargewp-timeline-addons-for-wpbakery' ),
 				'param_name' => 'content',
+			],
+			[
+				'type'        => 'colorpicker',
+				'value'       => '#cccccc',
+				'heading'     => esc_html__( 'Marker Color', 'chargewp-timeline-addons-for-wpbakery' ),
+				'param_name'  => 'marker_color',
+				'description' => esc_html__( 'Select custom color for item marker.', 'chargewp-timeline-addons-for-wpbakery' ),
+			],
+			[
+				'type'        => 'colorpicker',
+				'value'       => '#cccccc',
+				'heading'     => esc_html__( 'Marker Border Color', 'chargewp-timeline-addons-for-wpbakery' ),
+				'param_name'  => 'marker_border_color',
+				'description' => esc_html__( 'Select custom border color for item marker.', 'chargewp-timeline-addons-for-wpbakery' ),
+			],
+			[
+				'type'        => 'chargewp-number-slider',
+				'value'       => '12',
+				'min'         => '5',
+				'max'         => '20',
+				'step'        => '1',
+				'heading'     => esc_html__( 'Marker Size', 'chargewp-timeline-addons-for-wpbakery' ),
+				'param_name'  => 'marker_size',
+				'description' => esc_html__( 'Set custom size in px from 5 to 20 for timeline item marker.', 'chargewp-timeline-addons-for-wpbakery' ),
 			],
 		],
 	],

@@ -10,6 +10,7 @@
 defined( 'ABSPATH' ) || exit;
 
 $items = vc_param_group_parse_atts( $atts['items'] );
+$items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'items' );
 ?>
 
 <div <?php $_this->output_shortcode_wrapper_attributes( [ 'class' => 'chargewp-left-side-vertical-slider-timeline-container' ] ); ?>>
@@ -21,8 +22,8 @@ $items = vc_param_group_parse_atts( $atts['items'] );
 					continue;
 				}
 				?>
-				<li>
-					<a href="<?php echo esc_attr( $item['date'] ); ?>">
+				<li data-item-id="<?php echo esc_attr( $item['id'] ); ?>">
+					<a href="<?php echo esc_attr( $item['id'] ); ?>">
 						<?php echo esc_html( $item['date'] ); ?>
 					</a>
 				</li>
@@ -37,7 +38,7 @@ $items = vc_param_group_parse_atts( $atts['items'] );
 					continue;
 				}
 				?>
-				<li id="<?php echo esc_attr( $item['date'] ); ?>">
+				<li id="<?php echo esc_attr( $item['id'] ); ?>">
 					<?php
 					$item_data = $_this->get_atts_lib( 'image' )->get_item_data( $item );
 
@@ -72,12 +73,30 @@ $items = vc_param_group_parse_atts( $atts['items'] );
 		background-color: <?php echo esc_attr( $atts['baseline_color'] ); ?>;
 		width: <?php echo esc_attr( $atts['baseline_width'] ); ?>px;
 	}
+
+	.chargewp-left-side-vertical-slider-timeline-container #dates li::before {
+		left: <?php echo esc_attr( $atts['baseline_width'] <= 6 ? intdiv( $atts['baseline_width'] - 1, 2 ) : ( $atts['baseline_width'] <= 9 ? 3 : 4 ) ); ?>px;;
+	}
+
 	<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container #next {
 		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 22'%3E%3Cpath d='M19 22L0 3L3 0L19 16L35 0L38 3L19 22Z' fill='<?php echo rawurlencode( esc_attr( $atts['next_arrow_color'] ) ); ?>'/%3E%3C/svg%3E") no-repeat center;
 	}
 	<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container #prev {
 		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 22'%3E%3Cpath d='M19 0L38 19L35 22L19 6L3 22L0 19L19 0Z' fill='<?php echo rawurlencode( esc_attr( $atts['prev_arrow_color'] ) ); ?>'/%3E%3C/svg%3E") no-repeat center;
 	}
+	<?php
+	foreach ( $items as $item ) {
+		$_this->output_style_shortcode_id();
+		?>
+		.chargewp-left-side-vertical-slider-timeline-container #dates [data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]::before {
+				width: <?php echo (int) esc_attr( $item['marker_size'] ); ?>px;
+				height: <?php echo (int) esc_attr( $item['marker_size'] ); ?>px;
+				background-color: <?php echo esc_attr( $item['marker_color'] ); ?>;
+				border: 1px solid <?php echo esc_attr( $item['marker_border_color'] ); ?>;
+			}
+		<?php
+	}
+	?>
 </style>
 
 <style>
@@ -140,7 +159,7 @@ $items = vc_param_group_parse_atts( $atts['items'] );
 		height: 100px;
 		line-height: 100px;
 		font-size: 16px;
-		padding-left: 15px;
+		padding-left: 25px;
 		padding-right: 15px;
 		position: relative; /* For absolute positioning of the dot */
 	}
@@ -149,13 +168,8 @@ $items = vc_param_group_parse_atts( $atts['items'] );
 	.chargewp-left-side-vertical-slider-timeline-container #dates li::before {
 		content: '';
 		position: absolute;
-		left: 0;
 		top: 50%;
 		transform: translateY(-50%);
-		width: 12px;
-		height: 12px;
-		background-color: #666;
-		border: 1px solid #999;
 		border-radius: 50%;
 		z-index: 2;
 	}
@@ -163,6 +177,7 @@ $items = vc_param_group_parse_atts( $atts['items'] );
 	.chargewp-left-side-vertical-slider-timeline-container #dates a {
 		line-height: 38px;
 		padding-bottom: 10px;
+		white-space: nowrap;
 	}
 
 	.chargewp-left-side-vertical-slider-timeline-container #dates a.selected,
@@ -274,6 +289,13 @@ $items = vc_param_group_parse_atts( $atts['items'] );
 	}
 </style>
 
+<?php
+$active = 1;
+foreach ( $items as $key => $item ) {
+	$active = isset( $item['is_active'] ) ? $key + 1 : $active;
+}
+?>
+
 <script>
 	jQuery(window).ready(function() {
 		jQuery(function(){
@@ -282,7 +304,7 @@ $items = vc_param_group_parse_atts( $atts['items'] );
 				issuesSpeed: 300,
 				datesSpeed: 100,
 				arrowKeys: 'true',
-				startAt: 2
+				startAt: <?php echo esc_attr( $active ); ?>,
 			});
 		});
 	});
