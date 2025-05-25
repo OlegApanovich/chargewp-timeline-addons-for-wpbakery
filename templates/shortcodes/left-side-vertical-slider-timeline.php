@@ -8,73 +8,59 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+
+$items = vc_param_group_parse_atts( $atts['items'] );
 ?>
 
 <div <?php $_this->output_shortcode_wrapper_attributes( [ 'class' => 'chargewp-left-side-vertical-slider-timeline-container' ] ); ?>>
 	<div id="timeline">
 		<ul id="dates">
-			<li><a href="#1900">1900</a></li>
-			<li><a href="#1930">1930</a></li>
-			<li><a href="#1944">1944</a></li>
-			<li><a href="#1950">1950</a></li>
-			<li><a href="#1971">1971</a></li>
-			<li><a href="#1977">1977</a></li>
-			<li><a href="#1989">1989</a></li>
-			<li><a href="#1999">1999</a></li>
-			<li><a href="#2001">2001</a></li>
-			<li><a href="#2011">2011</a></li>
+			<?php
+			foreach ( $items as $item ) :
+				if ( ! isset( $item['date'] ) ) {
+					continue;
+				}
+				?>
+				<li>
+					<a href="<?php echo esc_attr( $item['date'] ); ?>">
+						<?php echo esc_html( $item['date'] ); ?>
+					</a>
+				</li>
+				<?php
+			endforeach;
+			?>
 		</ul>
 		<ul id="issues">
-			<li id="1900">
-				<img src="http://www.csslab.cl/ejemplos/timelinr/latest/images/9.png" />
-				<h1>1900</h1>
-				<p>Here we are.</p>
-			</li>
-			<li id="1930">
-				<img src="http://www.csslab.cl/ejemplos/timelinr/latest/images/9.png" />
-				<h1>1930</h1>
-				<p>Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit.</p>
-			</li>
-			<li id="1944">
-				<img src="http://www.csslab.cl/ejemplos/timelinr/latest/images/9.png" />
-				<h1>1944</h1>
-				<p>Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit.</p>
-			</li>
-			<li id="1950">
-				<img src="http://www.csslab.cl/ejemplos/timelinr/latest/images/9.png" />
-				<h1>1950</h1>
-				<p>Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit.</p>
-			</li>
-			<li id="1971">
-				<img src="http://www.csslab.cl/ejemplos/timelinr/latest/images/9.png" />
-				<h1>1971</h1>
-				<p>Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit.</p>
-			</li>
-			<li id="1977">
-				<img src="http://www.csslab.cl/ejemplos/timelinr/latest/images/9.png" />
-				<h1>1977</h1>
-				<p>Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit.</p>
-			</li>
-			<li id="1989">
-				<img src="http://www.csslab.cl/ejemplos/timelinr/latest/images/9.png" />
-				<h1>1989</h1>
-				<p>Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit.</p>
-			</li>
-			<li id="1999">
-				<img src="http://www.csslab.cl/ejemplos/timelinr/latest/images/9.png" />
-				<h1>1999</h1>
-				<p>Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit.</p>
-			</li>
-			<li id="2001">
-				<img src="http://www.csslab.cl/ejemplos/timelinr/latest/images/9.png" />
-				<h1>2001</h1>
-				<p>Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit.</p>
-			</li>
-			<li id="2011">
-				<img src="http://www.csslab.cl/ejemplos/timelinr/latest/images/9.png" />
-				<h1>2011</h1>
-				<p>Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit.</p>
-			</li>
+			<?php
+			foreach ( $items as $item ) :
+				if ( ! isset( $item['date'] ) ) {
+					continue;
+				}
+				?>
+				<li id="<?php echo esc_attr( $item['date'] ); ?>">
+					<?php
+					$item_data = $_this->get_atts_lib( 'image' )->get_item_data( $item );
+
+					if ( $item_data['img_src'] ) {
+						?>
+						<img alt="<?php echo esc_attr( $item_data['img_alt'] ); ?>" src="<?php echo esc_url( $item_data['img_src'] ); ?>">
+						<?php
+					}
+					?>
+					<h1><?php echo esc_attr( $item['date'] ); ?></h1>
+					<?php
+					if ( isset( $item['content'] ) ) {
+						?>
+						<p>
+							<?php echo esc_html( $item['content'] ); ?>
+						</p>
+						<?php
+					}
+					?>
+				</li>
+				<?php
+			endforeach;
+			?>
 		</ul>
 		<a href="#" id="next">+</a>
 		<a href="#" id="prev">-</a>

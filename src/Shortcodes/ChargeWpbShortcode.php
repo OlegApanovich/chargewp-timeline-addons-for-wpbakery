@@ -400,4 +400,19 @@ class ChargeWpbShortcode {
 
 		return '';
 	}
+
+	/**
+	 * We have a set of libs that help us work with shortcode attributes.
+	 * To access them we use this method.
+	 *
+	 * @param string $lib_name
+	 * @return object
+	 * @since 1.2
+	 */
+	public function get_atts_lib( string $lib_name ) {
+		$lib_name  = str_replace( '-', '', ucwords( $lib_name, '-' ) );
+		$lib_class = 'ChargewpWpbTimeline\\Shortcodes\\ShortcodeAttsLib\\' . $lib_name;
+
+		return new $lib_class();
+	}
 }

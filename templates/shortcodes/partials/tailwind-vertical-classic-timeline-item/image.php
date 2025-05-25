@@ -7,22 +7,15 @@
  * @var ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcode $_this
  */
 
-$img_src = '';
-$img_alt = '';
-if ( 'media_library' === $atts['image_source'] ) {
-	if ( $atts['image'] ) {
-		$img_src = wp_get_attachment_image_url( $atts['image'], 'full' );
-		$img_alt = get_post_meta( $atts['image'], '_wp_attachment_image_alt', true );
-	}
-} elseif ( $atts['image_custom_src'] ) {
-		$img_src = $atts['image_custom_src'];
-		$img_alt = __( 'Timeline Image', 'chargewp-timeline-addons-for-wpbakery' );
-}
-if ( $img_src ) {
+$img_src   = '';
+$img_alt   = '';
+$item_data = $_this->get_atts_lib( 'image' )->get_item_data( $atts );
+
+if ( $item_data['img_src'] ) {
 	?>
 	<img
-		src="<?php echo esc_url( $img_src ); ?>"
-		alt="<?php echo esc_attr( $img_alt ); ?>"
+		src="<?php echo esc_url( $item_data['img_src'] ); ?>"
+		alt="<?php echo esc_attr( $item_data['img_alt'] ); ?>"
 		class="chargewp-transform
 			chargewp-w-full
 			chargewp-aspect-video

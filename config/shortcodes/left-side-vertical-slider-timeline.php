@@ -41,6 +41,62 @@ $params = [
 		'param_name'  => 'next_arrow_color',
 		'description' => esc_html__( 'Select custom color for top navigation arrow.', 'chargewp-timeline-addons-for-wpbakery' ),
 	],
+	[
+		'type'       => 'param_group',
+		'value'      => '',
+		'group'      => esc_html__( 'Timeline Items', 'chargewp-timeline-addons-for-wpbakery' ),
+		'heading'    => esc_html__( 'Timeline Items', 'chargewp-timeline-addons-for-wpbakery' ),
+		'param_name' => 'items',
+		'params'     => [
+			[
+				'type'        => 'dropdown',
+				'heading'     => esc_html__( 'Image source', 'js_composer' ),
+				'param_name'  => 'image_source',
+				'value'       => [
+					esc_html__( 'Media library', 'js_composer' ) => 'media_library',
+					esc_html__( 'External link', 'js_composer' ) => 'external_link',
+				],
+				'std'         => 'media_library',
+				'description' => esc_html__( 'Select image source.', 'js_composer' ),
+			],
+			[
+				'type'        => 'attach_image',
+				'heading'     => esc_html__( 'Image', 'js_composer' ),
+				'param_name'  => 'image',
+				'value'       => '',
+				'description' => esc_html__( 'Select image from media library.', 'js_composer' ),
+				'dependency'  => [
+					'element' => 'image_source',
+					'value'   => 'media_library',
+				],
+				'admin_label' => true,
+			],
+			[
+				'type'        => 'textfield',
+				'heading'     => esc_html__( 'External link', 'js_composer' ),
+				'param_name'  => 'image_custom_src',
+				'description' => esc_html__( 'Select external link.', 'js_composer' ),
+				'dependency'  => [
+					'element' => 'image_source',
+					'value'   => 'external_link',
+				],
+				'admin_label' => true,
+			],
+			[
+				'type'        => 'textfield',
+				'heading'     => esc_html__( 'Date', 'chargewp-timeline-addons-for-wpbakery' ),
+				'param_name'  => 'date',
+				'description' => esc_html__( 'Enter date for timeline item.', 'chargewp-timeline-addons-for-wpbakery' ),
+				'admin_label' => true,
+				'group'       => esc_html__( 'Date', 'chargewp-timeline-addons-for-wpbakery' ),
+			],
+			[
+				'type'       => 'textarea',
+				'heading'    => esc_html__( 'Text', 'chargewp-timeline-addons-for-wpbakery' ),
+				'param_name' => 'content',
+			],
+		],
+	],
 ];
 
 return [
