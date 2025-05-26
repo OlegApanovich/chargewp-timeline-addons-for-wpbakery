@@ -125,6 +125,16 @@ $params = [
 				'param_name'  => 'marker_size',
 				'description' => esc_html__( 'Set custom size in px from 5 to 20 for timeline item marker.', 'chargewp-timeline-addons-for-wpbakery' ),
 			],
+			[
+				'type'        => 'chargewp-number-slider',
+				'value'       => '0',
+				'min'         => '0',
+				'max'         => '10',
+				'step'        => '0.5',
+				'heading'     => esc_html__( 'Marker Horizontal Alignment', 'chargewp-timeline-addons-for-wpbakery' ),
+				'param_name'  => 'marker_horizontal_alignment',
+				'description' => esc_html__( 'Marker horizontal alignment.', 'chargewp-timeline-addons-for-wpbakery' ),
+			],
 		],
 	],
 ];

@@ -74,10 +74,6 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		width: <?php echo esc_attr( $atts['baseline_width'] ); ?>px;
 	}
 
-	.chargewp-left-side-vertical-slider-timeline-container #dates li::before {
-		left: <?php echo esc_attr( $atts['baseline_width'] <= 6 ? intdiv( $atts['baseline_width'] - 1, 2 ) : ( $atts['baseline_width'] <= 9 ? 3 : 4 ) ); ?>px;;
-	}
-
 	<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container #next {
 		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 22'%3E%3Cpath d='M19 22L0 3L3 0L19 16L35 0L38 3L19 22Z' fill='<?php echo rawurlencode( esc_attr( $atts['next_arrow_color'] ) ); ?>'/%3E%3C/svg%3E") no-repeat center;
 	}
@@ -89,10 +85,11 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		$_this->output_style_shortcode_id();
 		?>
 		.chargewp-left-side-vertical-slider-timeline-container #dates [data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]::before {
-				width: <?php echo (int) esc_attr( $item['marker_size'] ); ?>px;
-				height: <?php echo (int) esc_attr( $item['marker_size'] ); ?>px;
-				background-color: <?php echo esc_attr( $item['marker_color'] ); ?>;
-				border: 1px solid <?php echo esc_attr( $item['marker_border_color'] ); ?>;
+				width: <?php echo (int) esc_attr( $item['marker_size'] ); ?>px !important;
+				height: <?php echo (int) esc_attr( $item['marker_size'] ); ?>px !important;
+				background-color: <?php echo esc_attr( $item['marker_color'] ); ?> !important;
+				border: 1px solid <?php echo esc_attr( $item['marker_border_color'] ); ?> !important;
+				left: <?php echo esc_attr( $item['marker_horizontal_alignment'] ); ?>px;
 			}
 		<?php
 	}
@@ -159,7 +156,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		height: 100px;
 		line-height: 100px;
 		font-size: 16px;
-		padding-left: 25px;
+		padding-left: 33px;
 		padding-right: 15px;
 		position: relative; /* For absolute positioning of the dot */
 	}
@@ -169,6 +166,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		content: '';
 		position: absolute;
 		top: 50%;
+		left: 0;
 		transform: translateY(-50%);
 		border-radius: 50%;
 		z-index: 2;
