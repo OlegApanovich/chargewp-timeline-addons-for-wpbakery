@@ -82,9 +82,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 	}
 	<?php
 	foreach ( $items as $item ) {
-		$_this->output_style_shortcode_id();
-		?>
-		.chargewp-left-side-vertical-slider-timeline-container #dates [data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]::before {
+		$_this->output_style_shortcode_id();?>.chargewp-left-side-vertical-slider-timeline-container #dates [data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]::before {
 				width: <?php echo (int) esc_attr( $item['marker_size'] ); ?>px !important;
 				height: <?php echo (int) esc_attr( $item['marker_size'] ); ?>px !important;
 				background-color: <?php echo esc_attr( $item['marker_color'] ); ?> !important;
