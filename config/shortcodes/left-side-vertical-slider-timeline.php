@@ -18,7 +18,7 @@ $params = [
 		'description' => esc_html__( 'Select custom color for timeline base line.', 'chargewp-timeline-addons-for-wpbakery' ),
 	],
 	[
-		'type'        => 'chargewp-number-slider',
+		'type'        => 'chargewp_number_slider',
 		'value'       => '2',
 		'min'         => '0.5',
 		'max'         => '10',
@@ -116,7 +116,7 @@ $params = [
 				'description' => esc_html__( 'Select custom border color for item marker.', 'chargewp-timeline-addons-for-wpbakery' ),
 			],
 			[
-				'type'        => 'chargewp-number-slider',
+				'type'        => 'chargewp_number_slider',
 				'value'       => '12',
 				'min'         => '5',
 				'max'         => '20',
@@ -126,7 +126,7 @@ $params = [
 				'description' => esc_html__( 'Set custom size in px from 5 to 20 for timeline item marker.', 'chargewp-timeline-addons-for-wpbakery' ),
 			],
 			[
-				'type'        => 'chargewp-number-slider',
+				'type'        => 'chargewp_number_slider',
 				'value'       => '0',
 				'min'         => '0',
 				'max'         => '10',

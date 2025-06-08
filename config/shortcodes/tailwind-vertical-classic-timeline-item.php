@@ -62,7 +62,7 @@ $params = array_merge(
 			'group'       => esc_html__( 'Marker', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
 		[
-			'type'        => 'chargewp-number-slider',
+			'type'        => 'chargewp_number_slider',
 			'value'       => '1',
 			'min'         => '0',
 			'max'         => '10',
@@ -109,7 +109,7 @@ $params = array_merge(
 			'group'       => esc_html__( 'Marker', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
 		[
-			'type'        => 'chargewp-number-slider',
+			'type'        => 'chargewp_number_slider',
 			'value'       => '44',
 			'min'         => '15',
 			'max'         => '100',
@@ -125,7 +125,7 @@ $params = array_merge(
 			'title'       => esc_html__( 'px', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
 		[
-			'type'        => 'chargewp-number-slider',
+			'type'        => 'chargewp_number_slider',
 			'value'       => '44',
 			'min'         => '15',
 			'max'         => '100',
@@ -230,7 +230,7 @@ $params = array_merge(
 			'group'       => esc_html__( 'Content', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
 		[
-			'type'        => 'chargewp-number-slider',
+			'type'        => 'chargewp_number_slider',
 			'value'       => '0',
 			'min'         => '0',
 			'max'         => '10',
@@ -347,7 +347,7 @@ $params = array_merge(
 			'group'            => esc_html__( 'Image', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
 		[
-			'type'        => 'chargewp-number-slider',
+			'type'        => 'chargewp_number_slider',
 			'value'       => '0',
 			'min'         => '0',
 			'max'         => '10',

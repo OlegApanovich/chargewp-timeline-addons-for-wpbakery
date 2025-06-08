@@ -1,0 +1,32 @@
+.wcp-wysiwyg-container .wcp-wysiwyg-tabs {
+    height: 34px;
+}
+
+.wcp-wysiwyg-container .wcp-wysiwyg-tabs .wcp-wysiwyg-html,
+.wcp-wysiwyg-container .wcp-wysiwyg-tabs .wcp-wysiwyg-visual {
+    background-color: #f1f1f1;
+    border-color: #dfdfdf #dfdfdf #dfdfdf;
+    color: #999;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    float: right;
+    height: 22px;
+    margin: 5px 5px -2px 0;
+    padding: 4px 5px 2px;
+    font-size: 13px;
+}
+
+.wcp-wysiwyg-container .wcp-wysiwyg-tabs .active {
+    background-color: #e9e9e9;
+    border-color: #ccc #ccc #e9e9e9;
+    color: #333;
+}
+
+.wcp-wysiwyg-container .mce-tinymce.mce-container.mce-panel {
+    border: 1px solid #dfdfdf;
+}
+
+.wcp-wysiwyg-container textarea.wcp-wysiwyg-editor {
+    height: 250px;
+}

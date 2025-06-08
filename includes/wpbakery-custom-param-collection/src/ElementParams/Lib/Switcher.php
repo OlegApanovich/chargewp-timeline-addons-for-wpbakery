@@ -17,32 +17,15 @@ use WpbCustomParamCollection\ElementParams\ElementParamsAbstract;
  */
 class Switcher extends ElementParamsAbstract {
 	/**
-	 * Get param default attr list.
-	 *
-	 * @since 1.0
-	 * @return array
-	 */
-	public function get_param_default_attr_list(): array {
-		return [
-			'type',
-			'options',
-			'class',
-			'default_set',
-			'param_name',
-		];
-	}
-
-	/**
 	 * Param output.
 	 *
-	 * @param array $settings
+	 * @param array $settings_initial
 	 * @param mixed $value
 	 * @return string
-	 * @since 1.0
 	 */
-	public function param_output( array $settings, $value ): string {
+	public function param_output( array $settings_initial, $value ): string {
 		$output   = '';
-		$settings = $this->merge_default_settings( $settings );
+		$settings = $this->get_default_settings( $settings_initial );
 		if ( ! is_array( $settings['options'] ) ) {
 			return $output;
 		}
@@ -80,26 +63,5 @@ class Switcher extends ElementParamsAbstract {
 		);
 
 		return $this->attach_styles_to_param_output( $output );
-	}
-
-	/**
-	 * Get params values.
-	 *
-	 * @param array $settings
-	 * @return array
-	 * @since 1.0
-	 */
-	public function merge_default_settings( array $settings ): array {
-		$values = [];
-
-		foreach ( $this->get_param_default_attr_list() as $name ) {
-			if ( 'default_set' === $name ) {
-				$values[ $name ] = $settings[ $name ] ?? false;
-			} else {
-				$values[ $name ] = $settings[ $name ] ?? '';
-			}
-		}
-
-		return $values;
 	}
 }

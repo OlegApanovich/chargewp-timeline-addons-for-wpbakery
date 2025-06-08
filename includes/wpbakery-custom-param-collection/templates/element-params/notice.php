@@ -13,7 +13,7 @@
 
 defined( 'ABSPATH' ) || exit;
 ?>
-<div class="notice <?php echo esc_attr( $settings['level'] ); ?> update-nag inline" style="margin: 0">
+<div class="notice <?php echo esc_attr( $settings['level'] ); ?> update-nag inline <?php echo esc_attr( $_this->get_param_classes( $settings ) ); ?>" style="margin: 0">
 	<?php
 	echo wp_kses_post( $settings['notice'] );
 	?>

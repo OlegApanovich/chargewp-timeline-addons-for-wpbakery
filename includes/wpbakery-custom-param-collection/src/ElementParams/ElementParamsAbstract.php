@@ -3,7 +3,6 @@
  * Base abstract class for custom element params.
  *
  * @see https://kb.wpbakery.com/docs/developers-how-tos/create-new-param-type
- * @since 1.0
  */
 
 namespace WpbCustomParamCollection\ElementParams;
@@ -12,14 +11,11 @@ defined( 'ABSPATH' ) || exit;
 
 /**
  * ElementParamsAbstract class.
- *
- * @since 1.0
  */
 abstract class ElementParamsAbstract {
 	/**
 	 * Element params templates folder.
 	 *
-	 * @since 1.0
 	 * @var string
 	 */
 	public $element_params_templates_folder = 'element-params';
@@ -27,38 +23,102 @@ abstract class ElementParamsAbstract {
 	/**
 	 * Param slug.
 	 *
-	 * @since 1.0
 	 * @var string
 	 */
 	public $param_slug;
 
 	/**
+	 * List of param attributes and their default values.
+	 *
+	 * @var array
+	 */
+	public $param_defaults;
+
+	/**
+	 * Attributes common for all params.
+	 *
+	 * @var array
+	 */
+	public $common_attrs = [
+		'param_name' => '',
+		'class'      => '',
+	];
+
+	/**
 	 * ElementParamsAbstract constructor.
 	 *
-	 * @since 1.0
 	 * @param string $param_slug
+	 * @param array  $param_defaults
 	 */
-	public function __construct( string $param_slug ) {
-		$this->param_slug = $param_slug;
+	public function __construct( string $param_slug, array $param_defaults ) {
+		$this->param_slug     = $param_slug;
+		$this->param_defaults = $param_defaults;
+	}
+
+	/**
+	 * Check if initially attr not set then set default values.
+	 *
+	 * @param array $settings
+	 * @return array
+	 */
+	public function get_default_settings( array $settings ): array {
+		$values = [];
+
+		foreach ( $this->get_param_default_attr_list() as $name => $default_value ) {
+			$values[ $name ] = $settings[ $name ] ?? $default_value;
+		}
+
+		return $values;
+	}
+
+	/**
+	 * Get specific param settings.
+	 * This method can be overridden in child classes to provide specific settings for each param type.
+	 *
+	 * @param array $settings
+	 * @return array
+	 */
+	public function get_specific_param_settings( array $settings ): array {
+		return $settings;
+	}
+
+	/**
+	 * Get param default attr list.
+	 *
+	 * @return array
+	 */
+	public function get_param_default_attr_list(): array {
+		return $this->add_common_param_defaults( $this->param_defaults );
+	}
+
+	/**
+	 * Add common param defaults.
+	 *
+	 * @param array $defaults
+	 * @return array
+	 */
+	public function add_common_param_defaults( array $defaults ): array {
+		return array_merge( $defaults, $this->common_attrs );
 	}
 
 	/**
 	 * Param output.
 	 *
-	 * @param array $settings
+	 * @param array $settings_initial
 	 * @param mixed $value
 	 * @return string
-	 * @since 1.0
 	 */
-	public function param_output( array $settings, $value ): string {
-		$settings = $this->merge_default_settings( $settings );
+	public function param_output( array $settings_initial, $value ): string {
+		$settings = $this->get_default_settings( $settings_initial );
+		$settings = $this->get_specific_param_settings( $settings );
 
 		$output = wpbcustomparamcollection_get_template(
 			$this->get_param_template_name(),
 			[
-				'value'    => $value,
-				'settings' => $settings,
-				'_this'    => $this,
+				'value'            => $value,
+				'initial_settings' => $settings,
+				'settings'         => $settings,
+				'_this'            => $this,
 			]
 		);
 
@@ -70,10 +130,11 @@ abstract class ElementParamsAbstract {
 	 *
 	 * @param string $output
 	 * @return string
-	 * @since 1.0
 	 */
-	public function attach_styles_to_param_output( $output ): string {
-		$path        = '/css/params/' . $this->param_slug . '.css';
+	public function attach_styles_to_param_output( string $output ): string {
+		$file_name = str_replace( '_', '-', $this->param_slug );
+
+		$path        = '/css/params/' . $file_name . '.css';
 		$param_style = WPBCUSTOMPARAMCCOLECTION_ASSETS_DIR . $path;
 
 		if ( ! file_exists( $param_style ) ) {
@@ -87,26 +148,8 @@ abstract class ElementParamsAbstract {
 	}
 
 	/**
-	 * Get param default attr list.
-	 *
-	 * @since 1.0
-	 * @return array
-	 */
-	abstract public function get_param_default_attr_list(): array;
-
-	/**
-	 * Get default attr values list.
-	 *
-	 * @param array $settings
-	 * @return array
-	 * @since 1.0
-	 */
-	abstract public function merge_default_settings( array $settings ): array;
-
-	/**
 	 * Get param slug.
 	 *
-	 * @since 1.0
 	 * @return string
 	 */
 	public function get_param_slug(): string {
@@ -116,11 +159,11 @@ abstract class ElementParamsAbstract {
 	/**
 	 * Get param template name.
 	 *
-	 * @since 1.0
 	 * @return string
 	 */
 	public function get_param_template_name(): string {
-		return $this->element_params_templates_folder . '/' . $this->get_param_slug() . '.php';
+		$file_name = str_replace( '_', '-', $this->get_param_slug() );
+		return $this->element_params_templates_folder . '/' . $file_name . '.php';
 	}
 
 	/**
