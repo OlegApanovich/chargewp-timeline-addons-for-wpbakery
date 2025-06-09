@@ -1,0 +1,20 @@
+.chargewp-left-side-vertical-slider-timeline-container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.chargewp-left-side-vertical-slider-timeline-container * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.chargewp-left-side-vertical-slider-timeline-container a {
+    text-decoration: none;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
+}

@@ -28,11 +28,27 @@ $params = [
 		'description' => esc_html__( 'Set custom width from 0 to 10 for timeline base line.', 'chargewp-timeline-addons-for-wpbakery' ),
 	],
 	[
+		'type'       => 'chargewp_switcher',
+		'param_name' => 'is_arrow_keys',
+		'options'    => [
+			'true' => [
+				'label' => '',
+				'on'    => __( 'Yes', 'chargewp-timeline-addons-for-wpbakery' ),
+				'off'   => __( 'No', 'chargewp-timeline-addons-for-wpbakery' ),
+			],
+		],
+		'value'      => '',
+	],
+	[
 		'type'        => 'colorpicker',
 		'value'       => '#cccccc',
 		'heading'     => esc_html__( 'Prev Arrow Color', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'  => 'prev_arrow_color',
 		'description' => esc_html__( 'Select custom color for bottom navigation arrow.', 'chargewp-timeline-addons-for-wpbakery' ),
+		'dependency'  => [
+			'element' => 'is_arrow_keys',
+			'value'   => 'true',
+		],
 	],
 	[
 		'type'        => 'colorpicker',
@@ -40,6 +56,10 @@ $params = [
 		'heading'     => esc_html__( 'Next Arrow Color', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'  => 'next_arrow_color',
 		'description' => esc_html__( 'Select custom color for top navigation arrow.', 'chargewp-timeline-addons-for-wpbakery' ),
+		'dependency'  => [
+			'element' => 'is_arrow_keys',
+			'value'   => 'true',
+		],
 	],
 	[
 		'type'       => 'param_group',

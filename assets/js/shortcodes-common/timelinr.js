@@ -2,16 +2,16 @@ jQuery(window).ready(function() {
     (function ($) {
         $.fn.timelinr = function (options) {
             var settings = $.extend({
-                orientation: 'horizontal',
+                orientation: 'vertical',
+                issuesSpeed: 300,
+                datesSpeed: 100,
                 datesSelectedClass: 'selected',
-                datesSpeed: 'normal',
                 issuesSelectedClass: 'selected',
-                issuesSpeed: 'fast',
+                startAt: 1,
                 issuesTransparency: 0.2,
                 issuesTransparencySpeed: 500,
                 arrowKeys: 'false',
                 autoPlayDirection: 'forward',
-                autoPlayPause: 2000
             }, options);
 
             $(function () {
