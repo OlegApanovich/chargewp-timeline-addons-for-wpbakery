@@ -8,14 +8,15 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+$timeline_id = uniqid();
 
 $items = vc_param_group_parse_atts( $atts['items'] );
 $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'items' );
 ?>
 
 <div <?php $_this->output_shortcode_wrapper_attributes( [ 'class' => 'chargewp-left-side-vertical-slider-timeline-container' ] ); ?>>
-	<div id="timeline">
-		<ul id="dates">
+	<div id="timeline-<?php echo esc_attr( $timeline_id ); ?>">
+		<ul id="dates-<?php echo esc_attr( $timeline_id ); ?>">
 			<?php
 			foreach ( $items as $item ) :
 				if ( ! isset( $item['date'] ) ) {
@@ -31,7 +32,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 			endforeach;
 			?>
 		</ul>
-		<ul id="issues">
+		<ul id="issues-<?php echo esc_attr( $timeline_id ); ?>">
 			<?php
 			foreach ( $items as $item ) :
 				if ( ! isset( $item['date'] ) ) {
@@ -63,26 +64,28 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 			endforeach;
 			?>
 		</ul>
-		<a href="#" id="next">+</a>
-		<a href="#" id="prev">-</a>
+		<a href="#" id="next-<?php echo esc_attr( $timeline_id ); ?>">+</a>
+		<a href="#" id="prev-<?php echo esc_attr( $timeline_id ); ?>">-</a>
 	</div>
 </div>
 
 <style>
-	<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container #timeline::before {
+	<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container #timeline-<?php echo esc_attr( $timeline_id ); ?>::before {
 		background-color: <?php echo esc_attr( $atts['baseline_color'] ); ?>;
 		width: <?php echo esc_attr( $atts['baseline_width'] ); ?>px;
 	}
 
-	<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container #next {
+	<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container #next-<?php echo esc_attr( $timeline_id ); ?> {
 		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 22'%3E%3Cpath d='M19 22L0 3L3 0L19 16L35 0L38 3L19 22Z' fill='<?php echo rawurlencode( esc_attr( $atts['next_arrow_color'] ) ); ?>'/%3E%3C/svg%3E") no-repeat center;
 	}
-	<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container #prev {
+	<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container #prev-<?php echo esc_attr( $timeline_id ); ?> {
 		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 22'%3E%3Cpath d='M19 0L38 19L35 22L19 6L3 22L0 19L19 0Z' fill='<?php echo rawurlencode( esc_attr( $atts['prev_arrow_color'] ) ); ?>'/%3E%3C/svg%3E") no-repeat center;
 	}
 	<?php
 	foreach ( $items as $item ) {
-		$_this->output_style_shortcode_id();?>.chargewp-left-side-vertical-slider-timeline-container #dates [data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]::before {
+		$_this->output_style_shortcode_id();
+		?>
+		.chargewp-left-side-vertical-slider-timeline-container #dates-<?php echo esc_attr( $timeline_id ); ?> [data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]::before {
 			width: <?php echo (int) esc_attr( $item['marker_size'] ); ?>px !important;
 			height: <?php echo (int) esc_attr( $item['marker_size'] ); ?>px !important;
 			background-color: <?php echo esc_attr( $item['marker_color'] ); ?> !important;
@@ -123,7 +126,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		transition: 0.5s;
 	}
 
-	.chargewp-left-side-vertical-slider-timeline-container #timeline {
+	.chargewp-left-side-vertical-slider-timeline-container #timeline-<?php echo esc_attr( $timeline_id ); ?> {
 		width: 100%; /* Make timeline responsive */
 		height: 600px;
 		overflow: hidden;
@@ -132,7 +135,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		display: flex; /* Use flexbox for layout */
 	}
 
-	.chargewp-left-side-vertical-slider-timeline-container #timeline::before {
+	.chargewp-left-side-vertical-slider-timeline-container #timeline-<?php echo esc_attr( $timeline_id ); ?>::before {
 		content: '';
 		position: absolute;
 		top: 0;
@@ -141,7 +144,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		z-index: 1;
 	}
 
-	.chargewp-left-side-vertical-slider-timeline-container #dates {
+	.chargewp-left-side-vertical-slider-timeline-container #dates-<?php echo esc_attr( $timeline_id ); ?> {
 		width: auto; /* Let width be determined by content */
 		min-width: 60px;
 		height: 600px;
@@ -149,7 +152,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		float: left;
 	}
 
-	.chargewp-left-side-vertical-slider-timeline-container #dates li {
+	.chargewp-left-side-vertical-slider-timeline-container #dates-<?php echo esc_attr( $timeline_id ); ?> li {
 		list-style: none;
 		width: auto;
 		height: 100px;
@@ -161,7 +164,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 	}
 
 	/* Create a dot centered on the vertical line */
-	.chargewp-left-side-vertical-slider-timeline-container #dates li::before {
+	.chargewp-left-side-vertical-slider-timeline-container #dates-<?php echo esc_attr( $timeline_id ); ?> li::before {
 		content: '';
 		position: absolute;
 		top: 50%;
@@ -171,25 +174,25 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		z-index: 2;
 	}
 
-	.chargewp-left-side-vertical-slider-timeline-container #dates a {
+	.chargewp-left-side-vertical-slider-timeline-container #dates-<?php echo esc_attr( $timeline_id ); ?> a {
 		line-height: 38px;
 		padding-bottom: 10px;
 		white-space: nowrap;
 	}
 
-	.chargewp-left-side-vertical-slider-timeline-container #dates a.selected,
-	.chargewp-left-side-vertical-slider-timeline-container #dates li a.selected {
+	.chargewp-left-side-vertical-slider-timeline-container #dates-<?php echo esc_attr( $timeline_id ); ?> a.selected,
+	.chargewp-left-side-vertical-slider-timeline-container #dates-<?php echo esc_attr( $timeline_id ); ?> li a.selected {
 		font-size: 24px; /* Larger selected font size */
 	}
 
-	.chargewp-left-side-vertical-slider-timeline-container #issues {
+	.chargewp-left-side-vertical-slider-timeline-container #issues-<?php echo esc_attr( $timeline_id ); ?> {
 		width: auto; /* Let issues take remaining space */
 		height: 600px;
 		overflow: hidden;
 		float: left;
 	}
 
-	.chargewp-left-side-vertical-slider-timeline-container #issues li {
+	.chargewp-left-side-vertical-slider-timeline-container #issues-<?php echo esc_attr( $timeline_id ); ?> li {
 		max-width: 300px;
 		height: 600px;
 		list-style: none;
@@ -201,7 +204,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		padding: 0 10px;
 	}
 
-	.chargewp-left-side-vertical-slider-timeline-container #issues li.selected img {
+	.chargewp-left-side-vertical-slider-timeline-container #issues-<?php echo esc_attr( $timeline_id ); ?> li.selected img {
 		-webkit-transform: scale(1.1,1.1);
 		-moz-transform: scale(1.1,1.1);
 		-o-transform: scale(1.1,1.1);
@@ -209,7 +212,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		transform: scale(1.1,1.1);
 	}
 
-	.chargewp-left-side-vertical-slider-timeline-container #issues li img {
+	.chargewp-left-side-vertical-slider-timeline-container #issues-<?php echo esc_attr( $timeline_id ); ?> li img {
 		width: 80%; /* Responsive image size */
 		max-width: 100px;
 		margin: 10px auto; /* Center image horizontally */
@@ -226,19 +229,19 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		transform: scale(0.7,0.7);
 	}
 
-	.chargewp-left-side-vertical-slider-timeline-container #issues li .date {
+	.chargewp-left-side-vertical-slider-timeline-container #issues-<?php echo esc_attr( $timeline_id ); ?> li .date {
 		text-align: center; /* Center heading */
 		margin-bottom: 10px;
 	}
 
-	.chargewp-left-side-vertical-slider-timeline-container #issues li .content {
+	.chargewp-left-side-vertical-slider-timeline-container #issues-<?php echo esc_attr( $timeline_id ); ?> li .content {
 		margin: 10px auto;
 		text-align: center;
 		max-width: 250px;
 	}
 
-	.chargewp-left-side-vertical-slider-timeline-container #next,
-	.chargewp-left-side-vertical-slider-timeline-container #prev {
+	.chargewp-left-side-vertical-slider-timeline-container #next-<?php echo esc_attr( $timeline_id ); ?>,
+	.chargewp-left-side-vertical-slider-timeline-container #prev-<?php echo esc_attr( $timeline_id ); ?> {
 		position: absolute;
 		left: 30px; /* Center horizontally relative to the issues container */
 		transform: translateX(-50%); /* Center perfectly by shifting back by half of width */
@@ -250,17 +253,17 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		z-index: 100; /* Ensure arrows appear above content */
 	}
 
-	.chargewp-left-side-vertical-slider-timeline-container #next:hover,
-	.chargewp-left-side-vertical-slider-timeline-container #prev:hover {
+	.chargewp-left-side-vertical-slider-timeline-container #next-<?php echo esc_attr( $timeline_id ); ?>:hover,
+	.chargewp-left-side-vertical-slider-timeline-container #prev-<?php echo esc_attr( $timeline_id ); ?>:hover {
 		opacity: 0.8;
 	}
 
-	.chargewp-left-side-vertical-slider-timeline-container #next.disabled,
-	.chargewp-left-side-vertical-slider-timeline-container #prev.disabled {
+	.chargewp-left-side-vertical-slider-timeline-container #next-<?php echo esc_attr( $timeline_id ); ?>.disabled,
+	.chargewp-left-side-vertical-slider-timeline-container #prev-<?php echo esc_attr( $timeline_id ); ?>.disabled {
 		opacity: 0.2;
 	}
 
-	.chargewp-left-side-vertical-slider-timeline-container #next {
+	.chargewp-left-side-vertical-slider-timeline-container #next-<?php echo esc_attr( $timeline_id ); ?> {
 		bottom: 0;
 	}
 
@@ -295,6 +298,12 @@ foreach ( $items as $key => $item ) {
 				datesSpeed: 100,
 				arrowKeys: 'true',
 				startAt: <?php echo esc_attr( $active ); ?>,
+				containerDiv: '#timeline-<?php echo esc_attr( $timeline_id ); ?>',
+				datesDiv: '#dates-<?php echo esc_attr( $timeline_id ); ?>',
+				issuesDiv: '#issues-<?php echo esc_attr( $timeline_id ); ?>',
+				prevButton: '#prev-<?php echo esc_attr( $timeline_id ); ?>',
+				nextButton: '#next-<?php echo esc_attr( $timeline_id ); ?>',
+				autoPlay: 'false',
 			});
 		});
 	});

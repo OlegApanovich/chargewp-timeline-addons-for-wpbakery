@@ -3,20 +3,13 @@ jQuery(window).ready(function() {
         $.fn.timelinr = function (options) {
             var settings = $.extend({
                 orientation: 'horizontal',
-                containerDiv: '#timeline',
-                datesDiv: '#dates',
                 datesSelectedClass: 'selected',
                 datesSpeed: 'normal',
-                issuesDiv: '#issues',
                 issuesSelectedClass: 'selected',
                 issuesSpeed: 'fast',
                 issuesTransparency: 0.2,
                 issuesTransparencySpeed: 500,
-                prevButton: '#prev',
-                nextButton: '#next',
                 arrowKeys: 'false',
-                startAt: 1,
-                autoPlay: 'false',
                 autoPlayDirection: 'forward',
                 autoPlayPause: 2000
             }, options);
