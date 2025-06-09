@@ -64,8 +64,8 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 			endforeach;
 			?>
 		</ul>
-		<a href="#" id="next-<?php echo esc_attr( $timeline_id ); ?>">+</a>
-		<a href="#" id="prev-<?php echo esc_attr( $timeline_id ); ?>">-</a>
+		<a href="#" id="next-<?php echo esc_attr( $timeline_id ); ?>" aria-label="<?php echo esc_html__( 'Next', 'chargewp-timeline-addons-for-wpbakery' ); ?>">+</a>
+		<a href="#" id="prev-<?php echo esc_attr( $timeline_id ); ?>" aria-label="<?php echo esc_html__( 'Previous', 'chargewp-timeline-addons-for-wpbakery' ); ?>">-</a>
 	</div>
 </div>
 
