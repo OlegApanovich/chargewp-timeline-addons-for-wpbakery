@@ -87,7 +87,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 	<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container #prev-<?php echo esc_attr( $timeline_id ); ?> {
 		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 22'%3E%3Cpath d='M19 0L38 19L35 22L19 6L3 22L0 19L19 0Z' fill='<?php echo rawurlencode( esc_attr( $atts['prev_arrow_color'] ) ); ?>'/%3E%3C/svg%3E") no-repeat center;
 	}
-    .chargewp-left-side-vertical-slider-timeline-container #timeline-<?php echo esc_attr( $timeline_id ); ?> {
+	.chargewp-left-side-vertical-slider-timeline-container #timeline-<?php echo esc_attr( $timeline_id ); ?> {
 		width: 100%; /* Make timeline responsive */
 		height: 600px;
 		overflow: hidden;
