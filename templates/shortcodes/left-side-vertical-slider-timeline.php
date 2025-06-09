@@ -48,16 +48,16 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 						<?php
 					}
 					?>
-					<h1><?php echo esc_attr( $item['date'] ); ?></h1>
-					<?php
-					if ( isset( $item['content'] ) ) {
-						?>
-						<p>
-							<?php echo esc_html( $item['content'] ); ?>
-						</p>
+					<div class="date">
+						<?php echo wp_kses_post( rawurldecode( base64_decode( $item['title'] ) ) ); // phpcs:ignore:WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_decode ?>
+					</div>
+					<div class="content">
 						<?php
-					}
-					?>
+						if ( isset( $item['content'] ) ) {
+							echo wp_kses_post( rawurldecode( base64_decode( $item['content'] ) ) ); // phpcs:ignore:WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_decode
+						}
+						?>
+					</div>
 				</li>
 				<?php
 			endforeach;
@@ -82,13 +82,22 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 	}
 	<?php
 	foreach ( $items as $item ) {
-		$_this->output_style_shortcode_id();?>.chargewp-left-side-vertical-slider-timeline-container #dates [data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]::before {
-				width: <?php echo (int) esc_attr( $item['marker_size'] ); ?>px !important;
-				height: <?php echo (int) esc_attr( $item['marker_size'] ); ?>px !important;
-				background-color: <?php echo esc_attr( $item['marker_color'] ); ?> !important;
-				border: 1px solid <?php echo esc_attr( $item['marker_border_color'] ); ?> !important;
-				left: <?php echo esc_attr( $item['marker_horizontal_alignment'] ); ?>px;
-			}
+		$_this->output_style_shortcode_id();
+		?>
+		.chargewp-left-side-vertical-slider-timeline-container #dates [data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]::before {
+			width: <?php echo (int) esc_attr( $item['marker_size'] ); ?>px !important;
+			height: <?php echo (int) esc_attr( $item['marker_size'] ); ?>px !important;
+			background-color: <?php echo esc_attr( $item['marker_color'] ); ?> !important;
+			border: 1px solid <?php echo esc_attr( $item['marker_border_color'] ); ?> !important;
+			left: <?php echo esc_attr( $item['marker_horizontal_alignment'] ); ?>px;
+		}
+		<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container a:hover,
+		<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container a.selected {
+			color: <?php echo esc_attr( $item['date_active_color'] ); ?>;
+		}
+		<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container a {
+			color: <?php echo esc_attr( $item['date_color'] ); ?>;
+		}
 		<?php
 	}
 	?>
@@ -108,18 +117,12 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 	}
 
 	.chargewp-left-side-vertical-slider-timeline-container a {
-		color: #ffffcc;
 		text-decoration: none;
 		-webkit-transition: 0.5s;
 		-moz-transition: 0.5s;
 		-o-transition: 0.5s;
 		-ms-transition: 0.5s;
 		transition: 0.5s;
-	}
-
-	.chargewp-left-side-vertical-slider-timeline-container a:hover,
-	.chargewp-left-side-vertical-slider-timeline-container a.selected {
-		color: #ffcc00;
 	}
 
 	.chargewp-left-side-vertical-slider-timeline-container #timeline {
@@ -225,22 +228,15 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		transform: scale(0.7,0.7);
 	}
 
-	.chargewp-left-side-vertical-slider-timeline-container #issues li h1 {
-		color: #ffcc00;
-		font-size: 24px; /* Smaller heading */
+	.chargewp-left-side-vertical-slider-timeline-container #issues li .date {
 		text-align: center; /* Center heading */
-		text-shadow: #000 1px 1px 2px;
 		margin-bottom: 10px;
 	}
 
-	.chargewp-left-side-vertical-slider-timeline-container #issues li p {
-		font-size: 12px; /* Smaller text */
+	.chargewp-left-side-vertical-slider-timeline-container #issues li .content {
 		margin: 10px auto;
-		font-weight: normal;
-		line-height: 1.4;
-		text-shadow: #000 1px 1px 2px;
-		text-align: center; /* Center paragraph text */
-		max-width: 250px; /* Control paragraph width */
+		text-align: center;
+		max-width: 250px;
 	}
 
 	.chargewp-left-side-vertical-slider-timeline-container #next,

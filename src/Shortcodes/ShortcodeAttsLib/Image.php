@@ -22,9 +22,12 @@ class Image {
 	 * @since 1.2
 	 */
 	public function get_item_data( array $item ): array {
-		$img_data = [];
+		$img_data = [
+			'img_src' => '',
+			'img_alt' => '',
+		];
 		if ( 'media_library' === $item['image_source'] ) {
-			if ( $item['image'] ) {
+			if ( isset( $item['image'] ) ) {
 				$img_data['img_src'] = wp_get_attachment_image_url( $item['image'], 'full' );
 				$img_data['img_alt'] = get_post_meta( $item['image'], '_wp_attachment_image_alt', true );
 			}
