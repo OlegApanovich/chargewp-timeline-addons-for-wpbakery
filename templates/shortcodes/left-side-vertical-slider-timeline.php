@@ -100,7 +100,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		content: '';
 		position: absolute;
 		top: 0;
-		left: 6px; /* Position for center of dots (dot is at 0px, 12px wide) */
+		left: 10px; /* Position for center of dots (dot is at 0px, 12px wide) */
 		height: 100%;
 		z-index: 1;
 	}
@@ -239,7 +239,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 			height: <?php echo (int) esc_attr( $item['marker_size'] ); ?>px;
 			background-color: <?php echo esc_attr( $item['marker_color'] ); ?>;
 			border: 1px solid <?php echo esc_attr( $item['marker_border_color'] ); ?>;
-			left: <?php echo esc_attr( $item['marker_horizontal_alignment'] ); ?>px;
+			left: <?php echo esc_attr( round( ( -7 / 15 * $item['marker_size'] + 28 / 3 ) * 2 ) / 2 ); ?>px;
 		}
 		<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container a:hover,
 		<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container a.selected {

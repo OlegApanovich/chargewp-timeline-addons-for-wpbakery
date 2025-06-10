@@ -69,18 +69,18 @@ $params = [
 		'param_name' => 'items',
 		'params'     => [
 			[
-				'type'       => 'chargewp_switcher',
-				'param_name' => 'is_active',
-                'heading'     => esc_html__( 'Active Item', 'chargewp-timeline-addons-for-wpbakery' ),
-                'description' => esc_html__( 'Set this item as active after the page finishes loading in the slider. Only one item can be active in the slider. If you select more than one as active, the slider will activate only the last one.', 'chargewp-timeline-addons-for-wpbakery' ),
-				'options'    => [
+				'type'        => 'chargewp_switcher',
+				'param_name'  => 'is_active',
+				'heading'     => esc_html__( 'Active Item', 'chargewp-timeline-addons-for-wpbakery' ),
+				'description' => esc_html__( 'Set this item as active after the page finishes loading in the slider. Only one item can be active in the slider. If you select more than one as active, the slider will activate only the last one.', 'chargewp-timeline-addons-for-wpbakery' ),
+				'options'     => [
 					'true' => [
 						'label' => '',
 						'on'    => __( 'Yes', 'chargewp-timeline-addons-for-wpbakery' ),
 						'off'   => __( 'No', 'chargewp-timeline-addons-for-wpbakery' ),
 					],
 				],
-				'value'      => '',
+				'value'       => '',
 			],
 			[
 				'type'        => 'dropdown',
@@ -198,16 +198,6 @@ $params = [
 				'heading'     => esc_html__( 'Marker Size', 'chargewp-timeline-addons-for-wpbakery' ),
 				'param_name'  => 'marker_size',
 				'description' => esc_html__( 'Set custom size in px from 5 to 20 for timeline item marker.', 'chargewp-timeline-addons-for-wpbakery' ),
-			],
-			[
-				'type'        => 'chargewp_number_slider',
-				'value'       => '0',
-				'min'         => '0',
-				'max'         => '10',
-				'step'        => '0.5',
-				'heading'     => esc_html__( 'Marker Horizontal Alignment', 'chargewp-timeline-addons-for-wpbakery' ),
-				'param_name'  => 'marker_horizontal_alignment',
-				'description' => esc_html__( 'Marker horizontal alignment.', 'chargewp-timeline-addons-for-wpbakery' ),
 			],
 		],
 	],
