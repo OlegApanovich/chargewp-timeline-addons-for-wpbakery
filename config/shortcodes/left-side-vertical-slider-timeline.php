@@ -143,24 +143,6 @@ $params = [
 				'type'        => 'chargewp_wysiwyg',
                 // phpcs:ignore:WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
 				'value'       => base64_encode( '' ),
-				'heading'     => esc_html__( 'Title', 'chargewp-timeline-addons-for-wpbakery' ),
-				'description' => esc_html__( 'Title for timeline item.', 'chargewp-timeline-addons-for-wpbakery' ),
-				'scope'       => [
-					'use_tabs'       => 'true',
-					'use_menubar'    => 'false',
-					'use_media'      => 'false',
-					'use_link'       => 'true',
-					'use_lists'      => 'false',
-					'use_blockquote' => 'true',
-					'use_textcolor'  => 'true',
-					'use_background' => 'true',
-				],
-				'param_name'  => 'title',
-			],
-			[
-				'type'        => 'chargewp_wysiwyg',
-                // phpcs:ignore:WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
-				'value'       => base64_encode( '' ),
 				'heading'     => esc_html__( 'Text', 'chargewp-timeline-addons-for-wpbakery' ),
 				'description' => esc_html__( 'Main text field for timeline item.', 'chargewp-timeline-addons-for-wpbakery' ),
 				'scope'       => [

@@ -40,18 +40,15 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 				}
 				?>
 				<li id="<?php echo esc_attr( $item['id'] ); ?>">
-									<?php
-									$item_data = $_this->get_atts_lib( 'image' )->get_item_data( $item );
+					<?php
+					$item_data = $_this->get_atts_lib( 'image' )->get_item_data( $item );
 
-									if ( $item_data['img_src'] ) {
-										?>
+					if ( $item_data['img_src'] ) {
+						?>
 						<img alt="<?php echo esc_attr( $item_data['img_alt'] ); ?>" src="<?php echo esc_url( $item_data['img_src'] ); ?>">
-										<?php
-									}
-									?>
-					<div class="date">
-						<?php echo wp_kses_post( rawurldecode( base64_decode( $item['title'] ) ) ); // phpcs:ignore:WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_decode ?>
-					</div>
+						<?php
+					}
+					?>
 					<div class="content">
 						<?php
 						if ( isset( $item['content'] ) ) {
@@ -189,11 +186,6 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		-o-transform: scale(0.7,0.7);
 		-ms-transform: scale(0.7,0.7);
 		transform: scale(0.7,0.7);
-	}
-
-	.chargewp-left-side-vertical-slider-timeline-container #issues-<?php echo esc_attr( $timeline_id ); ?> li .date {
-		text-align: center; /* Center heading */
-		margin-bottom: 10px;
 	}
 
 	.chargewp-left-side-vertical-slider-timeline-container #issues-<?php echo esc_attr( $timeline_id ); ?> li .content {
