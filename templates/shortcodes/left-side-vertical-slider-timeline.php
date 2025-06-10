@@ -98,7 +98,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		content: '';
 		position: absolute;
 		top: 0;
-		left: 10px; /* Position for center of dots (dot is at 0px, 12px wide) */
+		left: 10px;
 		height: 100%;
 		z-index: 1;
 	}
@@ -172,8 +172,8 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 	}
 
 	.chargewp-left-side-vertical-slider-timeline-container #issues-<?php echo esc_attr( $timeline_id ); ?> li img {
-		width: 80%; /* Responsive image size */
-		max-width: 100px;
+		width: 70%; /* Responsive image size */
+		/*max-width: 100px;*/
 		margin: 10px auto; /* Center image horizontally */
 		display: block;
 		-webkit-transition: all 2s ease-in-out;
