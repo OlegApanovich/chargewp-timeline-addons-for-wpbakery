@@ -79,6 +79,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 	<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container #timeline-<?php echo esc_attr( $timeline_id ); ?>::before {
 		background-color: <?php echo esc_attr( $atts['baseline_color'] ); ?>;
 		width: <?php echo esc_attr( $atts['baseline_width'] ); ?>px;
+		left: <?php echo esc_attr( ( 10 - $atts['baseline_width'] ) + $atts['baseline_width'] / 2 ); ?>px;
 	}
 
 	<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container #next-<?php echo esc_attr( $timeline_id ); ?> {
