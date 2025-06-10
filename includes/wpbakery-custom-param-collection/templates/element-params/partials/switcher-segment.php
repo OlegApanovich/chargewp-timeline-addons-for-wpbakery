@@ -22,7 +22,7 @@ defined( 'ABSPATH' ) || exit;
 			name="<?php echo esc_attr( $settings['param_name'] ); ?>"
 			value="<?php echo esc_attr( $value ); ?>"
 			class="<?php echo esc_attr( $_this->get_param_classes( $settings ) ); ?> ult-onoffswitch-checkbox chk-switch-<?php echo esc_attr( $un ); ?>"
-			id="switch<?php echo esc_attr( $uid ); ?>" ' <?php echo esc_attr( $checked ); ?>
+			id="switch<?php echo esc_attr( $uid ); ?>" <?php echo esc_attr( $checked ); ?>
 	>
 
 	<label class="ult-onoffswitch-label" for="switch<?php echo esc_attr( $uid ); ?>">

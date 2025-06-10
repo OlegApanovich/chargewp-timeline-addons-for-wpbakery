@@ -69,10 +69,16 @@ $params = [
 		'param_name' => 'items',
 		'params'     => [
 			[
-				'type'        => 'checkbox',
-				'heading'     => esc_html__( 'Active Item', 'chargewp-timeline-addons-for-wpbakery' ),
-				'description' => esc_html__( 'Set this item as active after the page finishes loading in the slider. Only one item can be active in the slider. If you select more than one as active, the slider will activate only the last one.', 'chargewp-timeline-addons-for-wpbakery' ),
-				'param_name'  => 'is_active',
+				'type'       => 'chargewp_switcher',
+				'param_name' => 'is_active',
+				'options'    => [
+					'true' => [
+						'label' => '',
+						'on'    => __( 'Yes', 'chargewp-timeline-addons-for-wpbakery' ),
+						'off'   => __( 'No', 'chargewp-timeline-addons-for-wpbakery' ),
+					],
+				],
+				'value'      => '',
 			],
 			[
 				'type'        => 'dropdown',
