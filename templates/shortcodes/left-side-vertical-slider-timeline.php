@@ -242,12 +242,12 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 			border: 1px solid <?php echo esc_attr( $item['marker_border_color'] ); ?>;
 			left: <?php echo esc_attr( round( ( -7 / 15 * $item['marker_size'] + 28 / 3 ) * 2 ) / 2 ); ?>px;
 		}
-		<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container a:hover,
-		<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container a.selected {
-			color: <?php echo esc_attr( $item['date_active_color'] ); ?>;
+		<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container [data-item-id="<?php echo esc_attr( $item['id'] ); ?>"] a:hover,
+		<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container [data-item-id="<?php echo esc_attr( $item['id'] ); ?>"] a.selected {
+			color: <?php echo esc_attr( $item['date_active_color'] ); ?> !important;
 		}
-		<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container a {
-			color: <?php echo esc_attr( $item['date_color'] ); ?>;
+		<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container [data-item-id="<?php echo esc_attr( $item['id'] ); ?>"] a {
+			color: <?php echo esc_attr( $item['date_color'] ); ?> !important;
 		}
 		<?php
 	}
