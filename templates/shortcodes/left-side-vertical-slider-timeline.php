@@ -264,7 +264,7 @@ foreach ( $items as $key => $item ) {
 	jQuery(window).ready(function() {
 		jQuery(function(){
 			jQuery().timelinr({
-				startAt: <?php echo esc_attr( $active ); ?>,
+				startAt: <?php echo esc_attr( (string) $active ); ?>,
 				containerDiv: '#timeline-<?php echo esc_attr( $timeline_id ); ?>',
 				datesDiv: '#dates-<?php echo esc_attr( $timeline_id ); ?>',
 				issuesDiv: '#issues-<?php echo esc_attr( $timeline_id ); ?>',
