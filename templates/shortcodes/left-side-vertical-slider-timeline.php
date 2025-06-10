@@ -235,10 +235,10 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 	foreach ( $items as $item ) {
         //phpcs:ignore:Squiz.PHP.EmbeddedPhp.ContentBeforeEnd
 		$_this->output_style_shortcode_id();?>.chargewp-left-side-vertical-slider-timeline-container #dates-<?php echo esc_attr( $timeline_id ); ?> [data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]::before {
-			width: <?php echo (int) esc_attr( $item['marker_size'] ); ?>px !important;
-			height: <?php echo (int) esc_attr( $item['marker_size'] ); ?>px !important;
-			background-color: <?php echo esc_attr( $item['marker_color'] ); ?> !important;
-			border: 1px solid <?php echo esc_attr( $item['marker_border_color'] ); ?> !important;
+			width: <?php echo (int) esc_attr( $item['marker_size'] ); ?>px;
+			height: <?php echo (int) esc_attr( $item['marker_size'] ); ?>px;
+			background-color: <?php echo esc_attr( $item['marker_color'] ); ?>;
+			border: 1px solid <?php echo esc_attr( $item['marker_border_color'] ); ?>;
 			left: <?php echo esc_attr( $item['marker_horizontal_alignment'] ); ?>px;
 		}
 		<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container a:hover,
