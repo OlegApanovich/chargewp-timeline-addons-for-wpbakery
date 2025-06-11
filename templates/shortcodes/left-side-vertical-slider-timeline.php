@@ -52,7 +52,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 					<div class="content">
 						<?php
 						if ( isset( $item['content'] ) ) {
-							echo wp_kses_post( rawurldecode( base64_decode( $item['content'] ) ) ); // phpcs:ignore:WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_decode
+							echo wp_kses_post( $item['content'] );
 						}
 						?>
 					</div>
