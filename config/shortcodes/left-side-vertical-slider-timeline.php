@@ -193,9 +193,7 @@ return [
 	'category'                => 'ChargeWP',
 	'description'             => __( 'Timeline element with vertical left side slider interface.', 'chargewp-timeline-addons-for-wpbakery' ),
 	'php_class_name'          => ChargeWpbShortcodeEmpty::class,
-	'content_element'         => true,
 	'show_settings_on_create' => true,
-	'js_view'                 => 'VcColumnView',
 	'params'                  => array_merge(
 		$params,
 		[ vc_map_add_css_animation() ],
