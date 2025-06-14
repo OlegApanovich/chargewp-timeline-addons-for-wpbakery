@@ -56,7 +56,6 @@ class Wysiwyg extends ElementParamsAbstract {
 			'use_blockquote' => 'true',
 			'use_textcolor'  => 'true',
 			'use_background' => 'true',
-			'use_height'     => 250,
 			'use_rootblock'  => 'p',
 		];
 
@@ -72,7 +71,6 @@ class Wysiwyg extends ElementParamsAbstract {
 			$settings['scope']['use_blockquote'] = 'false';
 			$settings['scope']['use_lists']      = 'false';
 			$settings['scope']['use_background'] = 'false';
-			$settings['scope']['use_height']     = 150;
 		}
 
 		return $settings;
