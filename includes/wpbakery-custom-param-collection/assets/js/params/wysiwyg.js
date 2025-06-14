@@ -168,3 +168,32 @@ vc.atts[window.i18nLocale.wcp_param_prefix + "_wysiwyg"] = {
         }
     }
 };
+
+jQuery(document).ready(function () {
+    // fix issue with WYSIWYG editor inside param_group
+    jQuery(".edit_form_line > .vc_param_group-list > .vc_param_group-add_content").on("click", function () {
+
+        let $newEl = jQuery(this).parent().parent().find('.vc_param_group-template').html();
+
+        $newEl = $newEl.replace(
+            /<!-- wcp-wysiwyg-start -->([\s\S]*?)<!-- wcp-wysiwyg-end -->/g,
+            (match, content) => {
+                const idMatch = content.match(/wcp-wysiwyg-container-(\d+)/);
+                if (!idMatch) return match;
+
+                const baseId = idMatch[1];
+                const newSuffix = Math.floor(Math.random() * 100000);
+                const newId = `${baseId}-${newSuffix}`;
+
+                return match
+                    .replace(new RegExp(`wcp-wysiwyg-container-${baseId}`, 'g'), `wcp-wysiwyg-container-${newId}`)
+                    .replace(new RegExp(`wcp-wysiwyg-tabs-${baseId}`, 'g'), `wcp-wysiwyg-tabs-${newId}`)
+                    .replace(new RegExp(`wcp-wysiwyg-html-${baseId}`, 'g'), `wcp-wysiwyg-html-${newId}`)
+                    .replace(new RegExp(`wcp-wysiwyg-visual-${baseId}`, 'g'), `wcp-wysiwyg-visual-${newId}`)
+                    .replace(new RegExp(`wcp-wysiwyg-editor-${baseId}`, 'g'), `wcp-wysiwyg-editor-${newId}`);
+            }
+        );
+
+        jQuery(this).parent().parent().find('.vc_param_group-template').text($newEl);
+    });
+});

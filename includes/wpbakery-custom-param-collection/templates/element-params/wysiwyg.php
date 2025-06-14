@@ -14,6 +14,7 @@
 defined( 'ABSPATH' ) || exit;
 $reduced_height = strval( $settings['use_height'] - 60 );
 ?>
+<!-- wcp-wysiwyg-start -->
 <div
 	id="wcp-wysiwyg-container-<?php echo esc_attr( $randomizer ); ?>"
 	class="wcp-wysiwyg-container"
@@ -43,7 +44,8 @@ $reduced_height = strval( $settings['use_height'] - 60 );
 	?>
 	<textarea id="wcp-wysiwyg-editor-<?php echo esc_attr( $randomizer ); ?>"
 				name="<?php echo esc_attr( $settings['param_name'] ); ?>"
-				class="wcp-wysiwyg-editor wpb_vc_param_value ' . '<?php echo esc_attr( $settings['param_name'] ); ?> <?php echo esc_attr( $settings['type'] ); ?>"
+				class="wcp-wysiwyg-editor wpb_vc_param_value <?php echo esc_attr( $settings['param_name'] ); ?> <?php echo esc_attr( $settings['type'] ); ?>"
 				style="height: <?php echo esc_attr( $settings['scope']['use_height'] ); ?>px;"><?php echo wp_kses_post( $value ); ?></textarea>
 </div>
 
+<!-- wcp-wysiwyg-end -->
