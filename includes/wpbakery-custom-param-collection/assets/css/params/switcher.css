@@ -9,13 +9,6 @@
     -ms-user-select: none
 }
 
-.ult-onoffswitch-checkbox {
-    position: absolute;
-    outline: 0;
-    top: 2px;
-    left: 0
-}
-
 .ult-onoffswitch-checkbox:focus {
     outline: 0
 }
@@ -124,7 +117,7 @@
 .ult-onoffswitch-checkbox {
     position: absolute;
     outline: none;
-    top: 2px;
+    top: 6px;
     left:0;
 }
 .ult-onoffswitch-checkbox:focus {

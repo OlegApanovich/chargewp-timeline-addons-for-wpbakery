@@ -17,6 +17,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
+<!-- wcp-switcher-start -->
 <div class="ult-onoffswitch">
 	<input type="checkbox"
 			name="<?php echo esc_attr( $settings['param_name'] ); ?>"

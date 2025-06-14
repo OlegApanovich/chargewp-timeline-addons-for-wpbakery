@@ -25,3 +25,4 @@ defined( 'ABSPATH' ) || exit;
 		}
 	});
 </script>
+<!-- wcp-switcher-end -->
