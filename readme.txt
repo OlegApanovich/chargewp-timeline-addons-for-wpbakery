@@ -3,7 +3,7 @@ Contributors: mrdollar4444
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K9NTJ6E2RQN3A&source=url
 Tags: WPBakery, wpbakery addons, wpbakery page builder, wpbakery page builder addons
 Tested up to: 6.8
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -38,6 +38,10 @@ Source file code you can find on [our GitHub plugin page](https://github.com/Ole
 5. Tailwind Vertical Classic Timeline
 
 == Changelog ==
+
+= 1.2 =
+* Dev - Introduced new "Left Side Vertical Slider Timeline" addon.
+* Dev - Improve existing textfield with integer value with integer slider custom param. 
 
 = 1.1 =
 * Dev - Introduced new "Tailwind Vertical Classic Timeline" addon.
