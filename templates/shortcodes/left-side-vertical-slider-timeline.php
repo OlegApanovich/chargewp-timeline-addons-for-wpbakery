@@ -232,7 +232,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 			height: <?php echo (int) esc_attr( $item['marker_size'] ); ?>px;
 			background-color: <?php echo esc_attr( $item['marker_color'] ); ?>;
 			border: 1px solid <?php echo esc_attr( $item['marker_border_color'] ); ?>;
-			left: <?php echo esc_attr( (string) ( round( ( -7 / 15 * $item['marker_size'] + 28 / 3 ) * 2 ) / 2 ) ); ?>px;
+			left: <?php echo esc_attr( (string) ( (round( ( -7 / 15 * $item['marker_size'] + 28 / 3 ) * 2 ) / 2 ) - 0.5) ); ?>px;
 		}
 		<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container [data-item-id="<?php echo esc_attr( $item['id'] ); ?>"] a:hover,
 		<?php $_this->output_style_shortcode_id(); ?>.chargewp-left-side-vertical-slider-timeline-container [data-item-id="<?php echo esc_attr( $item['id'] ); ?>"] a.selected {
