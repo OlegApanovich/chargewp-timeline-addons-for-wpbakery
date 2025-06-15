@@ -28,18 +28,18 @@ $params = [
 		'description' => esc_html__( 'Set custom width from 0 to 10 for timeline base line.', 'chargewp-timeline-addons-for-wpbakery' ),
 	],
 	[
-		'type'       => 'chargewp_switcher',
-		'param_name' => 'is_arrow_keys',
-        'heading'    => esc_html__( 'Navigation', 'chargewp-timeline-addons-for-wpbakery' ),
-        'description' => esc_html__( 'Enable or disable navigation arrows for timeline slider.', 'chargewp-timeline-addons-for-wpbakery' ),
-		'options'    => [
+		'type'        => 'chargewp_switcher',
+		'param_name'  => 'is_arrow_keys',
+		'heading'     => esc_html__( 'Navigation', 'chargewp-timeline-addons-for-wpbakery' ),
+		'description' => esc_html__( 'Enable or disable navigation arrows for timeline slider.', 'chargewp-timeline-addons-for-wpbakery' ),
+		'options'     => [
 			'true' => [
 				'label' => '',
 				'on'    => __( 'Yes', 'chargewp-timeline-addons-for-wpbakery' ),
 				'off'   => __( 'No', 'chargewp-timeline-addons-for-wpbakery' ),
 			],
 		],
-		'value'      => 'true',
+		'value'       => 'true',
 	],
 	[
 		'type'        => 'colorpicker',
