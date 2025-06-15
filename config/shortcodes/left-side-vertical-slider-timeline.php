@@ -30,6 +30,8 @@ $params = [
 	[
 		'type'       => 'chargewp_switcher',
 		'param_name' => 'is_arrow_keys',
+        'heading'    => esc_html__( 'Navigation', 'chargewp-timeline-addons-for-wpbakery' ),
+        'description' => esc_html__( 'Enable or disable navigation arrows for timeline slider.', 'chargewp-timeline-addons-for-wpbakery' ),
 		'options'    => [
 			'true' => [
 				'label' => '',
@@ -37,7 +39,7 @@ $params = [
 				'off'   => __( 'No', 'chargewp-timeline-addons-for-wpbakery' ),
 			],
 		],
-		'value'      => '',
+		'value'      => 'true',
 	],
 	[
 		'type'        => 'colorpicker',
