@@ -23,6 +23,8 @@ The WPBakery Page Builder plugin must be installed and activated to use this plu
 
 ![Vertical Segment Timeline Addon](assets/images/github-reame/screen-5.png)
 
+### 4. Left Side Vertical Slider Timeline.
+
 ## Installation
 It's recommended to use the [official plugin page on WordPress.org](https://wordpress.org/plugins/chargewp-timeline-addons-for-wpbakery).
 
