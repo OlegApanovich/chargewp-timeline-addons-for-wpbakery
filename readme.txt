@@ -3,7 +3,7 @@ Contributors: mrdollar4444
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K9NTJ6E2RQN3A&source=url
 Tags: WPBakery, wpbakery addons, wpbakery page builder, wpbakery page builder addons
 Tested up to: 6.8
-Stable tag: 1.2
+Stable tag: 1.2.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -38,6 +38,9 @@ Source file code you can find on [our GitHub plugin page](https://github.com/Ole
 5. Tailwind Vertical Classic Timeline
 
 == Changelog ==
+
+= 1.2.1 =
+* Fix - Fix an issue in the WPBakery backend editor where the inner elements edit window incorrectly opens the parent elements edit window.
 
 = 1.2 =
 * Dev - Introduced new "Left Side Vertical Slider Timeline" addon.
