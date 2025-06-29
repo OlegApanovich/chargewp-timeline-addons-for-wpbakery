@@ -1,6 +1,6 @@
 <?php
 /**
- * Entry point for add plugin elements to dependency plugin.
+ * Plugin entry point.
  *
  * @since 1.0
  */
@@ -13,7 +13,7 @@ use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeEmpty;
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcode;
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeContainerEmpty;
 use ChargewpWpbTimeline\Utils\Requirement;
-use WpbCustomParamCollection\Plugin\Wpbackery_Custom_Param_Collection;
+use ChargewpWpbTimeline\Settings\SettingsManager;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -29,6 +29,26 @@ class Plugin {
 	 * @since 1.0
 	 */
 	public function init() {
+		$this->init_settings();
+		$this->init_functionality();
+	}
+
+	/**
+	 * Initialize plugin settings.
+	 *
+	 * @since 1.3
+	 */
+	public function init_settings() {
+		$settings_manager = new SettingsManager();
+		$settings_manager->init();
+	}
+
+	/**
+	 * Initialize plugin functionality.
+	 *
+	 * @since 1.3
+	 */
+	public function init_functionality() {
 		add_action( 'init', [ $this, 'add_builder_elements' ] );
 		add_action( 'admin_init', [ $this, 'init_custom_element_params' ] );
 	}

@@ -198,6 +198,6 @@ return [
 	'params'                  => array_merge(
 		$params,
 		[ vc_map_add_css_animation() ],
-		chargewpwpbtimeline_config( 'shortcode-container-config' )
+		chargewpwpbtimeline_config( 'element-params' )['shortcode-container']
 	),
 ];
