@@ -296,9 +296,9 @@ class ChargeWpbShortcode {
 		$asset_name = $this->element_slug . '-' . $asset['file'];
 
 		if ( 'js' === $type ) {
-			wp_enqueue_script( $asset_name, $url, $options['deps'], filemtime( $path ), $options['args'] );
+			wp_enqueue_script( $asset_name, $url, $options['deps'], CHARGEWPWPBTIMELINE_VERSION, $options['args'] );
 		} elseif ( 'css' === $type ) {
-			wp_enqueue_style( $asset_name, $url, $options['deps'], filemtime( $path ), $options['media'] );
+			wp_enqueue_style( $asset_name, $url, $options['deps'], CHARGEWPWPBTIMELINE_VERSION, $options['media'] );
 		}
 	}
 
