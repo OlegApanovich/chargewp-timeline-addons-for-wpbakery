@@ -3,7 +3,6 @@ name: Release Build
 on:
   push:
     branches:
-      - develop
       - master
       - main
       - release/**
