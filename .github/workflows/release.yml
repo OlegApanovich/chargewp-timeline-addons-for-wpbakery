@@ -10,7 +10,6 @@ on:
       - hotfix/**
   pull_request:
     branches:
-      - develop
       - main
       - release/**
       - hotfix/**
