@@ -107,7 +107,7 @@ class DeactivationFeedback {
 		$reason_key  = wp_kses_post_deep( wp_unslash( $_POST['reason_key'] ) );
 		$reason_text = wp_kses_post_deep( wp_unslash( $_POST[ $reason_key . '_details' ] ) ) ?? '';
 
-		$response = Api::send_feedback( $reason_key, $reason_text );
+		Api::send_feedback( $reason_key, $reason_text );
 
 		wp_send_json_success();
 	}
@@ -116,7 +116,7 @@ class DeactivationFeedback {
 	 * Check if the current screen is the wp plugins page screen.
 	 *
 	 * @return bool
-	 * @since 1.0
+	 * @since 1.3
 	 */
 	public function is_plugins_screen(): bool {
 		return in_array( get_current_screen()->id, [ 'plugins', 'plugins-network' ] );

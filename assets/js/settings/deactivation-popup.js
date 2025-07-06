@@ -20,12 +20,10 @@
             url: window.ajaxurl,
             data: data,
             success: function(response) {
-                response
-                // window.location.href = deactivationUrl;
+                window.location.href = deactivationUrl;
             },
             error: function( error ) {
-                console.log(2);
-                // window.location.href = deactivationUrl;
+                window.location.href = deactivationUrl;
             }
         });
     });
