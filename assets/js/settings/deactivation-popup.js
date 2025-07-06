@@ -12,19 +12,23 @@
     });
 
     $('#chargewp-deactivation-popup .chargewp-deactivation-submit').on('click', function() {
+        var $btn = $(this);
+        var originalHtml = $btn.html();
+
+        $btn.prop('disabled', true);
+
         var data = $('#chargewp-deactivation-form').serialize();
         data += '&action=chargewp_timeline_deactivate_feedback';
 
-        $.ajax( {
+        $.ajax({
             type: 'POST',
             url: window.ajaxurl,
             data: data,
-            success: function(response) {
+            complete: function() {
+                $btn.html(originalHtml);
+                $btn.prop('disabled', false);
                 window.location.href = deactivationUrl;
             },
-            error: function( error ) {
-                window.location.href = deactivationUrl;
-            }
         });
     });
 
