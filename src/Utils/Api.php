@@ -26,6 +26,12 @@ class Api {
 	 */
 	private static $api_url = 'https://api.joywp';
 
+	/**
+	 * Endpoint's library
+	 *
+	 * @var array
+	 * @since 1.3
+	 */
 	private static $endpoint_lib = [
 		'plugin_deactivation_feedback' => 'plugin-deactivation-feedback',
 	];
@@ -49,7 +55,7 @@ class Api {
 	/**
 	 * Send Feedback.
 	 *
-	 * Fires a request to plugin server with the feedback data.
+	 * Fires a request to the plugin server with the feedback data
 	 *
 	 * @param string $feedback_key Feedback key.
 	 * @param string $feedback_text Feedback text.
