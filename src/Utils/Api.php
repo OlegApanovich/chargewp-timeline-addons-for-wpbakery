@@ -16,7 +16,6 @@ use WP_Error;
  *
  * @since 1.3
  */
-
 class Api {
 	/**
 	 * API URL
@@ -40,7 +39,7 @@ class Api {
 	 * We call endpoint here the full path for a specific API request.
 	 *
 	 * @since 1.3
-	 * @param $endpoint_slug
+	 * @param string $endpoint_slug
 	 * @return string
 	 */
 	private static function get_endpoint( $endpoint_slug ): string {

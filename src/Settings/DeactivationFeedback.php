@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin deactivation feedback.
+ * Plugin deactivation feedback functionality.
  *
  * @since 1.3
  */
@@ -11,6 +11,11 @@ use ChargewpWpbTimeline\Utils\Api;
 
 defined( 'ABSPATH' ) || exit;
 
+/**
+ * Class DeactivationFeedback
+ *
+ * @since 1.3
+ */
 class DeactivationFeedback {
 	/**
 	 * Initialize plugin deactivation feedback functionality.
@@ -100,12 +105,12 @@ class DeactivationFeedback {
 			wp_send_json_error();
 		}
 
-		if ( ! wp_verify_nonce( $_POST['_wpnonce'], '_chargewp_deactivate_feedback_action' ) ) {
+		if ( ! wp_verify_nonce( $_POST['_wpnonce'], '_chargewp_deactivate_feedback_action' ) ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput -- sanitization ok, nonce is checked.
 			wp_send_json_error();
 		}
 
-		$reason_key  = wp_kses_post_deep( wp_unslash( $_POST['reason_key'] ) );
-		$reason_text = wp_kses_post_deep( wp_unslash( $_POST[ $reason_key . '_details' ] ) ) ?? '';
+		$reason_key  = wp_kses_post_deep( wp_unslash( $_POST['reason_key'] ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput -- sanitization ok, reason key is checked.
+		$reason_text = wp_kses_post_deep( wp_unslash( $_POST[ $reason_key . '_details' ] ) ) ?? ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput
 
 		Api::send_feedback( $reason_key, $reason_text );
 
@@ -119,6 +124,6 @@ class DeactivationFeedback {
 	 * @since 1.3
 	 */
 	public function is_plugins_screen(): bool {
-		return in_array( get_current_screen()->id, [ 'plugins', 'plugins-network' ] );
+		return in_array( get_current_screen()->id, [ 'plugins', 'plugins-network' ], true );
 	}
 }
