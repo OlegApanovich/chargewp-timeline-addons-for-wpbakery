@@ -24,7 +24,7 @@ class Api {
 	 * @var string
 	 * @since 1.3
 	 */
-	private static $api_url = 'https://api.joywp';
+	private static $api_url = 'https://api.joywp.com';
 
 	/**
 	 * Endpoint's library
