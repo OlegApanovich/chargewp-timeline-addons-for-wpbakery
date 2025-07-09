@@ -3,12 +3,14 @@ name: Pipline
 on:
   push:
     branches:
+      - develop
       - master
       - main
       - release/**
       - hotfix/**
   pull_request:
     branches:
+      - develop
       - main
       - release/**
       - hotfix/**
