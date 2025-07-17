@@ -24,6 +24,6 @@ return [
 	'js_view'                 => 'VcColumnView',
 	'params'                  => array_merge(
 		[ vc_map_add_css_animation() ],
-		chargewpwpbtimeline_config( 'element-params' )['shortcode-container']
+		chargewpwpbtimeline_config( 'element-params' )['common-bottom-params']
 	),
 ];
