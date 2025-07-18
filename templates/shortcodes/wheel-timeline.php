@@ -1,4 +1,19 @@
-<div class="chargewp-cards-container-wrapper">
+<?php
+/**
+ * The template for displaying [chargewp-wheel-timeline] shortcode output.
+ *
+ * @var array $atts
+ * @var string $content - shortcode content
+ * @var ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcode $_this
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+$items = vc_param_group_parse_atts( $atts['items'] );
+$items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'items' );
+?>
+
+<div <?php $_this->output_shortcode_wrapper_attributes( [ 'class' => 'chargewp-wheel-timeline-wrapper' ] ); ?>>
     <div class="chargewp-cards-container">
         <ul class="chargewp-cards" style="--items: 26;">
             <li style="--i: 0;">
@@ -163,64 +178,60 @@
 
 
 <style>
-    .chargewp-cards-container-wrapper {
-        min-height: 100vh;
-        /* Add container query support */
+    .chargewp-wheel-timeline-wrapper {
         container-type: inline-size;
+        padding: 30px;
+        overflow: hidden;
     }
 
     @layer template, demo;
 
     @layer demo {
-        /* Hide radio buttons */
-        .chargewp-cards-container input[type="radio"] {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
+        <?php $_this->output_style_shortcode_id(); ?> .chargewp-cards-container {
+            --label-color: <?php echo esc_attr( $atts['circles_color'] ); ?>;
+            --label-color-hover: <?php echo esc_attr( $atts['circles_hover_color'] ); ?>;
+            --base-rotation: <?php echo esc_attr( $atts['wheel_rotation_degree'] ); ?>deg;
+            --duration: <?php echo esc_attr( $atts['wheel_speed'] ); ?>ms;
+            --label-dot-size: <?php echo esc_attr( $atts['circles_size'] ); ?>px;
+            --title-top: <?php echo esc_attr( $atts['vertical_date_alignment'] ); ?>rem;
+            --info-top: <?php echo esc_attr( $atts['vertical_info_alignment'] ); ?>rem;
+            --info-width: min(<?php echo esc_attr( $atts['info_width'] ); ?>%);
+            --label-line-h: 0;
         }
+    }
 
+    @layer demo {
         .chargewp-cards-container {
-            --base-rotation: 0deg;
             --full-circle: 360deg;
-            /* Use container-based sizing instead of viewport */
             --radius: min(45cqw, 400px);
-            --duration: 200ms;
-
             --cards-container-size: calc(var(--radius) * 2);
             --cards-container-padding: 2rem;
-
             --border-color: transparent;
-
             --label-offset: calc(var(--radius) * -1 - 1rem);
             --label-size: 30px;
-            --label-color: #666;
-            --label-color-hover: steelblue;
-            --label-line-h: 0;
             --label-line-h-current: 2rem;
-            --label-dot-size: 10px;
-
-            --title-top: 1.5rem;
             --title-offset-y: 30px;
-
-            --info-top: 5rem;
-            --info-width: min(70%, 500px);
             --info-offset-y: 30px;
-
             box-sizing: content-box;
             position: relative;
-            margin: 3rem auto;
             width: var(--cards-container-size);
             height: var(--cards-container-size);
             padding: var(--cards-container-padding);
             /* Ensure it fits within parent with some margin */
             max-width: calc(100% - 80px);
         }
+    }
+
+    .chargewp-cards-container input[type="radio"] {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
     }
 
     .chargewp-cards {
