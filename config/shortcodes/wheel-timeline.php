@@ -106,7 +106,7 @@ $params = [
     ],
     [
         'type'        => 'chargewp_number_slider',
-        'value'       => '0',
+        'value'       => '2',
         'min'         => '0',
         'max'         => '30',
         'step'        => '1',
@@ -119,6 +119,34 @@ $params = [
             'value'   => 'true',
         ],
     ],
+    [
+        'type'        => 'colorpicker',
+        'value'       => '#000666',
+        'heading'     => esc_html__( 'Connection Line Color', 'chargewp-timeline-addons-for-wpbakery' ),
+        'param_name'  => 'connection_line_color',
+        'description' => esc_html__( 'Select custom color for active connection line.', 'chargewp-timeline-addons-for-wpbakery' ),
+        'dependency'  => [
+            'element' => 'is_active_connection_line',
+            'value'   => 'true',
+        ],
+    ],
+    [
+        'type'        => 'chargewp_number_slider',
+        'value'       => '0',
+        'min'         => '0',
+        'max'         => '30',
+        'step'        => '1',
+        'heading'     => esc_html__( 'Connection Line Height', 'chargewp-timeline-addons-for-wpbakery' ),
+        'param_name'  => 'connection_line_height',
+        'description' => esc_html__( 'Set height of connection line elements in rem.', 'chargewp-timeline-addons-for-wpbakery' ),
+        'title'       => 'rem',
+        'dependency'  => [
+            'element' => 'is_connection_line',
+            'value'   => 'true',
+        ],
+    ],
+
+
 	[
 		'type'       => 'param_group',
 		'group'      => esc_html__( 'Timeline Items', 'chargewp-timeline-addons-for-wpbakery' ),

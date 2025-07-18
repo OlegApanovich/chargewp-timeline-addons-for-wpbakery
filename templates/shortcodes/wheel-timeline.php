@@ -196,9 +196,27 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
             --title-top: <?php echo esc_attr( $atts['vertical_date_alignment'] ); ?>rem;
             --info-top: <?php echo esc_attr( $atts['vertical_info_alignment'] ); ?>rem;
             --info-width: min(<?php echo esc_attr( $atts['info_width'] ); ?>%);
-            --label-line-h: 0;
+            --label-line-h: <?php echo esc_attr( $atts['connection_line_height'] ); ?>rem;
+            --label-line-h-current: <?php echo esc_attr( $atts['active_connection_line_height'] ); ?>rem;
         }
     }
+
+    <?php
+    if ( 'true' === $atts['is_active_connection_line'] ) {
+        $_this->output_style_shortcode_id(); ?> .chargewp-cards li>label::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            translate: -50% 5px;
+            width: 2px;
+            height: var(--label-line-h);
+            background-color: <?php echo esc_attr( $atts['connection_line_color'] ); ?>;
+            transition: height 300ms ease-in-out var(--label-line-delay, 0ms);
+        }
+    <?php
+    }
+    ?>
 
     @layer demo {
         .chargewp-cards-container {
@@ -209,7 +227,6 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
             --border-color: transparent;
             --label-offset: calc(var(--radius) * -1 - 1rem);
             --label-size: 30px;
-            --label-line-h-current: 2rem;
             --title-offset-y: 30px;
             --info-offset-y: 30px;
             box-sizing: content-box;
@@ -285,18 +302,6 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
         border-radius: 50%;
         background-color: var(--label-color);
         transition: background-color var(--duration) ease-in-out;
-    }
-
-    .chargewp-cards li>label::after {
-        content: '';
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        translate: -50% 5px;
-        width: 2px;
-        height: var(--label-line-h);
-        background-color: steelblue;
-        transition: height 300ms ease-in-out var(--label-line-delay, 0ms);
     }
 
     .chargewp-cards li>label:hover {
