@@ -180,7 +180,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 <style>
     .chargewp-wheel-timeline-wrapper {
         container-type: inline-size;
-        padding: 30px;
+        padding: 50px;
         overflow: hidden;
     }
 
