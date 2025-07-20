@@ -53,7 +53,6 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
         <?php $_this->output_style_shortcode_id(); ?> .chargewp-cards-container {
             --base-rotation: <?php echo esc_attr( $atts['wheel_rotation_degree'] ); ?>deg;
             --duration: <?php echo esc_attr( $atts['wheel_speed'] ); ?>ms;
-            --label-dot-size: <?php echo esc_attr( $atts['circles_size'] ); ?>px;
             --title-top: <?php echo esc_attr( $atts['vertical_date_alignment'] ); ?>rem;
             --info-top: <?php echo esc_attr( $atts['vertical_info_alignment'] ); ?>rem;
             --info-width: min(<?php echo esc_attr( $atts['info_width'] ); ?>%);
@@ -203,8 +202,6 @@ endforeach;
         top: var(--cards-container-padding);
         left: 50%;
         translate: -50% 0;
-        width: var(--label-dot-size);
-        height: var(--label-dot-size);
         aspect-ratio: 50%;
         border-radius: 50%;
         transition: background-color var(--duration) ease-in-out;

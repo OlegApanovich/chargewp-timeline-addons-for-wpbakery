@@ -12,17 +12,6 @@ defined( 'ABSPATH' ) || exit;
 $params = [
     [
         'type'        => 'chargewp_number_slider',
-        'value'       => '10',
-        'min'         => '1',
-        'max'         => '100',
-        'step'        => '1',
-        'heading'     => esc_html__( 'Circles Size', 'chargewp-timeline-addons-for-wpbakery' ),
-        'param_name'  => 'circles_size',
-        'description' => esc_html__( 'Set size of circles in pixels.', 'chargewp-timeline-addons-for-wpbakery' ),
-        'title'       => 'px',
-    ],
-    [
-        'type'        => 'chargewp_number_slider',
         'value'       => '2',
         'min'         => '1',
         'max'         => '30',
