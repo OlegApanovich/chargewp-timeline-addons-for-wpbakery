@@ -11,20 +11,6 @@ defined( 'ABSPATH' ) || exit;
 
 $params = [
     [
-        'type'        => 'colorpicker',
-        'value'       => '#000666',
-        'heading'     => esc_html__( 'Circles Color', 'chargewp-timeline-addons-for-wpbakery' ),
-        'param_name'  => 'circles_color',
-        'description' => esc_html__( 'Select custom color for timeline circles.', 'chargewp-timeline-addons-for-wpbakery' ),
-    ],
-    [
-        'type'        => 'colorpicker',
-        'value'       => '#4682B4',
-        'heading'     => esc_html__( 'Circles Hover Color', 'chargewp-timeline-addons-for-wpbakery' ),
-        'param_name'  => 'circles_hover_color',
-        'description' => esc_html__( 'Select custom color for timeline circles on hover.', 'chargewp-timeline-addons-for-wpbakery' ),
-    ],
-    [
         'type'        => 'chargewp_number_slider',
         'value'       => '10',
         'min'         => '1',
@@ -177,7 +163,7 @@ $params = [
             [
                 'type'        => 'chargewp_switcher',
                 'param_name'  => 'is_active',
-                'heading'     => esc_html__( 'Active Item', 'chargewp-timeline-addons-for-wpbakery' ),
+                'heading'     => esc_html__( 'Default Active Item', 'chargewp-timeline-addons-for-wpbakery' ),
                 'description' => esc_html__( 'Set this item as active after the page finishes loading in the slider. Only one item can be active. If you select more than one as active, the wheel will activate only the last one.', 'chargewp-timeline-addons-for-wpbakery' ),
                 'options'     => [
                     'true' => [
@@ -203,21 +189,45 @@ $params = [
                 'value'       => '',
                 'description' => esc_html__( 'Enter timeline item info.', 'chargewp-timeline-addons-for-wpbakery' ),
             ],
-
-//            [
-//                'type'        => 'colorpicker',
-//                'value'       => '#ffcc00',
-//                'heading'     => esc_html__( 'Date Active Color', 'chargewp-timeline-addons-for-wpbakery' ),
-//                'param_name'  => 'date_active_color',
-//                'description' => esc_html__( 'Select custom color for timeline date active element.', 'chargewp-timeline-addons-for-wpbakery' ),
-//            ],
-//            [
-//                'type'        => 'colorpicker',
-//                'value'       => '#cccccc',
-//                'heading'     => esc_html__( 'Date Regular Color', 'chargewp-timeline-addons-for-wpbakery' ),
-//                'param_name'  => 'date_color',
-//                'description' => esc_html__( 'Select custom color for timeline date not active element.', 'chargewp-timeline-addons-for-wpbakery' ),
-//            ],
+            [
+                'type'        => 'colorpicker',
+                'heading'     => esc_html__( 'Circle Color', 'chargewp-timeline-addons-for-wpbakery' ),
+                'param_name'  => 'circle_color',
+                'description' => esc_html__( 'Select custom color for item circle.', 'chargewp-timeline-addons-for-wpbakery' ),
+                'value'       => '#000666',
+            ],
+            [
+                'type'        => 'colorpicker',
+                'heading'     => esc_html__( 'Date Color', 'chargewp-timeline-addons-for-wpbakery' ),
+                'param_name'  => 'date_color',
+                'description' => esc_html__( 'Select custom color for item date.', 'chargewp-timeline-addons-for-wpbakery' ),
+                'value'       => '#000666',
+            ],
+            [
+                'type'        => 'colorpicker',
+                'heading'     => esc_html__( 'Circle Hover Color', 'chargewp-timeline-addons-for-wpbakery' ),
+                'param_name'  => 'circle_hover_color',
+                'description' => esc_html__( 'Select custom color for item circles on hover.', 'chargewp-timeline-addons-for-wpbakery' ),
+                'value'       => '#4682B4',
+            ],
+            [
+                'type'        => 'colorpicker',
+                'heading'     => esc_html__( 'Date Hover Color', 'chargewp-timeline-addons-for-wpbakery' ),
+                'param_name'  => 'date_hover_color',
+                'description' => esc_html__( 'Select custom color for item date on hover.', 'chargewp-timeline-addons-for-wpbakery' ),
+                'value'       => '#4682B4',
+            ],
+            [
+                'type'        => 'chargewp_number_slider',
+                'value'       => '10',
+                'min'         => '1',
+                'max'         => '100',
+                'step'        => '1',
+                'heading'     => esc_html__( 'Circle Size', 'chargewp-timeline-addons-for-wpbakery' ),
+                'param_name'  => 'circle_size',
+                'description' => esc_html__( 'Set size of circle in pixels.', 'chargewp-timeline-addons-for-wpbakery' ),
+                'title'       => 'px',
+            ],
         ],
 	],
 ];

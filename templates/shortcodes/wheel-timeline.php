@@ -20,16 +20,16 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
             foreach ( $items as $index => $item ) :
                 $checked = ( isset( $item['is_active'] ) && 'true' === $item['is_active'] ) ? 'checked' : '';
                 ?>
-                <li style="--i: <?php echo esc_attr( $index ); ?>;">
-                    <input type="radio" id="chargewp-item-<?php echo esc_attr( $index ); ?>" name="chargewp-gallery-item" data-item-id="<?php echo esc_attr( $item['id'] ); ?>" <?php echo esc_attr($checked); ?>>
+                <li style="--i: <?php echo esc_attr( $index ); ?>;" data-item-id="<?php echo esc_attr( $item['id'] ); ?>" <?php echo esc_attr($checked); ?>>
+                    <input type="radio" id="chargewp-item-<?php echo esc_attr( $index ); ?>" name="chargewp-gallery-item">
                     <label for="chargewp-item-<?php echo esc_attr( $index ); ?>">
-                        <?php echo esc_html( $item['date'] ); ?>
+                        <?php echo isset( $item['date'] ) ? esc_html( $item['date'] ) : ''; ?>
                     </label>
                     <div>
-                        <?php echo esc_html( $item['date'] ); ?>
+                        <?php echo isset( $item['date'] ) ? esc_html( $item['date'] ) : ''; ?>
                     </div>
                     <p>
-                        <?php echo esc_html( $item['info'] ); ?>
+                        <?php echo isset( $item['info'] ) ? esc_html( $item['info'] ) : ''; ?>
                     </p>
                 </li>
             <?php
@@ -40,12 +40,6 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 </div>
 
 <style>
-    .chargewp-wheel-timeline-wrapper {
-        container-type: inline-size;
-        padding: 50px;
-        overflow: hidden;
-    }
-
     @layer template, demo;
 
     @layer demo {
@@ -64,7 +58,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
     }
 
     <?php
-    if ( 'true' === $atts['is_connection_lines'] ) {
+    if ( 'true' === $atts['is_connection_lines'] ) :
         $_this->output_style_shortcode_id(); ?> .chargewp-cards li>label::after {
             content: '';
             position: absolute;
@@ -77,38 +71,49 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
             transition: height 300ms ease-in-out var(--label-line-delay, 0ms);
         }
     <?php
-    }
-    if ( 'true' === $atts['is_wheel_spinning'] ) {
-    ?>
-        .chargewp-cards:has(li:nth-child(1)>input:checked) { --index: 0; }
-        .chargewp-cards:has(li:nth-child(2)>input:checked) { --index: 1; }
-        .chargewp-cards:has(li:nth-child(3)>input:checked) { --index: 2; }
-        .chargewp-cards:has(li:nth-child(4)>input:checked) { --index: 3; }
-        .chargewp-cards:has(li:nth-child(5)>input:checked) { --index: 4; }
-        .chargewp-cards:has(li:nth-child(6)>input:checked) { --index: 5; }
-        .chargewp-cards:has(li:nth-child(7)>input:checked) { --index: 6; }
-        .chargewp-cards:has(li:nth-child(8)>input:checked) { --index: 7; }
-        .chargewp-cards:has(li:nth-child(9)>input:checked) { --index: 8; }
-        .chargewp-cards:has(li:nth-child(10)>input:checked) { --index: 9; }
-        .chargewp-cards:has(li:nth-child(11)>input:checked) { --index: 10; }
-        .chargewp-cards:has(li:nth-child(12)>input:checked) { --index: 11; }
-        .chargewp-cards:has(li:nth-child(13)>input:checked) { --index: 12; }
-        .chargewp-cards:has(li:nth-child(14)>input:checked) { --index: 13; }
-        .chargewp-cards:has(li:nth-child(15)>input:checked) { --index: 14; }
-        .chargewp-cards:has(li:nth-child(16)>input:checked) { --index: 15; }
-        .chargewp-cards:has(li:nth-child(17)>input:checked) { --index: 16; }
-        .chargewp-cards:has(li:nth-child(18)>input:checked) { --index: 17; }
-        .chargewp-cards:has(li:nth-child(19)>input:checked) { --index: 18; }
-        .chargewp-cards:has(li:nth-child(20)>input:checked) { --index: 19; }
-        .chargewp-cards:has(li:nth-child(21)>input:checked) { --index: 20; }
-        .chargewp-cards:has(li:nth-child(22)>input:checked) { --index: 21; }
-        .chargewp-cards:has(li:nth-child(23)>input:checked) { --index: 22; }
-        .chargewp-cards:has(li:nth-child(24)>input:checked) { --index: 23; }
-        .chargewp-cards:has(li:nth-child(25)>input:checked) { --index: 24; }
-        .chargewp-cards:has(li:nth-child(26)>input:checked) { --index: 25; }
-    <?php
-    }
-    ?>
+    endif;
+    if ( 'true' === $atts['is_wheel_spinning'] ) :
+        foreach ( $items as $index => $item ) :
+            ?>
+            .chargewp-cards:has(li:nth-child( <?php echo esc_attr( $index + 1 ) ?> )>input:checked) { --index: <?php echo esc_attr( $index ) ?>; }
+            <?php
+        endforeach;
+    endif;
+    foreach ( $items as $index => $item ) :
+        if ( ! empty( $item['date_color'] ) ) :
+            $_this->output_style_shortcode_id(); ?> .chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label {
+                color: <?php echo esc_attr( $item['date_color'] ); ?>;
+            }
+        <?php
+        endif;
+        if ( ! empty( $item['date_hover_color'] ) ) :
+            $_this->output_style_shortcode_id(); ?> .chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label:hover {
+                color: <?php echo esc_attr( $item['date_hover_color'] ); ?>;
+            }
+        <?php
+        endif;
+
+        if ( ! empty( $item['circle_color'] ) ) :
+            $_this->output_style_shortcode_id(); ?> .chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label::before {
+                background-color: <?php echo esc_attr( $item['circle_color'] ); ?>;
+            }
+        <?php
+        endif;
+        if ( ! empty( $item['circle_hover_color'] ) ) :
+            $_this->output_style_shortcode_id(); ?> .chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label:hover::before {
+                background-color: <?php echo esc_attr( $item['circle_hover_color'] ); ?>;
+            }
+        <?php
+        endif;
+//        if ( ! empty( $item['date_color'] ) ) :
+            $_this->output_style_shortcode_id(); ?> .chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label::before {
+                width: <?php echo esc_attr( $item['circle_size'] ); ?>px;
+                height: <?php echo esc_attr( $item['circle_size'] ); ?>px;
+            }
+        <?php
+//        endif;
+endforeach;
+?>
 
     @layer demo {
         .chargewp-cards-container {
@@ -129,6 +134,12 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
             /* Ensure it fits within parent with some margin */
             max-width: calc(100% - 80px);
         }
+    }
+
+    .chargewp-wheel-timeline-wrapper {
+        container-type: inline-size;
+        padding: 50px;
+        overflow: hidden;
     }
 
     .chargewp-cards-container input[type="radio"] {
