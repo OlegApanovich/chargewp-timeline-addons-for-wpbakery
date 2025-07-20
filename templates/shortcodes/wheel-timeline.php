@@ -51,8 +51,6 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 
     @layer demo {
         <?php $_this->output_style_shortcode_id(); ?> .chargewp-cards-container {
-            --label-color: <?php echo esc_attr( $atts['circles_color'] ); ?>;
-            --label-color-hover: <?php echo esc_attr( $atts['circles_hover_color'] ); ?>;
             --base-rotation: <?php echo esc_attr( $atts['wheel_rotation_degree'] ); ?>deg;
             --duration: <?php echo esc_attr( $atts['wheel_speed'] ); ?>ms;
             --label-dot-size: <?php echo esc_attr( $atts['circles_size'] ); ?>px;
@@ -195,7 +193,6 @@ endforeach;
         cursor: pointer;
         pointer-events: initial;
         text-align: center;
-        color: var(--label-color);
         font-size: clamp(.8rem, 2.5vw + .04rem, 1rem);
         transition: var(--duration) ease-in-out;
     }
@@ -210,12 +207,7 @@ endforeach;
         height: var(--label-dot-size);
         aspect-ratio: 50%;
         border-radius: 50%;
-        background-color: var(--label-color);
         transition: background-color var(--duration) ease-in-out;
-    }
-
-    .chargewp-cards li>label:hover {
-        --label-color: var(--label-color-hover);
     }
 
     .chargewp-cards>li>div,
@@ -254,7 +246,6 @@ endforeach;
     /* update custom properties for checked item */
     .chargewp-cards li:has(input:checked) {
         --label-opacity: 1;
-        --label-color: var(--label-color-hover);
         --label-line-h: var(--label-line-h-current);
         --label-line-delay: calc(var(--duration) * 2);
 
