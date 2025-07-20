@@ -81,7 +81,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 	if ( 'true' === $atts['is_wheel_spinning'] ) :
 		foreach ( $items as $index => $item ) :
 			?>
-			.chargewp-cards:has(li:nth-child( <?php echo esc_attr( $index + 1 ); ?> )>input:checked) { --index: <?php echo esc_attr( $index ); ?>; }
+			.chargewp-cards:has(li:nth-child( <?php echo esc_attr( (string) ( $index + 1 ) ); ?> )>input:checked) { --index: <?php echo esc_attr( $index ); ?>; }
 			<?php
 		endforeach;
 	endif;
