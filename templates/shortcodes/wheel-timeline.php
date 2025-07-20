@@ -17,8 +17,15 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
     <div class="chargewp-cards-container">
         <ul class="chargewp-cards" style="--items: 26;">
             <?php
+            $checked = '';
+            $checked_set = false;
             foreach ( $items as $index => $item ) :
-                $checked = ( isset( $item['is_active'] ) && 'true' === $item['is_active'] ) ? 'checked' : '';
+                if ( ! $checked_set && isset( $item['is_active'] ) && 'true' === $item['is_active'] ) {
+                    $checked_set = true;
+                    $checked = 'checked';
+                } else {
+                    $checked = '';
+                }
                 ?>
                 <li style="--i: <?php echo esc_attr( $index ); ?>;" data-item-id="<?php echo esc_attr( $item['id'] ); ?>">
                     <input type="radio" id="chargewp-item-<?php echo esc_attr( $index ); ?>" name="chargewp-gallery-item" <?php echo esc_attr($checked); ?>>
