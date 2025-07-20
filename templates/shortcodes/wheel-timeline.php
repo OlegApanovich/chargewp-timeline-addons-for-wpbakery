@@ -20,8 +20,8 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
             foreach ( $items as $index => $item ) :
                 $checked = ( isset( $item['is_active'] ) && 'true' === $item['is_active'] ) ? 'checked' : '';
                 ?>
-                <li style="--i: <?php echo esc_attr( $index ); ?>;" data-item-id="<?php echo esc_attr( $item['id'] ); ?>" <?php echo esc_attr($checked); ?>>
-                    <input type="radio" id="chargewp-item-<?php echo esc_attr( $index ); ?>" name="chargewp-gallery-item">
+                <li style="--i: <?php echo esc_attr( $index ); ?>;" data-item-id="<?php echo esc_attr( $item['id'] ); ?>">
+                    <input type="radio" id="chargewp-item-<?php echo esc_attr( $index ); ?>" name="chargewp-gallery-item" <?php echo esc_attr($checked); ?>>
                     <label for="chargewp-item-<?php echo esc_attr( $index ); ?>">
                         <?php echo isset( $item['date'] ) ? esc_html( $item['date'] ) : ''; ?>
                     </label>
