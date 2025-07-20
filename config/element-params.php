@@ -6,7 +6,7 @@
  */
 
 return [
-	'tailwind'            => [
+	'tailwind'             => [
 		'rotation_degree' => [
 			0   => '0',
 			1   => '1',

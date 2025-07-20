@@ -132,11 +132,11 @@ return [
 			],
 		],
 	],
-	'chargewp-wheel-timeline'      => [
+	'chargewp-wheel-timeline'                          => [
 		'config'        => 'shortcodes.wheel-timeline',
 		'template'      => 'shortcodes/wheel-timeline.php',
 		'depend_assets' => [
-			'inner'    => [
+			'inner' => [
 				'css' => [
 					[
 						'file' => 'element.css',
