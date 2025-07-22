@@ -14,8 +14,8 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 ?>
 
 <div <?php $_this->output_shortcode_wrapper_attributes( [ 'class' => 'chargewp-wheel-timeline-wrapper' ] ); ?>>
-	<div class="chargewp-cards-container">
-		<ul class="chargewp-cards" style="--items: <?php echo esc_attr( count( $items ) ); ?>;">
+	<div class="chargewp-wheel-timeline-cards-container">
+		<ul class="chargewp-wheel-timeline-cards" style="--items: <?php echo esc_attr( count( $items ) ); ?>;">
 			<?php
 			$checked     = '';
 			$checked_set = false;
@@ -50,7 +50,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 	@layer template, demo;
 
 	@layer demo {
-		<?php $_this->output_style_shortcode_id(); ?> .chargewp-cards-container {
+		<?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards-container {
 			--base-rotation: <?php echo esc_attr( $atts['wheel_rotation_degree'] ); ?>deg;
 			--duration: <?php echo esc_attr( $atts['wheel_speed'] ); ?>ms;
 			--title-top: <?php echo esc_attr( $atts['vertical_date_alignment'] ); ?>rem;
@@ -66,7 +66,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 	if ( 'true' === $atts['is_connection_lines'] ) :
 		$_this->output_style_shortcode_id();
 		?>
-		.chargewp-cards li>label::after {
+		.chargewp-wheel-timeline-cards li>label::after {
 			content: '';
 			position: absolute;
 			top: 100%;
@@ -82,7 +82,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 	if ( 'true' === $atts['is_wheel_spinning'] ) :
 		foreach ( $items as $index => $item ) :
 			?>
-			.chargewp-cards:has(li:nth-child( <?php echo esc_attr( (string) ( $index + 1 ) ); ?> )>input:checked) { --index: <?php echo esc_attr( $index ); ?>; }
+			.chargewp-wheel-timeline-cards:has(li:nth-child( <?php echo esc_attr( (string) ( $index + 1 ) ); ?> )>input:checked) { --index: <?php echo esc_attr( $index ); ?>; }
 			<?php
 		endforeach;
 	endif;
@@ -90,7 +90,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		if ( ! empty( $item['date_active_font_size'] ) ) :
 			$_this->output_style_shortcode_id();
 			?>
-			.chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>div {
+			.chargewp-wheel-timeline-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>div {
 				font-size: <?php echo esc_attr( $item['date_active_font_size'] ); ?>px;
 			}
 			<?php
@@ -98,7 +98,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		if ( ! empty( $item['date_active_font_weight'] ) ) :
 			$_this->output_style_shortcode_id();
 			?>
-			.chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>div {
+			.chargewp-wheel-timeline-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>div {
 				font-weight: <?php echo esc_attr( $item['date_active_font_weight'] ); ?>;
 			}
 			<?php
@@ -106,7 +106,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		if ( ! empty( $item['date_font_size'] ) ) :
 			$_this->output_style_shortcode_id();
 			?>
-			.chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label {
+			.chargewp-wheel-timeline-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label {
 				font-size: <?php echo esc_attr( $item['date_font_size'] ); ?>px;
 			}
 			<?php
@@ -114,7 +114,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		if ( ! empty( $item['date_font_weight'] ) ) :
 			$_this->output_style_shortcode_id();
 			?>
-			.chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label {
+			.chargewp-wheel-timeline-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label {
 				font-weight: <?php echo esc_attr( $item['date_font_weight'] ); ?>;
 			}
 			<?php
@@ -122,7 +122,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		if ( ! empty( $item['info_font_size'] ) ) :
 			$_this->output_style_shortcode_id();
 			?>
-			.chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>p {
+			.chargewp-wheel-timeline-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>p {
 				font-size: <?php echo esc_attr( $item['info_font_size'] ); ?>px;
 			}
 			<?php
@@ -130,7 +130,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		if ( ! empty( $item['info_font_weight'] ) ) :
 			$_this->output_style_shortcode_id();
 			?>
-			.chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>p {
+			.chargewp-wheel-timeline-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>p {
 				font-weight: <?php echo esc_attr( $item['info_font_weight'] ); ?>;
 			}
 			<?php
@@ -138,7 +138,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		if ( ! empty( $item['date_color'] ) ) :
 			$_this->output_style_shortcode_id();
 			?>
-			.chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label {
+			.chargewp-wheel-timeline-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label {
 				color: <?php echo esc_attr( $item['date_color'] ); ?>;
 			}
 			<?php
@@ -146,7 +146,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		if ( ! empty( $item['date_hover_color'] ) ) :
 			$_this->output_style_shortcode_id();
 			?>
-			.chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label:hover {
+			.chargewp-wheel-timeline-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label:hover {
 				color: <?php echo esc_attr( $item['date_hover_color'] ); ?>;
 			}
 			<?php
@@ -155,7 +155,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		if ( ! empty( $item['circle_color'] ) ) :
 			$_this->output_style_shortcode_id();
 			?>
-			.chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label::before {
+			.chargewp-wheel-timeline-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label::before {
 				background-color: <?php echo esc_attr( $item['circle_color'] ); ?>;
 			}
 			<?php
@@ -163,7 +163,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		if ( ! empty( $item['circle_hover_color'] ) ) :
 			$_this->output_style_shortcode_id();
 			?>
-			.chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label:hover::before {
+			.chargewp-wheel-timeline-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label:hover::before {
 				background-color: <?php echo esc_attr( $item['circle_hover_color'] ); ?>;
 			}
 			<?php
@@ -171,7 +171,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		if ( ! empty( $item['circle_size'] ) ) :
 			$_this->output_style_shortcode_id();
 			?>
-				.chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label::before {
+				.chargewp-wheel-timeline-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label::before {
 					width: <?php echo esc_attr( $item['circle_size'] ); ?>px;
 					height: <?php echo esc_attr( $item['circle_size'] ); ?>px;
 				}
@@ -181,7 +181,7 @@ endforeach;
 	?>
 
 	@layer demo {
-		.chargewp-cards-container {
+    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards-container {
 			--full-circle: 360deg;
 			--cards-container-size: calc(var(--radius) * 2);
 			--cards-container-padding: 2rem;
@@ -200,13 +200,13 @@ endforeach;
 		}
 	}
 
-	.chargewp-wheel-timeline-wrapper {
+    <?php $_this->output_style_shortcode_id(); ?>.chargewp-wheel-timeline-wrapper {
 		container-type: inline-size;
 		padding: 50px;
 		overflow: hidden;
 	}
 
-	.chargewp-cards-container input[type="radio"] {
+    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards-container input[type="radio"] {
 		position: absolute;
 		width: 1px;
 		height: 1px;
@@ -218,7 +218,7 @@ endforeach;
 		border-width: 0;
 	}
 
-	.chargewp-cards {
+    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards {
 		position: absolute;
 		inset: var(--cards-container-padding);
 		aspect-ratio: 1;
@@ -230,7 +230,7 @@ endforeach;
 		padding: 0;
 	}
 
-	.chargewp-cards li {
+    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards li {
 		position: absolute;
 		inset: 0;
 		margin: 0;
@@ -242,7 +242,7 @@ endforeach;
 		pointer-events: none;
 	}
 
-	.chargewp-cards li>label {
+    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards li>label {
 		position: absolute;
 		inset: 0;
 		margin: auto;
@@ -256,7 +256,7 @@ endforeach;
 		transition: var(--duration) ease-in-out;
 	}
 
-	.chargewp-cards li>label::before {
+    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards li>label::before {
 		content: '';
 		position: absolute;
 		top: var(--cards-container-padding);
@@ -267,8 +267,8 @@ endforeach;
 		transition: background-color var(--duration) ease-in-out;
 	}
 
-	.chargewp-cards>li>div,
-	.chargewp-cards>li>p {
+    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards>li>div,
+    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards>li>p {
 		position: absolute;
 		left: 50%;
 		text-align: center;
@@ -276,7 +276,7 @@ endforeach;
 		transform-origin: center;
 	}
 
-	.chargewp-cards>li>div {
+    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards>li>div {
 		top: var(--title-top);
 		opacity: var(--title-opacity, 0);
 		translate: 0 var(--title-offset-y);
@@ -288,7 +288,7 @@ endforeach;
 		line-height: 1.125;
 	}
 
-	.chargewp-cards>li>p {
+    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards>li>p {
 		top: var(--info-top);
 		margin: 0 auto;
 		width: var(--info-width);
@@ -301,7 +301,7 @@ endforeach;
 	}
 
 	/* update custom properties for checked item */
-	.chargewp-cards li:has(input:checked) {
+    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards li:has(input:checked) {
 		--label-opacity: 1;
 		--label-line-h: var(--label-line-h-current);
 		--label-line-delay: calc(var(--duration) * 2);
@@ -316,13 +316,13 @@ endforeach;
 	}
 
 	/* rotate container based on checked radio */
-	.chargewp-cards:has(input:checked) {
+    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards:has(input:checked) {
 		transform: rotate(calc(var(--base-rotation) - (var(--index) * var(--full-circle) / var(--items))));
 	}
 
 	/* Fallback for browsers that don't support container queries */
 	@supports not (width: 1cqw) {
-		.chargewp-cards-container {
+        <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards-container {
 			--radius: min(20%, 400px);
 		}
 	}
