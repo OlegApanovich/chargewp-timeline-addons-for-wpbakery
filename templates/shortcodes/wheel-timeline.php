@@ -15,7 +15,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 
 <div <?php $_this->output_shortcode_wrapper_attributes( [ 'class' => 'chargewp-wheel-timeline-wrapper' ] ); ?>>
 	<div class="chargewp-cards-container">
-		<ul class="chargewp-cards" style="--items: 26;">
+		<ul class="chargewp-cards" style="--items: <?php echo esc_attr( count( $items ) ); ?>;">
 			<?php
 			$checked     = '';
 			$checked_set = false;
