@@ -58,6 +58,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 			--info-width: min(<?php echo esc_attr( $atts['info_width'] ); ?>%);
 			--label-line-h: <?php echo esc_attr( $atts['connection_line_height'] ); ?>rem;
 			--label-line-h-current: <?php echo esc_attr( $atts['active_connection_line_height'] ); ?>rem;
+			--radius: min(<?php echo esc_attr( $atts['wheel_radius'] ); ?>cqw, 400px);
 		}
 	}
 
@@ -86,6 +87,14 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		endforeach;
 	endif;
 	foreach ( $items as $index => $item ) :
+		if ( ! empty( $item['date_font_size'] ) ) :
+			$_this->output_style_shortcode_id();
+			?>
+			.chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label {
+				font-size: <?php echo esc_attr( $item['date_font_size'] ); ?>px;
+			}
+			<?php
+		endif;
 		if ( ! empty( $item['date_color'] ) ) :
 			$_this->output_style_shortcode_id();
 			?>
@@ -134,7 +143,6 @@ endforeach;
 	@layer demo {
 		.chargewp-cards-container {
 			--full-circle: 360deg;
-			--radius: min(45cqw, 400px);
 			--cards-container-size: calc(var(--radius) * 2);
 			--cards-container-padding: 2rem;
 			--border-color: transparent;
