@@ -28,8 +28,8 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 				}
 				?>
 				<li style="--i: <?php echo esc_attr( $index ); ?>;" data-item-id="<?php echo esc_attr( $item['id'] ); ?>">
-					<input type="radio" id="chargewp-item-<?php echo esc_attr( $index ); ?>" name="chargewp-gallery-item" <?php echo esc_attr( $checked ); ?>>
-					<label for="chargewp-item-<?php echo esc_attr( $index ); ?>">
+                    <input type="radio" id="chargewp-item-<?php echo esc_attr( $_this->id . '-' . $index ); ?>" name="chargewp-gallery-item-<?php echo esc_attr( $_this->id ); ?>" <?php echo esc_attr( $checked ); ?>>
+                    <label for="chargewp-item-<?php echo esc_attr( $_this->id . '-' . $index ); ?>">
 						<?php echo isset( $item['date'] ) ? esc_html( $item['date'] ) : ''; ?>
 					</label>
 					<div>
