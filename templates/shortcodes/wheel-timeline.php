@@ -177,103 +177,35 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 				}
 			<?php
 		endif;
-endforeach;
-	?>
+    endforeach;
+    ?>
 
 	@layer demo {
     <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards-container {
 			--full-circle: 360deg;
 			--cards-container-size: calc(var(--radius) * 2);
 			--cards-container-padding: 2rem;
-			--border-color: transparent;
 			--label-offset: calc(var(--radius) * -1 - 1rem);
-			--label-size: 30px;
 			--title-offset-y: 30px;
 			--info-offset-y: 30px;
-			box-sizing: content-box;
-			position: relative;
 			width: var(--cards-container-size);
 			height: var(--cards-container-size);
 			padding: var(--cards-container-padding);
-			/* Ensure it fits within parent with some margin */
-			max-width: calc(100% - 80px);
 		}
 	}
 
-    <?php $_this->output_style_shortcode_id(); ?>.chargewp-wheel-timeline-wrapper {
-		container-type: inline-size;
-		padding: 50px;
-		overflow: hidden;
-	}
-
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards-container input[type="radio"] {
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		padding: 0;
-		margin: -1px;
-		overflow: hidden;
-		clip: rect(0, 0, 0, 0);
-		white-space: nowrap;
-		border-width: 0;
-	}
-
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards {
-		position: absolute;
-		inset: var(--cards-container-padding);
-		aspect-ratio: 1;
-		border-radius: 50%;
-		border: 1px solid var(--border-color);
-		transition: transform 0.3s ease-in-out var(--duration);
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-
     <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards li {
-		position: absolute;
-		inset: 0;
-		margin: 0;
-		padding: 0;
-		transform-origin: center;
-		display: grid;
-		place-content: center;
 		transform: rotate(calc(var(--i) * 360deg / var(--items)));
-		pointer-events: none;
 	}
 
     <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards li>label {
-		position: absolute;
-		inset: 0;
-		margin: auto;
 		transform: translateY(var(--label-offset));
-		width: var(--label-size);
-		height: var(--label-size);
-		cursor: pointer;
-		pointer-events: initial;
-		text-align: center;
-		font-size: clamp(.8rem, 2.5vw + .04rem, 1rem);
 		transition: var(--duration) ease-in-out;
 	}
 
     <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards li>label::before {
-		content: '';
-		position: absolute;
 		top: var(--cards-container-padding);
-		left: 50%;
-		translate: -50% 0;
-		aspect-ratio: 50%;
-		border-radius: 50%;
 		transition: background-color var(--duration) ease-in-out;
-	}
-
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards>li>div,
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards>li>p {
-		position: absolute;
-		left: 50%;
-		text-align: center;
-		transform: translate(-50%, 0);
-		transform-origin: center;
 	}
 
     <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards>li>div {
@@ -281,26 +213,15 @@ endforeach;
 		opacity: var(--title-opacity, 0);
 		translate: 0 var(--title-offset-y);
 		transition: var(--duration) ease-in-out var(--title-delay, 0ms);
-		margin: 0;
-		font-weight: 800;
-		font-size: 28px;
-		letter-spacing: -0.1px;
-		line-height: 1.125;
 	}
 
     <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards>li>p {
 		top: var(--info-top);
-		margin: 0 auto;
 		width: var(--info-width);
-		z-index: 2;
-		font-size: clamp(.8rem, 2.5vw + 0.05rem, .9rem);
-		text-align: center;
-		text-wrap: pretty;
 		opacity: var(--info-opacity, 0);
 		transition: var(--duration) ease-in-out var(--info-delay, 0ms);
 	}
 
-	/* update custom properties for checked item */
     <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards li:has(input:checked) {
 		--label-opacity: 1;
 		--label-line-h: var(--label-line-h-current);
@@ -318,12 +239,5 @@ endforeach;
 	/* rotate container based on checked radio */
     <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards:has(input:checked) {
 		transform: rotate(calc(var(--base-rotation) - (var(--index) * var(--full-circle) / var(--items))));
-	}
-
-	/* Fallback for browsers that don't support container queries */
-	@supports not (width: 1cqw) {
-        <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards-container {
-			--radius: min(20%, 400px);
-		}
 	}
 </style>
