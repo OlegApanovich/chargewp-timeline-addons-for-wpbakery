@@ -28,8 +28,8 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 				}
 				?>
 				<li style="--i: <?php echo esc_attr( $index ); ?>;" data-item-id="<?php echo esc_attr( $item['id'] ); ?>">
-                    <input type="radio" id="chargewp-item-<?php echo esc_attr( $_this->id . '-' . $index ); ?>" name="chargewp-gallery-item-<?php echo esc_attr( $_this->id ); ?>" <?php echo esc_attr( $checked ); ?>>
-                    <label for="chargewp-item-<?php echo esc_attr( $_this->id . '-' . $index ); ?>">
+					<input type="radio" id="chargewp-item-<?php echo esc_attr( $_this->id . '-' . $index ); ?>" name="chargewp-gallery-item-<?php echo esc_attr( $_this->id ); ?>" <?php echo esc_attr( $checked ); ?>>
+					<label for="chargewp-item-<?php echo esc_attr( $_this->id . '-' . $index ); ?>">
 						<?php echo isset( $item['date'] ) ? esc_html( $item['date'] ) : ''; ?>
 					</label>
 					<div>
@@ -177,11 +177,11 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 				}
 			<?php
 		endif;
-    endforeach;
-    ?>
+	endforeach;
+	?>
 
 	@layer demo {
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards-container {
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards-container {
 			--full-circle: 360deg;
 			--cards-container-size: calc(var(--radius) * 2);
 			--cards-container-padding: 2rem;
@@ -194,35 +194,35 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 		}
 	}
 
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards li {
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards li {
 		transform: rotate(calc(var(--i) * 360deg / var(--items)));
 	}
 
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards li>label {
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards li>label {
 		transform: translateY(var(--label-offset));
 		transition: var(--duration) ease-in-out;
 	}
 
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards li>label::before {
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards li>label::before {
 		top: var(--cards-container-padding);
 		transition: background-color var(--duration) ease-in-out;
 	}
 
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards>li>div {
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards>li>div {
 		top: var(--title-top);
 		opacity: var(--title-opacity, 0);
 		translate: 0 var(--title-offset-y);
 		transition: var(--duration) ease-in-out var(--title-delay, 0ms);
 	}
 
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards>li>p {
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards>li>p {
 		top: var(--info-top);
 		width: var(--info-width);
 		opacity: var(--info-opacity, 0);
 		transition: var(--duration) ease-in-out var(--info-delay, 0ms);
 	}
 
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards li:has(input:checked) {
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards li:has(input:checked) {
 		--label-opacity: 1;
 		--label-line-h: var(--label-line-h-current);
 		--label-line-delay: calc(var(--duration) * 2);
@@ -237,7 +237,7 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 	}
 
 	/* rotate container based on checked radio */
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards:has(input:checked) {
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-wheel-timeline-cards:has(input:checked) {
 		transform: rotate(calc(var(--base-rotation) - (var(--index) * var(--full-circle) / var(--items))));
 	}
 </style>
