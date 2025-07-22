@@ -95,6 +95,14 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 			}
 			<?php
 		endif;
+		if ( ! empty( $item['date_active_font_weight'] ) ) :
+			$_this->output_style_shortcode_id();
+			?>
+			.chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>div {
+				font-weight: <?php echo esc_attr( $item['date_active_font_weight'] ); ?>;
+			}
+			<?php
+		endif;
 		if ( ! empty( $item['date_font_size'] ) ) :
 			$_this->output_style_shortcode_id();
 			?>
@@ -103,11 +111,27 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 			}
 			<?php
 		endif;
+		if ( ! empty( $item['date_font_weight'] ) ) :
+			$_this->output_style_shortcode_id();
+			?>
+			.chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>label {
+				font-weight: <?php echo esc_attr( $item['date_font_weight'] ); ?>;
+			}
+			<?php
+		endif;
 		if ( ! empty( $item['info_font_size'] ) ) :
 			$_this->output_style_shortcode_id();
 			?>
 			.chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>p {
 				font-size: <?php echo esc_attr( $item['info_font_size'] ); ?>px;
+			}
+			<?php
+		endif;
+		if ( ! empty( $item['info_font_weight'] ) ) :
+			$_this->output_style_shortcode_id();
+			?>
+			.chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>p {
+				font-weight: <?php echo esc_attr( $item['info_font_weight'] ); ?>;
 			}
 			<?php
 		endif;
