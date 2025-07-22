@@ -238,6 +238,16 @@ $params = [
 				'param_name'  => 'date_font_size',
 				'description' => esc_html__( 'Set font size for date text in pixels.', 'chargewp-timeline-addons-for-wpbakery' ),
 			],
+			[
+				'type'        => 'chargewp_number',
+				'min'         => '1',
+				'max'         => '50',
+				'step'        => '1',
+				'title'       => 'px',
+				'heading'     => esc_html__( 'Info Font Size', 'my-text-domain' ),
+				'param_name'  => 'info_font_size',
+				'description' => esc_html__( 'Set font size for info text in pixels.', 'chargewp-timeline-addons-for-wpbakery' ),
+			],
 		],
 	],
 ];

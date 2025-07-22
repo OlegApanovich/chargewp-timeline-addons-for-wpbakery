@@ -95,6 +95,14 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 			}
 			<?php
 		endif;
+		if ( ! empty( $item['info_font_size'] ) ) :
+			$_this->output_style_shortcode_id();
+			?>
+			.chargewp-cards li[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"]>p {
+				font-size: <?php echo esc_attr( $item['info_font_size'] ); ?>px;
+			}
+			<?php
+		endif;
 		if ( ! empty( $item['date_color'] ) ) :
 			$_this->output_style_shortcode_id();
 			?>
