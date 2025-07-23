@@ -18,11 +18,12 @@ The WPBakery Page Builder plugin must be installed and activated to use this plu
 
 Source file code you can find on [our GitHub plugin page](https://github.com/OlegApanovich/chargewp-timeline-addons-for-wpbakery). Everyone is welcome to contribute to the development there.
 
-### Browser support
+### Default Browser support
 1. Chrome version 49+
 2. Safari 12+
 3. Firefox 78+
 4. Edge: Chromium-based Edge (79+)
+Please note that some elements use brand-new CSS/JS features, and browser support for them may vary. We specify browser support for such elements individually in the element edit window.
 
 
 == Installation ==
