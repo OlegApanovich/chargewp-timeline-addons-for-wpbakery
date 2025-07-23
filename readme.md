@@ -27,7 +27,7 @@ The WPBakery Page Builder plugin must be installed and activated to use this plu
 
 ![Vertical Segment Timeline Addon](assets/images/github-reame/screen-7.png)
 
-### 5. Wheel Timeline.
+### 6. Wheel Timeline.
 
 ![Wheel Timeline Addon](assets/images/github-reame/screen-8.png)
 
