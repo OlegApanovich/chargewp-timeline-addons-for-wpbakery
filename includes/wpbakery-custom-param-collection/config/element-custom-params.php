@@ -27,7 +27,7 @@ return [
 		'default_set' => false,
 	],
 	'notice'        => [
-		'type'        => '',
+		'type'   => '',
 		'level'  => 'notice',
 		'notice' => '',
 	],
