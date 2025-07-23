@@ -1,0 +1,103 @@
+.chargewp-wheel-timeline-cards-container {
+    box-sizing: content-box;
+    position: relative;
+    /* Ensure it fits within parent with some margin */
+    max-width: calc(100% - 80px);
+}
+
+.chargewp-wheel-timeline-wrapper {
+    container-type: inline-size;
+    padding: 50px;
+    overflow: hidden;
+}
+
+.chargewp-wheel-timeline-cards-container input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.chargewp-wheel-timeline-cards {
+    position: absolute;
+    inset: var(--cards-container-padding);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out var(--duration);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chargewp-wheel-timeline-cards li {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 0;
+    transform-origin: center;
+    display: grid;
+    place-content: center;
+    pointer-events: none;
+}
+
+.chargewp-wheel-timeline-cards li>label {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    pointer-events: initial;
+    text-align: center;
+    font-size: clamp(.8rem, 2.5vw + .04rem, 1rem);
+}
+
+.chargewp-wheel-timeline-cards li>label::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    translate: -50% 0;
+    aspect-ratio: 50%;
+    border-radius: 50%;
+}
+
+.chargewp-wheel-timeline-cards>li>div,
+.chargewp-wheel-timeline-cards>li>p {
+    position: absolute;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, 0);
+    transform-origin: center;
+}
+
+.chargewp-wheel-timeline-cards>li>div {
+    top: var(--title-top);
+    opacity: var(--title-opacity, 0);
+    translate: 0 var(--title-offset-y);
+    transition: var(--duration) ease-in-out var(--title-delay, 0ms);
+    margin: 0;
+    font-weight: 800;
+    font-size: 28px;
+    letter-spacing: -0.1px;
+    line-height: 1.125;
+}
+
+.chargewp-wheel-timeline-cards>li>p {
+    margin: 0 auto;
+    z-index: 2;
+    font-size: clamp(.8rem, 2.5vw + 0.05rem, .9rem);
+    text-align: center;
+    text-wrap: pretty;
+}
+
+/* Fallback for browsers that don't support container queries */
+@supports not (width: 1cqw) {
+    .chargewp-wheel-timeline-cards-container {
+        --radius: min(20%, 400px);
+    }
+}

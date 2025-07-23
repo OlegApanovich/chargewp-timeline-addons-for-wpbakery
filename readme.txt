@@ -39,6 +39,10 @@ Source file code you can find on [our GitHub plugin page](https://github.com/Ole
 
 == Changelog ==
 
+= 1.3 =
+* Dev - Introduced new "Wheel Timeline" addon.
+* Dev - Add plugin deactivation survey.
+
 = 1.2.1 =
 * Fix - Fix an issue in the WPBakery backend editor where the inner elements edit window incorrectly opens the parent elements edit window.
 

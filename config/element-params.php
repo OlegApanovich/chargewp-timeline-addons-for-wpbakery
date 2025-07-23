@@ -6,7 +6,7 @@
  */
 
 return [
-	'tailwind'            => [
+	'tailwind'             => [
 		'rotation_degree' => [
 			0   => '0',
 			1   => '1',
@@ -63,7 +63,7 @@ return [
 			esc_html__( 'Dashed', 'chargewp-timeline-addons-for-wpbakery' ) => 'dashed',
 		],
 	],
-	'shortcode-container' => [
+	'common-bottom-params' => [
 		[
 			'type'        => 'el_id',
 			'heading'     => esc_html__( 'Element ID', 'js_composer' ),
