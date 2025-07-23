@@ -234,7 +234,7 @@ $params = [
 				'max'         => '50',
 				'step'        => '1',
 				'title'       => 'px',
-				'heading'     => esc_html__( 'Date Font Size', 'my-text-domain' ),
+				'heading'     => esc_html__( 'Date Font Size', 'chargewp-timeline-addons-for-wpbakery' ),
 				'param_name'  => 'date_font_size',
 				'description' => esc_html__( 'Set font size for date text in pixels.', 'chargewp-timeline-addons-for-wpbakery' ),
 			],
@@ -244,7 +244,7 @@ $params = [
 				'max'         => '100',
 				'step'        => '1',
 				'title'       => 'px',
-				'heading'     => esc_html__( 'Date Active Font Size', 'my-text-domain' ),
+				'heading'     => esc_html__( 'Date Active Font Size', 'chargewp-timeline-addons-for-wpbakery' ),
 				'param_name'  => 'date_active_font_size',
 				'description' => esc_html__( 'Set font size for date active state, that you can see inside circle, in pixels.', 'chargewp-timeline-addons-for-wpbakery' ),
 			],
@@ -254,7 +254,7 @@ $params = [
 				'max'         => '50',
 				'step'        => '1',
 				'title'       => 'px',
-				'heading'     => esc_html__( 'Info Font Size', 'my-text-domain' ),
+				'heading'     => esc_html__( 'Info Font Size', 'chargewp-timeline-addons-for-wpbakery' ),
 				'param_name'  => 'info_font_size',
 				'description' => esc_html__( 'Set font size for info text, that you can see inside circle with item active state, in pixels.', 'chargewp-timeline-addons-for-wpbakery' ),
 			],
@@ -292,6 +292,29 @@ $params = [
 	],
 ];
 
+$browser_support_data = sprintf(
+	'<h4>%s</h4><h5>%s</h5><ul><li>%s</li><li>%s</li><li>%s</li><li>%s</li></ul>',
+	__( 'Browser Support', 'chargewp-timeline-addons-for-wpbakery' ),
+	sprintf(
+		__( 'This element doesn’t have a ', 'chargewp-timeline-addons-for-wpbakery' ) . '%1$s' . __( 'standard list ', 'chargewp-timeline-addons-for-wpbakery' ) . '%2$s' . __( 'of supported browsers:', 'chargewp-timeline-addons-for-wpbakery' ),
+		'<a target="_blank" href="https://github.com/OlegApanovich/chargewp-timeline-addons-for-wpbakery?tab=readme-ov-file#default-browser-support">',
+		'</a>'
+	),
+	__( 'Chrome: Version 105+', 'chargewp-timeline-addons-for-wpbakery' ),
+	__( 'Safari: Version 16+', 'chargewp-timeline-addons-for-wpbakery' ),
+	__( 'Firefox: Version 121+', 'chargewp-timeline-addons-for-wpbakery' ),
+	__( 'Edge: Chromium-based Edge (105+)', 'chargewp-timeline-addons-for-wpbakery' )
+);
+
+$browser_support = [
+	[
+		'type'       => 'chargewp_notice',
+		'param_name' => 'browser_support_notice',
+		'level'      => 'info',
+		'notice'     => $browser_support_data,
+	],
+];
+
 return [
 	'name'                    => __( 'Wheel Timeline', 'chargewp-timeline-addons-for-wpbakery' ),
 	'base'                    => 'chargewp-wheel-timeline',
@@ -304,6 +327,7 @@ return [
 	'params'                  => array_merge(
 		$params,
 		[ vc_map_add_css_animation() ],
-		chargewpwpbtimeline_config( 'element-params' )['common-bottom-params']
+		chargewpwpbtimeline_config( 'element-params' )['common-bottom-params'],
+		$browser_support
 	),
 ];
