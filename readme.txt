@@ -36,7 +36,9 @@ Please note that some elements use brand-new CSS/JS features, and browser suppor
 2. Vertical Segment Timeline Addon.
 3. Left Side Stack Timeline.
 4. How to find plugin elements in Wpbakery editor.
-5. Tailwind Vertical Classic Timeline
+5. Tailwind Vertical Classic Timeline Addon.
+6. Left Side Vertical Slider Timeline Addon.
+7. Wheel Timeline Timeline Addon.
 
 == Changelog ==
 
