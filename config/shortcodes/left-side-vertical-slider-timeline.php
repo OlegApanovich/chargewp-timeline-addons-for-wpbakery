@@ -105,7 +105,6 @@ $params = [
 					'element' => 'image_source',
 					'value'   => 'media_library',
 				],
-				'admin_label' => true,
 			],
 			[
 				'type'        => 'textfield',
@@ -116,7 +115,6 @@ $params = [
 					'element' => 'image_source',
 					'value'   => 'external_link',
 				],
-				'admin_label' => true,
 			],
 			[
 				'type'        => 'textfield',
@@ -198,6 +196,6 @@ return [
 	'params'                  => array_merge(
 		$params,
 		[ vc_map_add_css_animation() ],
-		chargewpwpbtimeline_config( 'shortcode-container-config' )
+		chargewpwpbtimeline_config( 'element-params' )['common-bottom-params']
 	),
 ];

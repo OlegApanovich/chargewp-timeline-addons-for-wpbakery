@@ -8,10 +8,10 @@
  */
 
 defined( 'ABSPATH' ) || exit;
-$timeline_id = uniqid();
 
-$items = vc_param_group_parse_atts( $atts['items'] );
-$items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'items' );
+$timeline_id = uniqid();
+$items       = vc_param_group_parse_atts( $atts['items'] );
+$items       = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'items' );
 ?>
 
 <div <?php $_this->output_shortcode_wrapper_attributes( [ 'class' => 'chargewp-left-side-vertical-slider-timeline-container' ] ); ?>>

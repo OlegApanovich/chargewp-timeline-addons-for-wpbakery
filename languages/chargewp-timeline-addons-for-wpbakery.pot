@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ChargeWP Timeline Addons For WPBakery Page Builder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-20 06:49+0000\n"
+"POT-Creation-Date: 2025-07-23 12:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,8 +13,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.7.1; wp-6.8-RC3\n"
+"X-Loco-Version: 2.8.0; wp-6.8.1; php-8.4.8\n"
 "X-Domain: chargewp-timeline-addons-for-wpbakery"
+
+#: config/shortcodes/wheel-timeline.php:77
+msgid "Active Connection Line Height"
+msgstr ""
+
+#: config/shortcodes/left-side-vertical-slider-timeline.php:76
+msgid "Active Item"
+msgstr ""
 
 #: config/shortcodes/vertical-segment-timeline.php:23
 msgid "Background Color"
@@ -30,12 +38,14 @@ msgstr ""
 msgid "Background hover color"
 msgstr ""
 
+#: config/shortcodes/left-side-vertical-slider-timeline.php:16
 #: config/shortcodes/vertical-segment-timeline.php:16
 #: config/shortcodes/left-side-stack-timeline.php:16
 #: config/shortcodes/tailwind-vertical-classic-timeline.php:16
 msgid "Baseline Color"
 msgstr ""
 
+#: config/shortcodes/left-side-vertical-slider-timeline.php:26
 #: config/shortcodes/tailwind-vertical-classic-timeline.php:26
 msgid "Baseline Width"
 msgstr ""
@@ -68,6 +78,10 @@ msgstr ""
 msgid "Border Width"
 msgstr ""
 
+#: config/shortcodes/wheel-timeline.php:298
+msgid "Browser Support"
+msgstr ""
+
 #. Name of the plugin
 msgid "ChargeWP Timeline Addons For WPBakery Page Builder"
 msgstr ""
@@ -96,12 +110,36 @@ msgstr ""
 msgid "Choose rotation degree."
 msgstr ""
 
+#: config/shortcodes/wheel-timeline.php:304
+msgid "Chrome: Version 105+"
+msgstr ""
+
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:32
 msgid "Circle"
 msgstr ""
 
+#: config/shortcodes/wheel-timeline.php:206
+msgid "Circle Color"
+msgstr ""
+
 #: config/shortcodes/left-side-stack-timeline-item.php:48
 msgid "Circle color"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:220
+msgid "Circle Hover Color"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:199
+msgid "Circle Size"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:104
+msgid "Connection Line Color"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:92
+msgid "Connection Line Height"
 msgstr ""
 
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:175
@@ -128,26 +166,65 @@ msgid "Dashed"
 msgstr ""
 
 #: config/shortcodes/left-side-stack-timeline-item.php:55
+#: config/shortcodes/left-side-vertical-slider-timeline.php:121
+#: config/shortcodes/left-side-vertical-slider-timeline.php:126
+#: config/shortcodes/wheel-timeline.php:180
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:170
 #: config/shortcodes/vertical-segment-timeline-item.php:53
 #: config/shortcodes/zigzag-timeline-item.php:58
 msgid "Date"
 msgstr ""
 
+#: config/shortcodes/left-side-vertical-slider-timeline.php:131
+msgid "Date Active Color"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:248
+msgid "Date Active Font Size"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:278
+msgid "Date Active Font Weight"
+msgstr ""
+
 #: config/shortcodes/zigzag-timeline-item.php:77
 msgid "Date background"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:213
+msgid "Date Color"
 msgstr ""
 
 #: config/shortcodes/vertical-segment-timeline-item.php:62
 msgid "Date color."
 msgstr ""
 
+#: config/shortcodes/wheel-timeline.php:238
+msgid "Date Font Size"
+msgstr ""
+
 #: config/shortcodes/vertical-segment-timeline-item.php:69
 msgid "Date font size."
 msgstr ""
 
+#: config/shortcodes/wheel-timeline.php:268
+msgid "Date Font Weight"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:227
+msgid "Date Hover Color"
+msgstr ""
+
+#: config/shortcodes/left-side-vertical-slider-timeline.php:138
+msgid "Date Regular Color"
+msgstr ""
+
 #: config/shortcodes/zigzag-timeline-item.php:32
 msgid "Decorative circle color"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:167
+msgid "Default Active Item"
 msgstr ""
 
 #: config/shortcodes/vertical-segment-timeline-item.php:84
@@ -175,6 +252,14 @@ msgstr ""
 msgid "Double"
 msgstr ""
 
+#: config/shortcodes/wheel-timeline.php:307
+msgid "Edge: Chromium-based Edge (105+)"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:60
+msgid "Enable Connection Lines"
+msgstr ""
+
 #: config/shortcodes/left-side-stack-timeline-item.php:32
 #: config/shortcodes/left-side-stack-timeline-item.php:65
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:181
@@ -190,10 +275,35 @@ msgstr ""
 msgid "Enable negative rotation degree."
 msgstr ""
 
+#: config/shortcodes/left-side-vertical-slider-timeline.php:34
+msgid "Enable or disable navigation arrows for timeline slider."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:115
+msgid "Enable Wheel Spinning"
+msgstr ""
+
+#: config/shortcodes/left-side-vertical-slider-timeline.php:124
+#: config/shortcodes/wheel-timeline.php:183
+msgid "Enter date for timeline item."
+msgstr ""
+
 #: config/shortcodes/left-side-stack-timeline-item.php:25
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:194
 #: config/shortcodes/zigzag-timeline-item.php:42
 msgid "Enter text for title line."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:191
+msgid "Enter timeline item info."
+msgstr ""
+
+#: src/Shortcodes/ShortcodeAttsLib/Image.php:36
+msgid "External Image"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:306
+msgid "Firefox: Version 121+"
 msgstr ""
 
 #: config/shortcodes/vertical-segment-timeline-item.php:96
@@ -206,6 +316,12 @@ msgstr ""
 
 #. URI of the plugin
 msgid "https://github.com/OlegApanovich/chargewp-timeline-addons-for-wpbakery"
+msgstr ""
+
+#: templates/settings/deactivation-popup.php:16
+msgid ""
+"If you have a moment, please let us know why you are deactivating this "
+"plugin."
 msgstr ""
 
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:278
@@ -223,6 +339,22 @@ msgstr ""
 msgid "Image"
 msgstr ""
 
+#: config/shortcodes/wheel-timeline.php:188
+msgid "Info"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:258
+msgid "Info Font Size"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:288
+msgid "Info Font Weight"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:52
+msgid "Info Width"
+msgstr ""
+
 #: config/shortcodes/left-side-stack-timeline-item.php:58
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:173
 #: config/shortcodes/vertical-segment-timeline-item.php:56
@@ -230,6 +362,10 @@ msgstr ""
 msgid ""
 "Initially, it was designed as a date field, but you can use it as a regular "
 "text as well. "
+msgstr ""
+
+#: templates/settings/deactivation-popup.php:24
+msgid "It's a temporary deactivation."
 msgstr ""
 
 #: config/shortcodes/left-side-stack-timeline-item.php:71
@@ -249,6 +385,14 @@ msgstr ""
 msgid "Left Side Stack Timeline"
 msgstr ""
 
+#: config/shortcodes/left-side-vertical-slider-timeline.php:188
+msgid "Left Side Vertical Slider Timeline"
+msgstr ""
+
+#: config/shortcodes/left-side-vertical-slider-timeline.php:146
+msgid "Main text field for timeline item."
+msgstr ""
+
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:39
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:51
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:62
@@ -263,8 +407,16 @@ msgstr ""
 msgid "Marker"
 msgstr ""
 
+#: config/shortcodes/left-side-vertical-slider-timeline.php:169
+msgid "Marker Border Color"
+msgstr ""
+
 #: config/shortcodes/vertical-segment-timeline-item.php:20
 msgid "Marker circle color"
+msgstr ""
+
+#: config/shortcodes/left-side-vertical-slider-timeline.php:162
+msgid "Marker Color"
 msgstr ""
 
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:133
@@ -279,6 +431,10 @@ msgstr ""
 msgid "Marker Rotation Degree"
 msgstr ""
 
+#: config/shortcodes/left-side-vertical-slider-timeline.php:179
+msgid "Marker Size"
+msgstr ""
+
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:36
 msgid "Marker Type"
 msgstr ""
@@ -291,11 +447,28 @@ msgstr ""
 msgid "Middle"
 msgstr ""
 
+#: config/shortcodes/left-side-vertical-slider-timeline.php:33
+msgid "Navigation"
+msgstr ""
+
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:158
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:343
 msgid "Negative rotation degree?"
 msgstr ""
 
+#: templates/shortcodes/left-side-vertical-slider-timeline.php:67
+msgid "Next"
+msgstr ""
+
+#: config/shortcodes/left-side-vertical-slider-timeline.php:58
+msgid "Next Arrow Color"
+msgstr ""
+
+#: config/shortcodes/left-side-vertical-slider-timeline.php:39
+#: config/shortcodes/left-side-vertical-slider-timeline.php:82
+#: config/shortcodes/wheel-timeline.php:66
+#: config/shortcodes/wheel-timeline.php:121
+#: config/shortcodes/wheel-timeline.php:173
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:34
 msgid "No"
 msgstr ""
@@ -304,8 +477,24 @@ msgstr ""
 msgid "None"
 msgstr ""
 
+#: config/shortcodes/wheel-timeline.php:300
+msgid "of supported browsers:"
+msgstr ""
+
 #. Author of the plugin
 msgid "OlegApanovich"
+msgstr ""
+
+#: templates/settings/deactivation-popup.php:44
+msgid "Other"
+msgstr ""
+
+#: templates/settings/deactivation-popup.php:32
+msgid "Please describe the missing addon."
+msgstr ""
+
+#: templates/settings/deactivation-popup.php:46
+msgid "Please specify"
 msgstr ""
 
 #: config/shortcodes/zigzag-timeline-item.php:25
@@ -313,7 +502,15 @@ msgid "Position"
 msgstr ""
 
 #. Description of the plugin
-msgid "Power your WPBakery Page Builder with well crafted timeline addons."
+msgid "Power your WPBakery Page Builder with well-crafted timeline addons."
+msgstr ""
+
+#: config/shortcodes/left-side-vertical-slider-timeline.php:47
+msgid "Prev Arrow Color"
+msgstr ""
+
+#: templates/shortcodes/left-side-vertical-slider-timeline.php:68
+msgid "Previous"
 msgstr ""
 
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:72
@@ -322,6 +519,10 @@ msgstr ""
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:240
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:357
 msgid "px"
+msgstr ""
+
+#: templates/settings/deactivation-popup.php:13
+msgid "Quick Feedback"
 msgstr ""
 
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:23
@@ -337,12 +538,24 @@ msgstr ""
 msgid "Rotation Degree"
 msgstr ""
 
+#: config/shortcodes/wheel-timeline.php:305
+msgid "Safari: Version 16+"
+msgstr ""
+
 #: config/shortcodes/vertical-segment-timeline.php:32
 msgid "Select a custom color for content part."
 msgstr ""
 
 #: config/shortcodes/vertical-segment-timeline.php:25
 msgid "Select a custom color for the whole element."
+msgstr ""
+
+#: config/shortcodes/left-side-vertical-slider-timeline.php:171
+msgid "Select custom border color for item marker."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:106
+msgid "Select custom color for active connection line."
 msgstr ""
 
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:57
@@ -367,6 +580,10 @@ msgstr ""
 msgid "Select custom color for border."
 msgstr ""
 
+#: config/shortcodes/left-side-vertical-slider-timeline.php:49
+msgid "Select custom color for bottom navigation arrow."
+msgstr ""
+
 #: config/shortcodes/left-side-stack-timeline-item.php:50
 msgid "Select custom color for circle."
 msgstr ""
@@ -383,14 +600,43 @@ msgstr ""
 msgid "Select custom color for item background."
 msgstr ""
 
+#: config/shortcodes/wheel-timeline.php:208
+msgid "Select custom color for item circle."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:222
+msgid "Select custom color for item circles on hover."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:229
+msgid "Select custom color for item date on hover."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:215
+msgid "Select custom color for item date."
+msgstr ""
+
+#: config/shortcodes/left-side-vertical-slider-timeline.php:164
+msgid "Select custom color for item marker."
+msgstr ""
+
 #: config/shortcodes/vertical-segment-timeline-item.php:29
 msgid "Select custom color for marker inside circle."
 msgstr ""
 
+#: config/shortcodes/left-side-vertical-slider-timeline.php:18
 #: config/shortcodes/vertical-segment-timeline.php:18
 #: config/shortcodes/left-side-stack-timeline.php:18
 #: config/shortcodes/tailwind-vertical-classic-timeline.php:18
 msgid "Select custom color for timeline base line."
+msgstr ""
+
+#: config/shortcodes/left-side-vertical-slider-timeline.php:133
+msgid "Select custom color for timeline date active element."
+msgstr ""
+
+#: config/shortcodes/left-side-vertical-slider-timeline.php:140
+msgid "Select custom color for timeline date not active element."
 msgstr ""
 
 #: config/shortcodes/vertical-segment-timeline-item.php:22
@@ -403,6 +649,10 @@ msgstr ""
 
 #: config/shortcodes/left-side-stack-timeline-item.php:43
 msgid "Select custom color for title background."
+msgstr ""
+
+#: config/shortcodes/left-side-vertical-slider-timeline.php:60
+msgid "Select custom color for top navigation arrow."
 msgstr ""
 
 #: config/shortcodes/zigzag-timeline-item.php:79
@@ -427,12 +677,102 @@ msgstr ""
 msgid "Set custom size for timeline section delimiter."
 msgstr ""
 
+#: config/shortcodes/left-side-vertical-slider-timeline.php:181
+msgid "Set custom size in px from 5 to 20 for timeline item marker."
+msgstr ""
+
+#: config/shortcodes/left-side-vertical-slider-timeline.php:28
 #: config/shortcodes/tailwind-vertical-classic-timeline.php:28
 msgid "Set custom width from 0 to 10 for timeline base line."
 msgstr ""
 
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:119
 msgid "Set custom width in px from 15 to 100 for marker."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:250
+msgid ""
+"Set font size for date active state, that you can see inside circle, in "
+"pixels."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:240
+msgid "Set font size for date text in pixels."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:260
+msgid ""
+"Set font size for info text, that you can see inside circle with item active "
+"state, in pixels."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:270
+msgid "Set font weight for a date."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:280
+msgid "Set font weight for date active state, that you can see inside circle."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:290
+msgid ""
+"Set font weight for info, that you can see inside circle with item active "
+"state."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:79
+msgid "Set height of active connection line element in rem."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:94
+msgid "Set height of connection line elements in rem."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:134
+msgid "Set initial wheel rotation degree in deg."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:201
+msgid "Set size of circle in pixels."
+msgstr ""
+
+#: config/shortcodes/left-side-vertical-slider-timeline.php:77
+msgid ""
+"Set this item as active after the page finishes loading in the slider. Only "
+"one item can be active in the slider. If you select more than one as active, "
+"the slider will activate only the last one."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:168
+msgid ""
+"Set this item as active after the page finishes loading in the slider. Only "
+"one item can be active. If you select more than one as active, the wheel "
+"will activate only the last one."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:32
+msgid "Set vertical alignment for date in rem."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:43
+msgid "Set vertical alignment for text info in rem."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:21
+msgid "Set wheel radius in %. It take value depending on it's container width."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:149
+msgid ""
+"Set wheel speed transition after click on a date circle in milliseconds."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:54
+msgid "Set width of info block in percent."
+msgstr ""
+
+#: templates/settings/deactivation-popup.php:53
+msgid "Skip & Deactivate"
 msgstr ""
 
 #: config/element-params.php:56
@@ -448,6 +788,24 @@ msgstr ""
 msgid "Square"
 msgstr ""
 
+#: config/shortcodes/wheel-timeline.php:300
+msgid "standard list "
+msgstr ""
+
+#: templates/settings/deactivation-popup.php:51
+msgid "Submit & Deactivate"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:61
+msgid "Switch to yes if you need a connection lines for timeline elements."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:116
+msgid ""
+"Switch to yes if you need a wheel spinning effect when clicking timeline "
+"items."
+msgstr ""
+
 #: config/shortcodes/tailwind-vertical-classic-timeline.php:33
 msgid "Tailwind Vertical Classic Timeline"
 msgstr ""
@@ -457,18 +815,29 @@ msgid "Tailwind Vertical Classic Timeline Item"
 msgstr ""
 
 #: config/shortcodes/left-side-stack-timeline-item.php:80
+#: config/shortcodes/left-side-vertical-slider-timeline.php:145
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:211
 #: config/shortcodes/vertical-segment-timeline-item.php:77
 #: config/shortcodes/zigzag-timeline-item.php:83
 msgid "Text"
 msgstr ""
 
-#. %1$s: current plugin name, %2$s plugin name that current plugin dependent on.
-#: templates/required-plugin-notification.php:21
+#. 1: plugin name, 2: list of requirements
+#: src/Utils/Requirement.php:164
 #, php-format
-msgid ""
-"The plugin <strong>\"%1$s\"</strong> requires the plugin <strong>"
-"\"%2$s\"</strong> active with version <strong>%3$s</strong> or higher."
+msgid "The %1$s plugin minimum requirements are not met:"
+msgstr ""
+
+#: templates/settings/deactivation-popup.php:37
+msgid "The plugin is missing a specific feature."
+msgstr ""
+
+#: templates/settings/deactivation-popup.php:30
+msgid "The plugin is missing a specific WPBakery addon."
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:300
+msgid "This element doesn’t have a "
 msgstr ""
 
 #: config/shortcodes/tailwind-vertical-classic-timeline.php:38
@@ -481,16 +850,16 @@ msgstr ""
 msgid "Timeline element with stack items on the left side."
 msgstr ""
 
+#: config/shortcodes/left-side-vertical-slider-timeline.php:193
+msgid "Timeline element with vertical left side slider interface."
+msgstr ""
+
 #: config/shortcodes/vertical-segment-timeline.php:42
 msgid "Timeline element with vertical-segment interface."
 msgstr ""
 
 #: config/shortcodes/zigzag-timeline.php:18
 msgid "Timeline element with zigzag interface."
-msgstr ""
-
-#: templates/shortcodes/partials/tailwind-vertical-classic-timeline-item/image.php:19
-msgid "Timeline Image"
 msgstr ""
 
 #: config/shortcodes/tailwind-vertical-classic-timeline-item.php:392
@@ -507,6 +876,13 @@ msgstr ""
 
 #: config/shortcodes/zigzag-timeline-item.php:95
 msgid "Timeline item for zigzag timeline element."
+msgstr ""
+
+#: config/shortcodes/left-side-vertical-slider-timeline.php:68
+#: config/shortcodes/left-side-vertical-slider-timeline.php:69
+#: config/shortcodes/wheel-timeline.php:159
+#: config/shortcodes/wheel-timeline.php:160
+msgid "Timeline Items"
 msgstr ""
 
 #: config/shortcodes/left-side-stack-timeline-item.php:22
@@ -530,12 +906,52 @@ msgstr ""
 msgid "Use custom font?"
 msgstr ""
 
+#: config/shortcodes/wheel-timeline.php:30
+msgid "Vertical Date Alignment"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:41
+msgid "Vertical Info Alignment"
+msgstr ""
+
 #: config/shortcodes/vertical-segment-timeline.php:37
 msgid "Vertical Segment Timeline"
 msgstr ""
 
 #: config/shortcodes/vertical-segment-timeline-item.php:115
 msgid "Vertical Segment Timeline Item"
+msgstr ""
+
+#: templates/settings/deactivation-popup.php:39
+msgid "What feature?"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:132
+msgid "Wheel Initial Rotation Degree"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:19
+msgid "Wheel Radius"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:147
+msgid "Wheel Speed"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:320
+msgid "Wheel Timeline"
+msgstr ""
+
+#: config/shortcodes/wheel-timeline.php:325
+msgid "Wheel Timeline. Pure CSS."
+msgstr ""
+
+#: config/shortcodes/left-side-vertical-slider-timeline.php:38
+#: config/shortcodes/left-side-vertical-slider-timeline.php:81
+#: config/shortcodes/wheel-timeline.php:65
+#: config/shortcodes/wheel-timeline.php:120
+#: config/shortcodes/wheel-timeline.php:172
+msgid "Yes"
 msgstr ""
 
 #: config/shortcodes/zigzag-timeline.php:13

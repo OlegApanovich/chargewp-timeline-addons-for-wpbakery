@@ -40,6 +40,11 @@ Please note that some elements use brand-new CSS/JS features, and browser suppor
 
 == Changelog ==
 
+= 1.3 =
+* Dev - Introduced new "Wheel Timeline" addon.
+* Dev - Add plugin deactivation survey.
+* Fix - Compatibility with php 8.4.
+
 = 1.2.1 =
 * Fix - Fix an issue in the WPBakery backend editor where the inner elements edit window incorrectly opens the parent elements edit window.
 
