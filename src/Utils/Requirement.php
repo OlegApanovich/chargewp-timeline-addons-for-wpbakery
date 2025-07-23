@@ -136,10 +136,10 @@ class Requirement {
 	 * Check if the site is using the specified theme.
 	 *
 	 * @since 1.2
-	 * @param string      $parent_theme The parent theme to check.
-	 * @param string|null $version The minimum version of the parent theme.
+	 * @param string $parent_theme The parent theme to check.
+	 * @param string $version The minimum version of the parent theme.
 	 */
-	public function theme( string $parent_theme, string $version = null ): self {
+	public function theme( string $parent_theme, string $version = '' ): self {
 		$theme = wp_get_theme();
 		if ( get_template() !== $parent_theme ) {
 			$this->does_not_meet[] = sprintf( '<strong>%s</strong>', $parent_theme );
