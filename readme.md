@@ -43,9 +43,10 @@ That's it! If you go to any WPBakery Page Builder editor, you'll find new elemen
 2. PHP version 7.0+
 3. Wordpress version 4.9+
    
-## Browser support
+## Default Browser support
 1. Chrome version 49+
 2. Safari 12+
 3. Firefox 78+
 4. Edge: Chromium-based Edge (79+)
+
 Please note that some elements use brand-new CSS/JS features, and browser support for them may vary. We specify browser support for such elements individually in the element edit window.
