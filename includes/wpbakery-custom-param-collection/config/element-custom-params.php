@@ -37,6 +37,7 @@ return [
 		'scope'   => [],
 	],
 	'divider'       => [
+		'type'              => '',
 		'title'             => '',
 		'title_description' => '',
 		'subtitle'          => '',

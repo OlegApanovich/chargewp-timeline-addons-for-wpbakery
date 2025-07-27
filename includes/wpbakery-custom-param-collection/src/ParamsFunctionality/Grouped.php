@@ -34,7 +34,7 @@ class Grouped {
 			$color = $param['wcp_group_color'];
 		}
 
-		$style = 'style="border-left: 5px solid ' . esc_attr( $color ) . '; margin-left: 15px;"';
+		$style = 'style="border-left: 5px solid ' . esc_attr( $color ) . '; margin-left: 5px;"';
 
 		return str_replace( 'data-vc-ui-element="panel-shortcode-param"', 'data-vc-ui-element="panel-shortcode-param" ' . $style, $output );
 	}
