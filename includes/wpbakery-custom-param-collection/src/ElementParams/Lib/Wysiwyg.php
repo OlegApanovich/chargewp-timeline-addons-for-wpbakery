@@ -3,7 +3,6 @@
  * Custom param 'Wysiwyg' for wpbakery element.
  *
  * @see https://github.com/OlegApanovich/wpbakery-custom-param-collection?tab=readme-ov-file#5-wysiwyg
- * @since 1.1
  */
 
 namespace WpbCustomParamCollection\ElementParams\Lib;
@@ -12,8 +11,6 @@ use WpbCustomParamCollection\ElementParams\ElementParamsAbstract;
 
 /**
  * Switch class.
- *
- * @since 1.1
  */
 class Wysiwyg extends ElementParamsAbstract {
 	/**

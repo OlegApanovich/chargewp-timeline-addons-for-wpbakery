@@ -1,0 +1,10 @@
+.wcp-vc-divider {
+	margin-top: 1em;
+	font-size: 1.2em;
+}
+
+.wpb_element_label.wcp-vc-divider {
+	border-bottom: 1px solid;
+	padding-bottom: 10px;
+	margin-bottom: 0;
+}

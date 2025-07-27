@@ -32,8 +32,14 @@ return [
 		'notice' => '',
 	],
 	'wysiwyg'       => [
-		'minimal' => 'false',
 		'type'    => '',
+		'minimal' => 'false',
 		'scope'   => [],
+	],
+	'divider'       => [
+		'title'             => '',
+		'title_description' => '',
+		'subtitle'          => '',
+		'color'             => '#E7E7E7',
 	],
 ];

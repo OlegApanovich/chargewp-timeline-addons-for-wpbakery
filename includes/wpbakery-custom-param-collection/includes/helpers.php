@@ -1,8 +1,6 @@
 <?php
 /**
  * Library of helper functions.
- *
- * @since 1.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -17,7 +15,6 @@ if ( ! function_exists( 'wpbcustomparamcollection_include_template' ) ) :
 	 * @param bool   $once
 	 *
 	 * @return mixed
-	 * @since 1.0
 	 */
 	function wpbcustomparamcollection_include_template( $template, $variables = [], $once = false ) {
         // phpcs:ignore:WordPress.PHP.DontExtract.extract_extract
@@ -40,7 +37,6 @@ if ( ! function_exists( 'wpbcustomparamcollection_get_template' ) ) :
 	 * @param bool   $once
 	 *
 	 * @return string
-	 * @since 1.0
 	 */
 	function wpbcustomparamcollection_get_template( $template, $variables = [], $once = false ) {
 		ob_start();
@@ -61,8 +57,6 @@ if ( ! function_exists( 'wpbcustomparamcollection_get_template_path' ) ) :
 	 * Shorthand for getting to the plugin templates.
 	 *
 	 * @param string $file
-	 *
-	 * @since 1.0
 	 *
 	 * @return string
 	 */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom element params for wpbakery element controller.
+ * Loader for a custom element params for wpbakery element.
  *
  * @see https://kb.wpbakery.com/docs/developers-how-tos/create-new-param-type
  */
