@@ -34,7 +34,15 @@ class Grouped {
 			$color = $param['wcp_group_color'];
 		}
 
-		$style = 'style="border-left: 5px solid ' . esc_attr( $color ) . '; margin-left: 5px;"';
+		$margin = 'margin-left: 5px;';
+		if ( ! empty( $param['wcp_group_margin_top'] ) ) {
+			$margin .= ' margin-top: ' . esc_attr( $param['wcp_group_margin_top'] ) . 'px;';
+		}
+		if ( ! empty( $param['wcp_group_margin_bottom'] ) ) {
+			$margin .= ' margin-bottom: ' . esc_attr( $param['wcp_group_margin_bottom'] ) . 'px;';
+		}
+
+		$style = 'style="border-left: 5px solid ' . esc_attr( $color ) . '; ' . $margin . '"';
 
 		return str_replace( 'data-vc-ui-element="panel-shortcode-param"', 'data-vc-ui-element="panel-shortcode-param" ' . $style, $output );
 	}
