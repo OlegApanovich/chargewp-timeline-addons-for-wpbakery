@@ -3,7 +3,6 @@
  * Custom param 'Switch' for wpbakery element.
  *
  * @see https://github.com/OlegApanovich/wpbakery-custom-param-collection?tab=readme-ov-file#3-switcher
- * @since 1.0
  */
 
 namespace WpbCustomParamCollection\ElementParams\Lib;
@@ -12,8 +11,6 @@ use WpbCustomParamCollection\ElementParams\ElementParamsAbstract;
 
 /**
  * Switch class.
- *
- * @since 1.0
  */
 class Switcher extends ElementParamsAbstract {
 	/**

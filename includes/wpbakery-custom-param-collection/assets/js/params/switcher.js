@@ -4,8 +4,6 @@ jQuery(document).ready(function () {
 
         let $newEl = jQuery(this).parent().parent().find('.vc_param_group-template').html();
 
-        console.log($newEl);
-
         $newEl = $newEl.replace(
             /<!-- wcp-switcher-start -->([\s\S]*?)<!-- wcp-switcher-end -->/g,
             (match, content) => {

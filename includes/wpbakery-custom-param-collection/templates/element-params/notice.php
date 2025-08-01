@@ -4,7 +4,6 @@
  * We use this to show user some notice or information about the element.
  *
  * @see https://kb.wpbakery.com/docs/developers-how-tos/create-new-param-type
- * @since 1.1
  *
  * @var mixed $value
  * @var array $settings

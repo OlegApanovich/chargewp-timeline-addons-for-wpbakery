@@ -1,20 +1,17 @@
 <?php
 /**
  * Entry point for add plugin elements to dependency plugin.
- *
- * @since 1.0
  */
 
 namespace WpbCustomParamCollection;
 
 use WpbCustomParamCollection\ElementParams\ElementParamsLoader;
+use WpbCustomParamCollection\ParamsFunctionality\Grouped;
 
 defined( 'ABSPATH' ) || exit;
 
 /**
  * Admin settings
- *
- * @since 1.0
  */
 class Plugin {
 	/**
@@ -22,6 +19,7 @@ class Plugin {
 	 */
 	public function init() {
 		add_action( 'admin_init', [ $this, 'init_custom_element_params' ], 20 );
+		add_action( 'admin_init', [ $this, 'init_grouped_param_functionality' ], 20 );
 	}
 
 	/**
@@ -29,5 +27,12 @@ class Plugin {
 	 */
 	public function init_custom_element_params() {
 		( new ElementParamsLoader() )->load_custom_element_params();
+	}
+
+	/**
+	 * Initialize functionality that groups element params.
+	 */
+	public function init_grouped_param_functionality() {
+		( new Grouped() )->init();
 	}
 }

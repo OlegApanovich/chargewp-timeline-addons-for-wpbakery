@@ -3,7 +3,6 @@
  * Custom element param template for a switch param.
  *
  * @see https://kb.wpbakery.com/docs/developers-how-tos/create-new-param-type
- * @since 1.1
  *
  * @var string $uid
  * @var string $key

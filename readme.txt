@@ -3,7 +3,7 @@ Contributors: mrdollar4444
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K9NTJ6E2RQN3A&source=url
 Tags: WPBakery, wpbakery addons, wpbakery page builder, wpbakery page builder addons
 Tested up to: 6.8
-Stable tag: 1.2.1
+Stable tag: 1.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,11 +18,12 @@ The WPBakery Page Builder plugin must be installed and activated to use this plu
 
 Source file code you can find on [our GitHub plugin page](https://github.com/OlegApanovich/chargewp-timeline-addons-for-wpbakery). Everyone is welcome to contribute to the development there.
 
-### Browser support
+### Default Browser support
 1. Chrome version 49+
 2. Safari 12+
 3. Firefox 78+
 4. Edge: Chromium-based Edge (79+)
+Please note that some elements use brand-new CSS/JS features, and browser support for them may vary. We specify browser support for such elements individually in the element edit window.
 
 
 == Installation ==
@@ -35,7 +36,9 @@ Source file code you can find on [our GitHub plugin page](https://github.com/Ole
 2. Vertical Segment Timeline Addon.
 3. Left Side Stack Timeline.
 4. How to find plugin elements in Wpbakery editor.
-5. Tailwind Vertical Classic Timeline
+5. Tailwind Vertical Classic Timeline Addon.
+6. Left Side Vertical Slider Timeline Addon.
+7. Wheel Timeline Timeline Addon.
 
 == Changelog ==
 
