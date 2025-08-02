@@ -19,6 +19,30 @@
  */
 
 return [
+	'chargewp-tailwind-vertical-classic-timeline'      => [
+		'config'        => 'shortcodes.tailwind-vertical-classic-timeline',
+		'template'      => 'shortcodes/tailwind-vertical-classic-timeline.php',
+		'is_container'  => true,
+		'depend_assets' => [
+			'external' => [
+				'css' => [
+					'tailwind-cdn-before-setup' => CHARGEWPWPBTIMELINE_ASSETS_URI . '/css/shortcodes-common/tailwind-base.css',
+				],
+			],
+			'inner'    => [
+				'css' => [
+					[
+						'file' => 'element.css',
+					],
+				],
+			],
+		],
+	],
+	'chargewp-tailwind-vertical-classic-timeline-item' => [
+		'config'   => 'shortcodes.tailwind-vertical-classic-timeline-item',
+		'template' => 'shortcodes/tailwind-vertical-classic-timeline-item.php',
+	],
+
 	'chargewp-vertical-segment-timeline'               => [
 		'config'        => 'shortcodes.vertical-segment-timeline',
 		'template'      => 'shortcodes/vertical-segment-timeline.php',
@@ -81,29 +105,6 @@ return [
 		'template' => 'shortcodes/left-side-stack-timeline-item.php',
 	],
 
-	'chargewp-tailwind-vertical-classic-timeline'      => [
-		'config'        => 'shortcodes.tailwind-vertical-classic-timeline',
-		'template'      => 'shortcodes/tailwind-vertical-classic-timeline.php',
-		'is_container'  => true,
-		'depend_assets' => [
-			'external' => [
-				'css' => [
-					'tailwind-cdn-before-setup' => CHARGEWPWPBTIMELINE_ASSETS_URI . '/css/shortcodes-common/tailwind-base.css',
-				],
-			],
-			'inner'    => [
-				'css' => [
-					[
-						'file' => 'element.css',
-					],
-				],
-			],
-		],
-	],
-	'chargewp-tailwind-vertical-classic-timeline-item' => [
-		'config'   => 'shortcodes.tailwind-vertical-classic-timeline-item',
-		'template' => 'shortcodes/tailwind-vertical-classic-timeline-item.php',
-	],
 
 	'chargewp-left-side-vertical-slider-timeline'      => [
 		'config'        => 'shortcodes.left-side-vertical-slider-timeline',
@@ -132,9 +133,22 @@ return [
 			],
 		],
 	],
-	'chargewp-wheel-timeline'                          => [
+	'chargewp-wheel-timeline' => [
 		'config'        => 'shortcodes.wheel-timeline',
 		'template'      => 'shortcodes/wheel-timeline.php',
+		'depend_assets' => [
+			'inner' => [
+				'css' => [
+					[
+						'file' => 'element.css',
+					],
+				],
+			],
+		],
+	],
+	'chargewp-bottom-horizontal-timeline' => [
+		'config'        => 'shortcodes.bottom-horizontal-timeline',
+		'template'      => 'shortcodes/bottom-horizontal-timeline.php',
 		'depend_assets' => [
 			'inner' => [
 				'css' => [
