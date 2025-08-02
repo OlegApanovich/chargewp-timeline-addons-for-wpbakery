@@ -10,7 +10,35 @@ use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeEmpty;
 defined( 'ABSPATH' ) || exit;
 
 $params = [
-
+    [
+        'type'        => 'colorpicker',
+        'heading'     => esc_html__( 'Base Line Color', 'chargewp-timeline-addons-for-wpbakery' ),
+        'param_name'  => 'base_line_color',
+        'description' => esc_html__( 'Select custom color for the base line.', 'chargewp-timeline-addons-for-wpbakery' ),
+        'value'       => '#e5e7eb',
+    ],
+    [
+        'type'        => 'chargewp_number_slider',
+        'param_name'  => 'base_line_thickness',
+        'heading' => esc_html__( 'Base Line Width', 'chargewp-timeline-addons-for-wpbakery' ),
+        'description' => esc_html__( 'Set the width of the base line.', 'chargewp-timeline-addons-for-wpbakery' ),
+        'title' => 'px',
+        'min' => 1,
+        'max' => 50,
+        'step' => 1,
+        'value' => 2,
+    ],
+    [
+        'type'        => 'chargewp_number_slider',
+        'param_name'  => 'base_line_height',
+        'heading' => esc_html__( 'Base Line Height', 'chargewp-timeline-addons-for-wpbakery' ),
+        'description' => esc_html__( 'Set the height of the base line to adjust the vertical position of it.', 'chargewp-timeline-addons-for-wpbakery' ),
+        'title' => 'px',
+        'min' => -30,
+        'max' => 30,
+        'step' => 1,
+        'value' => 25,
+    ],
 ];
 
 return [

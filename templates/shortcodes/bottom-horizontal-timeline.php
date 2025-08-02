@@ -8,86 +8,80 @@
  */
 
 defined( 'ABSPATH' ) || exit;
-
-ob_start();
-var_dump(1);
-$imp_to_file = ob_get_clean();
-file_put_contents('/var/www/test.html', $imp_to_file, FILE_APPEND);
-
 ?>
 
-<div class="bottom-horizontal-timeline-container">
-    <div class="bottom-horizontal-timeline-wrapper">
-        <div class="bottom-horizontal-timeline-item">
-            <div class="bottom-horizontal-timeline-step">1</div>
-            <div class="bottom-horizontal-timeline-content">
-                <h4 class="bottom-horizontal-timeline-title">Planning</h4>
-                <p class="bottom-horizontal-timeline-description">Define project scope and requirements</p>
+<div <?php $_this->output_shortcode_wrapper_attributes( [ 'class' => 'chargewp-bottom-horizontal-timeline-wrapper' ] ); ?>>
+    <div class="chargewp-bottom-horizontal-timeline-container">
+        <div class="chargewp-bottom-horizontal-timeline-item">
+            <div class="chargewp-bottom-horizontal-timeline-step">1</div>
+            <div class="chargewp-bottom-horizontal-timeline-content">
+                <h4 class="chargewp-bottom-horizontal-timeline-title">Planning</h4>
+                <p class="chargewp-bottom-horizontal-timeline-description">Define project scope and requirements</p>
             </div>
         </div>
-        <div class="bottom-horizontal-timeline-item">
-            <div class="bottom-horizontal-timeline-step">2</div>
-            <div class="bottom-horizontal-timeline-content">
-                <h4 class="bottom-horizontal-timeline-title">Design</h4>
-                <p class="bottom-horizontal-timeline-description">Create wireframes and mockups</p>
+        <div class="chargewp-bottom-horizontal-timeline-item">
+            <div class="chargewp-bottom-horizontal-timeline-step">2</div>
+            <div class="chargewp-bottom-horizontal-timeline-content">
+                <h4 class="chargewp-bottom-horizontal-timeline-title">Design</h4>
+                <p class="chargewp-bottom-horizontal-timeline-description">Create wireframes and mockups</p>
             </div>
         </div>
-        <div class="bottom-horizontal-timeline-item">
-            <div class="bottom-horizontal-timeline-step">3</div>
-            <div class="bottom-horizontal-timeline-content">
-                <h4 class="bottom-horizontal-timeline-title">Development</h4>
-                <p class="bottom-horizontal-timeline-description">Build and implement features</p>
+        <div class="chargewp-bottom-horizontal-timeline-item">
+            <div class="chargewp-bottom-horizontal-timeline-step">3</div>
+            <div class="chargewp-bottom-horizontal-timeline-content">
+                <h4 class="chargewp-bottom-horizontal-timeline-title">Development</h4>
+                <p class="chargewp-bottom-horizontal-timeline-description">Build and implement features</p>
             </div>
         </div>
-        <div class="bottom-horizontal-timeline-item">
-            <div class="bottom-horizontal-timeline-step">4</div>
-            <div class="bottom-horizontal-timeline-content">
-                <h4 class="bottom-horizontal-timeline-title">Testing</h4>
-                <p class="bottom-horizontal-timeline-description">Quality assurance and bug fixes</p>
+        <div class="chargewp-bottom-horizontal-timeline-item">
+            <div class="chargewp-bottom-horizontal-timeline-step">4</div>
+            <div class="chargewp-bottom-horizontal-timeline-content">
+                <h4 class="chargewp-bottom-horizontal-timeline-title">Testing</h4>
+                <p class="chargewp-bottom-horizontal-timeline-description">Quality assurance and bug fixes</p>
             </div>
         </div>
-        <div class="bottom-horizontal-timeline-item">
-            <div class="bottom-horizontal-timeline-step">5</div>
-            <div class="bottom-horizontal-timeline-content">
-                <h4 class="bottom-horizontal-timeline-title">Launch</h4>
-                <p class="bottom-horizontal-timeline-description">Deploy to production environment</p>
+        <div class="chargewp-bottom-horizontal-timeline-item">
+            <div class="chargewp-bottom-horizontal-timeline-step">5</div>
+            <div class="chargewp-bottom-horizontal-timeline-content">
+                <h4 class="chargewp-bottom-horizontal-timeline-title">Launch</h4>
+                <p class="chargewp-bottom-horizontal-timeline-description">Deploy to production environment</p>
             </div>
         </div>
     </div>
 </div>
+
 <style>
-    .bottom-horizontal-timeline-container {
+    <?php $_this->output_style_shortcode_id(); ?> .chargewp-bottom-horizontal-timeline-container::before {
+        background-color: <?php echo esc_attr( $atts['base_line_color'] ); ?>;
+        top: <?php echo esc_attr( $atts['base_line_height'] ); ?>px;
+        height: <?php echo esc_attr( $atts['base_line_thickness'] ); ?>px;
+    }
+</style>
+
+<style>
+    .chargewp-bottom-horizontal-timeline-wrapper {
         width: 100%;
         position: relative;
         overflow-x: auto;
     }
 
-    .bottom-horizontal-timeline-wrapper {
+    .chargewp-bottom-horizontal-timeline-container {
         display: flex;
         position: relative;
         min-width: max-content;
         align-items: flex-start;
     }
 
-    .bottom-horizontal-timeline-wrapper::before {
+    .chargewp-bottom-horizontal-timeline-container::before {
         content: "";
         position: absolute;
-        top: 25px;
         right: 25px;
         left: 25px;
-        height: 2px;
         z-index: 1;
     }
 
-    .bottom-horizontal-timeline-line {
-        background-color: #e5e7eb;
-    }
 
-    .bottom-horizontal-timeline-wrapper::before {
-        background-color: #e5e7eb;
-    }
-
-    .bottom-horizontal-timeline-item {
+    .chargewp-bottom-horizontal-timeline-item {
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -96,7 +90,7 @@ file_put_contents('/var/www/test.html', $imp_to_file, FILE_APPEND);
         min-width: 150px;
     }
 
-    .bottom-horizontal-timeline-step {
+    .chargewp-bottom-horizontal-timeline-step {
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -110,72 +104,44 @@ file_put_contents('/var/www/test.html', $imp_to_file, FILE_APPEND);
         border: 3px solid;
     }
 
-    .bottom-horizontal-timeline-step-bg {
-        background-color: #ffffff;
-    }
-
-    .bottom-horizontal-timeline-step-border {
-        border-color: #10b981;
-    }
-
-    .bottom-horizontal-timeline-step-color {
-        color: #10b981;
-    }
-
-    .bottom-horizontal-timeline-step {
+    .chargewp-bottom-horizontal-timeline-step {
         background-color: #ffffff;
         border-color: #10b981;
         color: #10b981;
     }
 
-    .bottom-horizontal-timeline-content {
+    .chargewp-bottom-horizontal-timeline-content {
         text-align: center;
         margin-top: 20px;
         max-width: 140px;
     }
 
-    .bottom-horizontal-timeline-title {
+    .chargewp-bottom-horizontal-timeline-title {
         font-size: 16px;
         font-weight: 600;
         margin: 0 0 8px 0;
         line-height: 1.3;
     }
 
-    .bottom-horizontal-timeline-title-color {
+    .chargewp-bottom-horizontal-timeline-title {
         color: #374151;
     }
 
-    .bottom-horizontal-timeline-title {
-        color: #374151;
-    }
-
-    .bottom-horizontal-timeline-description {
+    .chargewp-bottom-horizontal-timeline-description {
         font-size: 13px;
         line-height: 1.4;
         margin: 0;
     }
 
-    .bottom-horizontal-timeline-description-color {
+    .chargewp-bottom-horizontal-timeline-description {
         color: #6b7280;
     }
 
-    .bottom-horizontal-timeline-description {
-        color: #6b7280;
-    }
-
-    .bottom-horizontal-timeline-item.bottom-horizontal-timeline-completed .bottom-horizontal-timeline-step {
+    .chargewp-bottom-horizontal-timeline-item.chargewp-bottom-horizontal-timeline-completed .chargewp-bottom-horizontal-timeline-step {
         border-color: #10b981;
     }
 
-    .bottom-horizontal-timeline-completed-bg {
-        background-color: #10b981;
-    }
-
-    .bottom-horizontal-timeline-completed-color {
-        color: #ffffff;
-    }
-
-    .bottom-horizontal-timeline-item.bottom-horizontal-timeline-completed .bottom-horizontal-timeline-step {
+    .chargewp-bottom-horizontal-timeline-item.chargewp-bottom-horizontal-timeline-completed .chargewp-bottom-horizontal-timeline-step {
         background-color: #10b981;
         color: #ffffff;
     }
