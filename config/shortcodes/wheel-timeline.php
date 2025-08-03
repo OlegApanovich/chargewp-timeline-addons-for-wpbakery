@@ -277,7 +277,7 @@ $params = [
 			],
 			[
 				'type'              => 'chargewp_divider',
-				'param_name'        => 'divider_item_color',
+				'param_name'        => 'divider_item_font_size',
 				'title'             => __( 'Font Sizes', 'chargewp-timeline-addons-for-wpbakery' ),
 				'title_description' => __( 'Set for sizes for item elements', 'chargewp-timeline-addons-for-wpbakery' ),
 			],

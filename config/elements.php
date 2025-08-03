@@ -133,7 +133,7 @@ return [
 			],
 		],
 	],
-	'chargewp-wheel-timeline' => [
+	'chargewp-wheel-timeline'                          => [
 		'config'        => 'shortcodes.wheel-timeline',
 		'template'      => 'shortcodes/wheel-timeline.php',
 		'depend_assets' => [
@@ -146,7 +146,7 @@ return [
 			],
 		],
 	],
-	'chargewp-bottom-horizontal-timeline' => [
+	'chargewp-bottom-horizontal-timeline'              => [
 		'config'        => 'shortcodes.bottom-horizontal-timeline',
 		'template'      => 'shortcodes/bottom-horizontal-timeline.php',
 		'depend_assets' => [
