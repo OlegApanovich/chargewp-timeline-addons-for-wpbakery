@@ -99,6 +99,17 @@ class IconIntegration {
 	}
 
 	/**
+	 * Get icon class base on user selection.
+	 *
+	 * @since 1.4
+	 * @param array $atts
+	 * @return string
+	 */
+	public function get_element_icon_size( array $atts ): string {
+		return $this->get_icon_size_from_size_lib( $atts['i_size'] );
+	}
+
+	/**
 	 * Get icon color from color library.
 	 *
 	 * @since 1.0
@@ -128,6 +139,25 @@ class IconIntegration {
 		];
 
 		return $color_lib[ $color_name ] ?? $color_lib['default'];
+	}
+
+	/**
+	 * Get icon size from size library.
+	 *
+	 * @since 1.4
+	 * @param string $size_name
+	 * @return string
+	 */
+	public function get_icon_size_from_size_lib( string $size_name ): string {
+		$lib = [
+			'xs' => '1.2em',
+			'sm' => '1.6em',
+			'md' => '2.15em',
+			'lg' => '2.85em',
+			'xl' => '5em',
+		];
+
+		return $lib[ $size_name ] ?? $lib['md'];
 	}
 
 	/**

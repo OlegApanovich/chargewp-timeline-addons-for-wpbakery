@@ -7,10 +7,13 @@
  * @var ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcode $_this
  */
 
+use ChargewpWpbTimeline\ElementIntegration\IconIntegration;
+
 defined( 'ABSPATH' ) || exit;
 
-$items = vc_param_group_parse_atts( $atts['items'] );
-$items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'items' );
+$items                   = vc_param_group_parse_atts( $atts['items'] );
+$items                   = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'items' );
+$custom_icon_integration = new IconIntegration();
 ?>
 
 <div <?php $_this->output_shortcode_wrapper_attributes( [ 'class' => 'chargewp-bottom-horizontal-timeline-wrapper' ] ); ?>>
@@ -20,7 +23,19 @@ $items = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_this, 'i
 			?>
 			<div class="chargewp-bottom-horizontal-timeline-item" data-item-id="<?php echo esc_attr( $item['id'] ); ?>">
 				<div class="chargewp-bottom-horizontal-timeline-step">
-					<?php echo esc_attr( $item['number'] ); ?>
+					<?php
+					if ( isset( $item['add_icon'] ) && 'true' === $item['add_icon'] ) {
+						vc_icon_element_fonts_enqueue( $item['i_type'] );
+						$icon_class = $custom_icon_integration->get_element_icon_class( $item );
+						$icon_color = $custom_icon_integration->get_element_icon_color( $item );
+						$icon_size  = $custom_icon_integration->get_element_icon_size( $item );
+						?>
+						<i class="<?php echo esc_attr( $icon_class ); ?>" style="color: <?php echo esc_attr( $icon_color ); ?>; font-size: <?php echo esc_attr( $icon_size ); ?>; "></i>
+						<?php
+					} else {
+						echo esc_attr( $item['number'] );
+					}
+					?>
 				</div>
 				<div class="chargewp-bottom-horizontal-timeline-content">
 					<?php
