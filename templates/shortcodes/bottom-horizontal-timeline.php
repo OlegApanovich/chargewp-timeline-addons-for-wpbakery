@@ -83,15 +83,12 @@ $custom_icon_integration = new IconIntegration();
 		}
 		div[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"] .chargewp-bottom-horizontal-timeline-step {
 			background-color: <?php echo esc_attr( $item['circle_background_color'] ); ?>;
-			border-color: <?php echo esc_attr( $item['circle_color'] ); ?>;
 			color: <?php echo esc_attr( $item['number_color'] ); ?>;
 			font-size: <?php echo esc_attr( $item['number_font_size'] ); ?>px;
-		}
-		div[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"] .chargewp-bottom-horizontal-timeline-step {
 			width: <?php echo esc_attr( $item['size'] ); ?>px;
 			height: <?php echo esc_attr( $item['size'] ); ?>px;
 			font-weight: <?php echo esc_attr( $item['number_font_weight'] ); ?>;
-			border: <?php echo esc_attr( $item['border'] ); ?>px <?php echo esc_attr( $item['border_style'] ); ?>;
+			border: <?php echo esc_attr( $item['border'] ); ?>px <?php echo esc_attr( $item['border_style'] ); ?> <?php echo esc_attr( $item['circle_color'] ); ?>;
 			<?php
 			if ( 'circle' === $item['type'] ) {
 				echo 'border-radius: 50%;';

@@ -132,17 +132,17 @@ $items_paramas = [
 	[
 		'type'        => 'colorpicker',
 		'wcp_group'   => true,
-		'heading'     => esc_html__( 'Circle Color', 'chargewp-timeline-addons-for-wpbakery' ),
+		'heading'     => esc_html__( 'Border Color', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'  => 'circle_color',
-		'description' => esc_html__( 'Select custom color for item circle.', 'chargewp-timeline-addons-for-wpbakery' ),
+		'description' => esc_html__( 'Select custom color for item border.', 'chargewp-timeline-addons-for-wpbakery' ),
 		'value'       => '#10b981',
 	],
 	[
 		'type'        => 'colorpicker',
 		'wcp_group'   => true,
-		'heading'     => esc_html__( 'Circle Background Color', 'chargewp-timeline-addons-for-wpbakery' ),
+		'heading'     => esc_html__( 'Background Color', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'  => 'circle_background_color',
-		'description' => esc_html__( 'Select custom color for item circle background.', 'chargewp-timeline-addons-for-wpbakery' ),
+		'description' => esc_html__( 'Select custom color for item background.', 'chargewp-timeline-addons-for-wpbakery' ),
 		'value'       => '#ffffff',
 	],
 	[
