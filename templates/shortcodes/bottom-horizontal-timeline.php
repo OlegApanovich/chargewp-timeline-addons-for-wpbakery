@@ -2,6 +2,7 @@
 /**
  * The template for displaying [chargewp-bottom-horizontal-timeline] shortcode output.
  *
+ * @since 1.4
  * @var array $atts
  * @var string $content - shortcode content
  * @var ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcode $_this
@@ -98,61 +99,4 @@ $custom_icon_integration = new IconIntegration();
 		<?php
 	endforeach;
 	?>
-</style>
-
-<style>
-	.chargewp-bottom-horizontal-timeline-wrapper {
-		width: 100%;
-		position: relative;
-		overflow-x: auto;
-	}
-
-	.chargewp-bottom-horizontal-timeline-container {
-		display: flex;
-		position: relative;
-		min-width: max-content;
-		align-items: flex-start;
-	}
-
-	.chargewp-bottom-horizontal-timeline-container::before {
-		content: "";
-		position: absolute;
-		right: 25px;
-		left: 25px;
-		z-index: 1;
-	}
-
-	.chargewp-bottom-horizontal-timeline-item {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		position: relative;
-		min-width: 150px;
-	}
-
-	.chargewp-bottom-horizontal-timeline-step {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		position: relative;
-		z-index: 2;
-		overflow: hidden;
-	}
-
-	.chargewp-bottom-horizontal-timeline-content {
-		text-align: center;
-		margin-top: 20px;
-		max-width: 140px;
-	}
-
-	.chargewp-bottom-horizontal-timeline-title {
-		margin: 0 0 8px 0;
-		line-height: 1.3;
-	}
-
-	.chargewp-bottom-horizontal-timeline-description {
-		line-height: 1.4;
-		margin: 0;
-	}
 </style>
