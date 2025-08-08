@@ -18,7 +18,7 @@ $params = [
 		'heading'     => esc_html__( 'Base Line Color', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'  => 'base_line_color',
 		'description' => esc_html__( 'Select custom color for the base line.', 'chargewp-timeline-addons-for-wpbakery' ),
-		'value'       => '#e5e7eb',
+		'value'       => '#D4AF37',
 	],
 	[
 		'type'        => 'chargewp_number_slider',
@@ -29,7 +29,7 @@ $params = [
 		'min'         => 1,
 		'max'         => 100,
 		'step'        => 1,
-		'value'       => 2,
+		'value'       => 4,
 	],
 	[
 		'type'        => 'chargewp_number_slider',
@@ -40,7 +40,7 @@ $params = [
 		'min'         => -150,
 		'max'         => 150,
 		'step'        => 1,
-		'value'       => 25,
+		'value'       => 46,
 	],
 ];
 
@@ -260,6 +260,7 @@ $items = [
 		'heading'    => esc_html__( 'Timeline Items', 'chargewp-timeline-addons-for-wpbakery' ),
 		'value'      => '',
 		'param_name' => 'items',
+		'value'      => '%5B%7B%22type%22%3A%22circle%22%2C%22size%22%3A%2283%22%2C%22border%22%3A%225%22%2C%22border_style%22%3A%22solid%22%2C%22title%22%3A%22THE%20UNIVERSITY%20DEBACLE%22%2C%22info%22%3A%22%3Cp%3EFour%20splendid%20years%20mastering%20the%20ancient%20art%20of%20deadline%20dodging%20and%20instant%20noodle%20cuisine%20preparation%3C%2Fp%3E%22%2C%22circle_color%22%3A%22%23837458%22%2C%22circle_background_color%22%3A%22%23ffffff%22%2C%22number_color%22%3A%22%2310b981%22%2C%22title_color%22%3A%22%23374151%22%2C%22info_color%22%3A%22%235D4E42%22%2C%22number_font_size%22%3A%2216%22%2C%22title_font_size%22%3A%2216%22%2C%22info_font_size%22%3A%2215%22%2C%22number_font_weight%22%3A%22600%22%2C%22title_font_weight%22%3A%22600%22%2C%22add_icon%22%3A%22true%22%2C%22i_type%22%3A%22fontawesome%22%2C%22i_icon_fontawesome%22%3A%22fa%20fa-solid%20fa-microscope%22%2C%22i_icon_openiconic%22%3A%22vc-oi%20vc-oi-dial%22%2C%22i_icon_typicons%22%3A%22typcn%20typcn-adjust-brightness%22%2C%22i_icon_entypo%22%3A%22entypo-icon%20entypo-icon-note%22%2C%22i_icon_linecons%22%3A%22vc_li%20vc_li-heart%22%2C%22i_icon_monosocial%22%3A%22vc-mono%20vc-mono-fivehundredpx%22%2C%22i_icon_material%22%3A%22vc-material%20vc-material-cake%22%2C%22i_icon_pixelicons%22%3A%22vc_pixel_icon%20vc_pixel_icon-alert%22%2C%22i_color%22%3A%22custom%22%2C%22i_custom_color%22%3A%22%23837458%22%2C%22i_size%22%3A%22md%22%7D%2C%7B%22type%22%3A%22square%22%2C%22size%22%3A%2283%22%2C%22border%22%3A%225%22%2C%22border_style%22%3A%22solid%22%2C%22number%22%3A%22II%22%2C%22title%22%3A%22THE%20HUSTLE%20ERA%22%2C%22info%22%3A%22%3Cp%3EPioneered%20revolutionary%20door-to-door%20food%20transportation%20and%20professional%20dog%20companionship%20services%3C%2Fp%3E%22%2C%22circle_color%22%3A%22%23C8AF4A%22%2C%22circle_background_color%22%3A%22%23B9A03E%22%2C%22number_color%22%3A%22%23372A17%22%2C%22title_color%22%3A%22%23374151%22%2C%22info_color%22%3A%22%235D4E42%22%2C%22number_font_size%22%3A%2241%22%2C%22title_font_size%22%3A%2216%22%2C%22info_font_size%22%3A%2215%22%2C%22number_font_weight%22%3A%22600%22%2C%22title_font_weight%22%3A%22600%22%2C%22i_type%22%3A%22fontawesome%22%2C%22i_icon_fontawesome%22%3A%22fa%20fa-solid%20fa-microscope%22%2C%22i_icon_openiconic%22%3A%22vc-oi%20vc-oi-dial%22%2C%22i_icon_typicons%22%3A%22typcn%20typcn-adjust-brightness%22%2C%22i_icon_entypo%22%3A%22entypo-icon%20entypo-icon-note%22%2C%22i_icon_linecons%22%3A%22vc_li%20vc_li-heart%22%2C%22i_icon_monosocial%22%3A%22vc-mono%20vc-mono-fivehundredpx%22%2C%22i_icon_material%22%3A%22vc-material%20vc-material-cake%22%2C%22i_icon_pixelicons%22%3A%22vc_pixel_icon%20vc_pixel_icon-alert%22%2C%22i_color%22%3A%22custom%22%2C%22i_custom_color%22%3A%22%23837458%22%2C%22i_size%22%3A%22md%22%7D%2C%7B%22type%22%3A%22circle%22%2C%22size%22%3A%2283%22%2C%22border%22%3A%225%22%2C%22border_style%22%3A%22solid%22%2C%22title%22%3A%22THE%20CORPORATE%20INFILTRATION%22%2C%22info%22%3A%22%3Cp%3ESuccessfully%20convinced%20distinguished%20establishment%20of%20spreadsheet%20mastery%20through%20bathroom-based%20tutorials%3C%2Fp%3E%22%2C%22circle_color%22%3A%22%23C8AF4A%22%2C%22circle_background_color%22%3A%22%23BBA240%22%2C%22number_color%22%3A%22%2310b981%22%2C%22title_color%22%3A%22%23374151%22%2C%22info_color%22%3A%22%235D4E42%22%2C%22number_font_size%22%3A%2216%22%2C%22title_font_size%22%3A%2216%22%2C%22info_font_size%22%3A%2215%22%2C%22number_font_weight%22%3A%22600%22%2C%22title_font_weight%22%3A%22600%22%2C%22add_icon%22%3A%22true%22%2C%22i_type%22%3A%22fontawesome%22%2C%22i_icon_fontawesome%22%3A%22fa%20fa-solid%20fa-briefcase%22%2C%22i_icon_openiconic%22%3A%22vc-oi%20vc-oi-dial%22%2C%22i_icon_typicons%22%3A%22typcn%20typcn-adjust-brightness%22%2C%22i_icon_entypo%22%3A%22entypo-icon%20entypo-icon-note%22%2C%22i_icon_linecons%22%3A%22vc_li%20vc_li-heart%22%2C%22i_icon_monosocial%22%3A%22vc-mono%20vc-mono-fivehundredpx%22%2C%22i_icon_material%22%3A%22vc-material%20vc-material-cake%22%2C%22i_icon_pixelicons%22%3A%22vc_pixel_icon%20vc_pixel_icon-alert%22%2C%22i_color%22%3A%22custom%22%2C%22i_custom_color%22%3A%22%23372A17%22%2C%22i_size%22%3A%22md%22%7D%5D',
 		'params'     => $items_params,
 	],
 ];
