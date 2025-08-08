@@ -105,7 +105,13 @@ class Plugin {
 	public function is_dependency_plugin_active(): bool {
 		$requirement = new Requirement();
 		$requirement->plugins(
-			[ CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_PATH => CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_VERSION ]
+			[
+				[
+					'path'    => CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_PATH,
+					'version' => CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_VERSION,
+					'name'    => CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_NAME,
+				],
+			]
 		);
 
 		$is_active = $requirement->met();
