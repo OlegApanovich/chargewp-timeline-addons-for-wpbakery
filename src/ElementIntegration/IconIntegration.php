@@ -45,7 +45,7 @@ class IconIntegration {
 			'value'   => 'true',
 		];
 
-		return array_merge(
+		$config = array_merge(
 			$icon_params,
 			vc_map_integrate_shortcode(
 				vc_icon_element_params(),
@@ -55,6 +55,8 @@ class IconIntegration {
 				$integration_params
 			)
 		);
+
+		return $this->exclude_redundant_attributes( $config );
 	}
 
 	/**
@@ -70,6 +72,39 @@ class IconIntegration {
 			'el_class',
 			'css',
 		];
+	}
+
+	/**
+	 * Get icon elements params attributes list that we always when integrate icon shortcode.
+	 *
+	 * @since 1.4
+	 * @return array
+	 */
+	public function get_always_exclude_attributes(): array {
+		return [
+			'admin_label',
+		];
+	}
+
+	/**
+	 * Exclude redundant attributes from the config.
+	 *
+	 * @param array $config
+	 * @return array
+	 * @since 1.4
+	 */
+	public function exclude_redundant_attributes( array $config ): array {
+		$exclude_attributes = $this->get_always_exclude_attributes();
+
+		foreach ( $exclude_attributes as $exclude_attr_name ) {
+			foreach ( $config as $key => $field ) {
+				if ( isset( $field[ $exclude_attr_name ] ) ) {
+					unset( $config[ $key ][ $exclude_attr_name ] );
+				}
+			}
+		}
+
+		return $config;
 	}
 
 	/**
@@ -96,6 +131,17 @@ class IconIntegration {
 		}
 
 		return $this->get_icon_color_from_color_lib( $atts['i_color'] );
+	}
+
+	/**
+	 * Get icon class base on user selection.
+	 *
+	 * @since 1.4
+	 * @param array $atts
+	 * @return string
+	 */
+	public function get_element_icon_size( array $atts ): string {
+		return $this->get_icon_size_from_size_lib( $atts['i_size'] );
 	}
 
 	/**
@@ -128,6 +174,25 @@ class IconIntegration {
 		];
 
 		return $color_lib[ $color_name ] ?? $color_lib['default'];
+	}
+
+	/**
+	 * Get icon size from size library.
+	 *
+	 * @since 1.4
+	 * @param string $size_name
+	 * @return string
+	 */
+	public function get_icon_size_from_size_lib( string $size_name ): string {
+		$lib = [
+			'xs' => '1.2em',
+			'sm' => '1.6em',
+			'md' => '2.15em',
+			'lg' => '2.85em',
+			'xl' => '5em',
+		];
+
+		return $lib[ $size_name ] ?? $lib['md'];
 	}
 
 	/**

@@ -48,8 +48,6 @@ if ( 'no' !== $atts['marker_type'] ) {
 		<?php
 		if ( 'true' === $atts['add_icon'] ) {
 			$custom_icon_integration->output_icon_integration( $_this, $atts, 'i_' );
-			?>
-			<?php
 		}
 		?>
 	</div>
