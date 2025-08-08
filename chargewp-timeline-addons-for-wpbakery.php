@@ -39,7 +39,7 @@ class Chargewp_Wpb_Timeline_Element {
 	 * @since 1.0
 	 * @var Plugin|null
 	 */
-	public $charge;
+	public $plugin;
 
 	/**
 	 * Main plugin instance.
@@ -69,36 +69,27 @@ class Chargewp_Wpb_Timeline_Element {
 
 		$this->init_hooks();
 
-		$charge = $this->get_charge();
+		$plugin = $this->get_plugin();
 
-		if ( ! $charge->is_dependency_plugin_active() ) {
+		if ( ! $plugin->is_dependency_plugin_active() ) {
 			return;
 		}
 
-		$charge->init();
+		$plugin->init();
 	}
 
 	/**
-	 * Get Charge instance.
+	 * Get plugin instance.
 	 *
 	 * @since 1.0
 	 * @return Plugin
 	 */
-	public function get_charge(): Plugin {
-		if ( ! $this->charge ) {
-			$this->set_charge();
+	public function get_plugin(): Plugin {
+		if ( ! $this->plugin ) {
+			$this->plugin = new Plugin();
 		}
 
-		return $this->charge;
-	}
-
-	/**
-	 * Set Charge instance.
-	 *
-	 * @since 1.0
-	 */
-	public function set_charge() {
-		$this->charge = new Plugin();
+		return $this->plugin;
 	}
 
 	/**
