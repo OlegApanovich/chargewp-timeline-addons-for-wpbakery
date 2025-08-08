@@ -88,47 +88,35 @@ class Requirement {
 	 * @param array $plugins The plugins to check. Use the plugin file path, e.g. `['js_composer/js_composer.php' => '10.0',]`.
 	 */
 	public function plugins( array $plugins ): self {
-		foreach ( $plugins as $index => $value ) {
-			if ( is_int( $index ) ) {
-				$this->process_plugin_path( $value );
-			} else {
-				$this->process_plugin_path_with_version( $index, $value );
+		foreach ( $plugins as $plugin_data ) {
+
+			if ( ! is_array( $plugin_data ) ) {
+				continue;
 			}
+
+			$this->process_plugin_path_with_version( $plugin_data );
 		}
 		return $this;
 	}
 
 	/**
-	 * Process the plugin path.
-	 *
-	 * @since 1.2
-	 * @param string $plugin_path
-	 * @return void
-	 */
-	private function process_plugin_path( string $plugin_path ) {
-		if ( is_plugin_active( $plugin_path ) ) {
-			return;
-		}
-
-		$plugin_name           = get_plugin_data( WP_PLUGIN_DIR . '/' . $plugin_path, true, false )['Name'];
-		$this->does_not_meet[] = sprintf( '<strong>%s</strong>', $plugin_name );
-	}
-
-
-	/**
 	 * Process the plugin path with version.
 	 *
 	 * @since 1.2
-	 * @param string $plugin_path
-	 * @param string $version
+	 * @param array $plugin_data
 	 * @return void
 	 */
-	private function process_plugin_path_with_version( string $plugin_path, string $version ) {
-		$plugin_name = get_plugin_data( WP_PLUGIN_DIR . '/' . $plugin_path, true, false )['Name'];
-		if ( ! is_plugin_active( $plugin_path ) ) {
-			$this->does_not_meet[] = sprintf( '<strong>%s</strong>', $plugin_name );
-		} elseif ( version_compare( get_plugin_data( WP_PLUGIN_DIR . '/' . $plugin_path, true, false )['Version'], $version, '<' ) ) {
-			$this->does_not_meet[] = sprintf( '<strong>%s</strong> <code>%s</code> or higher', $plugin_name, $version );
+	private function process_plugin_path_with_version( array $plugin_data ) {
+		if ( file_exists( WP_PLUGIN_DIR . '/' . $plugin_data['path'] ) ) {
+			$plugin_name = get_plugin_data( WP_PLUGIN_DIR . '/' . $plugin_data['path'], true, false )['Name'];
+
+			if ( ! is_plugin_active( $plugin_data['path'] ) ) {
+				$this->does_not_meet[] = sprintf( '<strong>%s Plugin</strong>', $plugin_name );
+			} elseif ( version_compare( get_plugin_data( WP_PLUGIN_DIR . '/' . $plugin_data['path'], true, false )['Version'], $plugin_data['version'], '<' ) ) {
+				$this->does_not_meet[] = sprintf( '<strong>%s</strong> <code>%s</code> or higher', $plugin_name, $plugin_data['version'] );
+			}
+		} else {
+			$this->does_not_meet[] = sprintf( '<strong>%s Plugin</strong>', $plugin_data['name'] );
 		}
 	}
 

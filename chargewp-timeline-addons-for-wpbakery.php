@@ -100,6 +100,7 @@ class Chargewp_Wpb_Timeline_Element {
 	private function define_constants() {
 		define( 'CHARGEWPWPBTIMELINE_VERSION', '1.3' );
 		define( 'CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_VERSION', '5.0' );
+		define( 'CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_NAME', 'WPBakery Page Builder' );
 		define( 'CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_PATH', 'js_composer/js_composer.php' );
 
 		define( 'CHARGEWPWPBTIMELINE_PLUGIN_FILE', __FILE__ );
