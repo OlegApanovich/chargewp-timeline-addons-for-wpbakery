@@ -97,7 +97,6 @@ $items_paramas = [
 		'wcp_group_color' => 'black',
 		'heading'         => esc_html__( 'Number', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'      => 'number',
-		'value'           => '1',
 		'description'     => esc_html__( 'Enter number that will be displayed inside circle.', 'chargewp-timeline-addons-for-wpbakery' ),
 		'admin_label'     => true,
 	],

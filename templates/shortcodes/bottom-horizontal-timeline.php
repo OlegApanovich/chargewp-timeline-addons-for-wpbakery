@@ -33,7 +33,7 @@ $custom_icon_integration = new IconIntegration();
 						<i class="<?php echo esc_attr( $icon_class ); ?>" style="color: <?php echo esc_attr( $icon_color ); ?>; font-size: <?php echo esc_attr( $icon_size ); ?>; "></i>
 						<?php
 					} else {
-						echo esc_attr( $item['number'] );
+						echo isset( $item['number'] ) ? esc_attr( $item['number'] ) : '';
 					}
 					?>
 				</div>
