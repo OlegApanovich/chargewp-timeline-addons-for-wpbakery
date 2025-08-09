@@ -33,10 +33,24 @@ defined( 'ABSPATH' ) || exit;
 				</div>
 				<div class="chargewp-form-group">
 					<label>
+						<input type="radio" name="reason_key" value="plugin_not_working_as_expected">
+						<?php esc_html_e( "The plugin didn't work as expected.", 'chargewp-timeline-addons-for-wpbakery' ); ?>
+					</label>
+					<textarea name="plugin_not_working_as_expected_details" placeholder="<?php esc_html_e( 'What did you expected.', 'chargewp-timeline-addons-for-wpbakery' ); ?>"></textarea>
+				</div>
+				<div class="chargewp-form-group">
+					<label>
 						<input type="radio" name="reason_key" value="plugin_missing_feature">
 						<?php esc_html_e( 'The plugin is missing a specific feature.', 'chargewp-timeline-addons-for-wpbakery' ); ?>
 					</label>
 					<textarea name="plugin_missing_feature_details" placeholder="<?php esc_html_e( 'What feature?', 'chargewp-timeline-addons-for-wpbakery' ); ?>"></textarea>
+				</div>
+				<div class="chargewp-form-group">
+					<label>
+						<input type="radio" name="reason_key" value="plugin_not_working">
+						<?php esc_html_e( 'The plugin is not working.', 'chargewp-timeline-addons-for-wpbakery' ); ?>
+					</label>
+					<textarea name="plugin_not_working_details" placeholder="<?php esc_html_e( "Kindly share what didn't work so we can fix it for future users", 'chargewp-timeline-addons-for-wpbakery' ); ?>"></textarea>
 				</div>
 				<div class="chargewp-form-group">
 					<label>

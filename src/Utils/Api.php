@@ -63,6 +63,7 @@ class Api {
 	 */
 	public static function send_feedback( string $feedback_key, string $feedback_text ) {
 		$plugin_slug = basename( dirname( CHARGEWPWPBTIMELINE_PLUGIN_FILE ) );
+		$theme       = wp_get_theme();
 
 		return wp_remote_post(
 			self::get_endpoint( 'plugin_deactivation_feedback' ),
@@ -71,6 +72,10 @@ class Api {
 				'body'    => [
 					'plugin'         => $plugin_slug,
 					'plugin_version' => CHARGEWPWPBTIMELINE_VERSION,
+					'wp_version'     => get_bloginfo( 'version' ),
+					'php_version'    => phpversion(),
+					'theme'          => $theme->get( 'Name' ),
+					'theme_version'  => $theme->get( 'Version' ),
 					'reason'         => $feedback_key,
 					'reason_text'    => $feedback_text,
 				],
