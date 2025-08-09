@@ -105,12 +105,14 @@ class DeactivationFeedback {
 			wp_send_json_error();
 		}
 
-		if ( ! wp_verify_nonce( $_POST['_wpnonce'], '_chargewp_deactivate_feedback_action' ) ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput -- sanitization ok, nonce is checked.
+        //phpcs:disable WordPress.Security.ValidatedSanitizedInput
+		if ( ! wp_verify_nonce( $_POST['_wpnonce'], '_chargewp_deactivate_feedback_action' ) ) {
 			wp_send_json_error();
 		}
 
-		$reason_key  = wp_kses_post_deep( wp_unslash( $_POST['reason_key'] ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput -- sanitization ok, reason key is checked.
-		$reason_text = wp_kses_post_deep( wp_unslash( $_POST[ $reason_key . '_details' ] ) ) ?? ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput
+		$reason_key  = wp_kses_post_deep( wp_unslash( $_POST['reason_key'] ) );
+		$reason_text = wp_kses_post_deep( wp_unslash( $_POST[ $reason_key . '_details' ] ) ) ?? '';
+        //phpcs:enable WordPress.Security.ValidatedSanitizedInput
 
 		Api::send_feedback( $reason_key, $reason_text );
 
