@@ -34,7 +34,7 @@ class Grouped {
 			$color = $param['wcp_group_color'];
 		}
 
-		$margin = 'margin-left: 5px;';
+		$margin = '';
 		if ( ! empty( $param['wcp_group_margin_top'] ) ) {
 			$margin .= ' margin-top: ' . esc_attr( $param['wcp_group_margin_top'] ) . 'px;';
 		}
@@ -44,6 +44,10 @@ class Grouped {
 
 		$style = 'style="border-left: 5px solid ' . esc_attr( $color ) . '; ' . $margin . '"';
 
-		return str_replace( 'data-vc-ui-element="panel-shortcode-param"', 'data-vc-ui-element="panel-shortcode-param" ' . $style, $output );
+		$global_style = '<style>.vc_ui-panel-content.vc_properties-list.vc_edit_form_elements {padding: 18px 18px 18px 30px}</style>';
+
+		$output = str_replace( 'data-vc-ui-element="panel-shortcode-param"', 'data-vc-ui-element="panel-shortcode-param" ' . $style, $output );
+
+		return $output . $global_style;
 	}
 }

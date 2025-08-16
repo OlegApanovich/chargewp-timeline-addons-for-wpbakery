@@ -104,6 +104,13 @@ vc.atts[window.i18nLocale.wcp_param_prefix + "_wysiwyg"] = {
                 (useBackground ? "backcolor " : "") : "") +
             "| charmap | removeformat | media image";
 
+        // Check if editor already exists and remove it
+        // Without it, we can’t initialize the editor a second time after closing the edit popup.
+        var existingEditor = tinymce.get(editorId);
+        if (existingEditor) {
+            existingEditor.remove();
+        }
+
         tinymce.init({
             selector: "textarea#" + editorId,
             mode: "exact",
