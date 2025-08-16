@@ -46,7 +46,7 @@ Please note that some elements use brand-new CSS/JS features, and browser suppor
 * Dev - Introduced new "Bottom Horizontal Timeline" addon.
 * Dev - Update dependency 'wpbakery-custom-param-collection' to the latest version.
 * Fix - Deactivation feedback popup.
-* Fix - Not full information about plugin requrements.
+* Fix - Not full information about plugin requirements.
 
 = 1.3 =
 * Dev - Introduced new "Wheel Timeline" addon.
