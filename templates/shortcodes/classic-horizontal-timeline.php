@@ -21,51 +21,54 @@ $custom_icon_integration = new IconIntegration();
     <div class="chargewp-classic-horizontal-timeline-wrapper-container">
         <div class="chargewp-classic-horizontal-timeline-container">
             <div class="chargewp-classic-horizontal-timeline-track">
-                <div class="chargewp-classic-horizontal-timeline-item">
-                    <div class="chargewp-classic-horizontal-timeline-marker"></div>
-                    <div class="chargewp-classic-horizontal-timeline-content chargewp-classic-horizontal-timeline-top">
-                        <div class="chargewp-classic-horizontal-timeline-date">Q1 2024</div>
-                        <div class="chargewp-classic-horizontal-timeline-title">Planning</div>
-                        <div class="chargewp-classic-horizontal-timeline-description">Initial project planning and comprehensive research phase</div>
+                <?php
+                foreach ( $items as $index => $item ) :
+                ?>
+                    <div class="chargewp-classic-horizontal-timeline-item" data-item-id="<?php echo esc_attr( $item['id'] ); ?>">
+                        <div class="chargewp-classic-horizontal-timeline-marker"></div>
+                        <div class="chargewp-classic-horizontal-timeline-content chargewp-classic-horizontal-timeline-top">
+                            <div class="chargewp-classic-horizontal-timeline-date">Q1 2024</div>
+                            <div class="chargewp-classic-horizontal-timeline-title">Planning</div>
+                            <div class="chargewp-classic-horizontal-timeline-description">Initial project planning and comprehensive research phase</div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="chargewp-classic-horizontal-timeline-item">
-                    <div class="chargewp-classic-horizontal-timeline-marker"></div>
-                    <div class="chargewp-classic-horizontal-timeline-content chargewp-classic-horizontal-timeline-bottom">
-                        <div class="chargewp-classic-horizontal-timeline-date">Q2 2024</div>
-                        <div class="chargewp-classic-horizontal-timeline-title">Development</div>
-                        <div class="chargewp-classic-horizontal-timeline-description">Core development phase with agile methodology</div>
-                    </div>
-                </div>
-
-                <div class="chargewp-classic-horizontal-timeline-item">
-                    <div class="chargewp-classic-horizontal-timeline-marker"></div>
-                    <div class="chargewp-classic-horizontal-timeline-content chargewp-classic-horizontal-timeline-top">
-                        <div class="chargewp-classic-horizontal-timeline-date">Q3 2024</div>
-                        <div class="chargewp-classic-horizontal-timeline-title">Testing</div>
-                        <div class="chargewp-classic-horizontal-timeline-description">Quality assurance and comprehensive testing procedures</div>
-                    </div>
-                </div>
-
-                <div class="chargewp-classic-horizontal-timeline-item">
-                    <div class="chargewp-classic-horizontal-timeline-marker"></div>
-                    <div class="chargewp-classic-horizontal-timeline-content chargewp-classic-horizontal-timeline-bottom">
-                        <div class="chargewp-classic-horizontal-timeline-date">Q4 2024</div>
-                        <div class="chargewp-classic-horizontal-timeline-title">Launch</div>
-                        <div class="chargewp-classic-horizontal-timeline-description">Product launch and market deployment strategy</div>
-                    </div>
-                </div>
+                <?php
+                endforeach;
+                ?>
             </div>
         </div>
     </div>
 </div>
 
 <style>
-.chargewp-classic-horizontal-timeline-wrapper {
-    width: 90%;
-}
+    <?php $_this->output_style_shortcode_id(); ?> .chargewp-classic-horizontal-timeline-track::before {
+        background-color: <?php echo esc_attr( $atts['base_line_color'] ); ?>;
+        height: <?php echo esc_attr( $atts['base_line_thickness'] ); ?>px;
+    }
 
+    <?php $_this->output_style_shortcode_id(); ?> .chargewp-classic-horizontal-timeline-container {
+        height: <?php echo esc_attr( $atts['timeline_height'] ); ?>px;
+    }
+
+    <?php
+    foreach ( $items as $index => $item ) :
+        ?>
+        div[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"] .chargewp-classic-horizontal-timeline-marker {
+            width: 20px;
+            height: 20px;
+            <?php
+            if ( 'circle' === $item['type'] ) {
+                echo 'border-radius: 50%;';
+            }
+            ?>
+            border: 4px solid #ffffff;
+            background-color: #e74c3c;
+        <?php
+    endforeach;
+    ?>
+</style>
+
+<style>
 .chargewp-classic-horizontal-timeline-wrapper-container {
     position: relative;
     width: 100%;
@@ -74,8 +77,6 @@ $custom_icon_integration = new IconIntegration();
 
 .chargewp-classic-horizontal-timeline-container {
     position: relative;
-    min-width: 800px;
-    height: 300px;
     padding: 20px;
 }
 
@@ -93,9 +94,7 @@ $custom_icon_integration = new IconIntegration();
     top: 50%;
     left: 0;
     right: 0;
-    height: 2px;
     transform: translateY(-50%);
-    background-color: #e74c3c;
 }
 
 .chargewp-classic-horizontal-timeline-item {
@@ -108,13 +107,8 @@ $custom_icon_integration = new IconIntegration();
 }
 
 .chargewp-classic-horizontal-timeline-marker {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 4px solid #ffffff;
     position: relative;
     z-index: 3;
-    background-color: #e74c3c;
 }
 
 .chargewp-classic-horizontal-timeline-content {

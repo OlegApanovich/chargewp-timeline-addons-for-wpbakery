@@ -18,7 +18,7 @@ $params = [
 		'heading'     => esc_html__( 'Base Line Color', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'  => 'base_line_color',
 		'description' => esc_html__( 'Select custom color for the base line.', 'chargewp-timeline-addons-for-wpbakery' ),
-		'value'       => '#D4AF37',
+		'value'       => '#e74c3c',
 	],
 	[
 		'type'        => 'chargewp_number_slider',
@@ -26,24 +26,55 @@ $params = [
 		'heading'     => esc_html__( 'Base Line Width', 'chargewp-timeline-addons-for-wpbakery' ),
 		'description' => esc_html__( 'Set the width of the base line.', 'chargewp-timeline-addons-for-wpbakery' ),
 		'title'       => 'px',
-		'min'         => 1,
+		'min'         => 0,
 		'max'         => 100,
-		'step'        => 1,
-		'value'       => 4,
+		'step'        => 0.5,
+		'value'       => 2,
 	],
+    [
+        'type'            => 'chargewp_number',
+        'min'             => '1',
+        'value'           => '300',
+        'step'            => '1',
+        'title'           => 'px',
+        'heading'         => esc_html__( 'Timeline Height', 'chargewp-timeline-addons-for-wpbakery' ),
+        'param_name'      => 'timeline_height',
+        'description'     => esc_html__( 'Set heigh for the whole timeline block.', 'chargewp-timeline-addons-for-wpbakery' ),
+    ],
 ];
 
 $items_params = [
+    [
+        'type'              => 'chargewp_divider',
+        'param_name'        => 'divider_item_text',
+        'title'             => __( 'Marker', 'chargewp-timeline-addons-for-wpbakery' ),
+        'title_description' => __( 'Set options for the timeline item marker.', 'chargewp-timeline-addons-for-wpbakery' ),
+        'color'             => '#3e73c6',
+    ],
 	[
 		'type'        => 'dropdown',
+        'wcp_group'   => true,
+        'wcp_group_margin_bottom' => "50",
 		'value'       => [
 			esc_html__( 'Circle', 'chargewp-timeline-addons-for-wpbakery' ) => 'circle',
 			esc_html__( 'Square', 'chargewp-timeline-addons-for-wpbakery' ) => 'square',
 		],
-		'heading'     => esc_html__( 'Item Type', 'chargewp-timeline-addons-for-wpbakery' ),
+		'heading'     => esc_html__( 'Type', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'  => 'type',
-		'description' => esc_html__( 'Choose item type.', 'chargewp-timeline-addons-for-wpbakery' ),
+		'description' => esc_html__( 'Choose marker type.', 'chargewp-timeline-addons-for-wpbakery' ),
 	],
+    [
+        'type'        => 'chargewp_number_slider',
+        'wcp_group'   => true,
+        'param_name'  => 'size',
+        'heading'     => esc_html__( 'Size', 'chargewp-timeline-addons-for-wpbakery' ),
+        'description' => esc_html__( 'Set marker size in pixels.', 'chargewp-timeline-addons-for-wpbakery' ),
+        'title'       => 'px',
+        'min'         => 0,
+        'max'         => 200,
+        'step'        => 1,
+        'value'       => 50,
+    ],
 ];
 
 $items_params = array_merge(

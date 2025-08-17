@@ -26,7 +26,7 @@ $params = [
 		'heading'     => esc_html__( 'Base Line Width', 'chargewp-timeline-addons-for-wpbakery' ),
 		'description' => esc_html__( 'Set the width of the base line.', 'chargewp-timeline-addons-for-wpbakery' ),
 		'title'       => 'px',
-		'min'         => 1,
+		'min'         => 0,
 		'max'         => 100,
 		'step'        => 1,
 		'value'       => 4,
@@ -44,7 +44,7 @@ $params = [
 	],
 ];
 
-$items_paramas = [
+$items_params = [
 	[
 		'type'        => 'dropdown',
 		'value'       => [
@@ -249,7 +249,7 @@ $items_paramas = [
 ];
 
 $items_params = array_merge(
-	$items_paramas,
+	$items_params,
 	$custom_icon_integration->add_icon_checkbox( [ 'background_style', 'align', 'link', 'background_color', 'custom_background_color' ] )
 );
 
