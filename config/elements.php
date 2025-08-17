@@ -159,4 +159,17 @@ return [
 			],
 		],
 	],
+	'chargewp-classic-horizontal-timeline'              => [
+		'config'        => 'shortcodes.classic-horizontal-timeline',
+		'template'      => 'shortcodes/classic-horizontal-timeline.php',
+		'depend_assets' => [
+			'inner' => [
+				'css' => [
+					[
+						'file' => 'element.css',
+					],
+				],
+			],
+		],
+	],
 ];
