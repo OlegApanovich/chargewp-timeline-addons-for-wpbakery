@@ -18,155 +18,169 @@ $custom_icon_integration = new IconIntegration();
 ?>
 
 <div <?php $_this->output_shortcode_wrapper_attributes( [ 'class' => 'chargewp-classic-horizontal-timeline-wrapper' ] ); ?>>
-    <div class="chargewp-classic-horizontal-timeline-wrapper-container">
-        <div class="chargewp-classic-horizontal-timeline-container">
-            <div class="chargewp-classic-horizontal-timeline-track">
-                <?php
-                foreach ( $items as $index => $item ) :
-                ?>
-                    <div class="chargewp-classic-horizontal-timeline-item" data-item-id="<?php echo esc_attr( $item['id'] ); ?>">
-                        <div class="chargewp-classic-horizontal-timeline-marker"></div>
-                        <div class="chargewp-classic-horizontal-timeline-content chargewp-classic-horizontal-timeline-top">
-                            <div class="chargewp-classic-horizontal-timeline-date">Q1 2024</div>
-                            <div class="chargewp-classic-horizontal-timeline-title">Planning</div>
-                            <div class="chargewp-classic-horizontal-timeline-description">Initial project planning and comprehensive research phase</div>
-                        </div>
-                    </div>
-                <?php
-                endforeach;
-                ?>
-            </div>
-        </div>
-    </div>
+	<div class="chargewp-classic-horizontal-timeline-wrapper-container">
+		<div class="chargewp-classic-horizontal-timeline-container">
+			<div class="chargewp-classic-horizontal-timeline-track">
+				<?php
+				foreach ( $items as $index => $item ) :
+					?>
+					<div class="chargewp-classic-horizontal-timeline-item" data-item-id="<?php echo esc_attr( $item['id'] ); ?>">
+						<div class="chargewp-classic-horizontal-timeline-marker"></div>
+						<div class="chargewp-classic-horizontal-timeline-content chargewp-classic-horizontal-timeline-<?php echo esc_attr( $item['position'] ); ?>">
+							<div class="chargewp-classic-horizontal-timeline-date">Q1 2024</div>
+							<div class="chargewp-classic-horizontal-timeline-title">Planning</div>
+							<div class="chargewp-classic-horizontal-timeline-description">Initial project planning and comprehensive research phase</div>
+						</div>
+					</div>
+					<?php
+				endforeach;
+				?>
+			</div>
+		</div>
+	</div>
 </div>
 
 <style>
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-classic-horizontal-timeline-track::before {
-        background-color: <?php echo esc_attr( $atts['base_line_color'] ); ?>;
-        height: <?php echo esc_attr( $atts['base_line_thickness'] ); ?>px;
-    }
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-classic-horizontal-timeline-track::before {
+		background-color: <?php echo esc_attr( $atts['base_line_color'] ); ?>;
+		height: <?php echo esc_attr( $atts['base_line_thickness'] ); ?>px;
+	}
 
-    <?php $_this->output_style_shortcode_id(); ?> .chargewp-classic-horizontal-timeline-container {
-        height: <?php echo esc_attr( $atts['timeline_height'] ); ?>px;
-    }
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-classic-horizontal-timeline-container {
+		height: <?php echo esc_attr( $atts['timeline_height'] ); ?>px;
+	}
 
-    <?php
-    foreach ( $items as $index => $item ) :
-        ?>
-        div[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"] .chargewp-classic-horizontal-timeline-marker {
-            width: 20px;
-            height: 20px;
-            <?php
-            if ( 'circle' === $item['type'] ) {
-                echo 'border-radius: 50%;';
-            }
-            ?>
-            border: 4px solid #ffffff;
-            background-color: #e74c3c;
-        <?php
-    endforeach;
-    ?>
+	<?php
+	foreach ( $items as $index => $item ) :
+		?>
+		div[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"] .chargewp-classic-horizontal-timeline-marker {
+			width: <?php echo esc_attr( $item['size'] ); ?>px;
+			height: <?php echo esc_attr( $item['size'] ); ?>px;
+			<?php
+			if ( 'circle' === $item['type'] ) {
+				echo 'border-radius: 50%;';
+			}
+			?>
+			background-color: <?php echo esc_attr( $item['marker_color'] ); ?>;
+		}
+		div[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"] .chargewp-classic-horizontal-timeline-top {
+			bottom: <?php echo esc_attr( $item['vertical_align'] ); ?>px;
+		}
+		div[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"] .chargewp-classic-horizontal-timeline-bottom {
+			top: <?php echo esc_attr( $item['vertical_align'] ); ?>px;
+		}
+		div[data-item-id="<?php echo esc_attr( $item['id'] ); ?>"] .chargewp-classic-horizontal-timeline-content {
+			width: <?php echo esc_attr( $item['content_width'] ); ?>px;
+			background-color: <?php echo esc_attr( $item['content_background_color'] ); ?>;
+			<?php
+			if ( 'true' === $item['is_content_border'] ) {
+				?>
+				border-radius: <?php echo esc_attr( $item['content_border_radius'] ); ?>px;
+				<?php
+				if ( 'shadow' === $item['content_border_type'] ) {
+					?>
+					box-shadow: 0 3px 15px<?php echo esc_attr( $item['content_border_color'] ); ?>;
+					<?php
+				} else {
+					?>
+					border: <?php echo esc_attr( $item['content_border_size'] ); ?>px <?php echo esc_attr( $item['content_border_type'] ); ?> <?php echo esc_attr( $item['content_border_color'] ); ?>;
+					<?php
+				}
+			}
+			?>
+		}
+		<?php
+endforeach;
+	?>
 </style>
 
 <style>
 .chargewp-classic-horizontal-timeline-wrapper-container {
-    position: relative;
-    width: 100%;
-    overflow-x: auto;
+	position: relative;
+	width: 100%;
+	overflow-x: auto;
 }
 
 .chargewp-classic-horizontal-timeline-container {
-    position: relative;
-    padding: 20px;
+	position: relative;
+	padding: 20px;
 }
 
 .chargewp-classic-horizontal-timeline-track {
-    position: relative;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+	position: relative;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .chargewp-classic-horizontal-timeline-track::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	transform: translateY(-50%);
 }
 
 .chargewp-classic-horizontal-timeline-item {
-    position: relative;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 2;
+	position: relative;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: 2;
 }
 
 .chargewp-classic-horizontal-timeline-marker {
-    position: relative;
-    z-index: 3;
+	position: relative;
+	z-index: 3;
 }
 
 .chargewp-classic-horizontal-timeline-content {
-    position: absolute;
-    width: 200px;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-}
-
-.chargewp-classic-horizontal-timeline-top {
-    bottom: 40px;
-}
-
-.chargewp-classic-horizontal-timeline-bottom {
-    top: 40px;
+	position: absolute;
+	text-align: center;
+	padding: 15px;
 }
 
 .chargewp-classic-horizontal-timeline-content::before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    left: 50%;
-    transform: translateX(-50%);
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .chargewp-classic-horizontal-timeline-top::before {
-    top: 100%;
-    border-top: 10px solid #ffffff;
+	top: 100%;
+	border-top: 10px solid #ffffff;
 }
 
 .chargewp-classic-horizontal-timeline-bottom::before {
-    bottom: 100%;
-    border-bottom: 10px solid #ffffff;
+	bottom: 100%;
+	border-bottom: 10px solid #ffffff;
 }
 
 .chargewp-classic-horizontal-timeline-date {
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #e74c3c;
+	font-size: 12px;
+	font-weight: bold;
+	margin-bottom: 5px;
+	color: #e74c3c;
 }
 
 .chargewp-classic-horizontal-timeline-title {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #2c3e50;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 5px;
+	color: #2c3e50;
 }
 
 .chargewp-classic-horizontal-timeline-description {
-    font-size: 12px;
-    line-height: 1.4;
-    color: #7f8c8d;
+	font-size: 12px;
+	line-height: 1.4;
+	color: #7f8c8d;
 }
 </style>
