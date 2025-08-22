@@ -79,7 +79,7 @@ foreach ( $items as $index => $item ) :
 			<?php
 			if ( 'shadow' === $item['content_border_type'] ) {
 				?>
-				box-shadow: 0 3px 15px<?php echo esc_attr( $item['content_border_color'] ); ?>;
+				box-shadow: 0 3px 15px <?php echo esc_attr( $item['content_border_color'] ); ?>;
 				<?php
 			} else {
 				?>

@@ -6,7 +6,6 @@
  */
 
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeEmpty;
-use ChargewpWpbTimeline\ElementIntegration\IconIntegration;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -37,7 +36,7 @@ $params = [
 		'title'       => 'px',
 		'heading'     => esc_html__( 'Timeline Height', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'  => 'timeline_height',
-		'description' => esc_html__( 'Set heigh for the whole timeline block.', 'chargewp-timeline-addons-for-wpbakery' ),
+		'description' => esc_html__( 'Set height for the whole timeline block.', 'chargewp-timeline-addons-for-wpbakery' ),
 	],
 ];
 
@@ -51,7 +50,7 @@ $items_params = [
 		],
 		'heading'     => esc_html__( 'Position', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'  => 'position',
-		'description' => esc_html__( 'Choose item potion relative to the base line.', 'chargewp-timeline-addons-for-wpbakery' ),
+		'description' => esc_html__( 'Choose item position relative to the base line.', 'chargewp-timeline-addons-for-wpbakery' ),
 	],
 	[
 		'type'              => 'chargewp_divider',
@@ -179,13 +178,13 @@ $items_params = [
 		'wcp_group_color' => '#B8860B',
 		'value'           => [
 			esc_html__( 'Shadow', 'chargewp-timeline-addons-for-wpbakery' ) => 'shadow',
-			esc_html__( 'Solid', 'chargewp-timeline-addons-for-wpbakery' ) => 'Solid',
+			esc_html__( 'Solid', 'chargewp-timeline-addons-for-wpbakery' ) => 'solid',
 			esc_html__( 'Dotted', 'chargewp-timeline-addons-for-wpbakery' ) => 'dotted',
 			esc_html__( 'Dashed', 'chargewp-timeline-addons-for-wpbakery' ) => 'dashed',
 		],
 		'heading'         => esc_html__( 'Border Type', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'      => 'content_border_type',
-		'description'     => esc_html__( 'Choose item potion relative to the base line.', 'chargewp-timeline-addons-for-wpbakery' ),
+		'description'     => esc_html__( 'Choose item position relative to the base line.', 'chargewp-timeline-addons-for-wpbakery' ),
 		'dependency'      => [
 			'element' => 'is_content_border',
 			'value'   => 'true',
