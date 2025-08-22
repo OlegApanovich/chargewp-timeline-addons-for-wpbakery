@@ -42,6 +42,7 @@ $params = [
 ];
 
 $items_params = [
+
 	[
 		'type'        => 'dropdown',
 		'value'       => [
@@ -98,6 +99,17 @@ $items_params = [
 		'color'             => '#B8860B',
 	],
 	[
+		'type'            => 'chargewp_wysiwyg',
+		'wcp_group'       => true,
+		'wcp_group_color' => '#B8860B',
+		'param_name'      => 'text',
+		'value'           => '',
+		'scope'           => [
+			'use_menubar' => 'false',
+			'use_media'   => 'false',
+		],
+	],
+	[
 		'type'            => 'chargewp_number_slider',
 		'wcp_group'       => true,
 		'wcp_group_color' => '#B8860B',
@@ -105,8 +117,6 @@ $items_params = [
 		'heading'         => esc_html__( 'Vertical Alignment', 'chargewp-timeline-addons-for-wpbakery' ),
 		'description'     => esc_html__( 'Align content block vertically relative to the baseline.', 'chargewp-timeline-addons-for-wpbakery' ),
 		'title'           => 'px',
-		'min'             => -150,
-		'max'             => 150,
 		'step'            => 1,
 		'value'           => 40,
 	],
@@ -211,6 +221,52 @@ $items_params = [
 			'value'   => 'true',
 		],
 	],
+	[
+		'type'            => 'chargewp_switcher',
+		'wcp_group'       => true,
+		'wcp_group_color' => '#B8860B',
+		'param_name'      => 'is_pointer',
+		'heading'         => esc_html__( 'Enable Pointer', 'chargewp-timeline-addons-for-wpbakery' ),
+		'description'     => esc_html__( 'Enable content pointer.', 'chargewp-timeline-addons-for-wpbakery' ),
+		'options'         => [
+			'true' => [
+				'label' => '',
+				'on'    => __( 'Yes', 'chargewp-timeline-addons-for-wpbakery' ),
+				'off'   => __( 'No', 'chargewp-timeline-addons-for-wpbakery' ),
+			],
+		],
+		'value'           => 'true',
+	],
+	[
+		'type'            => 'chargewp_number_slider',
+		'wcp_group'       => true,
+		'wcp_group_color' => '#B8860B',
+		'param_name'      => 'content_pointer_size',
+		'heading'         => esc_html__( 'Pointer Size', 'chargewp-timeline-addons-for-wpbakery' ),
+		'description'     => esc_html__( 'Set pointer size in pixels.', 'chargewp-timeline-addons-for-wpbakery' ),
+		'title'           => 'px',
+		'min'             => 0,
+		'max'             => 100,
+		'step'            => 1,
+		'value'           => 10,
+		'dependency'      => [
+			'element' => 'is_pointer',
+			'value'   => 'true',
+		],
+	],
+	[
+		'type'            => 'colorpicker',
+		'wcp_group'       => true,
+		'wcp_group_color' => '#B8860B',
+		'heading'         => esc_html__( 'Pointer Color', 'chargewp-timeline-addons-for-wpbakery' ),
+		'param_name'      => 'pointer_color',
+		'description'     => esc_html__( 'Set custom color for the pointer.', 'chargewp-timeline-addons-for-wpbakery' ),
+		'value'           => '#ffffff',
+		'dependency'      => [
+			'element' => 'is_pointer',
+			'value'   => 'true',
+		],
+	],
 ];
 
 $items = [
@@ -219,6 +275,7 @@ $items = [
 		'group'      => esc_html__( 'Timeline Items', 'chargewp-timeline-addons-for-wpbakery' ),
 		'heading'    => esc_html__( 'Timeline Items', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name' => 'items',
+		'value'      => '%5B%7B%22position%22%3A%22top%22%2C%22type%22%3A%22circle%22%2C%22size%22%3A%2220%22%2C%22marker_color%22%3A%22%23e74c3c%22%2C%22text%22%3A%22%3Cdiv%20style%3D%5C%22text-align%3A%20center%3B%5C%22%3E%3Cspan%20style%3D%5C%22color%3A%20%23e74c3c%3B%5C%22%3E%3Cstrong%3E%3Cspan%20style%3D%5C%22font-size%3A%2012px%3B%5C%22%3EQ1%202024%3C%2Fspan%3E%3C%2Fstrong%3E%3C%2Fspan%3E%3C%2Fdiv%3E%5Cn%3Cdiv%20style%3D%5C%22text-align%3A%20center%3B%5C%22%3E%3Cspan%20style%3D%5C%22font-size%3A%2016px%3B%5C%22%3E%3Cstrong%3EPlanning%3C%2Fstrong%3E%3C%2Fspan%3E%3C%2Fdiv%3E%5Cn%3Cdiv%20style%3D%5C%22text-align%3A%20center%3B%5C%22%3E%26nbsp%3B%3C%2Fdiv%3E%5Cn%3Cdiv%20style%3D%5C%22text-align%3A%20center%3B%5C%22%3E%3Cspan%20style%3D%5C%22color%3A%20%237f8c8d%3B%20font-size%3A%2012px%3B%5C%22%3EInitial%20project%20planning%20and%20comprehensive%20research%20phase%3C%2Fspan%3E%3C%2Fdiv%3E%22%2C%22vertical_align%22%3A%2240%22%2C%22content_width%22%3A%22200%22%2C%22content_background_color%22%3A%22%23ffffff%22%2C%22is_content_border%22%3A%22true%22%2C%22content_border_radius%22%3A%228%22%2C%22content_border_type%22%3A%22shadow%22%2C%22content_border_color%22%3A%22%230000001A%22%2C%22content_border_size%22%3A%221%22%2C%22is_pointer%22%3A%22true%22%2C%22content_pointer_size%22%3A%2210%22%2C%22pointer_color%22%3A%22%23ffffff%22%7D%2C%7B%22position%22%3A%22bottom%22%2C%22type%22%3A%22circle%22%2C%22size%22%3A%2220%22%2C%22marker_color%22%3A%22%23e74c3c%22%2C%22text%22%3A%22%3Cdiv%20style%3D%5C%22text-align%3A%20center%3B%5C%22%3E%3Cspan%20style%3D%5C%22color%3A%20%23e74c3c%3B%5C%22%3E%3Cstrong%3E%3Cspan%20style%3D%5C%22font-size%3A%2012px%3B%5C%22%3EQ2%202025%3C%2Fspan%3E%3C%2Fstrong%3E%3C%2Fspan%3E%3C%2Fdiv%3E%5Cn%3Cdiv%20style%3D%5C%22text-align%3A%20center%3B%5C%22%3E%3Cspan%20style%3D%5C%22font-size%3A%2016px%3B%5C%22%3E%3Cstrong%3EDevelopment%3C%2Fstrong%3E%3C%2Fspan%3E%3C%2Fdiv%3E%5Cn%3Cdiv%20style%3D%5C%22text-align%3A%20center%3B%5C%22%3E%26nbsp%3B%3C%2Fdiv%3E%5Cn%3Cdiv%20style%3D%5C%22text-align%3A%20center%3B%5C%22%3E%3Cspan%20style%3D%5C%22color%3A%20%237f8c8d%3B%20font-size%3A%2012px%3B%5C%22%3ECore%20development%20phase%20with%20agile%20methodology%3C%2Fspan%3E%3C%2Fdiv%3E%22%2C%22vertical_align%22%3A%2240%22%2C%22content_width%22%3A%22200%22%2C%22content_background_color%22%3A%22%23ffffff%22%2C%22is_content_border%22%3A%22true%22%2C%22content_border_radius%22%3A%228%22%2C%22content_border_type%22%3A%22shadow%22%2C%22content_border_color%22%3A%22%230000001A%22%2C%22content_border_size%22%3A%221%22%2C%22is_pointer%22%3A%22true%22%2C%22content_pointer_size%22%3A%2210%22%2C%22pointer_color%22%3A%22%23ffffff%22%7D%2C%7B%22position%22%3A%22top%22%2C%22type%22%3A%22circle%22%2C%22size%22%3A%2220%22%2C%22marker_color%22%3A%22%23e74c3c%22%2C%22text%22%3A%22%3Cdiv%20style%3D%5C%22text-align%3A%20center%3B%5C%22%3E%3Cspan%20style%3D%5C%22color%3A%20%23e74c3c%3B%5C%22%3E%3Cstrong%3E%3Cspan%20style%3D%5C%22font-size%3A%2012px%3B%5C%22%3EQ3%202026%3C%2Fspan%3E%3C%2Fstrong%3E%3C%2Fspan%3E%3C%2Fdiv%3E%5Cn%3Cdiv%20style%3D%5C%22text-align%3A%20center%3B%5C%22%3E%3Cspan%20style%3D%5C%22font-size%3A%2016px%3B%5C%22%3E%3Cstrong%3ELaunch%3C%2Fstrong%3E%3C%2Fspan%3E%3C%2Fdiv%3E%5Cn%3Cdiv%20style%3D%5C%22text-align%3A%20center%3B%5C%22%3E%26nbsp%3B%3C%2Fdiv%3E%5Cn%3Cdiv%20style%3D%5C%22text-align%3A%20center%3B%5C%22%3E%3Cspan%20style%3D%5C%22color%3A%20%237f8c8d%3B%20font-size%3A%2012px%3B%5C%22%3EProduct%20launch%20and%20market%20deployment%20strategy%3C%2Fspan%3E%3C%2Fdiv%3E%22%2C%22vertical_align%22%3A%2240%22%2C%22content_width%22%3A%22200%22%2C%22content_background_color%22%3A%22%23ffffff%22%2C%22is_content_border%22%3A%22true%22%2C%22content_border_radius%22%3A%228%22%2C%22content_border_type%22%3A%22shadow%22%2C%22content_border_color%22%3A%22%230000001A%22%2C%22content_border_size%22%3A%221%22%2C%22is_pointer%22%3A%22true%22%2C%22content_pointer_size%22%3A%2210%22%2C%22pointer_color%22%3A%22%23ffffff%22%7D%5D',
 		'params'     => $items_params,
 	],
 ];
