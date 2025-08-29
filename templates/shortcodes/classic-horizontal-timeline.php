@@ -27,9 +27,15 @@ $custom_icon_integration = new IconIntegration();
 					<div class="chargewp-classic-horizontal-timeline-item" data-item-id="<?php echo esc_attr( $item['id'] ); ?>">
 						<div class="chargewp-classic-horizontal-timeline-marker"></div>
 						<div class="chargewp-classic-horizontal-timeline-content chargewp-classic-horizontal-timeline-<?php echo esc_attr( $item['position'] ); ?>">
-							<div class="chargewp-classic-horizontal-timeline-text">
-								<?php echo wp_kses_post( $item['text'] ); ?>
-							</div>
+                            <?php
+                            if ( isset( $item['text'] ) ) {
+                                ?>
+                                <div class="chargewp-classic-horizontal-timeline-text">
+                                    <?php echo wp_kses_post( $item['text'] ); ?>
+                                </div>
+                                <?php
+                            }
+                            ?>
 						</div>
 					</div>
 					<?php
