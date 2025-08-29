@@ -33,7 +33,11 @@ The WPBakery Page Builder plugin must be installed and activated to use this plu
 
 ### 7. Bottom Horizontal Timeline.
 
-![Wheel Timeline Addon](assets/images/github-reame/screen-9.png)
+![Bottom Horizontal Timeline](assets/images/github-reame/screen-9.png)
+
+### 8. Classic Horizontal Timeline.
+
+![Classic Horizontal Timeline](assets/images/github-reame/screen-10.png)
 
 
 ## Installation
