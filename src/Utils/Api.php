@@ -70,14 +70,15 @@ class Api {
 			[
 				'timeout' => 30,
 				'body'    => [
-					'plugin'         => $plugin_slug,
-					'plugin_version' => CHARGEWPWPBTIMELINE_VERSION,
-					'wp_version'     => get_bloginfo( 'version' ),
-					'php_version'    => phpversion(),
-					'theme'          => $theme->get( 'Name' ),
-					'theme_version'  => $theme->get( 'Version' ),
-					'reason'         => $feedback_key,
-					'reason_text'    => $feedback_text,
+					'plugin'            => $plugin_slug,
+					'plugin_version'    => CHARGEWPWPBTIMELINE_VERSION,
+					'wp_version'        => get_bloginfo( 'version' ),
+					'php_version'       => phpversion(),
+					'theme'             => $theme->get( 'Name' ),
+					'theme_version'     => $theme->get( 'Version' ),
+					'wp_bakery_version' => defined( 'WPB_VC_VERSION' ) ? WPB_VC_VERSION : '',
+					'reason'            => $feedback_key,
+					'reason_text'       => $feedback_text,
 				],
 			]
 		);
