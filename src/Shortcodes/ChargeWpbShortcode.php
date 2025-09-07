@@ -12,7 +12,7 @@ use WPBakeryShortCode;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * VerticalTimeline shortcode class.
+ * ChargeWpbShortcode shortcode class.
  *
  * @since 1.0
  */
@@ -86,7 +86,7 @@ class ChargeWpbShortcode {
 	 * Set element slug.
 	 *
 	 * @param string $element_slug
-	 * return ChargeWpbShortcode
+	 * @return ChargeWpbShortcode
 	 * @since 1.0
 	 */
 	public function set_element_slug( string $element_slug ): ChargeWpbShortcode {
@@ -98,7 +98,7 @@ class ChargeWpbShortcode {
 	 * Set element template.
 	 *
 	 * @param string $template
-	 * return ChargeWpbShortcode
+	 * @return ChargeWpbShortcode
 	 * @since 1.0
 	 */
 	public function set_template( string $template ): ChargeWpbShortcode {
@@ -110,7 +110,7 @@ class ChargeWpbShortcode {
 	 * Set shortcode attributes.
 	 *
 	 * @param array $config
-	 * return ChargeWpbShortcode
+	 * @return ChargeWpbShortcode
 	 * @since 1.0
 	 */
 	public function set_config( array $config ): ChargeWpbShortcode {
@@ -122,7 +122,7 @@ class ChargeWpbShortcode {
 	 * Set WPBakeryShortCode.
 	 *
 	 * @param WPBakeryShortCode $wpb_shortcode
-	 * return ChargeWpbShortcode
+	 * @return ChargeWpbShortcode
 	 * @since 1.0
 	 */
 	public function set_wpb_shortcode( WPBakeryShortCode $wpb_shortcode ): ChargeWpbShortcode {
@@ -134,7 +134,7 @@ class ChargeWpbShortcode {
 	 * Set element init data.
 	 *
 	 * @param array $element_init_data
-	 * return ChargeWpbShortcode
+	 * @return ChargeWpbShortcode
 	 * @since 1.0
 	 */
 	public function set_element_init_data( array $element_init_data ): ChargeWpbShortcode {
@@ -143,7 +143,7 @@ class ChargeWpbShortcode {
 	}
 
 	/**
-	 * Constructor.
+	 * Add shortcode.
 	 *
 	 * @since 1.0
 	 */
