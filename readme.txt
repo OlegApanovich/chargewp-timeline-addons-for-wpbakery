@@ -3,7 +3,7 @@ Contributors: mrdollar4444
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K9NTJ6E2RQN3A&source=url
 Tags: WPBakery, wpbakery addons, wpbakery page builder, wpbakery page builder addons
 Tested up to: 6.8
-Stable tag: 1.5
+Stable tag: 1.5.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -43,6 +43,9 @@ Please note that some elements use brand-new CSS/JS features, and browser suppor
 9. Classic Horizontal Timeline Addon.
 
 == Changelog ==
+
+= 1.5.1 =
+* Fix - Fatal php error with wpbakery <= 8.0 version
 
 = 1.5 =
 * Dev - Introduced new "Classic Horizontal Timeline" addon.
