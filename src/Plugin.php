@@ -167,7 +167,7 @@ class Plugin {
 		);
 
 		if ( ! class_exists( 'Wpbackery_Custom_Param_Collection' ) ) {
-			include_once JOYWPTESTIMONIALSWPB_INCLUDES_DIR . '/wpbakery-custom-param-collection/wpbakery-custom-param-collection.php';
+			include_once CHARGEWPWPBTIMELINE_INCLUDES_DIR . '/wpbakery-custom-param-collection/wpbakery-custom-param-collection.php';
 		}
 	}
 }
