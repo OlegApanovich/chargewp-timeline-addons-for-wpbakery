@@ -160,10 +160,14 @@ class Plugin {
 	public function init_custom_element_params() {
 		add_filter(
 			'wpcustomparamcollection_get_param_prefix',
-			function () {
-				return 'chargewp';
+			function ( $prefix_list ) {
+				$prefix_list[] = 'chargewp';
+				return $prefix_list;
 			}
 		);
-		include_once CHARGEWPWPBTIMELINE_INCLUDES_DIR . '/wpbakery-custom-param-collection/wpbakery-custom-param-collection.php';
+
+		if ( ! class_exists( 'Wpbackery_Custom_Param_Collection' ) ) {
+			include_once CHARGEWPWPBTIMELINE_INCLUDES_DIR . '/wpbakery-custom-param-collection/wpbakery-custom-param-collection.php';
+		}
 	}
 }

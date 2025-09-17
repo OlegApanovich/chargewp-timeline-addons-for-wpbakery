@@ -21,13 +21,6 @@ class ElementParamsLoader {
 	public $namespace_prefix = 'WpbCustomParamCollection\ElementParams\Lib\\';
 
 	/**
-	 * Param prefix.
-	 *
-	 * @var string
-	 */
-	public $param_prefix;
-
-	/**
 	 * Constructor.
 	 */
 	public function __construct() {
@@ -41,7 +34,7 @@ class ElementParamsLoader {
 	 * @return array
 	 */
 	public function localize_wpb_editors( array $localization ): array {
-		$localization['wcp_param_prefix'] = $this->get_param_prefix();
+		$localization['wcp_param_prefix_list'] = $this->get_param_prefix_list();
 
 		return $localization;
 	}
@@ -49,16 +42,15 @@ class ElementParamsLoader {
 	/**
 	 * Get param prefix.
 	 *
-	 * @return string
+	 * @return array
 	 */
-	public function get_param_prefix(): string {
-		if ( empty( $this->param_prefix ) ) {
-			$prefix = WPBCUSTOMPARAMCCOLECTION_PARAM_PREFIX;
-		} else {
-			$prefix = $this->param_prefix;
+	public function get_param_prefix_list(): array {
+		$prefix_list = (array) apply_filters( 'wpcustomparamcollection_get_param_prefix', [] );
+		if ( empty( $prefix_list ) ) {
+			$prefix_list = [ WPBCUSTOMPARAMCCOLECTION_PARAM_PREFIX ];
 		}
 
-		return (string) apply_filters( 'wpcustomparamcollection_get_param_prefix', $prefix );
+		return $prefix_list;
 	}
 
 	/**
@@ -68,10 +60,13 @@ class ElementParamsLoader {
 		$param_list = wpbcustomparamcollection_config( 'element-custom-params' );
 
 		foreach ( $param_list as $param_slug => $param_defaults ) {
-			$result = $this->load_single_param( $param_slug, $param_defaults );
+			foreach ( $this->get_param_prefix_list() as $prefix ) {
+				$prefix_slug = $prefix . '_' . $param_slug;
+				$result      = $this->load_single_param( $param_slug, $param_defaults, $prefix_slug );
 
-			if ( ! $result ) {
-				trigger_error( "Can't init custom element param " . esc_attr( $param_slug ) . __FILE__ . ' on line ' . __LINE__, E_USER_ERROR );
+				if ( ! $result ) {
+					trigger_error( "Can't init custom element param " . esc_attr( $param_slug ) . __FILE__ . ' on line ' . __LINE__, E_USER_ERROR );
+				}
 			}
 		}
 	}
@@ -81,18 +76,18 @@ class ElementParamsLoader {
 	 *
 	 * @param string $param_slug
 	 * @param array  $param_defaults
+	 * @param string $prefix_slug
 	 *
 	 * @return bool
 	 */
-	public function load_single_param( string $param_slug, array $param_defaults ): bool {
+	public function load_single_param( string $param_slug, array $param_defaults, string $prefix_slug ): bool {
 		$param_instance = $this->get_param_instance( $param_slug, $param_defaults );
 
 		$param_script = $this->get_param_script( $param_slug );
-		$param_slug   = $this->get_param_prefix() . '_' . $param_slug;
 		// as wpbakery does not have a system to include param styles we output styles together with param output.
 		// @see ElementParamsAbstract::param_output().
 
-		return vc_add_shortcode_param( $param_slug, [ $param_instance, 'param_output' ], $param_script );
+		return vc_add_shortcode_param( $prefix_slug, [ $param_instance, 'param_output' ], $param_script );
 	}
 
 	/**
