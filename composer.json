@@ -17,6 +17,7 @@
     },
     "allow-plugins": {
       "dealerdirect/phpcodesniffer-composer-installer": true
-    }
+    },
+    "autoloader-suffix": "ChargewpWpbTimeline"
   }
 }
