@@ -7,7 +7,7 @@
  * Author URI:        https://github.com/OlegApanovich
  * Text Domain:       wpb-custom-param-collection
  * Domain Path:       /languages
- * Version:           1.1
+ * Version:           1.3.2
  * License:           GPL-3.0+
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  *
