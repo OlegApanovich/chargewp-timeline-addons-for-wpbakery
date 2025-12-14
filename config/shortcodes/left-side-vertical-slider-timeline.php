@@ -10,6 +10,28 @@ use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeEmpty;
 defined( 'ABSPATH' ) || exit;
 
 $params = [
+    [
+        'type'        => 'chargewp_number',
+        'value'       => '300',
+        'min'         => '100',
+        'max'         => '1000',
+        'title'       => 'px',
+        'step'        => '1',
+        'heading'     => esc_html__( 'Content Width', 'chargewp-timeline-addons-for-wpbakery' ),
+        'param_name'  => 'content_width',
+        'description' => esc_html__( 'Set custom timeline content block width from 100 to 1000.', 'chargewp-timeline-addons-for-wpbakery' ),
+    ],
+    [
+        'type'            => 'chargewp_number',
+        'value'           => '60',
+        'min'             => '30',
+        'max'             => '500',
+        'step'            => '1',
+        'title'           => 'px',
+        'heading'         => esc_html__( 'Navigation width', 'chargewp-timeline-addons-for-wpbakery' ),
+        'param_name'      => 'navigation_width',
+        'description'     => esc_html__( 'Set custom navigation block width from 30 to 1000.', 'chargewp-timeline-addons-for-wpbakery' ),
+    ],
 	[
 		'type'              => 'chargewp_divider',
 		'param_name'        => 'divider_navigation',
@@ -42,19 +64,6 @@ $params = [
 		'title'             => __( 'Navigation', 'chargewp-timeline-addons-for-wpbakery' ),
 		'title_description' => __( 'Set options of navigation block.', 'chargewp-timeline-addons-for-wpbakery' ),
 		'color'             => '#006400',
-	],
-	[
-		'type'            => 'chargewp_number',
-		'wcp_group'       => true,
-		'wcp_group_color' => '#006400',
-		'value'           => '60',
-		'min'             => '30',
-		'max'             => '1000',
-		'step'            => '1',
-		'title'           => 'px',
-		'heading'         => esc_html__( 'Min width', 'chargewp-timeline-addons-for-wpbakery' ),
-		'param_name'      => 'navigation_width',
-		'description'     => esc_html__( 'Set custom navigation block width from 30 to 1000.', 'chargewp-timeline-addons-for-wpbakery' ),
 	],
 	[
 		'type'                 => 'chargewp_switcher',
@@ -118,17 +127,6 @@ $params = [
 					],
 				],
 				'value'       => '',
-			],
-			[
-				'type'        => 'chargewp_number',
-				'value'       => '300',
-				'min'         => '100',
-				'max'         => '1000',
-				'title'       => 'px',
-				'step'        => '1',
-				'heading'     => esc_html__( 'Block Width', 'chargewp-timeline-addons-for-wpbakery' ),
-				'param_name'  => 'item_width',
-				'description' => esc_html__( 'Set custom navigation item block width from 100 to 1000.', 'chargewp-timeline-addons-for-wpbakery' ),
 			],
 			[
 				'type'                 => 'dropdown',
