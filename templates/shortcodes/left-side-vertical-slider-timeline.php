@@ -41,12 +41,18 @@ $items       = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_th
 				?>
 				<li id="<?php echo esc_attr( $item['id'] ); ?>">
 					<?php
-					$item_data = $_this->get_atts_lib( 'image' )->get_item_data( $item );
 
-					if ( $item_data['img_src'] ) {
-						?>
-						<img alt="<?php echo esc_attr( $item_data['img_alt'] ); ?>" src="<?php echo esc_url( $item_data['img_src'] ); ?>">
-						<?php
+					// B.C 1.5 compatibility.
+					if ( isset( $item['image_source'] ) ) {
+						$item_data = $_this->get_atts_lib( 'image' )->get_item_data( $item );
+						if ( $item_data['img_src'] ) {
+							?>
+							<img alt="<?php echo esc_attr( $item_data['img_alt'] ); ?>" src="<?php echo esc_url( $item_data['img_src'] ); ?>">
+							<?php
+						}
+					} else {
+                        // phpcs:ignore:WordPress.Security.EscapeOutput.OutputNotEscaped
+						echo $_this->get_integrated_shortcode_output( 'vc_single_image', $item );
 					}
 					?>
 					<div class="content">
@@ -105,7 +111,7 @@ $items       = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_th
 
 	.chargewp-left-side-vertical-slider-timeline-container #dates-<?php echo esc_attr( $timeline_id ); ?> {
 		width: auto; /* Let width be determined by content */
-		min-width: <?php echo isset( $atts['navigation_width'] ) ? $atts['navigation_width'] : '60'  ?>px;
+		min-width: <?php echo isset( $atts['navigation_width'] ) ? esc_attr( $atts['navigation_width'] ) : '60'; ?>px;
 		height: 600px;
 		overflow: hidden;
 		float: left;
@@ -152,7 +158,7 @@ $items       = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_th
 	}
 
 	.chargewp-left-side-vertical-slider-timeline-container #issues-<?php echo esc_attr( $timeline_id ); ?> li {
-		max-width: <?php echo isset( $atts['content_width'] ) ? $atts['content_width'] : '300'  ?>px;
+		max-width: <?php echo isset( $atts['content_width'] ) ? esc_attr( $atts['content_width'] ) : '300'; ?>px;
 		height: 600px;
 		list-style: none;
 		text-align: center; /* Center all text content */
@@ -190,7 +196,7 @@ $items       = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_th
 	.chargewp-left-side-vertical-slider-timeline-container #issues-<?php echo esc_attr( $timeline_id ); ?> li .content {
 		margin: 10px auto;
 		text-align: center;
-		max-width: <?php echo isset( $atts['content_width'] ) ? $atts['content_width'] : '300'  ?>px;
+		max-width: <?php echo isset( $atts['content_width'] ) ? esc_attr( $atts['content_width'] ) : '300'; ?>px;
 	}
 
 	.chargewp-left-side-vertical-slider-timeline-container #next-<?php echo esc_attr( $timeline_id ); ?>,
