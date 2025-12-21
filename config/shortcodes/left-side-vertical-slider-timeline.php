@@ -15,7 +15,7 @@ $image_integration_params = $single_image_integration->add_config_params(
 	[
 		'wcp_group'       => true,
 		'wcp_group_color' => '#B8860B',
-        'admin_label' => false,
+		'admin_label'     => false,
 	]
 );
 

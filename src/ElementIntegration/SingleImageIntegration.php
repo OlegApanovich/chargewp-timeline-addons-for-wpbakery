@@ -11,13 +11,13 @@ namespace ChargewpWpbTimeline\ElementIntegration;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class IconIntegration
+ * Class SingleImageIntegration
  *
  * @since 1.6
  */
 class SingleImageIntegration {
 	/**
-	 * Get custom icon checkbox field params.
+	 * Get integration config.
 	 *
 	 * @since 1.6
 	 * @param array $exclude
@@ -42,7 +42,7 @@ class SingleImageIntegration {
 	}
 
 	/**
-	 * Get icon elements params list that we always exclude when integrate icon shortcode.
+	 * Get elements params list that we always exclude when integrate shortcode.
 	 *
 	 * @since 1.6
 	 * @return array

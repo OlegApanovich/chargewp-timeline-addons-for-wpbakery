@@ -135,7 +135,7 @@ $items       = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_th
 		top: 50%;
 		left: 0;
 		transform: translateY(-50%);
-		borderius: 50%;
+		border-radius: 50%;
 		z-index: 2;
 	}
 
