@@ -41,12 +41,18 @@ $items       = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_th
 				?>
 				<li id="<?php echo esc_attr( $item['id'] ); ?>">
 					<?php
-					$item_data = $_this->get_atts_lib( 'image' )->get_item_data( $item );
 
-					if ( $item_data['img_src'] ) {
-						?>
-						<img alt="<?php echo esc_attr( $item_data['img_alt'] ); ?>" src="<?php echo esc_url( $item_data['img_src'] ); ?>">
-						<?php
+					// B.C 1.5 compatibility.
+					if ( isset( $item['image_source'] ) ) {
+						$item_data = $_this->get_atts_lib( 'image' )->get_item_data( $item );
+						if ( $item_data['img_src'] ) {
+							?>
+							<img alt="<?php echo esc_attr( $item_data['img_alt'] ); ?>" src="<?php echo esc_url( $item_data['img_src'] ); ?>">
+							<?php
+						}
+					} else {
+                        // phpcs:ignore:WordPress.Security.EscapeOutput.OutputNotEscaped
+						echo $_this->get_integrated_shortcode_output( 'vc_single_image', $item );
 					}
 					?>
 					<div class="content">
@@ -86,12 +92,12 @@ $items       = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_th
 		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 22'%3E%3Cpath d='M19 0L38 19L35 22L19 6L3 22L0 19L19 0Z' fill='<?php echo rawurlencode( esc_attr( $atts['prev_arrow_color'] ) ); ?>'/%3E%3C/svg%3E") no-repeat center;
 	}
 	.chargewp-left-side-vertical-slider-timeline-container #timeline-<?php echo esc_attr( $timeline_id ); ?> {
-		width: 100%; /* Make timeline responsive */
+		width: 100%;
 		height: 600px;
 		overflow: hidden;
 		margin: 0 auto;
 		position: relative;
-		display: flex; /* Use flexbox for layout */
+		display: flex;
 	}
 
 	.chargewp-left-side-vertical-slider-timeline-container #timeline-<?php echo esc_attr( $timeline_id ); ?>::before {
@@ -105,7 +111,7 @@ $items       = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_th
 
 	.chargewp-left-side-vertical-slider-timeline-container #dates-<?php echo esc_attr( $timeline_id ); ?> {
 		width: auto; /* Let width be determined by content */
-		min-width: 60px;
+		min-width: <?php echo isset( $atts['navigation_width'] ) ? esc_attr( $atts['navigation_width'] ) : '60'; ?>px;
 		height: 600px;
 		overflow: hidden;
 		float: left;
@@ -119,7 +125,7 @@ $items       = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_th
 		font-size: 16px;
 		padding-left: 33px;
 		padding-right: 15px;
-		position: relative; /* For absolute positioning of the dot */
+		position: relative;
 	}
 
 	/* Create a dot centered on the vertical line */
@@ -152,7 +158,7 @@ $items       = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_th
 	}
 
 	.chargewp-left-side-vertical-slider-timeline-container #issues-<?php echo esc_attr( $timeline_id ); ?> li {
-		max-width: 300px;
+		max-width: <?php echo isset( $atts['content_width'] ) ? esc_attr( $atts['content_width'] ) : '300'; ?>px;
 		height: 600px;
 		list-style: none;
 		text-align: center; /* Center all text content */
@@ -172,9 +178,8 @@ $items       = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_th
 	}
 
 	.chargewp-left-side-vertical-slider-timeline-container #issues-<?php echo esc_attr( $timeline_id ); ?> li img {
-		width: 70%; /* Responsive image size */
-		/*max-width: 100px;*/
-		margin: 10px auto; /* Center image horizontally */
+		width: 70%;
+		margin: 10px auto;
 		display: block;
 		-webkit-transition: all 2s ease-in-out;
 		-moz-transition: all 2s ease-in-out;
@@ -191,20 +196,20 @@ $items       = $_this->get_atts_lib( 'param-group' )->set_items_id( $items, $_th
 	.chargewp-left-side-vertical-slider-timeline-container #issues-<?php echo esc_attr( $timeline_id ); ?> li .content {
 		margin: 10px auto;
 		text-align: center;
-		max-width: 250px;
+		max-width: <?php echo isset( $atts['content_width'] ) ? esc_attr( $atts['content_width'] ) : '300'; ?>px;
 	}
 
 	.chargewp-left-side-vertical-slider-timeline-container #next-<?php echo esc_attr( $timeline_id ); ?>,
 	.chargewp-left-side-vertical-slider-timeline-container #prev-<?php echo esc_attr( $timeline_id ); ?> {
 		position: absolute;
-		left: 30px; /* Center horizontally relative to the issues container */
-		transform: translateX(-50%); /* Center perfectly by shifting back by half of width */
+		left: 30px;
+		transform: translateX(-50%);
 		font-size: 70px;
 		width: 38px;
 		height: 22px;
 		text-indent: -9999px;
 		overflow: hidden;
-		z-index: 100; /* Ensure arrows appear above content */
+		z-index: 100;
 	}
 
 	.chargewp-left-side-vertical-slider-timeline-container #next-<?php echo esc_attr( $timeline_id ); ?>:hover,
