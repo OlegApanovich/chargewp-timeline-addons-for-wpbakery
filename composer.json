@@ -6,7 +6,7 @@
     "rarst/phpcs-cognitive-complexity": "^0.2",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
     "phpstan/phpstan": "^1.12",
-    "php-stubs/wordpress-stubs": "^6.7"
+    "php-stubs/wordpress-stubs": "^6.9"
   },
   "autoload": {
     "psr-4": {"ChargewpWpbTimeline\\": "src/"}
@@ -17,6 +17,7 @@
     },
     "allow-plugins": {
       "dealerdirect/phpcodesniffer-composer-installer": true
-    }
+    },
+    "autoloader-suffix": "ChargewpWpbTimeline"
   }
 }

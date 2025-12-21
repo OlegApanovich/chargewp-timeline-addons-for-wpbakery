@@ -205,6 +205,6 @@ class IconIntegration {
 	 */
 	public function output_icon_integration( ChargeWpbShortcode $shortcode, array $atts, string $prefix ) {
         // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		echo $shortcode->get_integrated_shortcode_output( $atts, 'vc_icon', $prefix );
+		echo $shortcode->get_integrated_shortcode_parse_atts_output( $atts, 'vc_icon', $prefix );
 	}
 }

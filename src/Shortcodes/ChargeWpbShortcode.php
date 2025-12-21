@@ -379,7 +379,7 @@ class ChargeWpbShortcode {
 
 	/**
 	 * We use it when want to get output template element shortcode
-	 * that was already integrated in current element.
+	 * that was already integrated in current element with parsing his atts before.
 	 *
 	 * @param array  $atts
 	 * @param string $integrated_slug
@@ -389,13 +389,32 @@ class ChargeWpbShortcode {
 	 * @return string
 	 * @since 1.1
 	 */
-	public function get_integrated_shortcode_output( array $atts, string $integrated_slug, string $integrated_prefix ): string {
+	public function get_integrated_shortcode_parse_atts_output( array $atts, string $integrated_slug, string $integrated_prefix = '' ): string {
 		$data = vc_map_integrate_parse_atts( $this->element_slug, $integrated_slug, $atts, $integrated_prefix );
 		if ( $data ) {
-			$integrated_shortcode = vc_manager()->vc()->getShortCode( 'vc_icon' );
+			$integrated_shortcode = vc_manager()->vc()->getShortCode( $integrated_slug );
 			if ( is_object( $integrated_shortcode ) ) {
 				return $integrated_shortcode->render( array_filter( $data ) );
 			}
+		}
+
+		return '';
+	}
+
+	/**
+	 * We use it when want to get output template element shortcode
+	 * that was already integrated in current element.
+	 *
+	 * @param string $integrated_slug
+	 * @param array  $atts
+	 *
+	 * @return string
+	 * @since 1.6
+	 */
+	public function get_integrated_shortcode_output( string $integrated_slug, array $atts ): string {
+		$integrated_shortcode = vc_manager()->vc()->getShortCode( $integrated_slug );
+		if ( is_object( $integrated_shortcode ) ) {
+			return $integrated_shortcode->render( array_filter( $atts ) );
 		}
 
 		return '';
