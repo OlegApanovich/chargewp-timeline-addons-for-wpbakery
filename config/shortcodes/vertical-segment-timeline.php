@@ -48,7 +48,7 @@ return [
 	'js_view'                 => 'VcColumnView',
 	'params'                  => array_merge(
 		$params,
-		[ method_exists( vc_config(), 'get_css_animation' ) ? vc_config()->get_css_animation() : vc_map_add_css_animation() ],
+		[ function_exists( 'vc_config' ) && method_exists( vc_config(), 'get_css_animation' ) ? vc_config()->get_css_animation() : vc_map_add_css_animation() ],
 		chargewpwpbtimeline_config( 'element-params' )['common-bottom-params']
 	),
 ];
