@@ -242,7 +242,7 @@ $params = [
 				'param_name'        => 'divider_item_color',
 				'title'             => __( 'Color', 'chargewp-timeline-addons-for-wpbakery' ),
 				'title_description' => __( 'Set item color options', 'chargewp-timeline-addons-for-wpbakery' ),
-				'color'             => '#3e73c6'
+				'color'             => '#3e73c6',
 			],
 			[
 				'type'        => 'colorpicker',
