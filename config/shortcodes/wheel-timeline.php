@@ -242,6 +242,7 @@ $params = [
 				'param_name'        => 'divider_item_color',
 				'title'             => __( 'Color', 'chargewp-timeline-addons-for-wpbakery' ),
 				'title_description' => __( 'Set item color options', 'chargewp-timeline-addons-for-wpbakery' ),
+				'color'             => '#3e73c6'
 			],
 			[
 				'type'        => 'colorpicker',
@@ -280,6 +281,7 @@ $params = [
 				'param_name'        => 'divider_item_font_size',
 				'title'             => __( 'Font Sizes', 'chargewp-timeline-addons-for-wpbakery' ),
 				'title_description' => __( 'Set for sizes for item elements', 'chargewp-timeline-addons-for-wpbakery' ),
+				'color'             => 'green',
 			],
 			[
 				'type'            => 'chargewp_number',
