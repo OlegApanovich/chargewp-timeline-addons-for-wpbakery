@@ -8,6 +8,8 @@
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeEmpty;
 use ChargewpWpbTimeline\ElementIntegration\SingleImageIntegration;
 
+defined( 'ABSPATH' ) || exit;
+
 $single_image_integration = new SingleImageIntegration();
 $image_integration_params = $single_image_integration->add_config( [ 'caption', 'add_caption', 'img_link_large' ] );
 $image_integration_params = $single_image_integration->add_config_params(
@@ -18,8 +20,6 @@ $image_integration_params = $single_image_integration->add_config_params(
 		'admin_label'     => false,
 	]
 );
-
-defined( 'ABSPATH' ) || exit;
 
 $param_group_params = array_merge(
 	[

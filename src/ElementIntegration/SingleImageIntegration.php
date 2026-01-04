@@ -24,6 +24,7 @@ class SingleImageIntegration {
 	 * @return array
 	 */
 	public function add_config( array $exclude = [] ): array {
+        include_once vc_path_dir( 'CONFIG_DIR', 'lean-map.php' );
 		$image_config = include vc_path_dir( 'CONFIG_DIR', 'content/shortcode-vc-single-image.php' );
 
 		$exclude = array_merge( $this->get_always_exclude_params(), $exclude );
