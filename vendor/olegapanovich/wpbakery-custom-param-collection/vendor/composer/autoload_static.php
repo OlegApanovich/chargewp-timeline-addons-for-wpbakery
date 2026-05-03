@@ -4,11 +4,10 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitChargewpWpbTimeline
+class ComposerStaticInit8fc96d1ec75ef3c04739a0768c3afd31
 {
     public static $files = array (
         '9b38cf48e83f5d8f60375221cd213eee' => __DIR__ . '/..' . '/phpstan/phpstan/bootstrap.php',
-        '39a3c0fad808a13a539de87b0950cc93' => __DIR__ . '/..' . '/olegapanovich/wpbakery-custom-param-collection/wpbakery-custom-param-collection.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -20,24 +19,16 @@ class ComposerStaticInitChargewpWpbTimeline
         array (
             'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 55,
         ),
-        'C' => 
-        array (
-            'ChargewpWpbTimeline\\' => 20,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'WpbCustomParamCollection\\' => 
         array (
-            0 => __DIR__ . '/..' . '/olegapanovich/wpbakery-custom-param-collection/src',
+            0 => __DIR__ . '/../..' . '/src',
         ),
         'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 
         array (
             0 => __DIR__ . '/..' . '/dealerdirect/phpcodesniffer-composer-installer/src',
-        ),
-        'ChargewpWpbTimeline\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
@@ -59,7 +50,6 @@ class ComposerStaticInitChargewpWpbTimeline
         'PHPCSUtils\\Exceptions\\UnexpectedTokenType' => __DIR__ . '/..' . '/phpcsstandards/phpcsutils/PHPCSUtils/Exceptions/UnexpectedTokenType.php',
         'PHPCSUtils\\Exceptions\\ValueError' => __DIR__ . '/..' . '/phpcsstandards/phpcsutils/PHPCSUtils/Exceptions/ValueError.php',
         'PHPCSUtils\\Fixers\\SpacesFixer' => __DIR__ . '/..' . '/phpcsstandards/phpcsutils/PHPCSUtils/Fixers/SpacesFixer.php',
-        'PHPCSUtils\\Internal\\AttributeHelper' => __DIR__ . '/..' . '/phpcsstandards/phpcsutils/PHPCSUtils/Internal/AttributeHelper.php',
         'PHPCSUtils\\Internal\\Cache' => __DIR__ . '/..' . '/phpcsstandards/phpcsutils/PHPCSUtils/Internal/Cache.php',
         'PHPCSUtils\\Internal\\IsShortArrayOrList' => __DIR__ . '/..' . '/phpcsstandards/phpcsutils/PHPCSUtils/Internal/IsShortArrayOrList.php',
         'PHPCSUtils\\Internal\\IsShortArrayOrListWithCache' => __DIR__ . '/..' . '/phpcsstandards/phpcsutils/PHPCSUtils/Internal/IsShortArrayOrListWithCache.php',
@@ -71,7 +61,6 @@ class ComposerStaticInitChargewpWpbTimeline
         'PHPCSUtils\\Tokens\\Collections' => __DIR__ . '/..' . '/phpcsstandards/phpcsutils/PHPCSUtils/Tokens/Collections.php',
         'PHPCSUtils\\Tokens\\TokenHelper' => __DIR__ . '/..' . '/phpcsstandards/phpcsutils/PHPCSUtils/Tokens/TokenHelper.php',
         'PHPCSUtils\\Utils\\Arrays' => __DIR__ . '/..' . '/phpcsstandards/phpcsutils/PHPCSUtils/Utils/Arrays.php',
-        'PHPCSUtils\\Utils\\AttributeBlock' => __DIR__ . '/..' . '/phpcsstandards/phpcsutils/PHPCSUtils/Utils/AttributeBlock.php',
         'PHPCSUtils\\Utils\\Conditions' => __DIR__ . '/..' . '/phpcsstandards/phpcsutils/PHPCSUtils/Utils/Conditions.php',
         'PHPCSUtils\\Utils\\Constants' => __DIR__ . '/..' . '/phpcsstandards/phpcsutils/PHPCSUtils/Utils/Constants.php',
         'PHPCSUtils\\Utils\\Context' => __DIR__ . '/..' . '/phpcsstandards/phpcsutils/PHPCSUtils/Utils/Context.php',
@@ -100,9 +89,9 @@ class ComposerStaticInitChargewpWpbTimeline
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitChargewpWpbTimeline::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitChargewpWpbTimeline::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitChargewpWpbTimeline::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit8fc96d1ec75ef3c04739a0768c3afd31::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit8fc96d1ec75ef3c04739a0768c3afd31::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit8fc96d1ec75ef3c04739a0768c3afd31::$classMap;
 
         }, null, ClassLoader::class);
     }
