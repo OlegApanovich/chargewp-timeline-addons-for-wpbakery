@@ -167,8 +167,8 @@ class Plugin {
 			}
 		);
 
-        if ( class_exists( Wpbackery_Custom_Param_Collection::class ) ) {
-            Wpbackery_Custom_Param_Collection::boot();
-        }
+		if ( class_exists( Wpbackery_Custom_Param_Collection::class ) ) {
+			Wpbackery_Custom_Param_Collection::boot();
+		}
 	}
 }
