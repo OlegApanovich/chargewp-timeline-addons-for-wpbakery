@@ -1,4 +1,13 @@
 {
+  "repositories": [
+     {
+       "type": "vcs",
+       "url": "https://github.com/OlegApanovich/wpbakery-custom-param-collection"
+     }
+   ],
+   "require": {
+     "olegapanovich/wpbakery-custom-param-collection": "dev-main"
+   },
   "require-dev": {
     "squizlabs/php_codesniffer": "3.*",
     "wp-coding-standards/wpcs": "*",
@@ -9,7 +18,10 @@
     "php-stubs/wordpress-stubs": "^6.9"
   },
   "autoload": {
-    "psr-4": {"ChargewpWpbTimeline\\": "src/"}
+    "psr-4": {"ChargewpWpbTimeline\\": "src/"},
+    "files": [
+      "vendor/olegapanovich/wpbakery-custom-param-collection/wpbakery-custom-param-collection.php"
+    ]
   },
   "config": {
     "platform": {
