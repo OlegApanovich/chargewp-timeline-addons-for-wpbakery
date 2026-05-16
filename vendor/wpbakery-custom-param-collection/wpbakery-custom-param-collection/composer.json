@@ -1,5 +1,5 @@
 {
-  "name": "olegapanovich/wpbakery-custom-param-collection",
+  "name": "wpbakery-custom-param-collection/wpbakery-custom-param-collection",
   "type": "wordpress-plugin",
   "require-dev": {
     "squizlabs/php_codesniffer": "3.*",

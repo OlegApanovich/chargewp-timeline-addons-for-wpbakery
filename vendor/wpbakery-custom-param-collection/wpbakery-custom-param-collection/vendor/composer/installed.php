@@ -3,7 +3,7 @@
         'name' => 'olegapanovich/wpbakery-custom-param-collection',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'a748579d85ddb6f60250e9d11599b37cde7b5c43',
+        'reference' => '724ccfb281e80525baca6bea262955e6cbcd1919',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'olegapanovich/wpbakery-custom-param-collection' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'a748579d85ddb6f60250e9d11599b37cde7b5c43',
+            'reference' => '724ccfb281e80525baca6bea262955e6cbcd1919',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -6,7 +6,7 @@
      }
    ],
    "require": {
-     "olegapanovich/wpbakery-custom-param-collection": "dev-main"
+     "wpbakery-custom-param-collection/wpbakery-custom-param-collection": "dev-main"
    },
   "require-dev": {
     "squizlabs/php_codesniffer": "3.*",
@@ -20,7 +20,7 @@
   "autoload": {
     "psr-4": {"ChargewpWpbTimeline\\": "src/"},
     "files": [
-      "vendor/olegapanovich/wpbakery-custom-param-collection/wpbakery-custom-param-collection.php"
+      "vendor/wpbakery-custom-param-collection/wpbakery-custom-param-collection/wpbakery-custom-param-collection.php"
     ]
   },
   "config": {
