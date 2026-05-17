@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitChargewpWpbTimeline
+class ComposerStaticInit8595441cf4178f475a3f413c8da39a2c
 {
     public static $files = array (
         '9b38cf48e83f5d8f60375221cd213eee' => __DIR__ . '/..' . '/phpstan/phpstan/bootstrap.php',
@@ -19,24 +19,16 @@ class ComposerStaticInitChargewpWpbTimeline
         array (
             'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 55,
         ),
-        'C' => 
-        array (
-            'ChargewpWpbTimeline\\' => 20,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'WpbCustomParamCollection\\' => 
         array (
-            0 => __DIR__ . '/..' . '/wpbakery-custom-param-collection/wpbakery-custom-param-collection/src',
+            0 => __DIR__ . '/../..' . '/src',
         ),
         'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 
         array (
             0 => __DIR__ . '/..' . '/dealerdirect/phpcodesniffer-composer-installer/src',
-        ),
-        'ChargewpWpbTimeline\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
@@ -99,9 +91,9 @@ class ComposerStaticInitChargewpWpbTimeline
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitChargewpWpbTimeline::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitChargewpWpbTimeline::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitChargewpWpbTimeline::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit8595441cf4178f475a3f413c8da39a2c::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit8595441cf4178f475a3f413c8da39a2c::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit8595441cf4178f475a3f413c8da39a2c::$classMap;
 
         }, null, ClassLoader::class);
     }

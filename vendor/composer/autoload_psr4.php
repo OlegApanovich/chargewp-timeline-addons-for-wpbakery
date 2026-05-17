@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'WpbCustomParamCollection\\' => array($vendorDir . '/olegapanovich/wpbakery-custom-param-collection/src'),
+    'WpbCustomParamCollection\\' => array($vendorDir . '/wpbakery-custom-param-collection/wpbakery-custom-param-collection/src'),
+    'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => array($vendorDir . '/dealerdirect/phpcodesniffer-composer-installer/src'),
     'ChargewpWpbTimeline\\' => array($baseDir . '/src'),
 );

@@ -184,6 +184,7 @@ class Wpbackery_Custom_Param_Collection {
 if ( ! defined( 'WPBCUSTOMPARAMCCOLECTION_LOADED' ) ) {
 	define( 'WPBCUSTOMPARAMCCOLECTION_LOADED', true );
 	if ( function_exists( 'add_action' ) ) {
+		// @phpstan-ignore-next-line
 		if ( function_exists( 'add_action' ) ) {
 				add_action(
 					'plugins_loaded',

@@ -47,11 +47,11 @@ Add to your composer.json
      }
    ],
    "require": {
-     "olegapanovich/wpbakery-custom-param-collection": "dev-main"
+     "wpbakery-custom-param-collection/wpbakery-custom-param-collection": "dev-main"
    },
   "autoload": {
     "files": [
-      "vendor/olegapanovich/wpbakery-custom-param-collection/wpbakery-custom-param-collection.php"
+      "vendor/wpbakery-custom-param-collection/wpbakery-custom-param-collection/wpbakery-custom-param-collection.php"
     ]
   }
 }
