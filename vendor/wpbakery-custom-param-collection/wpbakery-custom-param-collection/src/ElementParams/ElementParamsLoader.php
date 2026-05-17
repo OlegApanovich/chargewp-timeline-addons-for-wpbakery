@@ -85,7 +85,7 @@ class ElementParamsLoader {
 	public function load_single_param( string $param_slug, array $param_defaults, string $prefix_slug ): bool {
 		$param_instance = $this->get_param_instance( $param_slug, $param_defaults );
 
-		$param_script = $this->get_param_script( $param_slug );
+		$param_script = $this->get_param_script( $param_slug, $prefix_slug );
 		// as wpbakery does not have a system to include param styles we output styles together with param output.
 		// @see ElementParamsAbstract::param_output().
 
@@ -96,12 +96,13 @@ class ElementParamsLoader {
 	 * Get param script.
 	 *
 	 * @param string $param_slug
+	 * @param string $prefix_slug
 	 * @return string|null
 	 */
-	public function get_param_script( $param_slug ) {
+	public function get_param_script( $param_slug, $prefix_slug ) {
 		$path             = '/js/params/' . $param_slug . '.js';
 		$param_script     = WPBCUSTOMPARAMCCOLECTION_ASSETS_DIR . $path;
-		$param_script_url = WPBCUSTOMPARAMCCOLECTION_ASSETS_URI . $path;
+		$param_script_url = WPBCUSTOMPARAMCCOLECTION_ASSETS_URI . $path . '?param_name=' . $prefix_slug;
 
 		return file_exists( $param_script ) ? $param_script_url : null;
 	}

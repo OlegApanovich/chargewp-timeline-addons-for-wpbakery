@@ -3,7 +3,7 @@
         'name' => '__root__',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '7d997b2a27a22d1961113a5d8fb88967424d88bb',
+        'reference' => '99277609a36dbdb849e2e73ca3ab3142bb7c677b',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         '__root__' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '7d997b2a27a22d1961113a5d8fb88967424d88bb',
+            'reference' => '99277609a36dbdb849e2e73ca3ab3142bb7c677b',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -103,7 +103,7 @@
         'wpbakery-custom-param-collection/wpbakery-custom-param-collection' => array(
             'pretty_version' => '1.3.3',
             'version' => '1.3.3.0',
-            'reference' => '5193425ee0372e702f0381bd5c99e14d776c70bc',
+            'reference' => 'bf692d690217a0ae04e113a881004ce4502d1ca6',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../wpbakery-custom-param-collection/wpbakery-custom-param-collection',
             'aliases' => array(),
