@@ -1,13 +1,7 @@
 {
-  "repositories": [
-     {
-       "type": "vcs",
-       "url": "https://github.com/OlegApanovich/wpbakery-custom-param-collection"
-     }
-   ],
-   "require": {
-     "wpbakery-custom-param-collection/wpbakery-custom-param-collection": "dev-main"
-   },
+  "require": {
+    "wpbakery-custom-param-collection/wpbakery-custom-param-collection": "*"
+  },
   "require-dev": {
     "squizlabs/php_codesniffer": "3.*",
     "wp-coding-standards/wpcs": "*",
