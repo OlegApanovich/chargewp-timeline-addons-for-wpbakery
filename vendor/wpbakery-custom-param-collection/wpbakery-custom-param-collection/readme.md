@@ -35,27 +35,11 @@ add_action( 'admin_init', function() {
 Please note that if you include it in your theme/plugin, then disable wpbakery-custom-param-collection plugin, otherwise you will get a fatal error.
 
 ### 3. As a composer dependency
-Clone this repo to your theme/plugin folder.
 
-Add to your composer.json
+Execute this command.
 
 ```bash
-  "repositories": [
-     {
-       "type": "vcs",
-       "url": "https://github.com/OlegApanovich/wpbakery-custom-param-collection"
-     }
-   ],
-   "require": {
-     "wpbakery-custom-param-collection/wpbakery-custom-param-collection": "dev-main"
-   },
-  "autoload": {
-    "files": [
-      "vendor/wpbakery-custom-param-collection/wpbakery-custom-param-collection/wpbakery-custom-param-collection.php"
-    ]
-  }
-}
-
+  composer require wpbakery-custom-param-collection/wpbakery-custom-param-collection:"*"
 ```
 
 Then, if you include to the theme, add this code to your functions.php file, or if you use a plugin, add it to the main plugin file.

@@ -642,12 +642,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/OlegApanovich/wpbakery-custom-param-collection.git",
-                "reference": "5193425ee0372e702f0381bd5c99e14d776c70bc"
+                "reference": "bf692d690217a0ae04e113a881004ce4502d1ca6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OlegApanovich/wpbakery-custom-param-collection/zipball/5193425ee0372e702f0381bd5c99e14d776c70bc",
-                "reference": "5193425ee0372e702f0381bd5c99e14d776c70bc",
+                "url": "https://api.github.com/repos/OlegApanovich/wpbakery-custom-param-collection/zipball/bf692d690217a0ae04e113a881004ce4502d1ca6",
+                "reference": "bf692d690217a0ae04e113a881004ce4502d1ca6",
                 "shasum": ""
             },
             "require-dev": {
@@ -659,7 +659,7 @@
                 "squizlabs/php_codesniffer": "3.*",
                 "wp-coding-standards/wpcs": "*"
             },
-            "time": "2026-05-16T09:53:29+00:00",
+            "time": "2026-05-17T09:53:43+00:00",
             "type": "wordpress-plugin",
             "installation-source": "dist",
             "autoload": {

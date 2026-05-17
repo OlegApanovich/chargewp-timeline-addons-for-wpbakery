@@ -8,6 +8,7 @@ class ComposerStaticInitChargewpWpbTimeline
 {
     public static $files = array (
         '9b38cf48e83f5d8f60375221cd213eee' => __DIR__ . '/..' . '/phpstan/phpstan/bootstrap.php',
+        'd003794b00569ce8983bbf37a8bd3173' => __DIR__ . '/..' . '/wpbakery-custom-param-collection/wpbakery-custom-param-collection/wpbakery-custom-param-collection.php',
     );
 
     public static $prefixLengthsPsr4 = array (
