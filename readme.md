@@ -8,36 +8,36 @@ The WPBakery Page Builder plugin must be installed and activated to use this plu
 
 ### 1. ZigZag Timeline Addon.
 
-![ZigZag Timeline Addon](assets/images/github-reame/screen-2.png)
+![ZigZag Timeline Addon](assets/images/github-readme/screen-2.png)
 
 
 ### 2. Vertical Segment Timeline Addon.
 
-![Vertical Segment Timeline Addon](assets/images/github-reame/screen-4.png)
+![Vertical Segment Timeline Addon](assets/images/github-readme/screen-4.png)
 
 ### 3. Tailwind Vertical Classic Timeline Addon.
 
-![Tailwind Vertical Classic Timeline Addon](assets/images/github-reame/screen-6.png)
+![Tailwind Vertical Classic Timeline Addon](assets/images/github-readme/screen-6.png)
 
 ### 4. Left Side Stack Timeline.
 
-![Vertical Segment Timeline Addon](assets/images/github-reame/screen-5.png)
+![Vertical Segment Timeline Addon](assets/images/github-readme/screen-5.png)
 
 ### 5. Left Side Vertical Slider Timeline.
 
-![Vertical Segment Timeline Addon](assets/images/github-reame/screen-7.png)
+![Vertical Segment Timeline Addon](assets/images/github-readme/screen-7.png)
 
 ### 6. Wheel Timeline.
 
-![Wheel Timeline Addon](assets/images/github-reame/screen-8.png)
+![Wheel Timeline Addon](assets/images/github-readme/screen-8.png)
 
 ### 7. Bottom Horizontal Timeline.
 
-![Bottom Horizontal Timeline](assets/images/github-reame/screen-9.png)
+![Bottom Horizontal Timeline](assets/images/github-readme/screen-9.png)
 
 ### 8. Classic Horizontal Timeline.
 
-![Classic Horizontal Timeline](assets/images/github-reame/screen-10.png)
+![Classic Horizontal Timeline](assets/images/github-readme/screen-10.png)
 
 
 ## Installation
@@ -49,7 +49,7 @@ Also, you can directly install the plugin from the GitHub repository.
 
 That's it! If you go to any WPBakery Page Builder editor, you'll find new elements under the 'ChargeWp' tab in the 'Add Element' WPBakery popup.
 
-![](assets/images/github-reame/screen-1.png)
+![](assets/images/github-readme/screen-1.png)
 
 ## Requirements
 1. WPBakery Page Builder version 5.0+
