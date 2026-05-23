@@ -1,0 +1,82 @@
+name: Release Build
+
+on:
+  push:
+    branches:
+      - develop
+      - master
+      - main
+      - release/**
+      - hotfix/**
+  pull_request:
+    branches:
+      - develop
+      - main
+      - release/**
+      - hotfix/**
+
+jobs:
+  codestyle-php:
+    name: PHP Code Style
+    runs-on: ubuntu-latest
+    container:
+      image: mrdollar4444/plus-wp-builder-wpbakery-03052025:latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Composer dependencies
+        run: php ci/composer.phar install
+
+      - name: Check PHP Code Style
+        run: php vendor/bin/phpcs --standard=ci/phpcs.xml .
+  statanalys-php:
+    name: PHP Stan Stat Analys
+    runs-on: ubuntu-latest
+    container:
+      image: mrdollar4444/plus-wp-builder-wpbakery-03052025:latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Start MySql
+        run: service mysql start
+
+      - name: Install Composer dependencies
+        run: php ci/composer.phar install
+
+      - name: Copy plugin into WordPress installation
+        run: |
+          cp -R "$GITHUB_WORKSPACE" /var/www/html/wp-content/plugins/wpbakery-custom-param-collection
+
+      - name: activate plugin inside wp enviroment
+        run:  cd /var/www/html; wp plugin activate wpbakery-custom-param-collection --allow-root; wp plugin list --allow-root
+
+      - name: PHP stan check
+        run:  cd /var/www/html/wp-content/plugins/wpbakery-custom-param-collection/ci; ../vendor/bin/phpstan analyse --memory-limit=512M
+
+  compatibility-php:
+    name: PHP Code Compatibility
+    runs-on: ubuntu-latest
+    container:
+      image: mrdollar4444/plus-wp-builder-wpbakery-03052025:latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Composer dependencies
+        run: php ci/composer.phar install
+
+      - name: Check PHP Compatibility
+        run: php vendor/bin/phpcs --standard=PHPCompatibility --extensions=php --runtime-set testVersion 7.0-8.4 --ignore=vendor/* .
+  php-clones:
+    name: PHP Clone Detection
+    runs-on: ubuntu-latest
+    container:
+      image: mrdollar4444/plus-wp-builder-wpbakery-03052025:latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: PHP Clone Detection
+        run: php ci/phpcpd.phar --fuzzy .

@@ -1,24 +1,15 @@
 <?php return array(
     'root' => array(
-        'name' => '__root__',
+        'name' => 'wpbakery-custom-param-collection/wpbakery-custom-param-collection',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '99277609a36dbdb849e2e73ca3ab3142bb7c677b',
-        'type' => 'library',
+        'reference' => 'e3bb8d1b1d8ddf1dcf9a11fe84ccf7c2f124838a',
+        'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        '__root__' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '99277609a36dbdb849e2e73ca3ab3142bb7c677b',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'dealerdirect/phpcodesniffer-composer-installer' => array(
             'pretty_version' => 'v0.7.2',
             'version' => '0.7.2.0',
@@ -101,11 +92,11 @@
             'dev_requirement' => true,
         ),
         'wpbakery-custom-param-collection/wpbakery-custom-param-collection' => array(
-            'pretty_version' => '1.3.3',
-            'version' => '1.3.3.0',
-            'reference' => 'bf692d690217a0ae04e113a881004ce4502d1ca6',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'e3bb8d1b1d8ddf1dcf9a11fe84ccf7c2f124838a',
             'type' => 'wordpress-plugin',
-            'install_path' => __DIR__ . '/../wpbakery-custom-param-collection/wpbakery-custom-param-collection',
+            'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
