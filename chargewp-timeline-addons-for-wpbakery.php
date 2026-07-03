@@ -7,7 +7,7 @@
  * Author URI:        https://github.com/OlegApanovich
  * Text Domain:       chargewp-timeline-addons-for-wpbakery
  * Domain Path:       /languages
- * Version:           dev
+ * Version:           1.6.1
  * License:           GPL-3.0+
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  *
