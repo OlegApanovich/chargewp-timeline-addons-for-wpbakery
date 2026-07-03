@@ -15,7 +15,6 @@ $image_integration_params = $single_image_integration->add_config( [ 'caption', 
 $image_integration_params = $single_image_integration->add_config_params(
 	$image_integration_params,
 	[
-		'wcp_group'       => true,
 		'wcp_group_color' => '#B8860B',
 		'admin_label'     => false,
 	]
@@ -42,7 +41,6 @@ $param_group_params = array_merge(
 	[
 		[
 			'type'                 => 'textfield',
-			'wcp_group'            => true,
 			'wcp_group_color'      => '#006400',
 			'wcp_group_margin_top' => '20',
 			'heading'              => esc_html__( 'Date', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -54,7 +52,6 @@ $param_group_params = array_merge(
 		],
 		[
 			'type'            => 'colorpicker',
-			'wcp_group'       => true,
 			'wcp_group_color' => '#006400',
 			'value'           => '#ffcc00',
 			'heading'         => esc_html__( 'Date Active Color', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -63,7 +60,6 @@ $param_group_params = array_merge(
 		],
 		[
 			'type'            => 'colorpicker',
-			'wcp_group'       => true,
 			'wcp_group_color' => '#006400',
 			'value'           => '#cccccc',
 			'heading'         => esc_html__( 'Date Regular Color', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -72,7 +68,6 @@ $param_group_params = array_merge(
 		],
 		[
 			'type'                 => 'colorpicker',
-			'wcp_group'            => true,
 			'wcp_group_margin_top' => 20,
 			'value'                => '#cccccc',
 			'heading'              => esc_html__( 'Marker Color', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -81,7 +76,6 @@ $param_group_params = array_merge(
 		],
 		[
 			'type'        => 'colorpicker',
-			'wcp_group'   => true,
 			'value'       => '#cccccc',
 			'heading'     => esc_html__( 'Marker Border Color', 'chargewp-timeline-addons-for-wpbakery' ),
 			'param_name'  => 'marker_border_color',
@@ -89,7 +83,6 @@ $param_group_params = array_merge(
 		],
 		[
 			'type'        => 'chargewp_number_slider',
-			'wcp_group'   => true,
 			'value'       => '12',
 			'min'         => '0',
 			'max'         => '20',
@@ -150,7 +143,6 @@ $params = [
 	],
 	[
 		'type'        => 'colorpicker',
-		'wcp_group'   => true,
 		'value'       => '#DD993340',
 		'heading'     => esc_html__( 'Color', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'  => 'baseline_color',
@@ -158,7 +150,6 @@ $params = [
 	],
 	[
 		'type'        => 'chargewp_number_slider',
-		'wcp_group'   => true,
 		'value'       => '2',
 		'min'         => '0.5',
 		'max'         => '10',
@@ -176,7 +167,6 @@ $params = [
 	],
 	[
 		'type'            => 'chargewp_switcher',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#006400',
 		'param_name'      => 'is_arrow_keys',
 		'heading'         => esc_html__( 'Navigation Arrows', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -192,7 +182,6 @@ $params = [
 	],
 	[
 		'type'            => 'colorpicker',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#006400',
 		'value'           => '#cccccc',
 		'heading'         => esc_html__( 'Prev Arrow Color', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -205,7 +194,6 @@ $params = [
 	],
 	[
 		'type'            => 'colorpicker',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#006400',
 		'value'           => '#cccccc',
 		'heading'         => esc_html__( 'Next Arrow Color', 'chargewp-timeline-addons-for-wpbakery' ),

@@ -61,7 +61,6 @@ $items_params = [
 	],
 	[
 		'type'        => 'dropdown',
-		'wcp_group'   => true,
 		'value'       => [
 			esc_html__( 'Circle', 'chargewp-timeline-addons-for-wpbakery' ) => 'circle',
 			esc_html__( 'Square', 'chargewp-timeline-addons-for-wpbakery' ) => 'square',
@@ -72,7 +71,6 @@ $items_params = [
 	],
 	[
 		'type'        => 'chargewp_number_slider',
-		'wcp_group'   => true,
 		'param_name'  => 'size',
 		'heading'     => esc_html__( 'Size', 'chargewp-timeline-addons-for-wpbakery' ),
 		'description' => esc_html__( 'Set marker size in pixels.', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -84,7 +82,6 @@ $items_params = [
 	],
 	[
 		'type'        => 'colorpicker',
-		'wcp_group'   => true,
 		'heading'     => esc_html__( 'Color', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'  => 'marker_color',
 		'description' => esc_html__( 'Select custom color for item background.', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -99,7 +96,6 @@ $items_params = [
 	],
 	[
 		'type'            => 'chargewp_wysiwyg',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#B8860B',
 		'param_name'      => 'text',
 		'value'           => '',
@@ -110,7 +106,6 @@ $items_params = [
 	],
 	[
 		'type'            => 'chargewp_number_slider',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#B8860B',
 		'param_name'      => 'vertical_align',
 		'heading'         => esc_html__( 'Vertical Alignment', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -121,7 +116,6 @@ $items_params = [
 	],
 	[
 		'type'            => 'chargewp_number_slider',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#B8860B',
 		'param_name'      => 'content_width',
 		'heading'         => esc_html__( 'Width', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -133,7 +127,6 @@ $items_params = [
 	],
 	[
 		'type'            => 'colorpicker',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#B8860B',
 		'heading'         => esc_html__( 'Background Color', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'      => 'content_background_color',
@@ -142,7 +135,6 @@ $items_params = [
 	],
 	[
 		'type'            => 'chargewp_switcher',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#B8860B',
 		'param_name'      => 'is_content_border',
 		'heading'         => esc_html__( 'Enable Border', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -158,7 +150,6 @@ $items_params = [
 	],
 	[
 		'type'            => 'chargewp_number_slider',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#B8860B',
 		'param_name'      => 'content_border_radius',
 		'heading'         => esc_html__( 'Border Radius', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -174,7 +165,6 @@ $items_params = [
 	],
 	[
 		'type'            => 'dropdown',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#B8860B',
 		'value'           => [
 			esc_html__( 'Shadow', 'chargewp-timeline-addons-for-wpbakery' ) => 'shadow',
@@ -192,7 +182,6 @@ $items_params = [
 	],
 	[
 		'type'            => 'colorpicker',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#B8860B',
 		'heading'         => esc_html__( 'Border Color', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'      => 'content_border_color',
@@ -205,7 +194,6 @@ $items_params = [
 	],
 	[
 		'type'            => 'chargewp_number_slider',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#B8860B',
 		'param_name'      => 'content_border_size',
 		'heading'         => esc_html__( 'Border Size', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -222,7 +210,6 @@ $items_params = [
 	],
 	[
 		'type'            => 'chargewp_switcher',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#B8860B',
 		'param_name'      => 'is_pointer',
 		'heading'         => esc_html__( 'Enable Pointer', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -238,7 +225,6 @@ $items_params = [
 	],
 	[
 		'type'            => 'chargewp_number_slider',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#B8860B',
 		'param_name'      => 'content_pointer_size',
 		'heading'         => esc_html__( 'Pointer Size', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -255,7 +241,6 @@ $items_params = [
 	],
 	[
 		'type'            => 'colorpicker',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#B8860B',
 		'heading'         => esc_html__( 'Pointer Color', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'      => 'pointer_color',

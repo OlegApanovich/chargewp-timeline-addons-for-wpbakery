@@ -346,7 +346,7 @@ function your_name_integrate() {
 ```
 ## Bonus
 Additionally to custom parameter collection, we provide functionality to group parameters together. In the edit element popup, this will be visible as a border on the right side of the parameter.
-To enable this, you need to provide an additional parameter attribute called 'wcp_group' with the value true.
+To enable this, you need to provide an additional parameter attribute called 'wcp_group_color' with the value of color hash.
 
 __Screnshot:__
 
@@ -366,7 +366,6 @@ function integrate_custom_param() {
                 'type'        => 'custom_number_slider',
                 'param_name'  => 'custom_number_slider_example',
                 'heading' => 'Here some title',
-				'wcp_group' => true,
                 'wcp_group_color' => '#006400',
                 'title' => 'px',
                 'min' => 11,
@@ -376,7 +375,6 @@ function integrate_custom_param() {
             [
                 'type'        => 'custom_number_slider',
                 'param_name'  => 'custom_number_slider_example_2',
-				'wcp_group' => true,
                 'wcp_group_color' => '#006400',
                 'heading' => 'Here some title',
                 'title' => 'px',
@@ -389,7 +387,7 @@ function integrate_custom_param() {
                 'type'        => 'custom_number_slider',
                 'param_name'  => 'custom_number_slider_example3',
                 'heading' => 'Here some title',
-                'wcp_group' => true,
+                'wcp_group_color' => '#cccccc',
                 'wcp_group_margin_top' => '20',
                 'title' => 'px',
                 'min' => 11,
@@ -401,6 +399,7 @@ function integrate_custom_param() {
                 'param_name'  => 'custom_number_slider_example_4',
                 'wcp_group' => true,
                 'heading' => 'Here some title',
+                'wcp_group_color' => '#cccccc',
                 'title' => 'px',
                 'min' => 11,
                 'max' => 100,

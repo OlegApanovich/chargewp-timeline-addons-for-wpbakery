@@ -45,7 +45,6 @@ $params = array_merge(
 		],
 		[
 			'type'        => 'colorpicker',
-			'wcp_group'   => true,
 			'value'       => '#004ffc',
 			'heading'     => esc_html__( 'Marker circle color', 'chargewp-timeline-addons-for-wpbakery' ),
 			'param_name'  => 'marker_color',
@@ -53,7 +52,6 @@ $params = array_merge(
 		],
 		[
 			'type'        => 'colorpicker',
-			'wcp_group'   => true,
 			'value'       => '#2c2f2e',
 			'heading'     => esc_html__( 'Marker inside circle color', 'chargewp-timeline-addons-for-wpbakery' ),
 			'param_name'  => 'marker_inner_color',
@@ -71,7 +69,6 @@ $params = array_merge(
 		],
 		[
 			'type'             => 'textfield',
-			'wcp_group'        => true,
 			'wcp_group_color'  => '#B8860B',
 			'value'            => '65Million B.C.',
 			'heading'          => esc_html__( 'Date', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -82,7 +79,6 @@ $params = array_merge(
 		],
 		[
 			'type'            => 'colorpicker',
-			'wcp_group'       => true,
 			'wcp_group_color' => '#B8860B',
 			'value'           => '#E6E6E6',
 			'heading'         => esc_html__( 'Date color.', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -91,7 +87,6 @@ $params = array_merge(
 		],
 		[
 			'type'             => 'textfield',
-			'wcp_group'        => true,
 			'wcp_group_color'  => '#B8860B',
 			'value'            => '16px',
 			'heading'          => esc_html__( 'Date font size.', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -109,7 +104,6 @@ $params = array_merge(
 		],
 		[
 			'type'            => 'colorpicker',
-			'wcp_group'       => true,
 			'wcp_group_color' => '#006400',
 			'value'           => '#080808',
 			'heading'         => esc_html__( 'Delimiter Color', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -118,7 +112,6 @@ $params = array_merge(
 		],
 		[
 			'type'            => 'dropdown',
-			'wcp_group'       => true,
 			'wcp_group_color' => '#006400',
 			'heading'         => esc_html__( 'Delimiter Type', 'chargewp-timeline-addons-for-wpbakery' ),
 			'value'           => [
@@ -134,7 +127,6 @@ $params = array_merge(
 		],
 		[
 			'type'             => 'textfield',
-			'wcp_group'        => true,
 			'wcp_group_color'  => '#006400',
 			'value'            => '1px',
 			'heading'          => esc_html__( 'Delimiter Size', 'chargewp-timeline-addons-for-wpbakery' ),
