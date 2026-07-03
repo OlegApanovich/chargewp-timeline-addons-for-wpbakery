@@ -93,7 +93,6 @@ $items_params = [
 	],
 	[
 		'type'            => 'textfield',
-		'wcp_group'       => true,
 		'wcp_group_color' => 'black',
 		'heading'         => esc_html__( 'Number', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'      => 'number',
@@ -102,7 +101,6 @@ $items_params = [
 	],
 	[
 		'type'            => 'textfield',
-		'wcp_group'       => true,
 		'wcp_group_color' => 'black',
 		'heading'         => esc_html__( 'Title', 'chargewp-timeline-addons-for-wpbakery' ),
 		'value'           => '',
@@ -111,7 +109,6 @@ $items_params = [
 	],
 	[
 		'type'            => 'chargewp_wysiwyg',
-		'wcp_group'       => true,
 		'wcp_group_color' => 'black',
 		'heading'         => esc_html__( 'Info', 'chargewp-timeline-addons-for-wpbakery' ),
 		'description'     => esc_html__( 'Enter info that will be displayed under the title.', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -131,7 +128,6 @@ $items_params = [
 	],
 	[
 		'type'        => 'colorpicker',
-		'wcp_group'   => true,
 		'heading'     => esc_html__( 'Border Color', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'  => 'circle_color',
 		'description' => esc_html__( 'Select custom color for item border.', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -139,7 +135,6 @@ $items_params = [
 	],
 	[
 		'type'        => 'colorpicker',
-		'wcp_group'   => true,
 		'heading'     => esc_html__( 'Background Color', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'  => 'circle_background_color',
 		'description' => esc_html__( 'Select custom color for item background.', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -147,7 +142,6 @@ $items_params = [
 	],
 	[
 		'type'        => 'colorpicker',
-		'wcp_group'   => true,
 		'heading'     => esc_html__( 'Number Color', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'  => 'number_color',
 		'description' => esc_html__( 'Select custom color for number inside circle.', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -155,7 +149,6 @@ $items_params = [
 	],
 	[
 		'type'        => 'colorpicker',
-		'wcp_group'   => true,
 		'heading'     => esc_html__( 'Title Color', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'  => 'title_color',
 		'description' => esc_html__( 'Select custom color for item circle.', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -163,7 +156,6 @@ $items_params = [
 	],
 	[
 		'type'        => 'colorpicker',
-		'wcp_group'   => true,
 		'heading'     => esc_html__( 'Info', 'chargewp-timeline-addons-for-wpbakery' ),
 		'param_name'  => 'info_color',
 		'description' => esc_html__( 'Select custom color for item info.', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -178,7 +170,6 @@ $items_params = [
 	],
 	[
 		'type'            => 'chargewp_number',
-		'wcp_group'       => true,
 		'wcp_group_color' => 'green',
 		'min'             => '1',
 		'max'             => '50',
@@ -191,7 +182,6 @@ $items_params = [
 	],
 	[
 		'type'            => 'chargewp_number',
-		'wcp_group'       => true,
 		'wcp_group_color' => 'green',
 		'min'             => '1',
 		'max'             => '50',
@@ -204,7 +194,6 @@ $items_params = [
 	],
 	[
 		'type'            => 'chargewp_number',
-		'wcp_group'       => true,
 		'wcp_group_color' => 'green',
 		'min'             => '1',
 		'max'             => '50',
@@ -224,7 +213,6 @@ $items_params = [
 	],
 	[
 		'type'            => 'chargewp_number_slider',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#7339dc',
 		'value'           => '600',
 		'min'             => '0',
@@ -236,7 +224,6 @@ $items_params = [
 	],
 	[
 		'type'            => 'chargewp_number_slider',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#7339dc',
 		'value'           => '600',
 		'min'             => '0',

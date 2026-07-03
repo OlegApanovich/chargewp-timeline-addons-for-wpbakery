@@ -63,7 +63,6 @@ $params = [
 	],
 	[
 		'type'            => 'chargewp_switcher',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#7339dc',
 		'param_name'      => 'is_connection_lines',
 		'heading'         => esc_html__( 'Enable Connection Lines', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -79,7 +78,6 @@ $params = [
 	],
 	[
 		'type'            => 'chargewp_number_slider',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#7339dc',
 		'value'           => '2',
 		'min'             => '0',
@@ -96,7 +94,6 @@ $params = [
 	],
 	[
 		'type'            => 'chargewp_number_slider',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#7339dc',
 		'value'           => '0',
 		'min'             => '0',
@@ -113,7 +110,6 @@ $params = [
 	],
 	[
 		'type'            => 'colorpicker',
-		'wcp_group'       => true,
 		'wcp_group_color' => '#7339dc',
 		'value'           => '#000666',
 		'heading'         => esc_html__( 'Connection Line Color', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -134,7 +130,6 @@ $params = [
 	[
 		'type'        => 'chargewp_switcher',
 		'param_name'  => 'is_wheel_spinning',
-		'wcp_group'   => true,
 		'heading'     => esc_html__( 'Enable Wheel Spinning', 'chargewp-timeline-addons-for-wpbakery' ),
 		'description' => esc_html__( 'Switch to yes if you need a wheel spinning effect when clicking timeline items.', 'chargewp-timeline-addons-for-wpbakery' ),
 		'options'     => [
@@ -148,7 +143,6 @@ $params = [
 	],
 	[
 		'type'        => 'chargewp_number_slider',
-		'wcp_group'   => true,
 		'value'       => '0',
 		'min'         => '0',
 		'max'         => '360',
@@ -164,7 +158,6 @@ $params = [
 	],
 	[
 		'type'        => 'chargewp_number_slider',
-		'wcp_group'   => true,
 		'value'       => '200',
 		'min'         => '1',
 		'max'         => '10000',
@@ -220,7 +213,6 @@ $params = [
 			],
 			[
 				'type'            => 'textfield',
-				'wcp_group'       => true,
 				'wcp_group_color' => 'black',
 				'heading'         => esc_html__( 'Date', 'chargewp-timeline-addons-for-wpbakery' ),
 				'param_name'      => 'date',
@@ -230,7 +222,6 @@ $params = [
 			],
 			[
 				'type'            => 'textfield',
-				'wcp_group'       => true,
 				'wcp_group_color' => 'black',
 				'heading'         => esc_html__( 'Info', 'chargewp-timeline-addons-for-wpbakery' ),
 				'param_name'      => 'info',
@@ -246,7 +237,6 @@ $params = [
 			],
 			[
 				'type'        => 'colorpicker',
-				'wcp_group'   => true,
 				'heading'     => esc_html__( 'Circle Color', 'chargewp-timeline-addons-for-wpbakery' ),
 				'param_name'  => 'circle_color',
 				'description' => esc_html__( 'Select custom color for item circle.', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -254,7 +244,6 @@ $params = [
 			],
 			[
 				'type'        => 'colorpicker',
-				'wcp_group'   => true,
 				'heading'     => esc_html__( 'Date Color', 'chargewp-timeline-addons-for-wpbakery' ),
 				'param_name'  => 'date_color',
 				'description' => esc_html__( 'Select custom color for item date.', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -262,7 +251,6 @@ $params = [
 			],
 			[
 				'type'        => 'colorpicker',
-				'wcp_group'   => true,
 				'heading'     => esc_html__( 'Circle Hover Color', 'chargewp-timeline-addons-for-wpbakery' ),
 				'param_name'  => 'circle_hover_color',
 				'description' => esc_html__( 'Select custom color for item circles on hover.', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -270,7 +258,6 @@ $params = [
 			],
 			[
 				'type'        => 'colorpicker',
-				'wcp_group'   => true,
 				'heading'     => esc_html__( 'Date Hover Color', 'chargewp-timeline-addons-for-wpbakery' ),
 				'param_name'  => 'date_hover_color',
 				'description' => esc_html__( 'Select custom color for item date on hover.', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -285,7 +272,6 @@ $params = [
 			],
 			[
 				'type'            => 'chargewp_number',
-				'wcp_group'       => true,
 				'wcp_group_color' => 'green',
 				'min'             => '1',
 				'max'             => '50',
@@ -297,7 +283,6 @@ $params = [
 			],
 			[
 				'type'            => 'chargewp_number',
-				'wcp_group'       => true,
 				'wcp_group_color' => 'green',
 				'min'             => '1',
 				'max'             => '100',
@@ -309,7 +294,6 @@ $params = [
 			],
 			[
 				'type'            => 'chargewp_number',
-				'wcp_group'       => true,
 				'wcp_group_color' => 'green',
 				'min'             => '1',
 				'max'             => '50',
@@ -328,7 +312,6 @@ $params = [
 			],
 			[
 				'type'            => 'chargewp_number_slider',
-				'wcp_group'       => true,
 				'wcp_group_color' => '#7339dc',
 				'value'           => '400',
 				'min'             => '0',
@@ -340,7 +323,6 @@ $params = [
 			],
 			[
 				'type'            => 'chargewp_number_slider',
-				'wcp_group'       => true,
 				'wcp_group_color' => '#7339dc',
 				'value'           => '800',
 				'min'             => '0',
@@ -352,7 +334,6 @@ $params = [
 			],
 			[
 				'type'            => 'chargewp_number_slider',
-				'wcp_group'       => true,
 				'wcp_group_color' => '#7339dc',
 				'value'           => '400',
 				'min'             => '0',

@@ -73,7 +73,6 @@ $params = array_merge(
 		],
 		[
 			'type'            => 'colorpicker',
-			'wcp_group'       => true,
 			'wcp_group_color' => '#B8860B',
 			'value'           => '#ffffff',
 			'heading'         => esc_html__( 'Background color', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -87,7 +86,6 @@ $params = array_merge(
 		],
 		[
 			'type'            => 'colorpicker',
-			'wcp_group'       => true,
 			'wcp_group_color' => '#B8860B',
 			'heading'         => esc_html__( 'Background hover color', 'chargewp-timeline-addons-for-wpbakery' ),
 			'param_name'      => 'marker_background_hover_color',
@@ -108,7 +106,6 @@ $params = array_merge(
 		],
 		[
 			'type'        => 'chargewp_number_slider',
-			'wcp_group'   => true,
 			'value'       => '1',
 			'min'         => '0',
 			'max'         => '10',
@@ -125,7 +122,6 @@ $params = array_merge(
 		],
 		[
 			'type'        => 'colorpicker',
-			'wcp_group'   => true,
 			'value'       => '#cccccc',
 			'heading'     => esc_html__( 'Border color', 'chargewp-timeline-addons-for-wpbakery' ),
 			'param_name'  => 'marker_border_color',
@@ -138,7 +134,6 @@ $params = array_merge(
 		],
 		[
 			'type'        => 'colorpicker',
-			'wcp_group'   => true,
 			'heading'     => esc_html__( 'Border hover color', 'chargewp-timeline-addons-for-wpbakery' ),
 			'param_name'  => 'marker_border_hover_color',
 			'description' => esc_html__( 'Select custom color for border hover.', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -150,7 +145,6 @@ $params = array_merge(
 		],
 		[
 			'type'        => 'dropdown',
-			'wcp_group'   => true,
 			'value'       => chargewpwpbtimeline_config( 'element-params' )['tailwind']['border_style'],
 			'heading'     => esc_html__( 'Border Style', 'chargewp-timeline-addons-for-wpbakery' ),
 			'param_name'  => 'marker_border_style',
@@ -171,7 +165,6 @@ $params = array_merge(
 		],
 		[
 			'type'            => 'chargewp_number_slider',
-			'wcp_group'       => true,
 			'wcp_group_color' => '#006400',
 			'value'           => '44',
 			'min'             => '15',
@@ -189,7 +182,6 @@ $params = array_merge(
 		],
 		[
 			'type'            => 'chargewp_number_slider',
-			'wcp_group'       => true,
 			'wcp_group_color' => '#006400',
 			'value'           => '44',
 			'min'             => '15',
@@ -269,7 +261,6 @@ $params = array_merge(
 		],
 		[
 			'type'            => 'colorpicker',
-			'wcp_group'       => true,
 			'wcp_group_color' => '#B8860B',
 			'heading'         => esc_html__( 'Background color', 'chargewp-timeline-addons-for-wpbakery' ),
 			'param_name'      => 'content_background_color',
@@ -278,7 +269,6 @@ $params = array_merge(
 		],
 		[
 			'type'            => 'colorpicker',
-			'wcp_group'       => true,
 			'wcp_group_color' => '#B8860B',
 			'heading'         => esc_html__( 'Background hover color', 'chargewp-timeline-addons-for-wpbakery' ),
 			'param_name'      => 'content_background_hover_color',
@@ -295,7 +285,6 @@ $params = array_merge(
 		],
 		[
 			'type'        => 'chargewp_number_slider',
-			'wcp_group'   => true,
 			'value'       => '0',
 			'min'         => '0',
 			'max'         => '10',
@@ -308,7 +297,6 @@ $params = array_merge(
 		],
 		[
 			'type'        => 'colorpicker',
-			'wcp_group'   => true,
 			'heading'     => esc_html__( 'Border color', 'chargewp-timeline-addons-for-wpbakery' ),
 			'param_name'  => 'content_border_color',
 			'description' => esc_html__( 'Select custom color for border.', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -316,7 +304,6 @@ $params = array_merge(
 		],
 		[
 			'type'        => 'colorpicker',
-			'wcp_group'   => true,
 			'heading'     => esc_html__( 'Border hover color', 'chargewp-timeline-addons-for-wpbakery' ),
 			'param_name'  => 'content_border_hover_color',
 			'description' => esc_html__( 'Select custom color for border hover.', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -324,7 +311,6 @@ $params = array_merge(
 		],
 		[
 			'type'        => 'dropdown',
-			'wcp_group'   => true,
 			'value'       => chargewpwpbtimeline_config( 'element-params' )['tailwind']['border_style'],
 			'heading'     => esc_html__( 'Border Style', 'chargewp-timeline-addons-for-wpbakery' ),
 			'param_name'  => 'content_border_style',
@@ -424,7 +410,6 @@ $params = array_merge(
 		],
 		[
 			'type'        => 'chargewp_number_slider',
-			'wcp_group'   => true,
 			'value'       => '0',
 			'min'         => '0',
 			'max'         => '10',
@@ -437,7 +422,6 @@ $params = array_merge(
 		],
 		[
 			'type'        => 'colorpicker',
-			'wcp_group'   => true,
 			'value'       => '#cccccc',
 			'heading'     => esc_html__( 'Border color', 'chargewp-timeline-addons-for-wpbakery' ),
 			'param_name'  => 'image_border_color',
@@ -446,7 +430,6 @@ $params = array_merge(
 		],
 		[
 			'type'        => 'colorpicker',
-			'wcp_group'   => true,
 			'value'       => '#EEEE2278',
 			'heading'     => esc_html__( 'Border hover color', 'chargewp-timeline-addons-for-wpbakery' ),
 			'param_name'  => 'image_border_hover_color',
@@ -455,7 +438,6 @@ $params = array_merge(
 		],
 		[
 			'type'        => 'dropdown',
-			'wcp_group'   => true,
 			'value'       => chargewpwpbtimeline_config( 'element-params' )['tailwind']['border_style'],
 			'heading'     => esc_html__( 'Border Style', 'chargewp-timeline-addons-for-wpbakery' ),
 			'param_name'  => 'image_border_style',
