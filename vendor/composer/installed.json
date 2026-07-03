@@ -637,17 +637,17 @@
         },
         {
             "name": "wpbakery-custom-param-collection/wpbakery-custom-param-collection",
-            "version": "1.3.4",
-            "version_normalized": "1.3.4.0",
+            "version": "1.4",
+            "version_normalized": "1.4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/OlegApanovich/wpbakery-custom-param-collection.git",
-                "reference": "c1c8dd28e030c521b578f24998ed6a142b18ac30"
+                "reference": "62ea56b7a1a5af1a30e78d46aa4d27304bc1675a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OlegApanovich/wpbakery-custom-param-collection/zipball/c1c8dd28e030c521b578f24998ed6a142b18ac30",
-                "reference": "c1c8dd28e030c521b578f24998ed6a142b18ac30",
+                "url": "https://api.github.com/repos/OlegApanovich/wpbakery-custom-param-collection/zipball/62ea56b7a1a5af1a30e78d46aa4d27304bc1675a",
+                "reference": "62ea56b7a1a5af1a30e78d46aa4d27304bc1675a",
                 "shasum": ""
             },
             "require-dev": {
@@ -659,7 +659,7 @@
                 "squizlabs/php_codesniffer": "3.*",
                 "wp-coding-standards/wpcs": "*"
             },
-            "time": "2026-05-22T10:42:32+00:00",
+            "time": "2026-06-27T09:42:10+00:00",
             "type": "wordpress-plugin",
             "installation-source": "dist",
             "autoload": {
@@ -674,7 +674,7 @@
             "description": "Collection of WPBakery custom params for element edit modal.",
             "support": {
                 "issues": "https://github.com/OlegApanovich/wpbakery-custom-param-collection/issues",
-                "source": "https://github.com/OlegApanovich/wpbakery-custom-param-collection/tree/1.3.4"
+                "source": "https://github.com/OlegApanovich/wpbakery-custom-param-collection/tree/1.4"
             },
             "install-path": "../wpbakery-custom-param-collection/wpbakery-custom-param-collection"
         }
