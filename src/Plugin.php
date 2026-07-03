@@ -12,7 +12,6 @@ use WPBakeryShortCode;
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeEmpty;
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcode;
 use ChargewpWpbTimeline\Shortcodes\ChargeWpbShortcodeContainerEmpty;
-use ChargewpWpbTimeline\Utils\Requirement;
 use ChargewpWpbTimeline\Settings\SettingsManager;
 use Wpbackery_Custom_Param_Collection;
 
@@ -95,39 +94,6 @@ class Plugin {
             // phpcs:ignore
 			trigger_error( $e->getMessage(), E_USER_ERROR );
 		}
-	}
-
-	/**
-	 * Check if wpbakery already activated.
-	 *
-	 * @since 1.0
-	 * @return bool
-	 */
-	public function is_dependency_plugin_active(): bool {
-		$requirement = new Requirement();
-		$requirement->plugins(
-			[
-				[
-					'path'    => CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_PATH,
-					'version' => CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_VERSION,
-					'name'    => CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_NAME,
-				],
-			]
-		);
-
-		$is_active = $requirement->met();
-		if ( ! $is_active ) {
-			add_action(
-				'admin_notices',
-				function () use ( $requirement ) {
-					$requirement->print_notice();
-				},
-				0,
-				0
-			);
-		}
-
-		return $requirement->met();
 	}
 
 	/**

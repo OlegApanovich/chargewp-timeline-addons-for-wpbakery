@@ -18,6 +18,7 @@
 defined( 'ABSPATH' ) || exit;
 
 use ChargewpWpbTimeline\Plugin;
+use ChargewpWpbTimeline\Includes\Requirement;
 
 /**
  * Main Plugin Class.
@@ -65,17 +66,50 @@ class Chargewp_Wpb_Timeline_Element {
 	 */
 	public function __construct() {
 		$this->define_constants();
-		$this->includes();
+		$this->load_plugin_textdomain();
 
-		$this->init_hooks();
+		require_once CHARGEWPWPBTIMELINE_INCLUDES_DIR . '/requirement.php';
 
-		$plugin = $this->get_plugin();
-
-		if ( ! $plugin->is_dependency_plugin_active() ) {
+		if ( ! $this->is_dependency_plugin_active() ) {
 			return;
 		}
 
-		$plugin->init();
+		$this->includes();
+		$this->get_plugin()->init();
+	}
+
+	/**
+	 * Check if wpbakery already activated.
+	 *
+	 * @since 1.0
+	 * @return bool
+	 */
+	public function is_dependency_plugin_active(): bool {
+		$requirement = new Requirement();
+		$requirement->plugins(
+			[
+				[
+					'path'    => CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_PATH,
+					'version' => CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_VERSION,
+					'name'    => CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_NAME,
+				],
+			]
+		);
+
+		$is_active = $requirement->met();
+		if ( ! $is_active ) {
+			add_action(
+				'admin_notices',
+				function () use ( $requirement ) {
+					$requirement->print_notice();
+				},
+				0,
+				0
+			);
+			return false;
+		}
+
+		return true;
 	}
 
 	/**
@@ -123,29 +157,6 @@ class Chargewp_Wpb_Timeline_Element {
 	public function includes() {
 		require_once CHARGEWPWPBTIMELINE_INCLUDES_DIR . '/helpers.php';
 		require_once __DIR__ . '/vendor/autoload.php';
-	}
-
-	/**
-	 * Hook into actions and filters.
-	 *
-	 * @since 1.0
-	 */
-	private function init_hooks() {
-		add_action( 'init', [ $this, 'init' ], 0 );
-	}
-
-	/**
-	 * Init plugin when WordPress Initialises.
-	 *
-	 * @since 1.0
-	 */
-	public function init() {
-		// Before init action.
-		do_action( 'before_chargewp_wpb_timeline_addons' );
-		// Set up localization.
-		$this->load_plugin_textdomain();
-		// After init action.
-		do_action( 'after_chargewp_wpb_timeline_addons' );
 	}
 
 	/**

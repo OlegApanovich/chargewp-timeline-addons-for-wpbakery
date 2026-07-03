@@ -5,7 +5,7 @@
  * @since 1.2
  */
 
-namespace ChargewpWpbTimeline\Utils;
+namespace ChargewpWpbTimeline\Includes;
 
 /**
  * Requirement.
