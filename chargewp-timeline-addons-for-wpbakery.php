@@ -132,7 +132,7 @@ class Chargewp_Wpb_Timeline_Element {
 	 * @since 1.0
 	 */
 	private function define_constants() {
-		define( 'CHARGEWPWPBTIMELINE_VERSION', '1.6-beta.2' );
+		define( 'CHARGEWPWPBTIMELINE_VERSION', '1.6.1' );
 		define( 'CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_VERSION', '5.0' );
 		define( 'CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_NAME', 'WPBakery Page Builder' );
 		define( 'CHARGEWPWPBTIMELINE_WPBAKERY_REQUIRED_PATH', 'js_composer/js_composer.php' );
