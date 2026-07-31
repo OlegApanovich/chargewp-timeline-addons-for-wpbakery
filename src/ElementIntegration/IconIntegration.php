@@ -126,6 +126,10 @@ class IconIntegration {
 	 * @return string
 	 */
 	public function get_element_icon_color( array $atts ): string {
+		if ( version_compare( WPB_VC_VERSION, '9.0', '>=' ) ) {
+			return $atts['i_custom_color'];
+		}
+
 		if ( 'custom' === $atts['i_color'] ) {
 			return $atts['i_custom_color'];
 		}
