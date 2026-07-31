@@ -6,6 +6,16 @@ parameters:
     bootstrapFiles:
         - ../../../../wp-load.php # Load WordPress core files for analysis.
     ignoreErrors:
+        -
+            # WPB_VC_VERSION is defined as a fixed literal in the WPBakery version
+            # installed in this environment, so PHPStan statically folds the
+            # version_compare() check below. At runtime the installed WPBakery
+            # version varies, so the older-version branch is not actually dead code.
+            identifier: if.alwaysTrue
+            path: ../src/ElementIntegration/IconIntegration.php
+        -
+            identifier: deadCode.unreachable
+            path: ../src/ElementIntegration/IconIntegration.php
     paths:
         - ../includes
         - ../src
