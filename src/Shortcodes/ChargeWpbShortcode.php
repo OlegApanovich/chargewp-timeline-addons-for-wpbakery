@@ -162,8 +162,10 @@ class ChargeWpbShortcode {
 	public function render_shortcode( array $atts, $content = null ): string {
 		$this->shortcode_atts = $atts;
 
+		$mapped_atts = vc_map_get_attributes( $this->wpb_shortcode->getShortcode(), $atts );
+
 		$payload = [
-			'atts'    => vc_map_get_attributes( $this->wpb_shortcode->getShortcode(), $atts ),
+			'atts'    => array_merge( $atts, $mapped_atts ),
 			'content' => $content,
 			'_this'   => $this,
 		];
