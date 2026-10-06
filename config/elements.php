@@ -26,7 +26,9 @@ return [
 		'depend_assets' => [
 			'external' => [
 				'css' => [
-					'tailwind-cdn-before-setup' => CHARGEWPWPBTIMELINE_ASSETS_URI . '/css/shortcodes-common/tailwind-base.css',
+					'tailwind-cdn-before-setup' => [
+						'url' => CHARGEWPWPBTIMELINE_ASSETS_URI . '/css/shortcodes-common/tailwind-base.css',
+					],
 				],
 			],
 			'inner'    => [
