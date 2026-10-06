@@ -77,7 +77,7 @@ return [
 				],
 				'js'  => [
 					[
-						'element.js',
+						'file' => 'element.js',
 					],
 				],
 			],
