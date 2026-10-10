@@ -34,7 +34,7 @@ $reduced_height = strval( 250 );
 	if ( 'true' === $settings['scope']['use_tabs'] ) {
 		?>
 	<div id="wcp-wysiwyg-tabs-<?php echo esc_attr( $randomizer ); ?>" class="wcp-wysiwyg-tabs">
-		<a id="wcp-wysiwyg-html-<?php echo esc_attr( $randomizer ); ?>" class="wcp-wysiwyg-html active">HTML</a>
+		<a id="wcp-wysiwyg-html-<?php echo esc_attr( $randomizer ); ?>" class="wcp-wysiwyg-html active">Code</a>
 		<a id="wcp-wysiwyg-visual-<?php echo esc_attr( $randomizer ); ?>" class="wcp-wysiwyg-visual">Visual</a>
 		<div style="clear: both;"></div>
 	</div>

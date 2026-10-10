@@ -1,6 +1,7 @@
 function switchWysiwygTab(mode, visualTab, htmlTab, editorId) {
     var textarea = jQuery("textarea#" + editorId),
         mceTinymce = textarea.siblings(".mce-tinymce.mce-container.mce-panel"),
+        quicktagsToolbar = jQuery("#qt_" + editorId + "_toolbar"),
         content = "";
 
     if (mode !== "visual" || visualTab.hasClass("active")) {
@@ -11,6 +12,7 @@ function switchWysiwygTab(mode, visualTab, htmlTab, editorId) {
             tinymce.get(editorId).windowManager.close();
             textarea.val(content).show();
             mceTinymce.hide();
+            quicktagsToolbar.show();
             jQuery(".mce-toolbar-grp.mce-inline-toolbar-grp.mce-container.mce-panel").hide();
         }
     } else {
@@ -20,6 +22,7 @@ function switchWysiwygTab(mode, visualTab, htmlTab, editorId) {
         tinymce.get(editorId).setContent(content, { format: "raw" });
         tinymce.get(editorId).windowManager.close();
         textarea.hide();
+        quicktagsToolbar.hide();
         mceTinymce.show();
         jQuery(".mce-toolbar-grp.mce-inline-toolbar-grp.mce-container.mce-panel").hide();
     }
@@ -74,12 +77,20 @@ for (const prefix of window.i18nLocale.wcp_param_prefix_list) {
                 editorId = wysiwyg.find("textarea.wcp-wysiwyg-editor").attr("id"),
                 siteUrl = wysiwyg.attr("data-url-site");
 
-            var visualTab, htmlTab;
+            var visualTab, htmlTab, quicktagsToolbar;
 
             if (useTabs) {
                 var tabs = wysiwyg.find(".wcp-wysiwyg-tabs");
                 visualTab = tabs.find(".wcp-wysiwyg-visual");
                 htmlTab = tabs.find(".wcp-wysiwyg-html");
+
+                if (typeof quicktags === "function") {
+                    if (window.QTags && window.QTags.instances && window.QTags.instances[editorId]) {
+                        window.QTags.instances[editorId].remove();
+                    }
+                    quicktags({ id: editorId });
+                    quicktagsToolbar = jQuery("#qt_" + editorId + "_toolbar").hide();
+                }
             }
 
             var plugins = [
@@ -160,6 +171,9 @@ for (const prefix of window.i18nLocale.wcp_param_prefix_list) {
                         if (useTabs) {
                             htmlTab.removeClass("active");
                             visualTab.addClass("active");
+                            if (quicktagsToolbar) {
+                                quicktagsToolbar.hide();
+                            }
                         }
                     });
                 }

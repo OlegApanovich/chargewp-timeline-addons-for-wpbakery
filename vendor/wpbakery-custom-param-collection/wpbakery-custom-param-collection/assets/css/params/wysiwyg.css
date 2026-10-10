@@ -28,5 +28,14 @@
 }
 
 .wcp-wysiwyg-container textarea.wcp-wysiwyg-editor {
+    width: 100%;
     height: 250px;
+    box-sizing: border-box;
+    border: 1px solid #dfdfdf;
+}
+
+.wcp-wysiwyg-container textarea.wcp-wysiwyg-editor:focus {
+    border-color: #dfdfdf;
+    outline: none;
+    box-shadow: none;
 }
