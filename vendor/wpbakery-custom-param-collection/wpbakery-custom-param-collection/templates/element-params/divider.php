@@ -15,7 +15,6 @@ defined( 'ABSPATH' ) || exit;
 	<?php
 	echo esc_html( $settings['title'] );
 
-	// @phpstan-ignore-next-line
 	if ( version_compare( WPB_VC_VERSION, '8.0', '>=' ) ) {
 		if ( ! empty( $settings['title_description'] ) ) {
 			vc_include_template(

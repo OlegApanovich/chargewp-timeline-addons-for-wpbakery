@@ -27,6 +27,26 @@ class ElementParamsLoader {
 	 */
 	public function __construct() {
 		add_filter( 'vc_get_editor_locale', [ $this, 'localize_wpb_editors' ], 20 );
+		// WPBakery below 7.8 doesn't have 'vc_get_editor_locale' filter.
+		if ( defined( 'WPB_VC_VERSION' ) && version_compare( WPB_VC_VERSION, '7.8', '<' ) ) {
+			add_action(
+				'admin_print_footer_scripts',
+				function () {
+					$script = sprintf(
+						'window.i18nLocale = window.i18nLocale || {}; window.i18nLocale.wcp_param_prefix_list = window.i18nLocale.wcp_param_prefix_list || %s;',
+						wp_json_encode( $this->get_param_prefix_list() )
+					);
+
+					// Scripts that wpbakery backend and frontend editors localize i18nLocale for.
+					foreach ( [ 'vc-backend-actions-js', 'vc-frontend-editor-min-js' ] as $handle ) {
+						if ( wp_script_is( $handle ) ) {
+							wp_add_inline_script( $handle, $script, 'before' );
+						}
+					}
+				},
+				1
+			);
+		}
 	}
 
 	/**
