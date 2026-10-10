@@ -136,8 +136,9 @@ class HeadingIntegration {
 			return;
 		}
 
-		$custom_heading         = vc_manager()->vc()->getShortCode( 'vc_custom_heading' );
-		$data                   = vc_map_integrate_parse_atts( $shortcode_tag, 'vc_custom_heading', $atts, $atts_slug . '_' );
+		$custom_heading = vc_manager()->vc()->getShortCode( 'vc_custom_heading' );
+		$data           = vc_map_integrate_parse_atts( $shortcode_tag, 'vc_custom_heading', $atts, $atts_slug . '_' );
+
 		// vc_custom_heading allows only limited tags list and fallback to h2 for others (like span),
 		// so we render such tags as div and replace it with our tag after.
 		$is_tag_not_allowed = $tag && ! in_array( $tag, [ 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div' ], true );
