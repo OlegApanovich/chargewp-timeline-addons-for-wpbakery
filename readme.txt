@@ -3,7 +3,7 @@ Contributors: mrdollar4444
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K9NTJ6E2RQN3A&source=url
 Tags: WPBakery, wpbakery addons, wpbakery page builder, wpbakery page builder addons
 Tested up to: 7.1
-Stable tag: 1.6.2
+Stable tag: 1.6.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
