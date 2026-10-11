@@ -2,7 +2,7 @@
 Contributors: mrdollar4444
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K9NTJ6E2RQN3A&source=url
 Tags: WPBakery, wpbakery addons, wpbakery page builder, wpbakery page builder addons
-Tested up to: 7.0
+Tested up to: 7.1
 Stable tag: 1.6.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -43,6 +43,11 @@ Please note that some elements use brand-new CSS/JS features, and browser suppor
 9. Classic Horizontal Timeline Addon.
 
 == Changelog ==
+
+= 1.6.3 =
+Dev - Update dependency 'wpbakery-custom-param-collection' to the latest 1.4.4 version.
+Fix - Title background disappear in "Left Side Stack" addon.
+Fix - "Tailwind Vertical Classic Timeline" not centered properly.
 
 = 1.6.2 =
 Fix - PHP fatal error with WPBakery 9.0
