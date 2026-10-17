@@ -18,6 +18,8 @@ defined( 'ABSPATH' ) || exit;
  * @since 1.0
  */
 class IconIntegration {
+	use ConfigParamsTrait;
+
 	/**
 	 * Get custom icon checkbox field params.
 	 *
