@@ -197,13 +197,13 @@ $params = array_merge(
 			'title'           => esc_html__( 'px', 'chargewp-timeline-addons-for-wpbakery' ),
 			'group'           => esc_html__( 'Marker', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
-        [
-            'type'              => 'chargewp_divider',
-            'param_name'        => 'divider_marker_border',
-            'title'             => __( 'Icon', 'chargewp-timeline-addons-for-wpbakery' ),
-            'title_description' => __( 'Set of icon options.', 'chargewp-timeline-addons-for-wpbakery' ),
-            'color'             => '#4873c9',
-        ],
+		[
+			'type'              => 'chargewp_divider',
+			'param_name'        => 'divider_marker_icon',
+			'title'             => __( 'Icon', 'chargewp-timeline-addons-for-wpbakery' ),
+			'title_description' => __( 'Set of icon options.', 'chargewp-timeline-addons-for-wpbakery' ),
+			'color'             => '#4873c9',
+		],
 	],
 	$custom_icon_integration->add_config_params(
 		$custom_icon_integration->add_icon_checkbox( [ 'background_style', 'align', 'link', 'background_color', 'custom_background_color' ] ),
