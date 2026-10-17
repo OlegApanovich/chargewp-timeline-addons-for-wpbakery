@@ -14,6 +14,50 @@ defined( 'ABSPATH' ) || exit;
 $custom_heading_integration = new HeadingIntegration();
 $custom_icon_integration    = new IconIntegration();
 
+// linked_fields param type is available since WPBakery 9.0.
+$content_spacing_params = [];
+if ( version_compare( WPB_VC_VERSION, '9.0', '>=' ) ) {
+	$spacing_sides = [
+		'top'    => esc_html__( 'Top', 'chargewp-timeline-addons-for-wpbakery' ),
+		'right'  => esc_html__( 'Right', 'chargewp-timeline-addons-for-wpbakery' ),
+		'bottom' => esc_html__( 'Bottom', 'chargewp-timeline-addons-for-wpbakery' ),
+		'left'   => esc_html__( 'Left', 'chargewp-timeline-addons-for-wpbakery' ),
+	];
+
+	$content_spacing_params = [
+		[
+			'type'              => 'chargewp_divider',
+			'param_name'        => 'divider_content_spacing',
+			'title'             => __( 'Spacing', 'chargewp-timeline-addons-for-wpbakery' ),
+			'title_description' => __( 'Set of content spacing options.', 'chargewp-timeline-addons-for-wpbakery' ),
+			'color'             => '#006400',
+			'group'             => esc_html__( 'Content', 'chargewp-timeline-addons-for-wpbakery' ),
+		],
+		[
+			'type'            => 'linked_fields',
+			'wcp_group_color' => '#006400',
+			'value'           => $spacing_sides,
+			'heading'         => esc_html__( 'Padding', 'chargewp-timeline-addons-for-wpbakery' ),
+			'param_name'      => 'content_padding',
+			'settings'        => [
+				'units' => true,
+			],
+			'group'           => esc_html__( 'Content', 'chargewp-timeline-addons-for-wpbakery' ),
+		],
+		[
+			'type'            => 'linked_fields',
+			'wcp_group_color' => '#006400',
+			'value'           => $spacing_sides,
+			'heading'         => esc_html__( 'Margin', 'chargewp-timeline-addons-for-wpbakery' ),
+			'param_name'      => 'content_margin',
+			'settings'        => [
+				'units' => true,
+			],
+			'group'           => esc_html__( 'Content', 'chargewp-timeline-addons-for-wpbakery' ),
+		],
+	];
+}
+
 $params = array_merge(
 	[
 		[
@@ -105,55 +149,59 @@ $params = array_merge(
 			'group'             => esc_html__( 'Marker', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
 		[
-			'type'        => 'chargewp_number_slider',
-			'value'       => '1',
-			'min'         => '0',
-			'max'         => '10',
-			'step'        => '1',
-			'heading'     => esc_html__( 'Border Width', 'chargewp-timeline-addons-for-wpbakery' ),
-			'param_name'  => 'marker_border_width',
-			'title'       => esc_html__( 'px', 'chargewp-timeline-addons-for-wpbakery' ),
-			'description' => esc_html__( 'Set custom border width in px from 0 to 10.', 'chargewp-timeline-addons-for-wpbakery' ),
-			'dependency'  => [
+			'type'            => 'chargewp_number_slider',
+			'wcp_group_color' => '#4873c9',
+			'value'           => '1',
+			'min'             => '0',
+			'max'             => '10',
+			'step'            => '1',
+			'heading'         => esc_html__( 'Border Width', 'chargewp-timeline-addons-for-wpbakery' ),
+			'param_name'      => 'marker_border_width',
+			'title'           => esc_html__( 'px', 'chargewp-timeline-addons-for-wpbakery' ),
+			'description'     => esc_html__( 'Set custom border width in px from 0 to 10.', 'chargewp-timeline-addons-for-wpbakery' ),
+			'dependency'      => [
 				'element' => 'marker_type',
 				'value'   => [ 'circle', 'square' ],
 			],
-			'group'       => esc_html__( 'Marker', 'chargewp-timeline-addons-for-wpbakery' ),
+			'group'           => esc_html__( 'Marker', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
 		[
-			'type'        => 'colorpicker',
-			'value'       => '#cccccc',
-			'heading'     => esc_html__( 'Border color', 'chargewp-timeline-addons-for-wpbakery' ),
-			'param_name'  => 'marker_border_color',
-			'description' => esc_html__( 'Select custom color for border.', 'chargewp-timeline-addons-for-wpbakery' ),
-			'dependency'  => [
+			'type'            => 'colorpicker',
+			'wcp_group_color' => '#4873c9',
+			'value'           => '#cccccc',
+			'heading'         => esc_html__( 'Border color', 'chargewp-timeline-addons-for-wpbakery' ),
+			'param_name'      => 'marker_border_color',
+			'description'     => esc_html__( 'Select custom color for border.', 'chargewp-timeline-addons-for-wpbakery' ),
+			'dependency'      => [
 				'element' => 'marker_type',
 				'value'   => [ 'circle', 'square' ],
 			],
-			'group'       => esc_html__( 'Marker', 'chargewp-timeline-addons-for-wpbakery' ),
+			'group'           => esc_html__( 'Marker', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
 		[
-			'type'        => 'colorpicker',
-			'heading'     => esc_html__( 'Border hover color', 'chargewp-timeline-addons-for-wpbakery' ),
-			'param_name'  => 'marker_border_hover_color',
-			'description' => esc_html__( 'Select custom color for border hover.', 'chargewp-timeline-addons-for-wpbakery' ),
-			'dependency'  => [
+			'type'            => 'colorpicker',
+			'wcp_group_color' => '#4873c9',
+			'heading'         => esc_html__( 'Border hover color', 'chargewp-timeline-addons-for-wpbakery' ),
+			'param_name'      => 'marker_border_hover_color',
+			'description'     => esc_html__( 'Select custom color for border hover.', 'chargewp-timeline-addons-for-wpbakery' ),
+			'dependency'      => [
 				'element' => 'marker_type',
 				'value'   => [ 'circle', 'square' ],
 			],
-			'group'       => esc_html__( 'Marker', 'chargewp-timeline-addons-for-wpbakery' ),
+			'group'           => esc_html__( 'Marker', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
 		[
-			'type'        => 'dropdown',
-			'value'       => chargewpwpbtimeline_config( 'element-params' )['tailwind']['border_style'],
-			'heading'     => esc_html__( 'Border Style', 'chargewp-timeline-addons-for-wpbakery' ),
-			'param_name'  => 'marker_border_style',
-			'description' => esc_html__( 'Choose border style.', 'chargewp-timeline-addons-for-wpbakery' ),
-			'dependency'  => [
+			'type'            => 'dropdown',
+			'wcp_group_color' => '#4873c9',
+			'value'           => chargewpwpbtimeline_config( 'element-params' )['tailwind']['border_style'],
+			'heading'         => esc_html__( 'Border Style', 'chargewp-timeline-addons-for-wpbakery' ),
+			'param_name'      => 'marker_border_style',
+			'description'     => esc_html__( 'Choose border style.', 'chargewp-timeline-addons-for-wpbakery' ),
+			'dependency'      => [
 				'element' => 'marker_type',
 				'value'   => [ 'circle', 'square' ],
 			],
-			'group'       => esc_html__( 'Marker', 'chargewp-timeline-addons-for-wpbakery' ),
+			'group'           => esc_html__( 'Marker', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
 		[
 			'type'              => 'chargewp_divider',
@@ -250,6 +298,7 @@ $params = array_merge(
 			'group'      => esc_html__( 'Content', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
 	],
+	$content_spacing_params,
 	[
 		[
 			'type'              => 'chargewp_divider',
@@ -284,38 +333,42 @@ $params = array_merge(
 			'group'             => esc_html__( 'Content', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
 		[
-			'type'        => 'chargewp_number_slider',
-			'value'       => '0',
-			'min'         => '0',
-			'max'         => '10',
-			'step'        => '1',
-			'heading'     => esc_html__( 'Border Width', 'chargewp-timeline-addons-for-wpbakery' ),
-			'param_name'  => 'content_border_width',
-			'title'       => esc_html__( 'px', 'chargewp-timeline-addons-for-wpbakery' ),
-			'description' => esc_html__( 'Set custom border width in px from 0 to 10.', 'chargewp-timeline-addons-for-wpbakery' ),
-			'group'       => esc_html__( 'Content', 'chargewp-timeline-addons-for-wpbakery' ),
+			'type'            => 'chargewp_number_slider',
+			'wcp_group_color' => '#3e73c6',
+			'value'           => '0',
+			'min'             => '0',
+			'max'             => '10',
+			'step'            => '1',
+			'heading'         => esc_html__( 'Border Width', 'chargewp-timeline-addons-for-wpbakery' ),
+			'param_name'      => 'content_border_width',
+			'title'           => esc_html__( 'px', 'chargewp-timeline-addons-for-wpbakery' ),
+			'description'     => esc_html__( 'Set custom border width in px from 0 to 10.', 'chargewp-timeline-addons-for-wpbakery' ),
+			'group'           => esc_html__( 'Content', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
 		[
-			'type'        => 'colorpicker',
-			'heading'     => esc_html__( 'Border color', 'chargewp-timeline-addons-for-wpbakery' ),
-			'param_name'  => 'content_border_color',
-			'description' => esc_html__( 'Select custom color for border.', 'chargewp-timeline-addons-for-wpbakery' ),
-			'group'       => esc_html__( 'Content', 'chargewp-timeline-addons-for-wpbakery' ),
+			'type'            => 'colorpicker',
+			'wcp_group_color' => '#3e73c6',
+			'heading'         => esc_html__( 'Border color', 'chargewp-timeline-addons-for-wpbakery' ),
+			'param_name'      => 'content_border_color',
+			'description'     => esc_html__( 'Select custom color for border.', 'chargewp-timeline-addons-for-wpbakery' ),
+			'group'           => esc_html__( 'Content', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
 		[
-			'type'        => 'colorpicker',
-			'heading'     => esc_html__( 'Border hover color', 'chargewp-timeline-addons-for-wpbakery' ),
-			'param_name'  => 'content_border_hover_color',
-			'description' => esc_html__( 'Select custom color for border hover.', 'chargewp-timeline-addons-for-wpbakery' ),
-			'group'       => esc_html__( 'Content', 'chargewp-timeline-addons-for-wpbakery' ),
+			'type'            => 'colorpicker',
+			'wcp_group_color' => '#3e73c6',
+			'heading'         => esc_html__( 'Border hover color', 'chargewp-timeline-addons-for-wpbakery' ),
+			'param_name'      => 'content_border_hover_color',
+			'description'     => esc_html__( 'Select custom color for border hover.', 'chargewp-timeline-addons-for-wpbakery' ),
+			'group'           => esc_html__( 'Content', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
 		[
-			'type'        => 'dropdown',
-			'value'       => chargewpwpbtimeline_config( 'element-params' )['tailwind']['border_style'],
-			'heading'     => esc_html__( 'Border Style', 'chargewp-timeline-addons-for-wpbakery' ),
-			'param_name'  => 'content_border_style',
-			'description' => esc_html__( 'Choose border style.', 'chargewp-timeline-addons-for-wpbakery' ),
-			'group'       => esc_html__( 'Content', 'chargewp-timeline-addons-for-wpbakery' ),
+			'type'            => 'dropdown',
+			'wcp_group_color' => '#3e73c6',
+			'value'           => chargewpwpbtimeline_config( 'element-params' )['tailwind']['border_style'],
+			'heading'         => esc_html__( 'Border Style', 'chargewp-timeline-addons-for-wpbakery' ),
+			'param_name'      => 'content_border_style',
+			'description'     => esc_html__( 'Choose border style.', 'chargewp-timeline-addons-for-wpbakery' ),
+			'group'           => esc_html__( 'Content', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
 	],
 	[

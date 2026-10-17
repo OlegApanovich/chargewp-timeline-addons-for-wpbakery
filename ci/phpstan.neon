@@ -16,6 +16,12 @@ parameters:
         -
             identifier: deadCode.unreachable
             path: ../src/ElementIntegration/IconIntegration.php
+        -
+            # Same WPB_VC_VERSION check for spacing params (linked_fields, WPBakery 9.0+).
+            identifier: if.alwaysTrue
+            paths:
+                - ../config/shortcodes/tailwind-vertical-classic-timeline-item.php
+                - ../templates/shortcodes/partials/tailwind-vertical-classic-timeline-item/content.php
     paths:
         - ../includes
         - ../src

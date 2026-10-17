@@ -10,9 +10,33 @@
 
 use ChargewpWpbTimeline\ElementIntegration\HeadingIntegration;
 $custom_heading_integration = new HeadingIntegration();
+
+// Spacing params (linked_fields) are available since WPBakery 9.0 only.
+$content_spacing_css = '';
+if ( version_compare( WPB_VC_VERSION, '9.0', '>=' ) ) {
+	$content_spacing_params = [
+		'padding' => 'content_padding',
+		'margin'  => 'content_margin',
+	];
+	foreach ( $content_spacing_params as $spacing_property => $spacing_param ) {
+		if ( empty( $atts[ $spacing_param ] ) ) {
+			continue;
+		}
+
+		$spacing      = vc_parse_multi_attribute( $atts[ $spacing_param ], [ 'unit' => 'px' ] );
+		$spacing_unit = in_array( $spacing['unit'], [ 'px', 'em', 'rem', 'vw', 'vh', '%' ], true ) ? $spacing['unit'] : 'px';
+
+		foreach ( [ 'top', 'right', 'bottom', 'left' ] as $spacing_side ) {
+			if ( isset( $spacing[ $spacing_side ] ) && is_numeric( $spacing[ $spacing_side ] ) ) {
+				$content_spacing_css .= $spacing_property . '-' . $spacing_side . ': ' . (float) $spacing[ $spacing_side ] . $spacing_unit . ';';
+			}
+		}
+	}
+}
 ?>
 
 <div class="<?php echo esc_attr( $default_classes ); ?>
+			<?php echo $content_spacing_css ? 'chargewp-content-spacing' : ''; ?>
 			chargewp-bg-[<?php echo esc_attr( $atts['content_background_color'] ); ?>]
 			group-hover:chargewp-bg-[<?php echo esc_attr( $atts['content_background_hover_color'] ); ?>]
 			chargewp-border-<?php echo esc_attr( $atts['content_border_width'] ); ?>
@@ -51,5 +75,11 @@ $custom_heading_integration = new HeadingIntegration();
 	<?php $_this->output_style_shortcode_id(); ?> .chargewp-border-<?php echo esc_attr( $atts['content_border_style'] ); ?> {
 		border-style: <?php echo esc_attr( $atts['content_border_style'] ); ?>
 	}
+
+	<?php if ( $content_spacing_css ) : ?>
+		<?php $_this->output_style_shortcode_id(); ?> .chargewp-content-spacing {
+			<?php echo esc_attr( $content_spacing_css ); ?>
+		}
+	<?php endif; ?>
 
 </style>
