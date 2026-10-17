@@ -16,6 +16,8 @@ defined( 'ABSPATH' ) || exit;
  * @since 1.6
  */
 class SingleImageIntegration {
+	use ConfigParamsTrait;
+
 	/**
 	 * Get integration config.
 	 *
@@ -56,24 +58,5 @@ class SingleImageIntegration {
 			'el_class',
 			'css',
 		];
-	}
-
-	/**
-	 * Add additional params to each config param set.
-	 *
-	 * @since 1.6
-	 * @param array $init_param
-	 * @param array $additional_params
-	 * @return array
-	 */
-	public function add_config_params( array $init_param, array $additional_params ): array {
-		foreach ( $init_param as $init_param_key => $init_param_value ) {
-			$init_param[ $init_param_key ] = array_merge(
-				$init_param_value,
-				$additional_params
-			);
-		}
-
-		return $init_param;
 	}
 }

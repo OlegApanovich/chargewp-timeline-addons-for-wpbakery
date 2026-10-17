@@ -47,7 +47,11 @@ if ( 'no' !== $atts['marker_type'] ) {
 				">
 		<?php
 		if ( 'true' === $atts['add_icon'] ) {
-			$custom_icon_integration->output_icon_integration( $_this, $atts, 'i_' );
+			?>
+			<div class="<?php echo esc_attr( $atts['icon_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-<?php echo esc_attr( $atts['icon_rotation_degree'] ); ?>">
+				<?php $custom_icon_integration->output_icon_integration( $_this, $atts, 'i_' ); ?>
+			</div>
+			<?php
 		}
 		?>
 	</div>
@@ -119,4 +123,11 @@ if ( 'no' !== $atts['marker_type'] ) {
 		--tw-rotate: <?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>180deg;
 		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 	}
+
+	<?php if ( 'true' === $atts['add_icon'] ) : ?>
+		<?php $_this->output_style_shortcode_id(); ?> .<?php echo esc_attr( $atts['icon_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-<?php echo esc_attr( $atts['icon_rotation_degree'] ); ?> {
+			--tw-rotate: <?php echo esc_attr( $atts['icon_negative_rotation_degree'] ) ? '-' : ''; ?><?php echo (int) $atts['icon_rotation_degree']; ?>deg;
+			transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+		}
+	<?php endif; ?>
 </style>
