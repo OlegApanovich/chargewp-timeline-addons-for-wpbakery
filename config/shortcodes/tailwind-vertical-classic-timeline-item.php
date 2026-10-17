@@ -14,6 +14,50 @@ defined( 'ABSPATH' ) || exit;
 $custom_heading_integration = new HeadingIntegration();
 $custom_icon_integration    = new IconIntegration();
 
+// linked_fields param type is available since WPBakery 9.0.
+$content_spacing_params = [];
+if ( version_compare( WPB_VC_VERSION, '9.0', '>=' ) ) {
+	$spacing_sides = [
+		'top'    => esc_html__( 'Top', 'chargewp-timeline-addons-for-wpbakery' ),
+		'right'  => esc_html__( 'Right', 'chargewp-timeline-addons-for-wpbakery' ),
+		'bottom' => esc_html__( 'Bottom', 'chargewp-timeline-addons-for-wpbakery' ),
+		'left'   => esc_html__( 'Left', 'chargewp-timeline-addons-for-wpbakery' ),
+	];
+
+	$content_spacing_params = [
+		[
+			'type'              => 'chargewp_divider',
+			'param_name'        => 'divider_content_spacing',
+			'title'             => __( 'Spacing', 'chargewp-timeline-addons-for-wpbakery' ),
+			'title_description' => __( 'Set of content spacing options.', 'chargewp-timeline-addons-for-wpbakery' ),
+			'color'             => '#006400',
+			'group'             => esc_html__( 'Content', 'chargewp-timeline-addons-for-wpbakery' ),
+		],
+		[
+			'type'            => 'linked_fields',
+			'wcp_group_color' => '#006400',
+			'value'           => $spacing_sides,
+			'heading'         => esc_html__( 'Padding', 'chargewp-timeline-addons-for-wpbakery' ),
+			'param_name'      => 'content_padding',
+			'settings'        => [
+				'units' => true,
+			],
+			'group'           => esc_html__( 'Content', 'chargewp-timeline-addons-for-wpbakery' ),
+		],
+		[
+			'type'            => 'linked_fields',
+			'wcp_group_color' => '#006400',
+			'value'           => $spacing_sides,
+			'heading'         => esc_html__( 'Margin', 'chargewp-timeline-addons-for-wpbakery' ),
+			'param_name'      => 'content_margin',
+			'settings'        => [
+				'units' => true,
+			],
+			'group'           => esc_html__( 'Content', 'chargewp-timeline-addons-for-wpbakery' ),
+		],
+	];
+}
+
 $params = array_merge(
 	[
 		[
@@ -250,6 +294,7 @@ $params = array_merge(
 			'group'      => esc_html__( 'Content', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
 	],
+	$content_spacing_params,
 	[
 		[
 			'type'              => 'chargewp_divider',
