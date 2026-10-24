@@ -9,6 +9,7 @@
 
 use ChargewpWpbTimeline\ElementIntegration\IconIntegration;
 $custom_icon_integration = new IconIntegration();
+$is_show_on_mobile       = 'no' !== $atts['marker_type'] && 'true' === $atts['is_marker_on_mobile'];
 
 if ( 'no' !== $atts['marker_type'] ) {
 	?>
@@ -17,7 +18,9 @@ if ( 'no' !== $atts['marker_type'] ) {
 				chargewp-left-1/2
 				chargewp-transform
 				-chargewp-translate-x-1/2
-				-chargewp-translate-y-1/2
+				sm:-chargewp-translate-y-1/2
+				chargewp-top-0
+				sm:chargewp-top-auto
 				chargewp-w-[3%]
 				chargewp-h-[3%]
 				chargewp-min-w-[<?php echo esc_attr( $atts['marker_width'] ); ?>px]
@@ -29,8 +32,7 @@ if ( 'no' !== $atts['marker_type'] ) {
 				chargewp-border-<?php echo esc_attr( $atts['marker_border_style'] ); ?>
 				group-hover:chargewp-border-[<?php echo esc_attr( $atts['marker_border_hover_color'] ); ?>]
 				<?php echo esc_attr( $atts['marker_negative_rotation_degree'] ) ? '-' : ''; ?>chargewp-rotate-<?php echo esc_attr( $atts['marker_rotation_degree'] ); ?>
-				chargewp-hidden
-				sm:chargewp-flex
+				<?php echo $is_show_on_mobile ? 'chargewp-flex' : 'chargewp-hidden sm:chargewp-flex'; ?>
 				chargewp-items-center
 				chargewp-justify-center
 				<?php
@@ -130,4 +132,14 @@ if ( 'no' !== $atts['marker_type'] ) {
 			transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 		}
 	<?php endif; ?>
+
+    <?php if ( $is_show_on_mobile ) : ?>
+        @media (max-width: 639px) {
+            <?php $_this->output_style_shortcode_id(); ?> {
+                --chargewp-marker-height: <?php echo (int) $atts['marker_height']; ?>px;
+                --chargewp-marker-space: calc(<?php echo (int) $atts['marker_height']; ?>px + 2.5rem);
+                padding-top: var(--chargewp-marker-space);
+            }
+        }
+    <?php endif; ?>
 </style>
