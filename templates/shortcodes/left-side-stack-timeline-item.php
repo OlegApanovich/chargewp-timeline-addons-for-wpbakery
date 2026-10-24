@@ -42,7 +42,8 @@ $custom_icon_integration    = new IconIntegration();
 </div>
 
 <style>
-	<?php $_this->output_style_shortcode_id(); ?> .chargewp-left-side-stack-timeline-badge {
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-left-side-stack-timeline-badge,
+	<?php $_this->output_style_shortcode_id(); ?> .chargewp-left-side-stack-timeline-badge h2 {
 		background: <?php echo esc_attr( $atts['title_background_color'] ); ?>;
 	}
 
