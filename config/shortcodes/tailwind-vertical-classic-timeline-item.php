@@ -197,9 +197,44 @@ $params = array_merge(
 			'title'           => esc_html__( 'px', 'chargewp-timeline-addons-for-wpbakery' ),
 			'group'           => esc_html__( 'Marker', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
+		[
+			'type'              => 'chargewp_divider',
+			'param_name'        => 'divider_marker_icon',
+			'title'             => __( 'Icon', 'chargewp-timeline-addons-for-wpbakery' ),
+			'title_description' => __( 'Set of icon options.', 'chargewp-timeline-addons-for-wpbakery' ),
+			'color'             => '#4873c9',
+		],
 	],
-	$custom_icon_integration->add_icon_checkbox( [ 'background_style', 'align', 'link', 'background_color', 'custom_background_color' ] ),
+	$custom_icon_integration->add_config_params(
+		$custom_icon_integration->add_icon_checkbox( [ 'background_style', 'align', 'link', 'background_color', 'custom_background_color' ] ),
+		[ 'wcp_group_color' => '#4873c9' ]
+	),
 	[
+		[
+			'type'             => 'dropdown',
+			'value'            => chargewpwpbtimeline_config( 'element-params' )['tailwind']['rotation_degree'],
+			'heading'          => esc_html__( 'Rotation Degree', 'chargewp-timeline-addons-for-wpbakery' ),
+			'param_name'       => 'icon_rotation_degree',
+			'edit_field_class' => 'vc_col-sm-9',
+			'description'      => esc_html__( 'Choose icon rotation degree.', 'chargewp-timeline-addons-for-wpbakery' ),
+			'wcp_group_color'  => '#4873c9',
+			'dependency'       => [
+				'element' => 'add_icon',
+				'value'   => 'true',
+			],
+		],
+		[
+			'type'             => 'checkbox',
+			'heading'          => esc_html__( 'Negative rotation degree?', 'chargewp-timeline-addons-for-wpbakery' ),
+			'param_name'       => 'icon_negative_rotation_degree',
+			'description'      => esc_html__( 'Enable negative icon rotation degree.', 'chargewp-timeline-addons-for-wpbakery' ),
+			'edit_field_class' => 'vc_col-sm-3',
+			'wcp_group_color'  => '#4873c9',
+			'dependency'       => [
+				'element' => 'add_icon',
+				'value'   => 'true',
+			],
+		],
 		[
 			'type'             => 'textfield',
 			'value'            => 'Feb 2015',
