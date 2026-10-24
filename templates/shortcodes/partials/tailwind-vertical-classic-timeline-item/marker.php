@@ -133,13 +133,13 @@ if ( 'no' !== $atts['marker_type'] ) {
 		}
 	<?php endif; ?>
 
-    <?php if ( $is_show_on_mobile ) : ?>
-        @media (max-width: 639px) {
-            <?php $_this->output_style_shortcode_id(); ?> {
-                --chargewp-marker-height: <?php echo (int) $atts['marker_height']; ?>px;
-                --chargewp-marker-space: calc(<?php echo (int) $atts['marker_height']; ?>px + 2.5rem);
-                padding-top: var(--chargewp-marker-space);
-            }
-        }
-    <?php endif; ?>
+	<?php if ( $is_show_on_mobile ) : ?>
+		@media (max-width: 639px) {
+			<?php $_this->output_style_shortcode_id(); ?> {
+				--chargewp-marker-height: <?php echo (int) $atts['marker_height']; ?>px;
+				--chargewp-marker-space: calc(<?php echo (int) $atts['marker_height']; ?>px + 2.5rem);
+				padding-top: var(--chargewp-marker-space);
+			}
+		}
+	<?php endif; ?>
 </style>
