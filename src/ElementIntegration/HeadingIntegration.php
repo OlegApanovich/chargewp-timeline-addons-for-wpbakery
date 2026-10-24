@@ -136,19 +136,13 @@ class HeadingIntegration {
 			return;
 		}
 
-		$custom_heading = vc_manager()->vc()->getShortCode( 'vc_custom_heading' );
-		$data           = vc_map_integrate_parse_atts( $shortcode_tag, 'vc_custom_heading', $atts, $atts_slug . '_' );
-
-		// vc_custom_heading allows only limited tags list and fallback to h2 for others (like span),
-		// so we render such tags as div and replace it with our tag after.
-		$is_tag_not_allowed = $tag && ! in_array( $tag, [ 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div' ], true );
-		$render_tag         = $is_tag_not_allowed ? 'div' : $tag;
-
+		$custom_heading         = vc_manager()->vc()->getShortCode( 'vc_custom_heading' );
+		$data                   = vc_map_integrate_parse_atts( $shortcode_tag, 'vc_custom_heading', $atts, $atts_slug . '_' );
 		$data['font_container'] = implode(
 			'|',
 			array_filter(
 				[
-					$render_tag ? 'tag:' . $render_tag : '',
+					$tag ? 'tag:' . $tag : '',
 					$data['font_container'],
 				]
 			)
@@ -156,10 +150,6 @@ class HeadingIntegration {
 		$data['text']           = $atts[ $atts_slug ]; // provide text to shortcode.
 
 		$result = $custom_heading->render( array_filter( $data ) );
-
-		if ( $is_tag_not_allowed ) {
-			$result = preg_replace( [ '/<div\b/', '/<\/div>/' ], [ '<' . $tag, '</' . $tag . '>' ], $result );
-		}
 
 		// we already have properly escaped value here that we get on integration shortcode level.
         // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
