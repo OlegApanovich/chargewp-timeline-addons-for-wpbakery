@@ -72,6 +72,10 @@
     margin-bottom: 1.4rem;
 }
 
+.chargewp-left-side-stack-timeline-timeline .chargewp-left-side-stack-timeline-timeline-container .chargewp-left-side-stack-timeline-timeline-body .chargewp-left-side-stack-timeline-timeline-title .chargewp-left-side-stack-timeline-badge h2 {
+    display: inline-block;
+}
+
 .chargewp-left-side-stack-timeline-timeline .chargewp-left-side-stack-timeline-timeline-container .chargewp-left-side-stack-timeline-timeline-body .chargewp-left-side-stack-timeline-timeline-title .badge {
     background: #4f537b;
     padding: 4px 8px;

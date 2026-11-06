@@ -143,6 +143,7 @@
 .chargewp-tailwind-container .chargewp-absolute { position: absolute; }
 .chargewp-tailwind-container .chargewp-relative { position: relative; }
 .chargewp-tailwind-container .chargewp-left-1\/2 { left: 50%; }
+.chargewp-tailwind-container .chargewp-top-0 { top: 0; }
 .chargewp-tailwind-container .chargewp-order-1 { order: 1; }
 .chargewp-tailwind-container .chargewp-order-2 { order: 2; }
 .chargewp-tailwind-container .chargewp-mx-auto { margin-left: auto; margin-right: auto; }
@@ -181,6 +182,11 @@
 .chargewp-tailwind-container .chargewp-items-center { align-items: center; }
 .chargewp-tailwind-container .chargewp-justify-center { justify-content: center; }
 .chargewp-tailwind-container .chargewp-justify-between { justify-content: space-between; }
+.chargewp-tailwind-container .chargewp-space-y-10 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+}
 .chargewp-tailwind-container .chargewp-space-y-\[4\%\] > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
     margin-top: calc(4% * calc(1 - var(--tw-space-y-reverse)));
@@ -214,12 +220,32 @@
     color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
+@media (max-width: 639px) {
+    .chargewp-tailwind-vertical-classic-timeline-container .chargewp-tailwind-vertical-classic-timeline-item-container::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: calc(var(--chargewp-marker-height, 0px) / 2);
+        height: calc(var(--chargewp-marker-space, 0px) - var(--chargewp-marker-height, 0px) / 2 - 0.25rem);
+        width: var(--chargewp-baseline-width, 0.125rem);
+        background-color: var(--chargewp-baseline-background, #cccccc);
+        transform: translateX(-50%);
+    }
+    .chargewp-tailwind-vertical-classic-timeline-container .chargewp-tailwind-vertical-classic-timeline-item-container ~ .chargewp-tailwind-vertical-classic-timeline-item-container::before,
+    .chargewp-tailwind-vertical-classic-timeline-container .vc_element ~ .vc_element > .chargewp-tailwind-vertical-classic-timeline-item-container::before {
+        top: -2.25rem;
+        height: calc(var(--chargewp-marker-space, -2rem) + 2rem);
+    }
+}
+
 /* Responsive Styles */
 @media (min-width: 640px) {
     .chargewp-tailwind-container .sm\:chargewp-order-1 { order: 1; }
     .chargewp-tailwind-container .sm\:chargewp-order-2 { order: 2; }
     .chargewp-tailwind-container .sm\:chargewp-mb-0 { margin-bottom: 0; }
     .chargewp-tailwind-container .sm\:chargewp-block { display: block; }
+    .chargewp-tailwind-container .sm\:chargewp-top-auto { top: auto; }
+    .chargewp-tailwind-container .sm\:-chargewp-translate-y-1\/2 { --tw-translate-y: -50%; }
     .chargewp-tailwind-container .sm\:chargewp-flex { display: flex; }
     .chargewp-tailwind-container .sm\:chargewp-w-\[48\%\] { width: 48%; }
     .chargewp-tailwind-container .sm\:chargewp-flex-row { flex-direction: row; }

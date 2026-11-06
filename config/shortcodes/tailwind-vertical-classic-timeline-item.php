@@ -108,6 +108,25 @@ $params = array_merge(
 			'group'            => esc_html__( 'Marker', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
 		[
+			'type'        => 'chargewp_switcher',
+			'param_name'  => 'is_marker_on_mobile',
+			'heading'     => esc_html__( 'Show on mobile', 'chargewp-timeline-addons-for-wpbakery' ),
+			'description' => esc_html__( 'Show marker with connecting line on mobile devices.', 'chargewp-timeline-addons-for-wpbakery' ),
+			'options'     => [
+				'true' => [
+					'label' => '',
+					'on'    => __( 'Yes', 'chargewp-timeline-addons-for-wpbakery' ),
+					'off'   => __( 'No', 'chargewp-timeline-addons-for-wpbakery' ),
+				],
+			],
+			'value'       => '',
+			'dependency'  => [
+				'element' => 'marker_type',
+				'value'   => [ 'circle', 'square' ],
+			],
+			'group'       => esc_html__( 'Marker', 'chargewp-timeline-addons-for-wpbakery' ),
+		],
+		[
 			'type'              => 'chargewp_divider',
 			'param_name'        => 'divider_marker_background',
 			'title'             => __( 'Background', 'chargewp-timeline-addons-for-wpbakery' ),
@@ -245,9 +264,44 @@ $params = array_merge(
 			'title'           => esc_html__( 'px', 'chargewp-timeline-addons-for-wpbakery' ),
 			'group'           => esc_html__( 'Marker', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
+		[
+			'type'              => 'chargewp_divider',
+			'param_name'        => 'divider_marker_icon',
+			'title'             => __( 'Icon', 'chargewp-timeline-addons-for-wpbakery' ),
+			'title_description' => __( 'Set of icon options.', 'chargewp-timeline-addons-for-wpbakery' ),
+			'color'             => '#4873c9',
+		],
 	],
-	$custom_icon_integration->add_icon_checkbox( [ 'background_style', 'align', 'link', 'background_color', 'custom_background_color' ] ),
+	$custom_icon_integration->add_config_params(
+		$custom_icon_integration->add_icon_checkbox( [ 'background_style', 'align', 'link', 'background_color', 'custom_background_color' ] ),
+		[ 'wcp_group_color' => '#4873c9' ]
+	),
 	[
+		[
+			'type'             => 'dropdown',
+			'value'            => chargewpwpbtimeline_config( 'element-params' )['tailwind']['rotation_degree'],
+			'heading'          => esc_html__( 'Rotation Degree', 'chargewp-timeline-addons-for-wpbakery' ),
+			'param_name'       => 'icon_rotation_degree',
+			'edit_field_class' => 'vc_col-sm-9',
+			'description'      => esc_html__( 'Choose icon rotation degree.', 'chargewp-timeline-addons-for-wpbakery' ),
+			'wcp_group_color'  => '#4873c9',
+			'dependency'       => [
+				'element' => 'add_icon',
+				'value'   => 'true',
+			],
+		],
+		[
+			'type'             => 'checkbox',
+			'heading'          => esc_html__( 'Negative rotation degree?', 'chargewp-timeline-addons-for-wpbakery' ),
+			'param_name'       => 'icon_negative_rotation_degree',
+			'description'      => esc_html__( 'Enable negative icon rotation degree.', 'chargewp-timeline-addons-for-wpbakery' ),
+			'edit_field_class' => 'vc_col-sm-3',
+			'wcp_group_color'  => '#4873c9',
+			'dependency'       => [
+				'element' => 'add_icon',
+				'value'   => 'true',
+			],
+		],
 		[
 			'type'             => 'textfield',
 			'value'            => 'Feb 2015',
@@ -380,7 +434,6 @@ $params = array_merge(
 				esc_html__( 'Media library', 'js_composer' ) => 'media_library',
 				esc_html__( 'External link', 'js_composer' ) => 'external_link',
 			],
-			'std'         => 'media_library',
 			'description' => esc_html__( 'Select image source.', 'js_composer' ),
 			'group'       => esc_html__( 'Image', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
@@ -414,7 +467,6 @@ $params = array_merge(
 			'heading'     => esc_html__( 'Rounded', 'js_composer' ),
 			'param_name'  => 'image_rounded',
 			'value'       => chargewpwpbtimeline_config( 'element-params' )['tailwind']['rounded'],
-			'std'         => 'media_library',
 			'description' => esc_html__( 'Select image rounded value.', 'js_composer' ),
 			'group'       => esc_html__( 'Image', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
@@ -423,7 +475,6 @@ $params = array_merge(
 			'heading'     => esc_html__( 'Shadow', 'js_composer' ),
 			'param_name'  => 'image_shadow',
 			'value'       => chargewpwpbtimeline_config( 'element-params' )['tailwind']['shadow'],
-			'std'         => 'media_library',
 			'description' => esc_html__( 'Select image shadow value.', 'js_composer' ),
 			'group'       => esc_html__( 'Image', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
@@ -432,7 +483,6 @@ $params = array_merge(
 			'heading'     => esc_html__( 'Fit', 'js_composer' ),
 			'param_name'  => 'image_fit',
 			'value'       => chargewpwpbtimeline_config( 'element-params' )['tailwind']['fit'],
-			'std'         => 'media_library',
 			'description' => esc_html__( 'Select image fit/position value.', 'js_composer' ),
 			'group'       => esc_html__( 'Image', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
