@@ -14,9 +14,6 @@ defined( 'ABSPATH' ) || exit;
 $custom_heading_integration = new HeadingIntegration();
 $custom_icon_integration    = new IconIntegration();
 
-// WPBakery 9.1 deprecated 'std' in favor of settings['default'], so we keep 'std' only for older versions.
-$is_std_supported = defined( 'WPB_VC_VERSION' ) && version_compare( WPB_VC_VERSION, '9.1', '<' );
-
 $params = array_merge(
 	[
 		[
@@ -365,12 +362,9 @@ $params = array_merge(
 				esc_html__( 'Media library', 'js_composer' ) => 'media_library',
 				esc_html__( 'External link', 'js_composer' ) => 'external_link',
 			],
-			'settings'    => [
-				'default' => 'media_library',
-			],
 			'description' => esc_html__( 'Select image source.', 'js_composer' ),
 			'group'       => esc_html__( 'Image', 'chargewp-timeline-addons-for-wpbakery' ),
-		] + ( $is_std_supported ? [ 'std' => 'media_library' ] : [] ),
+		],
 		[
 			'type'        => 'attach_image',
 			'heading'     => esc_html__( 'Image', 'js_composer' ),
@@ -401,34 +395,25 @@ $params = array_merge(
 			'heading'     => esc_html__( 'Rounded', 'js_composer' ),
 			'param_name'  => 'image_rounded',
 			'value'       => chargewpwpbtimeline_config( 'element-params' )['tailwind']['rounded'],
-			'settings'    => [
-				'default' => 'media_library',
-			],
 			'description' => esc_html__( 'Select image rounded value.', 'js_composer' ),
 			'group'       => esc_html__( 'Image', 'chargewp-timeline-addons-for-wpbakery' ),
-		] + ( $is_std_supported ? [ 'std' => 'media_library' ] : [] ),
+		],
 		[
 			'type'        => 'dropdown',
 			'heading'     => esc_html__( 'Shadow', 'js_composer' ),
 			'param_name'  => 'image_shadow',
 			'value'       => chargewpwpbtimeline_config( 'element-params' )['tailwind']['shadow'],
-			'settings'    => [
-				'default' => 'media_library',
-			],
 			'description' => esc_html__( 'Select image shadow value.', 'js_composer' ),
 			'group'       => esc_html__( 'Image', 'chargewp-timeline-addons-for-wpbakery' ),
-		] + ( $is_std_supported ? [ 'std' => 'media_library' ] : [] ),
+		],
 		[
 			'type'        => 'dropdown',
 			'heading'     => esc_html__( 'Fit', 'js_composer' ),
 			'param_name'  => 'image_fit',
 			'value'       => chargewpwpbtimeline_config( 'element-params' )['tailwind']['fit'],
-			'settings'    => [
-				'default' => 'media_library',
-			],
 			'description' => esc_html__( 'Select image fit/position value.', 'js_composer' ),
 			'group'       => esc_html__( 'Image', 'chargewp-timeline-addons-for-wpbakery' ),
-		] + ( $is_std_supported ? [ 'std' => 'media_library' ] : [] ),
+		],
 		[
 			'type'             => 'dropdown',
 			'value'            => chargewpwpbtimeline_config( 'element-params' )['tailwind']['rotation_degree'],
