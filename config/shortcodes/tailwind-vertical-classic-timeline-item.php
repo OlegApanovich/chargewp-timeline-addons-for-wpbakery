@@ -64,6 +64,25 @@ $params = array_merge(
 			'group'            => esc_html__( 'Marker', 'chargewp-timeline-addons-for-wpbakery' ),
 		],
 		[
+			'type'        => 'chargewp_switcher',
+			'param_name'  => 'is_marker_on_mobile',
+			'heading'     => esc_html__( 'Show on mobile', 'chargewp-timeline-addons-for-wpbakery' ),
+			'description' => esc_html__( 'Show marker with connecting line on mobile devices.', 'chargewp-timeline-addons-for-wpbakery' ),
+			'options'     => [
+				'true' => [
+					'label' => '',
+					'on'    => __( 'Yes', 'chargewp-timeline-addons-for-wpbakery' ),
+					'off'   => __( 'No', 'chargewp-timeline-addons-for-wpbakery' ),
+				],
+			],
+			'value'       => '',
+			'dependency'  => [
+				'element' => 'marker_type',
+				'value'   => [ 'circle', 'square' ],
+			],
+			'group'       => esc_html__( 'Marker', 'chargewp-timeline-addons-for-wpbakery' ),
+		],
+		[
 			'type'              => 'chargewp_divider',
 			'param_name'        => 'divider_marker_background',
 			'title'             => __( 'Background', 'chargewp-timeline-addons-for-wpbakery' ),
