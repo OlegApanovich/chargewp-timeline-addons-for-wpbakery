@@ -3,7 +3,7 @@ Contributors: mrdollar4444
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K9NTJ6E2RQN3A&source=url
 Tags: WPBakery, wpbakery addons, wpbakery page builder, wpbakery page builder addons
 Tested up to: 7.1
-Stable tag: 1.6.3
+Stable tag: 1.6.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -43,6 +43,13 @@ Please note that some elements use brand-new CSS/JS features, and browser suppor
 9. Classic Horizontal Timeline Addon.
 
 == Changelog ==
+
+= 1.6.4 =
+Dev - Add an option to show timeline lines on mobile in "Tailwind Vertical Classic Timeline".
+Dev - Add an option for icon rotation in "Tailwind Vertical Classic Timeline".
+Dev - Add options for additional paddings and margins in "Tailwind Vertical Classic Timeline".
+Fix - Compatibility with WPBakery version 9.1+.
+Fix - Issue with theme default fonts in elements.
 
 = 1.6.3 =
 Dev - Update dependency 'wpbakery-custom-param-collection' to the latest 1.4.4 version.
